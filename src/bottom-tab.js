@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -26,13 +26,47 @@ export default class BottomTab extends Component {
 
   render() {
     return (
-      <bottomTab.Navigator>
+      <bottomTab.Navigator
+      tabBarOptions={{
+        style: {
+          height: "10%"
+        },
+        labelStyle: {
+          fontSize: 13
+        },
+      }}>
         <bottomTab.Screen component={this.testScreenStack}
-        name="Test 1"/>
+        options={{
+          tabBarIcon: () => {
+            // TODO: put image icon here
+            // <Image source={require("path")} />
+          }
+        }}
+        name="Objek Wisata"/>
+
         <bottomTab.Screen component={this.testScreenStack}
-        name="Test 2"/>
+        options={{
+          tabBarIcon: () => {
+            // <Image source={require("path")}
+          }
+        }}
+        name="Akomodasi"/>
+
         <bottomTab.Screen component={this.testScreenStack}
-        name="Test 3"/>
+        options={{
+          tabBarIcon: () => {
+            // <Image source={require("path")}
+          }
+        }}
+        name="My Trip"/>
+
+        <bottomTab.Screen component={this.testScreenStack}
+        options={{
+          tabBarIcon: () => {
+            // <Image source={require("path")}
+          }
+        }}
+        name="Profile"/>
       </bottomTab.Navigator>
     )
   }
