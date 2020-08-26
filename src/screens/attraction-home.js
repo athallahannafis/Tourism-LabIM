@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 
 // style
 import {globalStyling as gs} from '../style/global-styling';
-import { View, Text } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, Image } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 // data
 import ExploreData from '../data-dummy/attraction-data/explore-indonesia.json';
+import WisataPopulerData from '../data-dummy/attraction-data/wisata-populer.json';
 
 
 export default class AttractionHome extends Component {
@@ -31,8 +32,10 @@ export default class AttractionHome extends Component {
     cityRender = this.state.city.map((city) => {
       console.log(city);
       return (
-        <View style={gs.smallRectangularCard}>
-          <Text>{city}</Text>
+        <View style={{margin: 10}}>
+          <TouchableOpacity style={gs.smallRectangularCard}>
+            <Text>{city}</Text>
+          </TouchableOpacity>
         </View>
       );
     });
@@ -41,12 +44,41 @@ export default class AttractionHome extends Component {
       <ScrollView>
         <View style={[gs.mainContainer]}>
 
-          <View style={gs.cardSection}>
-              <Text>Explore Indonesia</Text>
-              <View style={gs.rowContainer}>
-                {cityRender}
+          {/* Explore Indonesia */}
+          <View style={[gs.cardSection,]}>
+            <Text style={gs.cardTitle}>Explore Indonesia</Text>
+            <View style={gs.rowContainer}>
+              {cityRender}
+            </View>
+          </View>
+
+          {/* Objek wisata populer */}
+          <View style={[gs.cardSection, {marginTop: 20} ]}>
+            <Text style={gs.cardTitle}>Objek Wisata Populer</Text>
+            <View style={gs.rowContainer}>
+              {/* left section */}
+              <View style={{width: 180}}>
+                <Text>Malang</Text>
+                <Image source={{uri: WisataPopulerData.data.image_source}}
+                style={{
+                  borderRadius: 10,
+                  width: 150,
+                  height: 100,
+                  marginTop: 10
+                }}/>
               </View>
-          </View> 
+
+              {/* Right Section */}
+              <View style={{width:180}}>
+                <Text style={{fontWeight: "bold", fontSize: 15}}>
+                  {WisataPopulerData.data.place_name}
+                </Text>
+                <Text>
+                  {WisataPopulerData.data.description}
+                </Text>
+              </View>
+            </View>
+          </View>
 
         </View>
       </ScrollView>
