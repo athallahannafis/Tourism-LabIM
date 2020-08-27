@@ -59,5 +59,11 @@ export const globalStyling = StyleSheet.create({
     width: 150,
     height: 100,
     marginTop: 10
+  },
+  smallImage: {
+    borderRadius: 10,
+    width: 110,
+    height: 60,
+    marginTop: 10
   }
 })
