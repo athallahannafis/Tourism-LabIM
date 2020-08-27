@@ -1,0 +1,21 @@
+{
+  "popular_place": {
+    "province": "Ancol, Jakarta",
+    "place_name": "Pantai Karnaval",
+    "place_description": "Rasakan sensasi berjalan di jembatan panjang dan indah sembari menikmati sunset di ujung utara kota Jakarta."
+  },
+  "tourist_attraction": [
+    {
+      "attraction_name": "National Monument (Monumen Nasional)",
+      "attraction_desc": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!"
+    },
+    {
+      "attraction_name": "Plaza Indonesia",
+      "attraction_desc": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT."
+    },
+    {
+      "attraction_name": "Taman Lapangan Banteng",
+      "attraction_desc": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!"
+    }
+  ]
+}
