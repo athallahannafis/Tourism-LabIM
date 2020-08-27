@@ -33,7 +33,8 @@ export default class AttractionHome extends Component {
       console.log(city);
       return (
         <View style={{margin: 10}}>
-          <TouchableOpacity style={gs.smallRectangularCard}>
+          <TouchableOpacity style={gs.smallRectangularCard}
+          onPress={() => this.props.navigation.navigate("Attraction in Destination", city)}>
             <Text>{city}</Text>
           </TouchableOpacity>
         </View>
