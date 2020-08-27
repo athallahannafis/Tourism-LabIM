@@ -29,7 +29,7 @@ export default class AttractionHome extends Component {
 
   render() {
     this.fetchCities();
-    cityRender = this.state.city.map((city) => {
+    const cityRender = this.state.city.map((city) => {
       console.log(city);
       return (
         <View style={{margin: 10}}>
