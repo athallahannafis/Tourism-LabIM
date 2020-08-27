@@ -28,13 +28,12 @@ export default class BottomTab extends Component {
 
   attractionStackScreen = (props) => {
     return (
-      <attractionStack.Navigator>
+      <attractionStack.Navigator screenOptions={{
+        headerStyle: {backgroundColor: "#2E99A3"},
+        headerTintColor: "white",
+      }}>
         <attractionStack.Screen component={AttractionHome}
-        name="Objek Wisata dan Destinasi"
-        options={{
-          headerStyle: {backgroundColor: "#2E99A3"},
-          headerTintColor: "white",
-        }}/>
+        name="Objek Wisata dan Destinasi"/>
       </attractionStack.Navigator>
     )
   }
