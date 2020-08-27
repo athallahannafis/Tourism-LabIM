@@ -1,8 +1,22 @@
 {
-  "data": {
-    "cities": [
-      "Jakarta", "Bandung", "Malang",
-      "Sulawesi", "Lombok", "Sumatra"
-    ]
-  }
+  "data": [
+    {
+      "city_name": "Jakarta"
+    },
+    {
+      "city_name": "Bandung"
+    },
+    {
+      "city_name": "Malang"
+    },
+    {
+      "city_name": "Sulawesi"
+    },
+    {
+      "city_name": "Lombok"
+    },
+    {
+      "city_name": "Sumatra"
+    },
+  ]
 }
