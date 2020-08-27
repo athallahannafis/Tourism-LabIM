@@ -39,6 +39,11 @@ export const globalStyling = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
   },
+  subCardTitle: {
+    fontSize: 15,
+    marginBottom: 15,
+    fontWeight: "bold"
+  },
   smallRectangularCard: {
     flex: 0,
     flexDirection: "column",
@@ -48,5 +53,11 @@ export const globalStyling = StyleSheet.create({
     width: 100,
     borderRadius: 10,
     backgroundColor: "#c2b9b8",
+  },
+  bigImage: {
+    borderRadius: 10,
+    width: 150,
+    height: 100,
+    marginTop: 10
   }
 })

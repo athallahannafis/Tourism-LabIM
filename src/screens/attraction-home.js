@@ -20,9 +20,9 @@ export default class AttractionHome extends Component {
 
   // methods
   fetchCities = () => {
-    const cityList = ExploreData.data.cities;
+    const cityList = ExploreData.data;
     for (let i = 0; i < cityList.length; i++) {
-      this.state.city.push(cityList[i])
+      this.state.city.push(cityList[i].city_name)
     }
     console.log(this.state.city);
   }
@@ -44,7 +44,6 @@ export default class AttractionHome extends Component {
     return (
       <ScrollView>
         <View style={[gs.mainContainer]}>
-
           {/* Explore Indonesia */}
           <View style={[gs.cardSection,]}>
             <Text style={gs.cardTitle}>Explore Indonesia</Text>
@@ -61,17 +60,12 @@ export default class AttractionHome extends Component {
               <View style={{width: 180}}>
                 <Text>Malang</Text>
                 <Image source={{uri: WisataPopulerData.data.image_source}}
-                style={{
-                  borderRadius: 10,
-                  width: 150,
-                  height: 100,
-                  marginTop: 10
-                }}/>
+                style={gs.bigImage}/>
               </View>
 
               {/* Right Section */}
               <View style={{width:180}}>
-                <Text style={{fontWeight: "bold", fontSize: 15}}>
+                <Text style={gs.subCardTitle}>
                   {WisataPopulerData.data.place_name}
                 </Text>
                 <Text>
