@@ -24,13 +24,11 @@ export default class AttractionHome extends Component {
     for (let i = 0; i < cityList.length; i++) {
       this.state.city.push(cityList[i].city_name)
     }
-    console.log(this.state.city);
   }
 
   render() {
     this.fetchCities();
     const cityRender = this.state.city.map((city) => {
-      console.log(city);
       return (
         <View style={{margin: 10}}>
           <TouchableOpacity style={gs.smallRectangularCard}
