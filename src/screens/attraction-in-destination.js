@@ -26,9 +26,8 @@ export default class AttractionInDestination extends Component {
 
   render() {
     const cityName = this.props.route.params;
-    this.fetchAttraction()
+    this.fetchAttraction();
     const objekWisata = this.state.touristAtt.map((item) => {
-      console.log(this.state.touristAtt);
       return (
         <View style={[gs.rowContainer, {marginBottom: 20}]}>
           {/* Left section */}
