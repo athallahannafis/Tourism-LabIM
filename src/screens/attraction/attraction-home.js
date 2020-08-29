@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
 // style
-import {globalStyling as gs} from '../style/global-styling';
+import {globalStyling as gs} from '../../style/global-styling';
 import { View, Text, Image } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 // data
-import ExploreData from '../data-dummy/attraction-data/explore-indonesia.json';
-import WisataPopulerData from '../data-dummy/attraction-data/wisata-populer.json';
+import ExploreData from '../../data-dummy/attraction-data/explore-indonesia.json';
+import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
 
 export default class AttractionHome extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ export default class AttractionHome extends Component {
   }
 
   fetchFirstRecommendation = () => {
-    const imagePath = require('../images/dummy-image2.jpeg');
+    const imagePath = require('../../images/dummy-image2.jpeg');
     for (let i = 0; i < 3; i++) {
       this.state.dummyRecImg.push(imagePath);
     }

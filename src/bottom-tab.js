@@ -6,8 +6,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Screen
 import TestScreen from './screens/Test';
-import AttractionHome from './screens/attraction-home';
-import AttractionInDestination from './screens/attraction-in-destination';
+import AttractionHome from './screens/attraction/attraction-home';
+import AttractionInDestination from './screens/attraction/attraction-in-destination';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();

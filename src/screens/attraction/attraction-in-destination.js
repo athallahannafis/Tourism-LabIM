@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import { View, Text, Image } from 'react-native';
 
 // style
-import {globalStyling as gs} from '../style/global-styling';
+import {globalStyling as gs} from '../../style/global-styling';
 import { ScrollView } from 'react-native-gesture-handler';
 
 // data
 import attInDestination from 
-'../data-dummy/attraction-data/attraction-in-destination.json';
+'../../data-dummy/attraction-data/attraction-in-destination.json';
 
 export default class AttractionInDestination extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ export default class AttractionInDestination extends Component {
         <View style={[gs.rowContainer, {paddingVertical: 20, borderBottomWidth: 1}]}>
           {/* Left section */}
           <View style={[gs.rowContainer,{width: 100}]}>
-            <Image source={require('../images/dummy-image2.jpeg')}
+            <Image source={require('../../images/dummy-image2.jpeg')}
             style={gs.smallImage}/>
           </View>
           {/* Right section */}
@@ -50,7 +50,7 @@ export default class AttractionInDestination extends Component {
         <View style={[gs.rowContainer, {paddingVertical: 20}]}>
           {/* Left section */}
           <View style={[gs.rowContainer,{width: 100}]}>
-            <Image source={require('../images/dummy-image2.jpeg')}
+            <Image source={require('../../images/dummy-image2.jpeg')}
             style={gs.smallImage}/>
           </View>
           {/* Right section */}
@@ -74,7 +74,7 @@ export default class AttractionInDestination extends Component {
               {/* Left section */}
               <View style={{width: 180}}>
                 <Text>{attInDestination.popular_place.province}</Text>
-                <Image source={require("../images/dummy-image.jpg")}
+                <Image source={require("../../images/dummy-image.jpg")}
                 style={gs.bigImage}/>
               </View>
               {/* Right Section */}
