@@ -10,16 +10,12 @@ import ProfileHomeScreen from './screens/ProfileHome.js';
 import ProfileEditScreen from './screens/ProfileEdit.js';
 import PreferensiObjekWisataScreen from './screens/PreferensiObjekWisata.js';
 import PreferensiAkomodasiScreen from './screens/PreferensiAkomodasi.js';
-
-const testStack = createStackNavigator();
-const bottomTab = createBottomTabNavigator();
-const profileStack = createStackNavigator();
-import TestScreen from './screens/Test';
 import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
+const profileStack = createStackNavigator();
 const attractionStack = createStackNavigator();
 
 export default class BottomTab extends Component {
