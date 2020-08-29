@@ -6,9 +6,12 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Screen
 import TestScreen from './screens/Test';
+import AttractionHome from './screens/attraction/attraction-home';
+import AttractionInDestination from './screens/attraction/attraction-in-destination';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
+const attractionStack = createStackNavigator();
 
 export default class BottomTab extends Component {
   constructor(props) {
@@ -24,6 +27,20 @@ export default class BottomTab extends Component {
     )
   }
 
+  attractionStackScreen = (props) => {
+    return (
+      <attractionStack.Navigator screenOptions={{
+        headerStyle: {backgroundColor: "#2E99A3"},
+        headerTintColor: "white",
+      }}>
+        <attractionStack.Screen component={AttractionHome}
+        name="Objek Wisata dan Destinasi"/>
+        <attractionStack.Screen component={AttractionInDestination}
+        name="Attraction in Destination"/>
+      </attractionStack.Navigator>
+    )
+  }
+
   render() {
     return (
       <bottomTab.Navigator
@@ -35,7 +52,7 @@ export default class BottomTab extends Component {
           fontSize: 13
         },
       }}>
-        <bottomTab.Screen component={this.testScreenStack}
+        <bottomTab.Screen component={this.attractionStackScreen}
         options={{
           tabBarIcon: () => {
             // TODO: put image icon here

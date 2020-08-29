@@ -6,8 +6,8 @@ export const globalStyling = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "20%",
-    marginBottom: "20%",
+    marginTop: "5%",
+    marginBottom: "5%",
   },
   columnContainer: {
     flex: 0,
@@ -19,6 +19,51 @@ export const globalStyling = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     alignItems: "center",
+    flexWrap: "wrap",
     justifyContent: "center",
+  },
+  cardSection: {
+    borderRadius: 15,
+    flex: 0,
+    flexDirection: "column",
+    backgroundColor: "#f0f9f8",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    width: "95%",
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 3,
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  subCardTitle: {
+    fontSize: 15,
+    marginBottom: 15,
+    fontWeight: "bold"
+  },
+  smallRectangularCard: {
+    flex: 0,
+    flexDirection: "column",
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 100,
+    borderRadius: 10,
+    backgroundColor: "#c2b9b8",
+  },
+  bigImage: {
+    borderRadius: 10,
+    width: 150,
+    height: 100,
+    marginTop: 10
+  },
+  smallImage: {
+    borderRadius: 10,
+    width: 110,
+    height: 60,
+    marginTop: 10
   }
 })
