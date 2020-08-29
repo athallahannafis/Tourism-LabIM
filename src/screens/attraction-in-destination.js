@@ -13,7 +13,8 @@ export default class AttractionInDestination extends Component {
   constructor(props) {
     super(props);
     this.state = ({
-      touristAtt: []
+      touristAtt: [],
+      lastTouristAtt: [],
     })
   }
 
@@ -22,6 +23,7 @@ export default class AttractionInDestination extends Component {
     for (let i = 0; i < attList.length; i++) {
       this.state.touristAtt.push(attList[i]);
     }
+    this.state.lastTouristAtt.push(this.state.touristAtt.pop());
   }
 
   render() {
@@ -29,7 +31,7 @@ export default class AttractionInDestination extends Component {
     this.fetchAttraction();
     const objekWisata = this.state.touristAtt.map((item) => {
       return (
-        <View style={[gs.rowContainer, {marginBottom: 20}]}>
+        <View style={[gs.rowContainer, {paddingVertical: 20, borderBottomWidth: 1}]}>
           {/* Left section */}
           <View style={[gs.rowContainer,{width: 100}]}>
             <Image source={require('../images/dummy-image2.jpeg')}
@@ -43,6 +45,22 @@ export default class AttractionInDestination extends Component {
         </View>
       );
     });
+    const lastObjekWisata = this.state.lastTouristAtt.map((item) => {
+      return (
+        <View style={[gs.rowContainer, {paddingVertical: 20}]}>
+          {/* Left section */}
+          <View style={[gs.rowContainer,{width: 100}]}>
+            <Image source={require('../images/dummy-image2.jpeg')}
+            style={gs.smallImage}/>
+          </View>
+          {/* Right section */}
+          <View style={[{width: 230, marginLeft: 20}]}>
+            <Text style={gs.subCardTitle}>{item.attraction_name}</Text>
+            <Text>{item.attraction_desc}</Text>
+          </View>
+        </View>
+      )
+    })
 
     return (
       <ScrollView>
@@ -73,6 +91,7 @@ export default class AttractionInDestination extends Component {
             <Text style={gs.cardTitle}>Objek Wisata di {cityName}</Text>
             <View>
             {objekWisata}
+            {lastObjekWisata}
             </View>
           </View>
 
