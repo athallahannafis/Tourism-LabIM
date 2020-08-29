@@ -9,12 +9,12 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ExploreData from '../data-dummy/attraction-data/explore-indonesia.json';
 import WisataPopulerData from '../data-dummy/attraction-data/wisata-populer.json';
 
-
 export default class AttractionHome extends Component {
   constructor(props) {
     super(props);
     this.state = ({
       city: [],
+      dummyRecImg: [],
     })
   }
 
@@ -26,8 +26,17 @@ export default class AttractionHome extends Component {
     }
   }
 
+  fetchFirstRecommendation = () => {
+    const imagePath = require('../images/dummy-image2.jpeg');
+    for (let i = 0; i < 3; i++) {
+      this.state.dummyRecImg.push(imagePath);
+    }
+  }
+
   render() {
     this.fetchCities();
+    this.fetchFirstRecommendation();
+
     const cityRender = this.state.city.map((city) => {
       return (
         <View style={{margin: 10}}>
@@ -38,6 +47,14 @@ export default class AttractionHome extends Component {
         </View>
       );
     });
+
+    const dummyRecommendation = this.state.dummyRecImg.map((item) => {
+      return (
+        <View>
+          <Image style={[gs.smallImage, {marginHorizontal: 5}]} source={item}/>
+        </View>
+      )
+    })
 
     return (
       <ScrollView>
@@ -69,6 +86,25 @@ export default class AttractionHome extends Component {
                 <Text>
                   {WisataPopulerData.data.description}
                 </Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Rekomendasi objek wisata */}
+          <View style={[gs.cardSection, {marginTop: 20}]}>
+            <Text style={gs.cardTitle}>Rekomendasi Objek Wisata</Text>
+            
+            <View style={{marginBottom: 20}}>
+              <Text style={{marginBottom: 5}}>Karena anda sempat melihat Bromo Tengger Semeru</Text>
+              <View style={gs.rowContainer}>
+                {dummyRecommendation}
+              </View>
+            </View>
+
+            <View style={{marginBottom: 20}}>
+              <Text style={{marginBottom: 5}}>Karena anda sempat melihat Mandalika</Text>
+              <View style={gs.rowContainer}>
+                {dummyRecommendation}
               </View>
             </View>
           </View>
