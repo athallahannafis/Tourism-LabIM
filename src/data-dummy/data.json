@@ -1,0 +1,23 @@
+{
+  "profil": {
+    "namaDepan": "Sterling",
+    "namaBelakang": "Mortlock",
+    "tanggalLahir": "24 Januari 1998",
+    "jenisKelamin": "Laki-laki",
+    "preferensiObjekWisata": {
+      "objek1": true,
+      "objek2": true,
+      "objek3": false,
+      "objek4": true,
+      "objek5": false
+    },
+    "preferensiAkomodasi": {
+      "akomodasi1": false,
+      "akomodasi2": false,
+      "akomodasi3": false,
+      "akomodasi4": true,
+      "akomodasi5": true,
+      "akomodasi6": true
+    }
+  }
+}
