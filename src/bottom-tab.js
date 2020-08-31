@@ -97,15 +97,22 @@ export default class BottomTab extends Component {
             height: '10%',
           },
           labelStyle: {
-            fontSize: 13,
+            fontSize: 14,
+            fontWeight: "bold",
+            color: "#2E99A3",
           },
+          inactiveBackgroundColor: "white",
+          activeBackgroundColor: "#C1DFE1",
         }}>
         <bottomTab.Screen
           component={this.attractionStackScreen}
           options={{
             tabBarIcon: () => {
               // TODO: put image icon here
-              // <Image source={require("path")} />
+              return (
+                <Image style={{width: 40, height: 40}}
+                source={require("./images/bottomtab-icons/objekWisata.png")}/>
+              )
             },
           }}
           name="Objek Wisata"
@@ -115,7 +122,10 @@ export default class BottomTab extends Component {
           component={this.testScreenStack}
           options={{
             tabBarIcon: () => {
-              // <Image source={require("path")}
+              return (
+                <Image style={{width: 40, height: 40}}
+                source={require("./images/bottomtab-icons/akomodasi.png")}/>
+              )
             },
           }}
           name="Akomodasi"
@@ -126,6 +136,10 @@ export default class BottomTab extends Component {
           options={{
             tabBarIcon: () => {
               // <Image source={require("path")}
+              return (
+                <Image style={{width: 40, height: 40}}
+                source={require("./images/bottomtab-icons/myTrip.png")}/>
+              )
             },
           }}
           name="My Trip"
@@ -136,6 +150,10 @@ export default class BottomTab extends Component {
           options={{
             tabBarIcon: () => {
               // <Image source={require("path")}
+              return (
+                <Image style={{width: 40, height: 40}}
+                source={require("./images/bottomtab-icons/profile.png")}/>
+              )
             },
           }}
           name="Profile"
