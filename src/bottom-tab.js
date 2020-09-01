@@ -93,6 +93,7 @@ export default class BottomTab extends Component {
     return (
       <bottomTab.Navigator
         tabBarOptions={{
+          keyboardHidesTabBar: true,
           style: {
             height: '10%',
           },
