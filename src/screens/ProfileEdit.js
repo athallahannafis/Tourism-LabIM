@@ -4,7 +4,11 @@ import {View, Text, Image} from 'react-native';
 // Style
 import {globalStyling as gs} from '../style/global-styling';
 import {profilStyling as ps} from '../style/profil-styling';
-import {TouchableOpacity, TextInput} from 'react-native-gesture-handler';
+import {
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native-gesture-handler';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import {Picker} from '@react-native-community/picker';
 import moment from 'moment';
@@ -211,96 +215,101 @@ export default class ProfileEdit extends Component {
     };
 
     return (
-      <View style={[gs.mainContainer]}>
-        <View style={ps.backgroundContainer}>
-          <View style={ps.pictureContainer}>
-            <Image source={require('../picture.png')} style={ps.CircleShape} />
-          </View>
-
-          <View style={ps.detailContainer}>
-            <Text style={ps.bubbleTitleText}>Nama Depan</Text>
-            <View style={ps.bubble}>
-              <TextInput
-                style={ps.bubbleTextInput}
-                placeholder={'Nama Depan'}
-                defaultValue={this.state.dataSource.namaDepan}
-                onChangeText={(newNamaDepan) => this.setState({newNamaDepan})}
+      <ScrollView>
+        <View style={[gs.mainContainer]}>
+          <View style={ps.backgroundContainer}>
+            <View style={ps.pictureContainer}>
+              <Image
+                source={require('../picture.png')}
+                style={ps.CircleShape}
               />
             </View>
-          </View>
 
-          <View style={ps.detailContainer}>
-            <Text style={ps.bubbleTitleText}>Nama Belakang</Text>
-            <View style={ps.bubble}>
-              <TextInput
-                style={ps.bubbleTextInput}
-                placeholder={'Nama Belakang'}
-                defaultValue={this.state.dataSource.namaBelakang}
-              />
+            <View style={ps.detailContainer}>
+              <Text style={ps.bubbleTitleText}>Nama Depan</Text>
+              <View style={ps.bubble}>
+                <TextInput
+                  style={ps.bubbleTextInput}
+                  placeholder={'Nama Depan'}
+                  defaultValue={this.state.dataSource.namaDepan}
+                  onChangeText={(newNamaDepan) => this.setState({newNamaDepan})}
+                />
+              </View>
             </View>
-          </View>
 
-          <View style={ps.detailContainer}>
-            <Text style={ps.bubbleTitleText}>Tanggal Lahir</Text>
-            <View style={ps.bubble}>
-              {/* Tulisan untuk initial date (sebelum buka kalender)*/}
-              <TouchableOpacity onPress={this.showPicker}>
-                {this.state.textBeforeVisible ? (
-                  <Text style={ps.bubbleTextInput}>
-                    {this.state.tanggalLahir}
+            <View style={ps.detailContainer}>
+              <Text style={ps.bubbleTitleText}>Nama Belakang</Text>
+              <View style={ps.bubble}>
+                <TextInput
+                  style={ps.bubbleTextInput}
+                  placeholder={'Nama Belakang'}
+                  defaultValue={this.state.dataSource.namaBelakang}
+                />
+              </View>
+            </View>
+
+            <View style={ps.detailContainer}>
+              <Text style={ps.bubbleTitleText}>Tanggal Lahir</Text>
+              <View style={ps.bubble}>
+                {/* Tulisan untuk initial date (sebelum buka kalender)*/}
+                <TouchableOpacity onPress={this.showPicker}>
+                  {this.state.textBeforeVisible ? (
+                    <Text style={ps.bubbleTextInput}>
+                      {this.state.tanggalLahir}
+                    </Text>
+                  ) : null}
+                </TouchableOpacity>
+
+                {/* Tulisan setelah memilih tanggal di kalender*/}
+                {this.state.textAfterVisible ? (
+                  <Text onPress={this.showPicker} style={ps.bubbleTextInput}>
+                    {this.state.chosenDate}
                   </Text>
                 ) : null}
+
+                {/* Kalender */}
+                <DateTimePicker
+                  date={
+                    new Date(
+                      this.state.bornYear,
+                      this.state.bornMonth,
+                      this.state.bornDate,
+                    )
+                  } //nanti diganti yaa
+                  isVisible={this.state.isVisible}
+                  onConfirm={this.handlePicker}
+                  onCancel={this.hidePicker}
+                  mode={'date'}
+                />
+              </View>
+            </View>
+
+            <View style={ps.detailContainer}>
+              <Text style={ps.bubbleTitleText}>Jenis Kelamin</Text>
+              <View style={ps.bubble}>
+                {/* Dropdown untuk memilih Jenis Kelamin */}
+                <Picker
+                  selectedValue={this.state.selectedValue}
+                  style={ps.picker}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setSelectedValue(itemValue)
+                  }>
+                  <Picker.Item label="Laki-laki" value="Laki-laki" />
+                  <Picker.Item label="Perempuan" value="Perempuan" />
+                </Picker>
+              </View>
+            </View>
+
+            <View style={ps.detailContainer}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('ProfileHome')}
+                style={ps.btn}>
+                <Text style={ps.btnText}>Simpan</Text>
               </TouchableOpacity>
-
-              {/* Tulisan setelah memilih tanggal di kalender*/}
-              {this.state.textAfterVisible ? (
-                <Text onPress={this.showPicker} style={ps.bubbleTextInput}>
-                  {this.state.chosenDate}
-                </Text>
-              ) : null}
-
-              {/* Kalender */}
-              <DateTimePicker
-                date={
-                  new Date(
-                    this.state.bornYear,
-                    this.state.bornMonth,
-                    this.state.bornDate,
-                  )
-                } //nanti diganti yaa
-                isVisible={this.state.isVisible}
-                onConfirm={this.handlePicker}
-                onCancel={this.hidePicker}
-                mode={'date'}
-              />
             </View>
-          </View>
-
-          <View style={ps.detailContainer}>
-            <Text style={ps.bubbleTitleText}>Jenis Kelamin</Text>
-            <View style={ps.bubble}>
-              {/* Dropdown untuk memilih Jenis Kelamin */}
-              <Picker
-                selectedValue={this.state.selectedValue}
-                style={ps.picker}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setSelectedValue(itemValue)
-                }>
-                <Picker.Item label="Laki-laki" value="Laki-laki" />
-                <Picker.Item label="Perempuan" value="Perempuan" />
-              </Picker>
-            </View>
-          </View>
-
-          <View style={ps.detailContainer}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('ProfileHome')}
-              style={ps.btn}>
-              <Text style={ps.btnText}>Simpan</Text>
-            </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
