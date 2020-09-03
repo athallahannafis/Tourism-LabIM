@@ -68,12 +68,13 @@ export default class AttractionHome extends Component {
           </View>
 
           {/* Objek wisata populer */}
-          <View style={[gs.cardSection, {marginTop: 20} ]}>
+          <TouchableOpacity style={[gs.cardSection, {marginTop: 20} ]}
+          onPress={() => this.props.navigation.navigate("Ticket Reservation") }>
             <Text style={gs.cardTitle}>Objek Wisata Populer</Text>
             <View style={gs.rowContainer}>
               {/* left section */}
               <View style={{width: 180}}>
-                <Text>Malang</Text>
+                <Text> {WisataPopulerData.data.city_name} </Text>
                 <Image source={{uri: WisataPopulerData.data.image_source}}
                 style={gs.bigImage}/>
               </View>
@@ -88,7 +89,7 @@ export default class AttractionHome extends Component {
                 </Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
 
           {/* Rekomendasi objek wisata */}
           <View style={[gs.cardSection, {marginTop: 20}]}>
