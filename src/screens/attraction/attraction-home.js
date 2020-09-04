@@ -69,7 +69,9 @@ export default class AttractionHome extends Component {
 
           {/* Objek wisata populer */}
           <TouchableOpacity style={[gs.cardSection, {marginTop: 20} ]}
-          onPress={() => this.props.navigation.navigate("Ticket Reservation") }>
+          onPress={
+            () => this.props.navigation.navigate("Ticket Reservation",
+            WisataPopulerData.data) }>
             <Text style={gs.cardTitle}>Objek Wisata Populer</Text>
             <View style={gs.rowContainer}>
               {/* left section */}
