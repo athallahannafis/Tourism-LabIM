@@ -6,12 +6,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Screen
 import TestScreen from './screens/Test.js';
-import ProfileHomeScreen from './screens/ProfileHome.js';
-import ProfileEditScreen from './screens/ProfileEdit.js';
-import PreferensiObjekWisataScreen from './screens/PreferensiObjekWisata.js';
-import PreferensiAkomodasiScreen from './screens/PreferensiAkomodasi.js';
+import ProfileHomeScreen from './screens/profile/ProfileHome.js';
+import ProfileEditScreen from './screens/profile/ProfileEdit.js';
+import PreferensiObjekWisataScreen from './screens/profile/PreferensiObjekWisata.js';
+import PreferensiAkomodasiScreen from './screens/profile/PreferensiAkomodasi.js';
 import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
+import AttractionDetails from './screens/attraction/attraction-details';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -84,6 +85,10 @@ export default class BottomTab extends Component {
         <attractionStack.Screen
           component={AttractionInDestination}
           name="Attraction in Destination"
+        />
+        <attractionStack.Screen
+          component={AttractionDetails}
+          name="Attraction Details"
         />
       </attractionStack.Navigator>
     );

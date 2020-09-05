@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {View, Text, Image} from 'react-native';
 
 // Style
-import {globalStyling as gs} from '../style/global-styling';
-import {profilStyling as ps} from '../style/profil-styling';
+import {globalStyling as gs} from '../../style/global-styling';
+import {profilStyling as ps} from '../../style/profil-styling';
 import {
   ScrollView,
   TouchableOpacity,
@@ -13,7 +13,7 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 import {Picker} from '@react-native-community/picker';
 import moment from 'moment';
 
-import data from '../data-dummy/data.json';
+import data from '../../data-dummy/data.json';
 
 export default class ProfileEdit extends Component {
   constructor(props) {
@@ -220,7 +220,7 @@ export default class ProfileEdit extends Component {
           <View style={ps.backgroundContainer}>
             <View style={ps.pictureContainer}>
               <Image
-                source={require('../picture.png')}
+                source={require('../../picture.png')}
                 style={ps.CircleShape}
               />
             </View>

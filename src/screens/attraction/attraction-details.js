@@ -4,23 +4,13 @@ import React, {Component} from 'react';
 import {globalStyling as gs} from '../../style/global-styling';
 import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
-import {
-  View,
-  Modal,
-  Text,
-  Image,
-  PixelRatio,
-  Dimensions,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Modal, Text, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 // data
-import ExploreData from '../../data-dummy/attraction-data/explore-indonesia.json';
 import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
-import {profilStyling} from '../../style/profil-styling';
+import AttractionInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
 
 export default class AttractionDetails extends Component {
   constructor(props) {
@@ -28,35 +18,59 @@ export default class AttractionDetails extends Component {
     this.state = {
       addToItineraryPopUp: false,
       successPopUp: false,
+      attractionDataSet: {},
     };
   }
 
+  fetchAttractionData = (attractionName) => {
+    if (attractionName === WisataPopulerData.data.place_name) {
+      /*Jika atraksi ada di dalam data wisata populer */
+      this.state.attractionDataSet = WisataPopulerData.data;
+    } else if (
+      /*Jika atraksi merupakan popular place di data attraction in destination */
+      attractionName === AttractionInDestination.popular_place.place_name
+    ) {
+      this.state.attractionDataSet = AttractionInDestination.popular_place;
+    } else {
+      /*Jika atraksi ada di dalam data attraction in destination */
+      this.state.testMasuk = 'masukC';
+      const attList = AttractionInDestination.tourist_attraction;
+      for (let i = 0; i < attList.length; i++) {
+        if (attractionName === attList[i].place_name) {
+          this.state.attractionDataSet = attList[i];
+        }
+      }
+    }
+  };
   render() {
+    const attractionName = this.props.route.params;
+    this.fetchAttractionData(attractionName);
+    const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
+      (item) => {
+        return (
+          <View style={ats.rowInList}>
+            <View style={ats.smallCircle2}></View>
+            <Text style={ats.cardSmallText}>{item}</Text>
+          </View>
+        );
+      },
+    );
+
+    const attrImages = this.state.attractionDataSet.images_source.map(
+      (item) => {
+        return <Image source={{uri: item}} style={ats.smallImage2} />;
+      },
+    );
     return (
       <ScrollView>
         <View style={[gs.mainContainer]}>
           <View style={ats.mainImageContainer}>
             <Image
-              source={require('../../images/dummy-image.jpg')}
+              source={{uri: this.state.attractionDataSet.image_source}}
               style={ats.mainImage}
             />
             <View style={ats.rowImageContainer}>
-              <Image
-                source={require('../../images/dummy-image.jpg')}
-                style={ats.smallImage2}
-              />
-              <Image
-                source={require('../../images/dummy-image.jpg')}
-                style={ats.smallImage2}
-              />
-              <Image
-                source={require('../../images/dummy-image.jpg')}
-                style={ats.smallImage2}
-              />
-              <Image
-                source={require('../../images/dummy-image.jpg')}
-                style={ats.smallImage2WithText}
-              />
+              {attrImages}
               <View style={ats.smallImageBlackOverlay} />
               <View style={ats.textOnImageContainer}>
                 <Text style={ats.textOnImage}>Lihat</Text>
@@ -68,8 +82,13 @@ export default class AttractionDetails extends Component {
           <View style={gs.cardSection}>
             <View style={ats.rowSpaceBetweenInCard}>
               <View style={ats.columnInCard}>
-                <Text style={ats.cardTitleText}>Bromo Tengger Semeru</Text>
-                <Text style={ats.cardSmallText}>Malang, Jawa Timur</Text>
+                <Text style={ats.cardTitleText}>
+                  {this.state.attractionDataSet.place_name}
+                </Text>
+                <Text style={ats.cardSmallText}>
+                  {this.state.attractionDataSet.city_name},
+                  {this.state.attractionDataSet.province}
+                </Text>
                 <Text style={ats.cardMediumText}>(183 review)</Text>
               </View>
               <TouchableOpacity
@@ -84,9 +103,7 @@ export default class AttractionDetails extends Component {
             </View>
 
             <Text style={ats.cardMediumText}>
-              Bromo Tengger Semeru menawarkan pemandangan gunung indah yang
-              dihiasi padang savana, rasakan pengalaman tak terlupakan di Bromo
-              Tengger Semeru!
+              {this.state.attractionDataSet.description}
             </Text>
           </View>
           <View style={{padding: 10}}></View>
@@ -100,9 +117,11 @@ export default class AttractionDetails extends Component {
                   <View style={ats.smallCircle}></View>
                   <View style={{flexDirection: 'column'}}>
                     <Text style={ats.cardSmallText}>
-                      Buka 10.00 AM - 04.00 PM
+                      Buka {this.state.attractionDataSet.detail.open_hours}
                     </Text>
-                    <Text style={ats.cardSmallText}>Senin - Minggu</Text>
+                    <Text style={ats.cardSmallText}>
+                      {this.state.attractionDataSet.detail.open_days}
+                    </Text>
                   </View>
                 </View>
                 {/*kolom kiri row 2*/}
@@ -110,21 +129,7 @@ export default class AttractionDetails extends Component {
                   <View style={ats.smallCircle}></View>
                   <View style={{flexDirection: 'column', width: '100%'}}>
                     <Text style={ats.cardSmallText}>Fasilitas</Text>
-                    {/*row fasilitas 1 */}
-                    <View style={ats.rowInList}>
-                      <View style={ats.smallCircle2}></View>
-                      <Text style={ats.cardSmallText}>Area Parkir</Text>
-                    </View>
-                    {/*row fasilitas 2 */}
-                    <View style={ats.rowInList}>
-                      <View style={ats.smallCircle2}></View>
-                      <Text style={ats.cardSmallText}>ATMs</Text>
-                    </View>
-                    {/*row fasilitas 3 */}
-                    <View style={ats.rowInList}>
-                      <View style={ats.smallCircle2}></View>
-                      <Text style={ats.cardSmallText}>Kamar Mandi</Text>
-                    </View>
+                    <View>{attrFacilities}</View>
                   </View>
                 </View>
                 {/*kolom kiri row 3*/}
@@ -132,7 +137,8 @@ export default class AttractionDetails extends Component {
                   <View style={ats.smallCircle}></View>
                   <View style={{flexDirection: 'column'}}>
                     <Text style={ats.cardSmallText}>
-                      Harga tiket mulai Rp.15.000,00
+                      Harga tiket mulai{' '}
+                      {this.state.attractionDataSet.detail.ticket_price}
                     </Text>
                   </View>
                 </View>
@@ -144,7 +150,9 @@ export default class AttractionDetails extends Component {
                   <View style={ats.smallCircle}></View>
                   <View style={{flexDirection: 'column'}}>
                     <Text style={ats.cardSmallText}>
-                      Mampu menampung 20.000 pengunjung setiap hari
+                      Mampu menampung{' '}
+                      {this.state.attractionDataSet.detail.visitor_capacity}{' '}
+                      pengunjung setiap hari
                     </Text>
                   </View>
                 </View>
@@ -152,7 +160,9 @@ export default class AttractionDetails extends Component {
                 <View style={ats.rowInCard}>
                   <View style={ats.smallCircle}></View>
                   <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.cardSmallText}>Sedang ramai</Text>
+                    <Text style={ats.cardSmallText}>
+                      {this.state.attractionDataSet.detail.current_status}
+                    </Text>
                   </View>
                 </View>
               </View>

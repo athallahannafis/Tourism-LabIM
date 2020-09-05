@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 
-import {globalStyling as gs} from '../style/global-styling';
-import {profilStyling as ps} from '../style/profil-styling';
+import {globalStyling as gs} from '../../style/global-styling';
+import {profilStyling as ps} from '../../style/profil-styling';
 import {
   ScrollView,
   TouchableOpacity,
@@ -10,39 +10,42 @@ import {
 } from 'react-native-gesture-handler';
 import CheckBox from '@react-native-community/checkbox';
 
-import data from '../data-dummy/data.json';
+import data from '../../data-dummy/data.json';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: false,
+      isLoading: true,
       isChecked1: false,
       isChecked2: false,
       isChecked3: false,
       isChecked4: false,
       isChecked5: false,
+      isChecked6: false,
     };
   }
 
   componentDidMount() {
     this.setState({
       isLoading: false,
-      isChecked1: data.profil.preferensiObjekWisata.objek1,
-      isChecked2: data.profil.preferensiObjekWisata.objek2,
-      isChecked3: data.profil.preferensiObjekWisata.objek3,
-      isChecked4: data.profil.preferensiObjekWisata.objek4,
-      isChecked5: data.profil.preferensiObjekWisata.objek5,
+      isChecked1: data.profil.preferensiAkomodasi.akomodasi1,
+      isChecked2: data.profil.preferensiAkomodasi.akomodasi2,
+      isChecked3: data.profil.preferensiAkomodasi.akomodasi3,
+      isChecked4: data.profil.preferensiAkomodasi.akomodasi4,
+      isChecked5: data.profil.preferensiAkomodasi.akomodasi5,
+      isChecked6: data.profil.preferensiAkomodasi.akomodasi6,
     });
   }
+
   render() {
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
           <View style={ps.backgroundContainer}>
             <View style={ps.titleContainer}>
-              <Text style={ps.fontJudul2}>Jenis Objek Wisata</Text>
+              <Text style={ps.fontJudul2}>Jenis Akomodasi</Text>
             </View>
 
             <View style={ps.checkListContainer}>
@@ -56,7 +59,7 @@ export default class App extends Component {
                     })
                   }
                 />
-                <Text style={ps.fontCheckList}>Wisata Alam</Text>
+                <Text style={ps.fontCheckList}>Hotel (Bintang 5)</Text>
               </View>
 
               <View style={ps.checkItemContainer}>
@@ -69,7 +72,7 @@ export default class App extends Component {
                     })
                   }
                 />
-                <Text style={ps.fontCheckList}>Tantangan</Text>
+                <Text style={ps.fontCheckList}>Hotel (Bintang 4)</Text>
               </View>
 
               <View style={ps.checkItemContainer}>
@@ -82,7 +85,7 @@ export default class App extends Component {
                     })
                   }
                 />
-                <Text style={ps.fontCheckList}>Budaya Lokal</Text>
+                <Text style={ps.fontCheckList}>Hotel (Bintang 3)</Text>
               </View>
 
               <View style={ps.checkItemContainer}>
@@ -95,7 +98,7 @@ export default class App extends Component {
                     })
                   }
                 />
-                <Text style={ps.fontCheckList}>Kuliner</Text>
+                <Text style={ps.fontCheckList}>Hotel (Bintang 2)</Text>
               </View>
 
               <View style={ps.checkItemContainer}>
@@ -108,7 +111,20 @@ export default class App extends Component {
                     })
                   }
                 />
-                <Text style={ps.fontCheckList}>Perbelanjaan</Text>
+                <Text style={ps.fontCheckList}>Hotel (Bintang 1)</Text>
+              </View>
+
+              <View style={ps.checkItemContainer}>
+                {/*<Text>{`[value: ${this.state.value1}]`}</Text>*/}
+                <CheckBox
+                  value={this.state.isChecked6}
+                  onValueChange={(value) =>
+                    this.setState({
+                      isChecked6: value,
+                    })
+                  }
+                />
+                <Text style={ps.fontCheckList}>Guest House</Text>
               </View>
             </View>
 

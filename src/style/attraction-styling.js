@@ -182,6 +182,7 @@ export const attractionStyling = StyleSheet.create({
   rowSpaceBetweenInCard: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
   smallCircle: {
     width: 15,

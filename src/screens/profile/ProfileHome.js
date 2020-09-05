@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
 
 // Style
-import {globalStyling as gs} from '../style/global-styling';
-import {profilStyling as ps} from '../style/profil-styling';
+import {globalStyling as gs} from '../../style/global-styling';
+import {profilStyling as ps} from '../../style/profil-styling';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-import data from '../data-dummy/data.json';
+import data from '../../data-dummy/data.json';
 
 export default class ProfileHome extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class ProfileHome extends Component {
           <View style={ps.backgroundContainer}>
             <View style={ps.pictureContainer}>
               <Image
-                source={require('../picture.png')}
+                source={require('../../picture.png')}
                 style={ps.CircleShape}
               />
             </View>
