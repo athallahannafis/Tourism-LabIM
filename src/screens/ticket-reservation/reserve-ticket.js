@@ -21,8 +21,23 @@ export default class ReserveTicket extends Component {
       isVisible: false,
       ticketData: [],
       ticketValue: "",
-      chosenDate: "",
+      dateValue: "Tap to select date",
+      dataToPost: {
+        "chosenTicket": "",
+        "chosendDate": "",
+        "adult": 0,
+        "kids": 0
+      },
     })
+  }
+  // for re-rendering
+  componentDidMount = () => {
+    console.log(this.state.ticketValue);
+  }
+
+  // called only first time rendering
+  UNSAFE_componentWillMount = () => {
+    this.fetchTicket();
   }
 
   showPicker = () => {
@@ -34,7 +49,7 @@ export default class ReserveTicket extends Component {
   handlePicker = (date) => {
     this.setState({
       isVisible: false,
-      chosenDate: moment(date).format("MMMM, Do YYYY"),
+      dateValue: moment(date).format("DD MMMM YYYY"),
     });
   }
 
@@ -49,19 +64,16 @@ export default class ReserveTicket extends Component {
     for (let i = 0; i < tList.length; i++) {
       this.state.ticketData.push(tList[i]);
     }
-    console.log(this.state.ticketData);
   }
 
   setTicketValue = (value) => {
     this.setState({
       ticketValue: value
-    })
+    });
   }
 
   render() {
     const data = this.props.route.params;
-    this.fetchTicket();
-
     const ticketOption = this.state.ticketData.map((item) => {
       return (
         <Picker.Item label={item.ticket_name} value={item.ticket_name} />
@@ -69,15 +81,16 @@ export default class ReserveTicket extends Component {
     })
 
     return (
-      <ScrollView>
-        <DateTimePicker
-        isVisible={this.state.isVisible}
-        onConfirm={this.handlePicker}
-        onCancel={this.hidePicker}
-        />
+    
         <View style={gs.mainContainer}>
+          <DateTimePicker
+          isVisible={this.state.isVisible}
+          onConfirm={this.handlePicker}
+          onCancel={this.hidePicker}/>
+
           {/* Ticket card */}
           <View style={gs.cardSection} >
+            {/* Title */}
             <Text style={{
               fontSize: 20,
               fontWeight: "bold",
@@ -85,95 +98,97 @@ export default class ReserveTicket extends Component {
             }} > {data.place_name}</Text>
             <Text> {data.city_name} </Text>
 
-            {/* Date picker
-            <>
-              <TouchableOpacity
-              onPress={() => this.showPicker()}
-              style={[
-                gs.columnContainer,
-                {
-                  borderRadius: 100,
-                  padding: 20,
-                  backgroundColor: Color.color6
-                }
-              ]}>
-                <Text style={{
-                  color: "white",
-                  fontWeight: "bold",
-                }}>Date Picker</Text>
-              </TouchableOpacity>
-            </> */}
-
-            <View style={[gs.rowContainer, {marginTop: 10}]}>
-              {/* Left side (icons) */}
-              <View style={gs.columnContainer}>
+            {/* Input section */}
+            <View style={[gs.columnContainer, {marginTop: 10,}]}>
+              {/* Ticket */}
+              <View style={[localStyle.rowContainer,{width: 250,}]}>
                 <Image
                 style={localStyle.smallIcons}
-                source={require("../../images/ticket-icons/ticket.png")}
-                />
-                <Image
-                style={localStyle.smallIcons}
-                source={require("../../images/ticket-icons/calendar.png")}
-                />
-                <Image
-                style={localStyle.smallIcons}
-                source={require("../../images/ticket-icons/person.png")}
-                />
+                source={require("../../images/ticket-icons/ticket.png")}/>
+                <View style={localStyle.bubble}>
+                  <Picker
+                  mode="dropdown"
+                  style={{width: "100%"}}
+                  selectedValue={this.state.ticketValue}
+                  onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
+                    <Picker.Item label="Tap to select ticket" />
+                    {ticketOption}
+                  </Picker>
+                </View>
               </View>
-
-              {/* Right side (boxes) */}
-              <View style={gs.columnContainer}>
-                {/* Ticket */}
-                <View style={{width: 300, marginLeft: 2}}>
+              {/* Calendar */}
+              <View style={[localStyle.rowContainer,{width: 250,}]}>
+                <Image
+                style={localStyle.smallIcons}
+                source={require("../../images/ticket-icons/calendar.png")}/>
+                <TouchableOpacity style={localStyle.bubble}
+                onPress={() => this.showPicker()}>
+                  {/* <Text>Date picker</Text> */}
+                  <Text style={{fontSize: 17}}> {this.state.dateValue} </Text>
+                </TouchableOpacity>
+              </View>
+              {/* Person */}
+              <View style={[localStyle.rowContainer,{width: 250,}]}>
+                <Image
+                style={localStyle.smallIcons}
+                source={require("../../images/ticket-icons/person.png")}/>
+                <View style={localStyle.bubble}>
                   <Picker
-                  style={localStyle.bubble}
-                  selectedValue={this.state.ticketValue}
-                  onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
-                    {ticketOption}
-                  </Picker>
-                </View>
-                {/* Ticket */}
-                <View style={{width: 300, marginLeft: 2}}>
-                  <Picker
-                  style={localStyle.bubble}
-                  selectedValue={this.state.ticketValue}
-                  onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
-                    {ticketOption}
-                  </Picker>
-                </View>
-                {/* Ticket */}
-                <View style={{width: 300, marginLeft: 2}}>
-                  <Picker
-                  style={localStyle.bubble}
+                  mode="dropdown"
+                  style={{width: "100%"}}
                   selectedValue={this.state.ticketValue}
                   onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
                     {ticketOption}
                   </Picker>
                 </View>
               </View>
-
             </View>
-            <Text> {this.state.chosenDate} </Text>
+
+            {/* Pesan button */}
+            <View style={[gs.columnContainer]}>
+              <TouchableOpacity style={localStyle.pesanButton}>
+                <Text style={{fontWeight: "bold", color: "white"}}>Pesan</Text>
+              </TouchableOpacity>
+            </View>
+
           </View>
         </View>
-      </ScrollView>
+      
     )
   }
 }
 const localStyle = StyleSheet.create({
+  rowContainer: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: "center",
+  },
   smallIcons: {
-    height: 30,
-    width: 30,
+    height: 40,
+    width: 40,
   },
   bubble: {
     flexDirection: 'row',
-    width: '100%',
+    alignItems: "center",
+    width: 300,
     height: 40,
     textAlignVertical: 'center',
-    borderRadius: 3,
+    borderRadius: 10,
     paddingLeft: 7,
     backgroundColor: '#C1DFE1',
-    scaleX: 0.9,
-    scaleY: 0.9
+    marginVertical: 5,
+  },
+  pesanButton: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Color.color6,
+    borderRadius: 1000,
+    width: 100,
+    marginTop: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 10
   }
 })
