@@ -68,7 +68,11 @@ export default class ReserveTicket extends Component {
   }
 
   postData = (ticket, date) => {
+    const cityData = this.props.route.params;
+    // DATA REQUEST STRUCTURE
     this.state.dataToPost = {
+      "place_name": cityData.place_name,
+      "city_name": cityData.city_name,
       "chosenTicket": ticket,
       "chosenDate": date
     };
@@ -77,7 +81,7 @@ export default class ReserveTicket extends Component {
   }
 
   render() {
-    const data = this.props.route.params;
+    const CITY_DATA = this.props.route.params;
     console.log(this.state.ticketValue)
     const ticketOption = this.state.ticketData.map((item) => {
       return (
@@ -100,8 +104,8 @@ export default class ReserveTicket extends Component {
               fontSize: 20,
               fontWeight: "bold",
               marginBottom: 2
-            }} > {data.place_name}</Text>
-            <Text> {data.city_name} </Text>
+            }} > {CITY_DATA.place_name}</Text>
+            <Text> {CITY_DATA.city_name} </Text>
 
             {/* Input section */}
             <View style={[gs.columnContainer, {marginTop: 10,}]}>
