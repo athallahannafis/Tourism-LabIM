@@ -73,7 +73,7 @@ export default class AttractionInDestination extends Component {
             <View style={gs.rowContainer}>
               {/* Left section */}
               <View style={{width: 180}}>
-                <Text>{attInDestination.popular_place.province}</Text>
+                <Text>{attInDestination.popular_place.city_name}</Text>
                 <Image source={require("../../images/dummy-image.jpg")}
                 style={gs.bigImage}/>
               </View>
