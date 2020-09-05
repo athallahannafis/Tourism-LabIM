@@ -22,17 +22,12 @@ export default class ReserveTicket extends Component {
       ticketData: [],
       ticketValue: "",
       dateValue: "Tap to select date",
-      dataToPost: {
-        "chosenTicket": "",
-        "chosendDate": "",
-        "adult": 0,
-        "kids": 0
-      },
+      dataToPost: {},
     })
   }
   // for re-rendering
   componentDidMount = () => {
-    console.log(this.state.ticketValue);
+    
   }
 
   // called only first time rendering
@@ -72,8 +67,18 @@ export default class ReserveTicket extends Component {
     });
   }
 
+  postData = (ticket, date) => {
+    this.state.dataToPost = {
+      "chosenTicket": ticket,
+      "chosenDate": date
+    };
+    console.log(this.state.dataToPost);
+    this.props.navigation.navigate("Ticket Payment", this.state.dataToPost);
+  }
+
   render() {
     const data = this.props.route.params;
+    console.log(this.state.ticketValue)
     const ticketOption = this.state.ticketData.map((item) => {
       return (
         <Picker.Item label={item.ticket_name} value={item.ticket_name} />
@@ -133,20 +138,15 @@ export default class ReserveTicket extends Component {
                 style={localStyle.smallIcons}
                 source={require("../../images/ticket-icons/person.png")}/>
                 <View style={localStyle.bubble}>
-                  <Picker
-                  mode="dropdown"
-                  style={{width: "100%"}}
-                  selectedValue={this.state.ticketValue}
-                  onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
-                    {ticketOption}
-                  </Picker>
+                  
                 </View>
               </View>
             </View>
 
             {/* Pesan button */}
             <View style={[gs.columnContainer]}>
-              <TouchableOpacity style={localStyle.pesanButton}>
+              <TouchableOpacity style={localStyle.pesanButton}
+              onPress={() => this.postData(this.state.ticketValue, this.state.dateValue)}>
                 <Text style={{fontWeight: "bold", color: "white"}}>Pesan</Text>
               </TouchableOpacity>
             </View>
