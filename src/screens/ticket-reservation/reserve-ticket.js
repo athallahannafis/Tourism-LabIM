@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Alert, Modal } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import moment from 'moment';
 import DateTimePicker from 'react-native-modal-datetime-picker';
@@ -10,8 +10,7 @@ import Ticket from '../../data-dummy/ticket.json';
 
 // styling
 import {globalStyling as gs} from '../../style/global-styling';
-import Color from '../../style/color.json';
-
+import {ticketStyling as ts} from '../../style/ticket-styling';
 
 export default class ReserveTicket extends Component {
   constructor(props) {
@@ -20,9 +19,13 @@ export default class ReserveTicket extends Component {
       num: 0,
       isVisible: false,
       ticketData: [],
-      ticketValue: "",
+      ticketValue: null,
+      ticketValuePlaceHolder: "select ticket",
+      adultValue: 0,
+      childValue: 0,
       dateValue: "Tap to select date",
       dataToPost: {},
+      alertPopup: false,
     })
   }
   // for re-rendering
@@ -67,7 +70,35 @@ export default class ReserveTicket extends Component {
     });
   }
 
-  postData = (ticket, date) => {
+  orderAlert = (orderData) => {
+    if (orderData.chosenTicket === null) {
+      Alert.alert(
+        "Warning",
+        "Select the ticket first",
+        [
+          {
+            text: "OK"
+          }
+        ],
+        {cancelable: false}
+      );
+      return true;
+    } else if (orderData.chosenDate === "Tap to select date") {
+      Alert.alert(
+        "Warning",
+        "Select the date please",
+        [
+          {
+            text: "OK"
+          }
+        ],
+        {cancelable: false}
+      );
+      return true
+    }
+  }
+
+  orderTicket = (ticket, date) => {
     const cityData = this.props.route.params;
     // DATA REQUEST STRUCTURE
     this.state.dataToPost = {
@@ -77,12 +108,13 @@ export default class ReserveTicket extends Component {
       "chosenDate": date
     };
     console.log(this.state.dataToPost);
-    this.props.navigation.navigate("Ticket Payment", this.state.dataToPost);
+    this.setState({alertPopup: true});
+    // if (this.orderAlert(this.state.dataToPost)) return;
+    // else this.props.navigation.navigate("Ticket Payment", this.state.dataToPost);
   }
 
   render() {
     const CITY_DATA = this.props.route.params;
-    console.log(this.state.ticketValue)
     const ticketOption = this.state.ticketData.map((item) => {
       return (
         <Picker.Item label={item.ticket_name} value={item.ticket_name} />
@@ -90,8 +122,21 @@ export default class ReserveTicket extends Component {
     })
 
     return (
-    
         <View style={gs.mainContainer}>
+          <Modal
+          transparent={true}
+          visible={this.state.alertPopup}
+          animationType="fade">
+            <View style={gs.columnContainer}>
+              <View 
+              style={{
+              width: 100, height: 100, backgroundColor: "red", 
+              marginTop: "70%"}}>
+                <Text>This is modal</Text>
+              </View>
+            </View>
+          </Modal>
+
           <DateTimePicker
           isVisible={this.state.isVisible}
           onConfirm={this.handlePicker}
@@ -100,57 +145,66 @@ export default class ReserveTicket extends Component {
           {/* Ticket card */}
           <View style={gs.cardSection} >
             {/* Title */}
-            <Text style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              marginBottom: 2
-            }} > {CITY_DATA.place_name}</Text>
+            <Text style={ts.title}> {CITY_DATA.place_name}</Text>
             <Text> {CITY_DATA.city_name} </Text>
 
             {/* Input section */}
             <View style={[gs.columnContainer, {marginTop: 10,}]}>
               {/* Ticket */}
-              <View style={[localStyle.rowContainer,{width: 250,}]}>
+              <View style={[ts.rowContainer,{width: 250,}]}>
                 <Image
-                style={localStyle.smallIcons}
+                style={ts.smallIcons}
                 source={require("../../images/ticket-icons/ticket.png")}/>
-                <View style={localStyle.bubble}>
+                <View style={ts.bubble}>
                   <Picker
                   mode="dropdown"
                   style={{width: "100%"}}
                   selectedValue={this.state.ticketValue}
                   onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
-                    <Picker.Item label="Tap to select ticket" />
+                    <Picker.Item label="Tap to select ticket" value={null} />
                     {ticketOption}
                   </Picker>
                 </View>
               </View>
               {/* Calendar */}
-              <View style={[localStyle.rowContainer,{width: 250,}]}>
+              <View style={[ts.rowContainer,{width: 250,}]}>
                 <Image
-                style={localStyle.smallIcons}
+                style={ts.smallIcons}
                 source={require("../../images/ticket-icons/calendar.png")}/>
-                <TouchableOpacity style={localStyle.bubble}
+                <TouchableOpacity style={ts.bubble}
                 onPress={() => this.showPicker()}>
                   {/* <Text>Date picker</Text> */}
                   <Text style={{fontSize: 17}}> {this.state.dateValue} </Text>
                 </TouchableOpacity>
               </View>
               {/* Person */}
-              <View style={[localStyle.rowContainer,{width: 250,}]}>
+              <View style={[ts.rowContainer,{width: 250,}]}>
                 <Image
-                style={localStyle.smallIcons}
+                style={ts.smallIcons}
                 source={require("../../images/ticket-icons/person.png")}/>
-                <View style={localStyle.bubble}>
-                  
+                <View style={[ts.personBubble,]}>
+                  {/* Dewasa */}
+                  <View style={[ts.littleBubble, {width: 140, marginRight: 20}]}>
+                    {/* <Picker
+                    mode="dropdown"
+                    style={{width: "100%"}}
+                    selectedValue={this.state.adultValue}
+                    onValueChange={(value) => (value)}>
+
+                    </Picker> */}
+                  </View>
+                  {/* Anak */}
+                  <View style={[ts.littleBubble, {width: 140}]}>
+
+                  </View>
                 </View>
               </View>
             </View>
 
             {/* Pesan button */}
             <View style={[gs.columnContainer]}>
-              <TouchableOpacity style={localStyle.pesanButton}
-              onPress={() => this.postData(this.state.ticketValue, this.state.dateValue)}>
+              <TouchableOpacity style={ts.pesanButton}
+              onPress={() => this.orderTicket(this.state.ticketValue, this.state.dateValue)}>
                 <Text style={{fontWeight: "bold", color: "white"}}>Pesan</Text>
               </TouchableOpacity>
             </View>
@@ -161,38 +215,3 @@ export default class ReserveTicket extends Component {
     )
   }
 }
-const localStyle = StyleSheet.create({
-  rowContainer: {
-    flex: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: "center",
-  },
-  smallIcons: {
-    height: 40,
-    width: 40,
-  },
-  bubble: {
-    flexDirection: 'row',
-    alignItems: "center",
-    width: 300,
-    height: 40,
-    textAlignVertical: 'center',
-    borderRadius: 10,
-    paddingLeft: 7,
-    backgroundColor: '#C1DFE1',
-    marginVertical: 5,
-  },
-  pesanButton: {
-    flex: 0,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Color.color6,
-    borderRadius: 1000,
-    width: 100,
-    marginTop: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 10
-  }
-})
