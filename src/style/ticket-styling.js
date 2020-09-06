@@ -43,7 +43,7 @@ export const ticketStyling = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: Color.color1,
     marginVertical: 5,
-    
+
   },
   pesanButton: {
     flex: 0,
@@ -76,7 +76,8 @@ export const ticketStyling = StyleSheet.create({
   alertMessage: {
     fontSize: 20,
     fontWeight: "bold",
-    marginVertical: 30
+    marginVertical: 30,
+    textAlign: "center"
   },
   modalContainer: {
     flex: 0,

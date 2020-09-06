@@ -32,7 +32,6 @@ export default class ReserveTicket extends Component {
       isVisible: false,
       ticketData: [],
       ticketValue: null,
-      ticketValuePlaceHolder: "select ticket",
       adultTicketData: [],
       childTicketData: [],
       adultTicketValue: null,
@@ -143,13 +142,19 @@ export default class ReserveTicket extends Component {
     if (data.chosenTicket === null) {
       this.setState({
         alertPopup: true,
-        alertMessage: "Ticket belum dipilih"
+        alertMessage: "Kelas tiket belum dipilih"
       });
       return true;
     } else if (data.chosenDate === "Tap to select date") {
       this.setState({
         alertPopup: true,
-        alertMessage: "Tanggal belum dipilih"
+        alertMessage: "Tanggal belum ditentukan"
+      });
+      return true;
+    } else if (data.adultTickets === null || data.childTickets === null) {
+      this.setState({
+        alertPopup: true,
+        alertMessage: "Jumlah tiket belum dipilih"
       });
       return true;
     }
@@ -232,7 +237,7 @@ export default class ReserveTicket extends Component {
                   style={{width: "100%"}}
                   selectedValue={this.state.ticketValue}
                   onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
-                    <Picker.Item label="Tap to select ticket" value={null} />
+                    <Picker.Item label="Tap to select ticket class" value={null}/>
                     {ticketOption}
                   </Picker>
                 </View>
