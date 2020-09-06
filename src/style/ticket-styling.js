@@ -55,9 +55,39 @@ export const ticketStyling = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10
   },
+  okButton: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Color.color4,
+    borderRadius: 1000,
+    width: 100,
+    paddingVertical: 5,
+    paddingHorizontal: 5
+  },
   title: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 2
   },
+  alertMessage: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginVertical: 30
+  },
+  modalContainer: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 300,
+    minHeight: 300,
+    backgroundColor: "#fff",
+    marginTop: "50%",
+    padding: 20,
+    borderWidth: 2,
+    borderColor: Color.color4,
+    borderRadius: 20
+  }
 });
