@@ -11,11 +11,12 @@ export const ticketStyling = StyleSheet.create({
   smallIcons: {
     height: 40,
     width: 40,
+    marginRight: 5
   },
   bubble: {
     flexDirection: 'row',
     alignItems: "center",
-    width: 300,
+    width: 270,
     height: 40,
     textAlignVertical: 'center',
     borderRadius: 10,
@@ -26,7 +27,7 @@ export const ticketStyling = StyleSheet.create({
   personBubble: {
     flexDirection: 'row',
     alignItems: "center",
-    width: 300,
+    width: 270,
     height: 40,
     textAlignVertical: 'center',
     borderRadius: 10,
@@ -40,8 +41,9 @@ export const ticketStyling = StyleSheet.create({
     height: 40,
     textAlignVertical: 'center',
     borderRadius: 10,
-    backgroundColor: '#C1DFE1',
+    backgroundColor: Color.color1,
     marginVertical: 5,
+    
   },
   pesanButton: {
     flex: 0,
