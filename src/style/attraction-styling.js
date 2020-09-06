@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import Color from './color.json';
 
 export const attractionStyling = StyleSheet.create({
   bottomImage: {
@@ -8,7 +9,7 @@ export const attractionStyling = StyleSheet.create({
   btn: {
     height: 25,
     borderRadius: 5,
-    backgroundColor: '#FF6B00',
+    backgroundColor: Color.color6,
     justifyContent: 'center',
     marginTop: 10,
     shadowColor: 'black',
@@ -24,7 +25,7 @@ export const attractionStyling = StyleSheet.create({
     width: 90,
     height: 40,
     borderRadius: 5,
-    backgroundColor: '#095185',
+    backgroundColor: Color.color4,
     justifyContent: 'center',
     shadowColor: 'black',
     shadowOffset: {
@@ -39,7 +40,7 @@ export const attractionStyling = StyleSheet.create({
     width: 90,
     height: 25,
     borderRadius: 5,
-    backgroundColor: '#095185',
+    backgroundColor: Color.color4,
     justifyContent: 'center',
     shadowColor: 'black',
     shadowOffset: {
@@ -60,7 +61,7 @@ export const attractionStyling = StyleSheet.create({
     width: 110,
     height: 25,
     borderRadius: 5,
-    backgroundColor: '#095185',
+    backgroundColor: Color.color4,
     justifyContent: 'center',
     shadowColor: 'black',
     shadowOffset: {
@@ -110,7 +111,7 @@ export const attractionStyling = StyleSheet.create({
     height: 60,
     borderRadius: 60 / 2,
     padding: 5,
-    backgroundColor: '#FF6B00',
+    backgroundColor: Color.color6,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -149,7 +150,7 @@ export const attractionStyling = StyleSheet.create({
     width: '100%',
     height: 50,
     borderRadius: 5,
-    backgroundColor: '#f0f9f8',
+    backgroundColor: Color.color3,
     marginTop: 5,
     marginBottom: 5,
     paddingLeft: 10,
@@ -170,7 +171,7 @@ export const attractionStyling = StyleSheet.create({
     paddingLeft: 5,
     paddingRight: 5,
     borderRadius: 10,
-    borderColor: '#095185',
+    borderColor: Color.color4,
     borderWidth: 2,
   },
   modal1SubBubble: {
@@ -181,18 +182,18 @@ export const attractionStyling = StyleSheet.create({
     backgroundColor: 'white',
     width: 370,
     borderRadius: 10,
-    borderColor: '#095185',
+    borderColor: Color.color4,
     borderWidth: 2,
-    paddingTop: 15,
-    paddingBottom: 15,
+    padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   modal3MainContainer: {
     width: 200,
     height: 80,
     borderRadius: 8,
-    backgroundColor: '#FF6B00',
+    backgroundColor: Color.color6,
     justifyContent: 'center',
     paddingTop: 10,
   },
@@ -245,7 +246,7 @@ export const attractionStyling = StyleSheet.create({
     width: 15,
     height: 15,
     borderRadius: 60,
-    backgroundColor: '#095185',
+    backgroundColor: Color.color4,
     marginRight: 10,
   },
   smallCircle2: {
@@ -291,14 +292,15 @@ export const attractionStyling = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
-  textMediumBoldColor4: {
+  textMediumBoldColor4AlignCenter: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#095185',
+    color: Color.color4,
+    textAlign: 'center',
   },
   textMediumColor4: {
     fontSize: 20,
-    color: '#095185',
+    color: Color.color4,
   },
   textOnImage: {
     fontSize: 12,

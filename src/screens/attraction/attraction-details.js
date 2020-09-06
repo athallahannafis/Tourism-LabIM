@@ -303,7 +303,7 @@ export default class AttractionDetails extends Component {
               <View style={ats.modal2Container}>
                 <Icon name={'check-circle-o'} size={80} color={'#095185'} />
                 <Text style={ats.textMediumColor4}>Berhasil menambahkan</Text>
-                <Text style={ats.textMediumBoldColor4}>
+                <Text style={ats.textMediumBoldColor4AlignCenter}>
                   {this.state.attractionDataSet.place_name}
                 </Text>
                 <Text style={ats.textMediumColor4}>ke</Text>
