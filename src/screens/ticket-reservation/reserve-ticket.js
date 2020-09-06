@@ -16,7 +16,8 @@ import { Picker } from '@react-native-community/picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 // data
-import Ticket from '../../data-dummy/ticket.json';
+import Ticket from '../../data-dummy/attraction-data/ticket.json';
+import JumlahTicket from '../../data-dummy/attraction-data/jumlah-ticket.json';
 
 // styling
 import {globalStyling as gs} from '../../style/global-styling';
@@ -32,8 +33,10 @@ export default class ReserveTicket extends Component {
       ticketData: [],
       ticketValue: null,
       ticketValuePlaceHolder: "select ticket",
-      adultValue: 0,
-      childValue: 0,
+      adultTicketData: [],
+      childTicketData: [],
+      adultTicketValue: null,
+      childTicketValue: null,
       dateValue: "Tap to select date",
       dataToPost: {},
       alertPopup: false,
@@ -48,6 +51,7 @@ export default class ReserveTicket extends Component {
   // called only first time rendering
   UNSAFE_componentWillMount = () => {
     this.fetchTicket();
+    this.fetchTicketAmount();
   }
 
   showPicker = () => {
@@ -76,10 +80,35 @@ export default class ReserveTicket extends Component {
     }
   }
 
+  fetchTicketAmount = () => {
+    const adultAmount = JumlahTicket.data.jumlah_dewasa;
+    const childAmount = JumlahTicket.data.jumlah_anak;
+    for (let i = 0; i <= adultAmount; i++) {
+      this.state.adultTicketData.push(i);
+    }
+    for (let i = 0; i <= childAmount; i++) {
+      this.state.childTicketData.push(i);
+    }
+    console.log(this.state.adultTicketData);
+    console.log(this.state.childTicketData);
+  }
+
   setTicketValue = (value) => {
     this.setState({
       ticketValue: value
     });
+  }
+
+  setAdultValue = (value) => {
+    this.setState({
+      adultTicketValue: value,
+    })
+  }
+
+  setChildValue = (value) => {
+    this.setState({
+      childTicketValue: value
+    })
   }
 
   orderAlert = (orderData) => {
@@ -127,14 +156,16 @@ export default class ReserveTicket extends Component {
     return false;
   }
 
-  orderTicket = (ticket, date) => {
+  orderTicket = (ticket, date, adult, child) => {
     const cityData = this.props.route.params;
     // DATA REQUEST STRUCTURE
     this.state.dataToPost = {
       "place_name": cityData.place_name,
       "city_name": cityData.city_name,
       "chosenTicket": ticket,
-      "chosenDate": date
+      "chosenDate": date,
+      "adultTickets": adult,
+      "childTickets": child 
     };
     console.log(this.state.dataToPost);
     if (this.orderCheck(this.state.dataToPost)) return;
@@ -146,6 +177,16 @@ export default class ReserveTicket extends Component {
     const ticketOption = this.state.ticketData.map((item) => {
       return (
         <Picker.Item label={item.ticket_name} value={item.ticket_name} />
+      )
+    });
+    const renderAdultTicket = this.state.adultTicketData.map((item) => {
+      return (
+        <Picker.Item label={item + " dewasa"} value={item} />
+      )
+    });
+    const renderChildTicket = this.state.childTicketData.map((item) => {
+      return (
+        <Picker.Item label={item+ " anak"} value={item} />
       )
     })
 
@@ -203,7 +244,6 @@ export default class ReserveTicket extends Component {
                 source={require("../../images/ticket-icons/calendar.png")}/>
                 <TouchableOpacity style={ts.bubble}
                 onPress={() => this.showPicker()}>
-                  {/* <Text>Date picker</Text> */}
                   <Text style={{fontSize: 17}}> {this.state.dateValue} </Text>
                 </TouchableOpacity>
               </View>
@@ -214,18 +254,26 @@ export default class ReserveTicket extends Component {
                 source={require("../../images/ticket-icons/person.png")}/>
                 <View style={[ts.personBubble,]}>
                   {/* Dewasa */}
-                  <View style={[ts.littleBubble, {width: 140, marginRight: 20}]}>
-                    {/* <Picker
+                  <View style={[ts.littleBubble, {width: 130, marginRight: 10}]}>
+                    <Picker
                     mode="dropdown"
-                    style={{width: "100%"}}
-                    selectedValue={this.state.adultValue}
-                    onValueChange={(value) => (value)}>
-
-                    </Picker> */}
+                    style={{width: "110%", scaleX: 0.9, scaleY: 0.9}}
+                    selectedValue={this.state.adultTicketValue}
+                    onValueChange={(itemValue) => this.setAdultValue(itemValue)}>
+                      <Picker.Item label="Dewasa" value={null} />
+                      {renderAdultTicket}
+                    </Picker>
                   </View>
                   {/* Anak */}
-                  <View style={[ts.littleBubble, {width: 140}]}>
-
+                  <View style={[ts.littleBubble, {width: 130}]}>
+                    <Picker
+                    mode="dropdown"
+                    style={{width: "110%", scaleX: 0.9, scaleY: 0.9}}
+                    selectedValue={this.state.childTicketValue}
+                    onValueChange={(itemValue) => this.setChildValue(itemValue)}>
+                      <Picker.Item label="Anak" value={null}/>
+                      {renderChildTicket}
+                    </Picker>
                   </View>
                 </View>
               </View>
@@ -234,7 +282,9 @@ export default class ReserveTicket extends Component {
             {/* Pesan button */}
             <View style={[gs.columnContainer]}>
               <TouchableOpacity style={ts.pesanButton}
-              onPress={() => this.orderTicket(this.state.ticketValue, this.state.dateValue)}>
+              onPress={() => this.orderTicket(
+                this.state.ticketValue, this.state.dateValue,
+                this.state.adultTicketValue, this.state.childTicketValue)}>
                 <Text style={{fontWeight: "bold", color: "white"}}>Pesan</Text>
               </TouchableOpacity>
             </View>
