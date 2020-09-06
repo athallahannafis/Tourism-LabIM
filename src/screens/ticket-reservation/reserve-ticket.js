@@ -1,9 +1,19 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Image, Alert, Modal } from 'react-native';
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { 
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Alert,
+  Modal,
+  TouchableOpacity,
+  ColorPropType
+} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { Picker } from '@react-native-community/picker';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // data
 import Ticket from '../../data-dummy/ticket.json';
@@ -11,6 +21,7 @@ import Ticket from '../../data-dummy/ticket.json';
 // styling
 import {globalStyling as gs} from '../../style/global-styling';
 import {ticketStyling as ts} from '../../style/ticket-styling';
+import Color from '../../style/color.json';
 
 export default class ReserveTicket extends Component {
   constructor(props) {
@@ -26,6 +37,7 @@ export default class ReserveTicket extends Component {
       dateValue: "Tap to select date",
       dataToPost: {},
       alertPopup: false,
+      alertMessage: "",
     })
   }
   // for re-rendering
@@ -98,6 +110,23 @@ export default class ReserveTicket extends Component {
     }
   }
 
+  orderCheck = (data) => {
+    if (data.chosenTicket === null) {
+      this.setState({
+        alertPopup: true,
+        alertMessage: "Ticket belum dipilih"
+      });
+      return true;
+    } else if (data.chosenDate === "Tap to select date") {
+      this.setState({
+        alertPopup: true,
+        alertMessage: "Tanggal belum dipilih"
+      });
+      return true;
+    }
+    return false;
+  }
+
   orderTicket = (ticket, date) => {
     const cityData = this.props.route.params;
     // DATA REQUEST STRUCTURE
@@ -108,9 +137,8 @@ export default class ReserveTicket extends Component {
       "chosenDate": date
     };
     console.log(this.state.dataToPost);
-    this.setState({alertPopup: true});
-    // if (this.orderAlert(this.state.dataToPost)) return;
-    // else this.props.navigation.navigate("Ticket Payment", this.state.dataToPost);
+    if (this.orderCheck(this.state.dataToPost)) return;
+    else this.props.navigation.navigate("Ticket Payment", this.state.dataToPost);
   }
 
   render() {
@@ -126,13 +154,15 @@ export default class ReserveTicket extends Component {
           <Modal
           transparent={true}
           visible={this.state.alertPopup}
-          animationType="fade">
+          animationType="slide">
             <View style={gs.columnContainer}>
-              <View 
-              style={{
-              width: 100, height: 100, backgroundColor: "red", 
-              marginTop: "70%"}}>
-                <Text>This is modal</Text>
+              <View style={ts.modalContainer}>
+                <Icon name={'times-circle'} size={80} color={"red"} />
+                <Text style={[ts.alertMessage]}>{this.state.alertMessage}</Text>
+                <TouchableOpacity style={ts.okButton}
+                onPress={() => this.setState({alertPopup: false}) }>
+                  <Text style={[ts.title, {color: "white"}]}>OK</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </Modal>
