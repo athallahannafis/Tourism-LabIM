@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
+import {View, Modal, Alert, Text, Image, TouchableOpacity} from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
-import {View, Modal, Text, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -18,6 +18,7 @@ export default class AttractionDetails extends Component {
     this.state = {
       addToItineraryPopUp: false,
       successPopUp: false,
+      contactInfoPopUp: false,
       attractionDataSet: {},
     };
   }
@@ -42,6 +43,66 @@ export default class AttractionDetails extends Component {
       }
     }
   };
+  renderFloatingButton() {
+    if (this.state.attractionDataSet.booking_available) {
+      return (
+        <TouchableOpacity style={ats.floatingButton}>
+          <Text style={ats.floatingButtonText}>Pesan Tiket</Text>
+        </TouchableOpacity>
+      );
+    } else {
+      return (
+        <TouchableOpacity
+          style={ats.floatingButton}
+          onPress={() => {
+            this.setState({contactInfoPopUp: true});
+          }}>
+          <Text style={ats.floatingButtonText}>Informasi Kontak</Text>
+        </TouchableOpacity>
+      );
+    }
+  }
+
+  renderContactInfo() {
+    if (this.state.contactInfoPopUp) {
+      return (
+        <View style={ats.modal3MainContainer}>
+          <View style={ats.modal3SubContainer}>
+            <Icon
+              name={'phone'}
+              size={15}
+              style={{paddingRight: 5}}
+              color={'white'}
+            />
+            <Text style={ats.textBubbleSmall}>
+              {this.state.attractionDataSet.phone_number}
+            </Text>
+          </View>
+          <View style={ats.modal3SubContainer}>
+            <Icon
+              name={'envelope'}
+              size={12}
+              style={{paddingRight: 5}}
+              color={'white'}
+            />
+            <Text style={ats.textBubbleSmall}>
+              {this.state.attractionDataSet.email}
+            </Text>
+          </View>
+          <View style={ats.modal3SubContainer2}>
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({contactInfoPopUp: false});
+              }}>
+              <Text style={ats.textCloseBubbleSmall}>Tutup</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
+    return null;
+  }
+
   render() {
     const attractionName = this.props.route.params;
     this.fetchAttractionData(attractionName);
@@ -62,8 +123,8 @@ export default class AttractionDetails extends Component {
       },
     );
     return (
-      <ScrollView>
-        <View style={[gs.mainContainer]}>
+      <View style={[gs.mainContainer]}>
+        <ScrollView>
           <View style={ats.mainImageContainer}>
             <Image
               source={{uri: this.state.attractionDataSet.image_source}}
@@ -78,99 +139,96 @@ export default class AttractionDetails extends Component {
               </View>
             </View>
           </View>
-
-          <View style={gs.cardSection}>
-            <View style={ats.rowSpaceBetweenInCard}>
-              <View style={ats.columnInCard}>
-                <Text style={ats.cardTitleText}>
-                  {this.state.attractionDataSet.place_name}
-                </Text>
-                <Text style={ats.cardSmallText}>
-                  {this.state.attractionDataSet.city_name},
-                  {this.state.attractionDataSet.province}
-                </Text>
-                <Text style={ats.cardMediumText}>(183 review)</Text>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <View style={gs.cardSection}>
+              <View style={ats.rowSpaceBetweenInCard}>
+                <View style={ats.columnInCard}>
+                  <Text style={ats.cardTitleText}>
+                    {this.state.attractionDataSet.place_name}
+                  </Text>
+                  <Text style={ats.cardSmallText}>
+                    {this.state.attractionDataSet.city_name},
+                    {this.state.attractionDataSet.province}
+                  </Text>
+                  <Text style={ats.cardMediumText}>(183 review)</Text>
+                </View>
+                <TouchableOpacity
+                  style={ats.btnAddtoItinerary}
+                  onPress={() => {
+                    this.setState({addToItineraryPopUp: true});
+                  }}>
+                  <Text style={ats.btnAddtoItineraryText}>
+                    Tambah ke Itinerary
+                  </Text>
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity
-                style={ats.btnAddtoItinerary}
-                onPress={() => {
-                  this.setState({addToItineraryPopUp: true});
-                }}>
-                <Text style={ats.btnAddtoItineraryText}>
-                  Tambah ke Itinerary
-                </Text>
-              </TouchableOpacity>
+
+              <Text style={ats.cardMediumText}>
+                {this.state.attractionDataSet.description}
+              </Text>
             </View>
 
-            <Text style={ats.cardMediumText}>
-              {this.state.attractionDataSet.description}
-            </Text>
-          </View>
-          <View style={{padding: 10}}></View>
-          <View style={gs.cardSection}>
-            <Text style={ats.cardTitleText}>Detail Objek Wisata</Text>
-            <View style={ats.rowFlexStart}>
-              {/*kolom kiri*/}
-              <View style={ats.columnTwo}>
-                {/*kolom kiri row 1*/}
-                <View style={ats.rowInCard}>
-                  <View style={ats.smallCircle}></View>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.cardSmallText}>
-                      Buka {this.state.attractionDataSet.detail.open_hours}
-                    </Text>
-                    <Text style={ats.cardSmallText}>
-                      {this.state.attractionDataSet.detail.open_days}
-                    </Text>
+            <View style={{padding: 10}}></View>
+            <View style={gs.cardSection}>
+              <Text style={ats.cardTitleText}>Detail Objek Wisata</Text>
+              <View style={ats.rowFlexStart}>
+                {/*kolom kiri*/}
+                <View style={ats.columnTwo}>
+                  {/*kolom kiri row 1*/}
+                  <View style={ats.rowInCard}>
+                    <View style={ats.smallCircle}></View>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={ats.cardSmallText}>
+                        Buka {this.state.attractionDataSet.detail.open_hours}
+                      </Text>
+                      <Text style={ats.cardSmallText}>
+                        {this.state.attractionDataSet.detail.open_days}
+                      </Text>
+                    </View>
+                  </View>
+                  {/*kolom kiri row 2*/}
+                  <View style={ats.rowInCard}>
+                    <View style={ats.smallCircle}></View>
+                    <View style={{flexDirection: 'column', width: '100%'}}>
+                      <Text style={ats.cardSmallText}>Fasilitas</Text>
+                      <View>{attrFacilities}</View>
+                    </View>
+                  </View>
+                  {/*kolom kiri row 3*/}
+                  <View style={ats.rowInList}>
+                    <View style={ats.smallCircle}></View>
+                    <View style={{flexDirection: 'column', flexWrap: 'wrap'}}>
+                      <Text style={ats.cardSmallText}>
+                        Harga tiket mulai{' '}
+                        {this.state.attractionDataSet.detail.ticket_price}
+                      </Text>
+                    </View>
                   </View>
                 </View>
-                {/*kolom kiri row 2*/}
-                <View style={ats.rowInCard}>
-                  <View style={ats.smallCircle}></View>
-                  <View style={{flexDirection: 'column', width: '100%'}}>
-                    <Text style={ats.cardSmallText}>Fasilitas</Text>
-                    <View>{attrFacilities}</View>
+                {/*kolom kanan*/}
+                <View style={ats.columnTwo}>
+                  {/*kolom kanan row 1*/}
+                  <View style={ats.rowInCard}>
+                    <View style={ats.smallCircle}></View>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={ats.cardSmallText}>
+                        Mampu menampung{' '}
+                        {this.state.attractionDataSet.detail.visitor_capacity}{' '}
+                        pengunjung setiap hari
+                      </Text>
+                    </View>
                   </View>
-                </View>
-                {/*kolom kiri row 3*/}
-                <View style={ats.rowInList}>
-                  <View style={ats.smallCircle}></View>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.cardSmallText}>
-                      Harga tiket mulai{' '}
-                      {this.state.attractionDataSet.detail.ticket_price}
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              {/*kolom kanan*/}
-              <View style={ats.columnTwo}>
-                {/*kolom kanan row 1*/}
-                <View style={ats.rowInCard}>
-                  <View style={ats.smallCircle}></View>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.cardSmallText}>
-                      Mampu menampung{' '}
-                      {this.state.attractionDataSet.detail.visitor_capacity}{' '}
-                      pengunjung setiap hari
-                    </Text>
-                  </View>
-                </View>
-                {/*kolom kanan row 2*/}
-                <View style={ats.rowInCard}>
-                  <View style={ats.smallCircle}></View>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.cardSmallText}>
-                      {this.state.attractionDataSet.detail.current_status}
-                    </Text>
+                  {/*kolom kanan row 2*/}
+                  <View style={ats.rowInCard}>
+                    <View style={ats.smallCircle}></View>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={ats.cardSmallText}>
+                        {this.state.attractionDataSet.detail.current_status}
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>
-            </View>
-            <View style={ats.mainImageContainer}>
-              <Image
-                source={require('../../images/dummy-image.jpg')}
-                style={ats.mainImage}></Image>
             </View>
           </View>
 
@@ -185,16 +243,9 @@ export default class AttractionDetails extends Component {
                 </View>
 
                 <View style={ats.modal1Bubble}>
-                  <View
-                    style={{
-                      flexDirection: 'column',
-                    }}>
+                  <View style={{flexDirection: 'column'}}>
                     <Text style={ats.textMediumBold}>Jalan-jalan Hari 1</Text>
-                    <View
-                      style={{
-                        width: '100%',
-                        flexDirection: 'row',
-                      }}>
+                    <View style={ats.modal1SubBubble}>
                       <View style={ats.modal1Container2}>
                         <Icon
                           style={{marginRight: 5}}
@@ -224,11 +275,7 @@ export default class AttractionDetails extends Component {
                       </View>
                     </View>
                   </View>
-                  <View
-                    style={{
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                    }}>
+                  <View style={ats.buttonContainer}>
                     <TouchableOpacity
                       style={ats.btnAddtoItinerary2}
                       onPress={() => {
@@ -238,11 +285,7 @@ export default class AttractionDetails extends Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View
-                  style={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}>
+                <View style={ats.buttonContainer}>
                   <TouchableOpacity
                     style={ats.btn}
                     onPress={() => {
@@ -261,7 +304,7 @@ export default class AttractionDetails extends Component {
                 <Icon name={'check-circle-o'} size={80} color={'#095185'} />
                 <Text style={ats.textMediumColor4}>Berhasil menambahkan</Text>
                 <Text style={ats.textMediumBoldColor4}>
-                  Bromo Tengger Semeru
+                  {this.state.attractionDataSet.place_name}
                 </Text>
                 <Text style={ats.textMediumColor4}>ke</Text>
                 <Text style={ats.textMediumBoldColor4}>Jalan-jalan Hari 1</Text>
@@ -283,8 +326,12 @@ export default class AttractionDetails extends Component {
               </View>
             </View>
           </Modal>
+        </ScrollView>
+        <View style={ats.floatingButtonContainer}>
+          {this.renderFloatingButton()}
         </View>
-      </ScrollView>
+        <View style={ats.modal3PlainContainer}>{this.renderContactInfo()}</View>
+      </View>
     );
   }
 }

@@ -18,7 +18,10 @@
       "ticket_price": "Rp 25.000,00",
       "visitor_capacity": "30.000",
       "current_status": "Sedang ramai"
-    }
+    },
+    "booking_available": true,
+    "phone_number": "(+62-21) 29 222 222",
+    "email": "customercare@ancol.com"
   },
   "tourist_attraction": [
     {
@@ -40,7 +43,10 @@
         "ticket_price": "Rp 10.000,00",
         "visitor_capacity": "3.000",
         "current_status": "Sedang ramai"
-      }
+      },
+      "booking_available": false,
+      "phone_number": "(021)3504333",
+      "email": "-"
     },
     {
       "place_name": "Plaza Indonesia",
@@ -61,7 +67,10 @@
         "ticket_price": "Rp 0",
         "visitor_capacity": "1.000",
         "current_status": "Sedang ramai"
-      }
+      },
+      "booking_available": false,
+      "phone_number": "(021) 29920000",
+      "email": "https://www.plazaindonesia.com"
     },
     {
       "place_name": "Taman Lapangan Banteng",
@@ -82,7 +91,10 @@
         "ticket_price": "Rp 0",
         "visitor_capacity": "3.000",
         "current_status": "Sedang ramai"
-      }
+      },
+      "booking_available": false,
+      "phone_number": "-",
+      "email": "-"
     }
   ]
 }

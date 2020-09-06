@@ -20,14 +20,6 @@ export const attractionStyling = StyleSheet.create({
     shadowRadius: 8.3,
     elevation: 10,
   },
-  btnText: {
-    color: 'white',
-    fontSize: 11,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
   btnAddtoItinerary: {
     width: 90,
     height: 40,
@@ -58,6 +50,12 @@ export const attractionStyling = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
+  btnAddtoItineraryText: {
+    color: 'white',
+    fontSize: 11,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
   btnGotoItinerary: {
     width: 110,
     height: 25,
@@ -73,11 +71,18 @@ export const attractionStyling = StyleSheet.create({
     shadowRadius: 8.3,
     elevation: 10,
   },
-  btnAddtoItineraryText: {
+  btnText: {
     color: 'white',
     fontSize: 11,
     fontWeight: 'bold',
     textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignItems: 'center',
   },
   cardMediumText: {
     fontSize: 13,
@@ -99,6 +104,28 @@ export const attractionStyling = StyleSheet.create({
     flexDirection: 'column',
     width: '50%',
     paddingRight: 10,
+  },
+  floatingButton: {
+    width: 60,
+    height: 60,
+    borderRadius: 60 / 2,
+    padding: 5,
+    backgroundColor: '#FF6B00',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  floatingButtonContainer: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    elevation: Platform.OS === 'android' ? 50 : 0,
+  },
+  floatingButtonText: {
+    flexWrap: 'wrap',
+    fontSize: 10,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   mainImageContainer: {
     justifyContent: 'center',
@@ -146,6 +173,10 @@ export const attractionStyling = StyleSheet.create({
     borderColor: '#095185',
     borderWidth: 2,
   },
+  modal1SubBubble: {
+    width: '100%',
+    flexDirection: 'row',
+  },
   modal2Container: {
     backgroundColor: 'white',
     width: 370,
@@ -156,6 +187,37 @@ export const attractionStyling = StyleSheet.create({
     paddingBottom: 15,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  modal3MainContainer: {
+    width: 200,
+    height: 80,
+    borderRadius: 8,
+    backgroundColor: '#FF6B00',
+    justifyContent: 'center',
+    paddingTop: 10,
+  },
+  modal3PlainContainer: {
+    position: 'absolute',
+    bottom: 10,
+    right: 5,
+    elevation: Platform.OS === 'android' ? 50 : 0,
+  },
+  modal3SubContainer: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    flexDirection: 'row',
+  },
+  modal3SubContainer2: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  rowFlexStart: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingTop: 5,
   },
   rowImageContainer: {
     flexDirection: 'row',
@@ -173,11 +235,6 @@ export const attractionStyling = StyleSheet.create({
   rowInList: {
     flexDirection: 'row',
     marginBottom: 5,
-  },
-  rowFlexStart: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    paddingTop: 5,
   },
   rowSpaceBetweenInCard: {
     flexDirection: 'row',
@@ -216,9 +273,19 @@ export const attractionStyling = StyleSheet.create({
     top: 4,
     left: 228,
   },
-  textMediumColor4: {
-    fontSize: 20,
-    color: '#095185',
+  textBubbleSmall: {
+    flexWrap: 'wrap',
+    fontSize: 10,
+    color: 'white',
+    textAlign: 'left',
+  },
+  textCloseBubbleSmall: {
+    flexWrap: 'wrap',
+    fontSize: 10,
+    color: 'white',
+    textAlign: 'right',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
   textMediumBold: {
     fontSize: 14,
@@ -227,6 +294,10 @@ export const attractionStyling = StyleSheet.create({
   textMediumBoldColor4: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#095185',
+  },
+  textMediumColor4: {
+    fontSize: 20,
     color: '#095185',
   },
   textOnImage: {
