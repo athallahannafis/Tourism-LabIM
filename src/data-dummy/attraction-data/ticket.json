@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "ticket_name": "Tiket masuk - Reguler"
+    },
+    {
+      "ticket_name": "Tiket masuk - Paralel"
+    },
+    {
+      "ticket_name": "Tiket masuk - International"
+    },
+    {
+      "ticket_name": "Tiket masuk - Eksternal"
+    }
+  ]
+}
