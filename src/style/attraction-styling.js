@@ -128,6 +128,9 @@ export const attractionStyling = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  mainContainer: {
+    marginBottom: '10%',
+  },
   mainImageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -187,7 +190,7 @@ export const attractionStyling = StyleSheet.create({
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    flexWrap: 'wrap',
+    textAlignVertical: 'center',
   },
   modal3MainContainer: {
     width: 200,
