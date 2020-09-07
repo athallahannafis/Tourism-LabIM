@@ -6,12 +6,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Screen
 import TestScreen from './screens/Test.js';
-import ProfileHomeScreen from './screens/ProfileHome.js';
-import ProfileEditScreen from './screens/ProfileEdit.js';
-import PreferensiObjekWisataScreen from './screens/PreferensiObjekWisata.js';
-import PreferensiAkomodasiScreen from './screens/PreferensiAkomodasi.js';
+import ProfileHomeScreen from './screens/profile/ProfileHome.js';
+import ProfileEditScreen from './screens/profile/ProfileEdit.js';
+import PreferensiObjekWisataScreen from './screens/profile/PreferensiObjekWisata.js';
+import PreferensiAkomodasiScreen from './screens/profile/PreferensiAkomodasi.js';
 import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
+import AttractionDetails from './screens/attraction/attraction-details';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -85,6 +86,10 @@ export default class BottomTab extends Component {
           component={AttractionInDestination}
           name="Attraction in Destination"
         />
+        <attractionStack.Screen
+          component={AttractionDetails}
+          name="Attraction Details"
+        />
       </attractionStack.Navigator>
     );
   };
@@ -99,11 +104,11 @@ export default class BottomTab extends Component {
           },
           labelStyle: {
             fontSize: 14,
-            fontWeight: "bold",
-            color: "#2E99A3",
+            fontWeight: 'bold',
+            color: '#2E99A3',
           },
-          inactiveBackgroundColor: "white",
-          activeBackgroundColor: "#C1DFE1",
+          inactiveBackgroundColor: 'white',
+          activeBackgroundColor: '#C1DFE1',
         }}>
         <bottomTab.Screen
           component={this.attractionStackScreen}
@@ -111,9 +116,11 @@ export default class BottomTab extends Component {
             tabBarIcon: () => {
               // TODO: put image icon here
               return (
-                <Image style={{width: 40, height: 40}}
-                source={require("./images/bottomtab-icons/objekWisata.png")}/>
-              )
+                <Image
+                  style={{width: 40, height: 40}}
+                  source={require('./images/bottomtab-icons/objekWisata.png')}
+                />
+              );
             },
           }}
           name="Objek Wisata"
@@ -124,9 +131,11 @@ export default class BottomTab extends Component {
           options={{
             tabBarIcon: () => {
               return (
-                <Image style={{width: 40, height: 40}}
-                source={require("./images/bottomtab-icons/akomodasi.png")}/>
-              )
+                <Image
+                  style={{width: 40, height: 40}}
+                  source={require('./images/bottomtab-icons/akomodasi.png')}
+                />
+              );
             },
           }}
           name="Akomodasi"
@@ -138,9 +147,11 @@ export default class BottomTab extends Component {
             tabBarIcon: () => {
               // <Image source={require("path")}
               return (
-                <Image style={{width: 40, height: 40}}
-                source={require("./images/bottomtab-icons/myTrip.png")}/>
-              )
+                <Image
+                  style={{width: 40, height: 40}}
+                  source={require('./images/bottomtab-icons/myTrip.png')}
+                />
+              );
             },
           }}
           name="My Trip"
@@ -152,9 +163,11 @@ export default class BottomTab extends Component {
             tabBarIcon: () => {
               // <Image source={require("path")}
               return (
-                <Image style={{width: 40, height: 40}}
-                source={require("./images/bottomtab-icons/profile.png")}/>
-              )
+                <Image
+                  style={{width: 40, height: 40}}
+                  source={require('./images/bottomtab-icons/profile.png')}
+                />
+              );
             },
           }}
           name="Profile"

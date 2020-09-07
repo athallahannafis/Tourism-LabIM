@@ -1,29 +1,100 @@
 {
   "popular_place": {
+    "city_name": "Jakarta",
     "province": "Ancol, Jakarta",
     "place_name": "Pantai Karnaval",
-    "place_description": "Rasakan sensasi berjalan di jembatan panjang dan indah sembari menikmati sunset di ujung utara kota Jakarta."
+    "description": "Rasakan sensasi berjalan di jembatan panjang dan indah sembari menikmati sunset di ujung utara kota Jakarta.",
+    "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+    "images_source": [
+      "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+      "https://cdn2.tstatic.net/travel/foto/bank/images2/ancol_20180618_174633.jpg",
+      "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+      "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
+    ],
+    "detail": {
+      "open_days": "Senin - Minggu",
+      "open_hours": "10.00 AM - 08.00 PM",
+      "facilities": ["Area Parkir", "Kamar Mandi"],
+      "ticket_price": "Rp 25.000,00",
+      "visitor_capacity": "30.000",
+      "current_status": "Sedang ramai"
+    },
+    "booking_available": true,
+    "phone_number": "(+62-21) 29 222 222",
+    "email": "customercare@ancol.com"
   },
   "tourist_attraction": [
     {
-      "attraction_name": "National Monument (Monumen Nasional)",
-      "attraction_desc": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!"
+      "place_name": "National Monument (Monumen Nasional)",
+      "description": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!",
+      "city_name": "Jakarta Pusat",
+      "province": "Jakarta",
+      "image_source": "https://i0.wp.com/www.holamigo.id/wp-content/uploads/2020/01/49238511562_c578353bdc_c.jpg?fit=800%2C600&ssl=1",
+      "images_source": [
+        "https://mmc.tirto.id/image/2018/07/28/ilustrasi-monas-2_ratio-16x9.jpg",
+        "https://img.okezone.com/content/2019/12/20/338/2144501/jelang-tahun-baru-2020-monas-tampilkan-video-mapping-sejarah-jakarta-OASQdqRGMN.jpg",
+        "https://1.bp.blogspot.com/-ak8r4HDWcK8/XlARnhxjcrI/AAAAAAAACpQ/hamG7DBX7NQamAIBywmLzlgQ6MzSFpzqwCLcBGAsYHQ/s1600/D395886D-F968-47BD-962C-9854EB284B36.jpeg",
+        "https://travelspromo.com/wp-content/uploads/2018/05/Air-Mancur-Monas-Monumen-Nasional.jpg"
+      ],
+      "detail": {
+        "open_days": "Senin - Minggu",
+        "open_hours": "10.00 AM - 04.00 PM",
+        "facilities": ["Area Parkir", "Kamar Mandi"],
+        "ticket_price": "Rp 10.000,00",
+        "visitor_capacity": "3.000",
+        "current_status": "Sedang ramai"
+      },
+      "booking_available": false,
+      "phone_number": "(021)3504333",
+      "email": "-"
     },
     {
-      "attraction_name": "Plaza Indonesia",
-      "attraction_desc": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT."
+      "place_name": "Plaza Indonesia",
+      "description": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT.",
+      "city_name": "Jakarta Pusat",
+      "province": "Jakarta Pusat",
+      "image_source": "https://images.bisnis-cdn.com/posts/2020/03/24/1217241/rsz_inpp_plaza_indonesia.jpg",
+      "images_source": [
+        "https://merahputih.com/media/28/a1/d4/28a1d45c3a8db9de67c97e13a1842083.png",
+        "https://akcdn.detik.net.id/visual/2019/05/24/d665e4ea-a6dc-4836-956f-ae34299a07f9_169.jpeg?w=715&q=90",
+        "https://live.staticflickr.com/5060/5555815688_81674188cb_b.jpg",
+        "https://img.beritasatu.com/cache/investor/798x449-2/1561356001.jpg"
+      ],
+      "detail": {
+        "open_days": "Senin - Minggu",
+        "open_hours": "10.00 AM - 09.00 PM",
+        "facilities": ["Area Parkir", "ATMs", "Kamar Mandi"],
+        "ticket_price": "Rp 0",
+        "visitor_capacity": "1.000",
+        "current_status": "Sedang ramai"
+      },
+      "booking_available": false,
+      "phone_number": "(021) 29920000",
+      "email": "https://www.plazaindonesia.com"
     },
     {
-      "attraction_name": "Taman Lapangan Banteng",
-      "attraction_desc": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!"
-    },
-    {
-      "attraction_name": "Plaza Indonesia",
-      "attraction_desc": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT."
-    },
-    {
-      "attraction_name": "National Monument (Monumen Nasional)",
-      "attraction_desc": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!"
+      "place_name": "Taman Lapangan Banteng",
+      "description": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!",
+      "city_name": "Jakarta Pusat",
+      "province": "Jakarta",
+      "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
+      "images_source": [
+        "https://3.bp.blogspot.com/-p_o1LU7Rl-8/W0Ak5jVYtZI/AAAAAAABDNQ/-tNE6uh7k8QFtktDJBMJ2AsH2ER7cz6RgCLcBGAs/s640/36662253_138963780322051_8775003392754843648_n.jpg",
+        "https://www.indovoices.com/wp-content/uploads/2018/06/IMG-20180622-WA0003.jpg",
+        "https://cdn-image.hipwee.com/wp-content/uploads/2018/07/hipwee-31326588_226921401398455_801165757533650944_n-750x422.jpg",
+        "https://awsimages.detik.net.id/community/media/visual/2018/07/02/181b0482-3d81-4859-93a1-a6141e79e81f_169.jpeg?w=780&q=90"
+      ],
+      "detail": {
+        "open_days": "Senin - Minggu",
+        "open_hours": "08.00 AM - 06.00 PM",
+        "facilities": ["Area Parkir", "Kamar Mandi"],
+        "ticket_price": "Rp 0",
+        "visitor_capacity": "3.000",
+        "current_status": "Sedang ramai"
+      },
+      "booking_available": false,
+      "phone_number": "-",
+      "email": "-"
     }
   ]
 }
