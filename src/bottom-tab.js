@@ -12,7 +12,10 @@ import PreferensiObjekWisataScreen from './screens/profile/PreferensiObjekWisata
 import PreferensiAkomodasiScreen from './screens/profile/PreferensiAkomodasi.js';
 import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
+import TicketReservation from './screens/ticket-reservation/reserve-ticket';
+import TicketPayment from './screens/ticket-reservation/payment-ticket';
 import AttractionDetails from './screens/attraction/attraction-details';
+import AttractionReview from './screens/attraction/attraction-reviews';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -89,6 +92,18 @@ export default class BottomTab extends Component {
         <attractionStack.Screen
           component={AttractionDetails}
           name="Attraction Details"
+        />
+        <attractionStack.Screen
+          component={AttractionReview}
+          name="Attraction Reviews"
+        />
+        <attractionStack.Screen
+          component={TicketReservation}
+          name="Ticket Reservation"
+        />
+        <attractionStack.Screen
+          component={TicketPayment}
+          name="Ticket Payment"
         />
       </attractionStack.Navigator>
     );
