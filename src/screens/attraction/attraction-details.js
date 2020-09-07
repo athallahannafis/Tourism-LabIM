@@ -46,7 +46,10 @@ export default class AttractionDetails extends Component {
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
       return (
-        <TouchableOpacity style={ats.floatingButton}>
+        <TouchableOpacity
+        onPress={() => this.props.navigation.navigate("Ticket Reservation",
+        this.state.attractionDataSet)}
+        style={ats.floatingButton}>
           <Text style={ats.floatingButtonText}>Pesan Tiket</Text>
         </TouchableOpacity>
       );
