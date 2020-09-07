@@ -46,7 +46,10 @@ export default class AttractionDetails extends Component {
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
       return (
-        <TouchableOpacity style={ats.floatingButton}>
+        <TouchableOpacity
+        onPress={() => this.props.navigation.navigate("Ticket Reservation",
+        this.state.attractionDataSet)}
+        style={ats.floatingButton}>
           <Text style={ats.floatingButtonText}>Pesan Tiket</Text>
         </TouchableOpacity>
       );
@@ -105,6 +108,7 @@ export default class AttractionDetails extends Component {
 
   render() {
     const attractionName = this.props.route.params;
+    console.log(attractionName);
     this.fetchAttractionData(attractionName);
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
@@ -150,7 +154,9 @@ export default class AttractionDetails extends Component {
                     {this.state.attractionDataSet.city_name},
                     {this.state.attractionDataSet.province}
                   </Text>
-                  <Text style={ats.cardMediumText}>(183 review)</Text>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate("Attraction Reviews", attractionName)}>
+                    <Text style={ats.cardMediumText}>(183 review)</Text>
+                  </TouchableOpacity>
                 </View>
                 <TouchableOpacity
                   style={ats.btnAddtoItinerary}
