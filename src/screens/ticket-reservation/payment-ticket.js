@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
+import {ticketStyling as ts} from '../../style/ticket-styling';
 import Color from '../../style/color.json';
 
 
@@ -15,11 +16,16 @@ export default class PaymentTicket extends Component {
   }
 
   render() {
-    const data = this.props.route.params;
-    console.log("from payment" + data.chosenTicket);
+    const RESERVE_DATA = this.props.route.params;
+    console.log(RESERVE_DATA);
     return (
       <View style={gs.mainContainer}>
-        <Text>Ticket payment Screen</Text>
+        <Text style={[ts.title, {marginBottom: 30}]}>Order Payment</Text>
+        <View style={gs.cardSection}>
+          {/* Title */}
+          <Text style={ts.title} > {RESERVE_DATA.place_name} </Text>
+          <Text> {RESERVE_DATA.city_name} </Text>
+        </View>
       </View>
     )
   }
