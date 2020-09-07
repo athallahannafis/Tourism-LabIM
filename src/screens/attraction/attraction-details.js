@@ -108,6 +108,7 @@ export default class AttractionDetails extends Component {
 
   render() {
     const attractionName = this.props.route.params;
+    console.log(attractionName);
     this.fetchAttractionData(attractionName);
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
@@ -153,7 +154,9 @@ export default class AttractionDetails extends Component {
                     {this.state.attractionDataSet.city_name},
                     {this.state.attractionDataSet.province}
                   </Text>
-                  <Text style={ats.cardMediumText}>(183 review)</Text>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate("Attraction Reviews", attractionName)}>
+                    <Text style={ats.cardMediumText}>(183 review)</Text>
+                  </TouchableOpacity>
                 </View>
                 <TouchableOpacity
                   style={ats.btnAddtoItinerary}
