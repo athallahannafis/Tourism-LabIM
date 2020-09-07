@@ -1,10 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 export const profilStyling = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
-    width: '100%',
-    height: '100%',
+    flexDirection: 'column',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
     backgroundColor: 'white',
     paddingLeft: 20,
     paddingRight: 20,
@@ -53,8 +54,8 @@ export const profilStyling = StyleSheet.create({
     left: 337,
   },
   bubblePreferensi: {
+    width: Dimensions.get('window').width - 40,
     flexDirection: 'row',
-    width: 350,
     height: 27,
     textAlignVertical: 'center',
     borderRadius: 3,
