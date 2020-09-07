@@ -19,7 +19,7 @@
       "visitor_capacity": "20.000",
       "current_status": "Sedang ramai"
     },
-    "booking_available": true,
+    "booking_available": false,
     "phone_number": "087712121212",
     "email": "bromotengger@malang.gov.id"
   }
