@@ -57,6 +57,8 @@ export default class PaymentTicket extends Component {
   pay = () => {
     const ewFlag = this.state.eWalletFlag;
     const transferFlag = this.state.transferBankFlag;
+    console.log(transferFlag);
+    console.log(ewFlag);
     if (ewFlag === true || transferFlag === true) {
       this.setState({paySuccessAlert: true})
     } else {
@@ -77,7 +79,10 @@ export default class PaymentTicket extends Component {
               <Icon name={'check-circle-o'} size={80} color={Color.color2} />
               <Text style={ts.alertMessage}>Payment Success!</Text>
               <TouchableOpacity style={ts.okButton}
-                onPress={() => this.setState({paySuccessAlert: false}) }>
+                onPress={() => {
+                  this.setState({paySuccessAlert: false});
+                  this.props.navigation.navigate("Objek Wisata dan Destinasi")
+                }}>
                   <Text style={[ts.title, {color: "white"}]}>OK</Text>
                 </TouchableOpacity>
             </View>
@@ -95,7 +100,7 @@ export default class PaymentTicket extends Component {
               <Text style={ts.alertMessage}>Pilih metode pembayaran</Text>
               <TouchableOpacity style={ts.okButton}
                 onPress={() => this.setState({payFailedAlert: false}) }>
-                  <Text style={[ts.title, {color: "white"}]}>OK</Text>
+                  <Text style={[ts.title, {color: "white"}]}>Tutup</Text>
                 </TouchableOpacity>
             </View>
           </View>
