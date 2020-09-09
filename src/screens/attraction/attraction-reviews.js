@@ -6,7 +6,6 @@ import StarRating from 'react-native-star-rating';
 import {globalStyling as gs} from '../../style/global-styling';
 import Color from '../../style/color.json';
 // data
-import Review from '../../data-dummy/attraction-data/attraction-review.json';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class AttractionReviews extends Component {
