@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Modal, Alert, Text, Image, TouchableOpacity} from 'react-native';
+import StarRating from 'react-native-star-rating';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -7,6 +8,7 @@ import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Color from '../../style/color.json';
 
 // data
 import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
@@ -20,6 +22,8 @@ export default class AttractionDetails extends Component {
       successPopUp: false,
       contactInfoPopUp: false,
       attractionDataSet: {},
+      attractionReviews: {},
+      averageRate: 0,
     };
   }
 
@@ -42,6 +46,7 @@ export default class AttractionDetails extends Component {
         }
       }
     }
+    this.state.attractionReviews = this.state.attractionDataSet.attraction_reviews;
   };
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
@@ -110,9 +115,21 @@ export default class AttractionDetails extends Component {
     return null;
   }
 
+  countAverage = () => {
+    let rateSum = 0, divisor;
+    divisor = this.state.attractionReviews.length;
+    for (let i = 0; i < this.state.attractionReviews.length; i++) {
+      rateSum += this.state.attractionReviews[i].rate;
+    }
+    const result = (rateSum / divisor).toFixed(2);
+    console.log(result);
+    this.state.averageRate = result;
+  }
+
   render() {
     const attractionName = this.props.route.params;
     this.fetchAttractionData(attractionName);
+    this.countAverage();
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
         return (
@@ -158,14 +175,33 @@ export default class AttractionDetails extends Component {
                       {this.state.attractionDataSet.city_name},
                       {this.state.attractionDataSet.province}
                     </Text>
+                    <View style={ats.starRatingView}>
+                      <StarRating
+                      disabled={true}
+                      maxStars={5}
+                      rating={this.state.averageRate}
+                      fullStarColor={Color.color6}
+                      starSize={17}
+                      />
+                      <Text style={[
+                      ats.textSmall,
+                      {color:Color.color6,
+                      marginLeft: 10}]}>
+                        {this.state.averageRate}
+                      </Text>
+                    </View>
                     <TouchableOpacity
+                    style={ats.reviewBtn}
                       onPress={() =>
                         this.props.navigation.navigate(
                           'Attraction Reviews',
-                          attractionName,
+                          this.state.attractionDataSet,
                         )
                       }>
-                      <Text style={ats.cardMediumText}>(183 review)</Text>
+                      <Text style={[ats.cardMediumText, 
+                      {fontWeight: "bold"}]}>
+                        ({this.state.attractionReviews.length} reviews)
+                      </Text>
                     </TouchableOpacity>
                   </View>
                   <TouchableOpacity
