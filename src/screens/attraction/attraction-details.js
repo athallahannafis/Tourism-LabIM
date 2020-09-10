@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Modal,
-  Alert,
-  Text,
-  Image,
-  TouchableOpacity,
-  ScrollViewBase,
-} from 'react-native';
+import {View, Modal, Alert, Text, Image, TouchableOpacity} from 'react-native';
+import StarRating from 'react-native-star-rating';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -15,6 +8,7 @@ import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Color from '../../style/color.json';
 
 // data
 import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
@@ -28,6 +22,8 @@ export default class AttractionDetails extends Component {
       successPopUp: false,
       contactInfoPopUp: false,
       attractionDataSet: {},
+      attractionReviews: {},
+      averageRate: 0,
     };
   }
 
@@ -50,6 +46,7 @@ export default class AttractionDetails extends Component {
         }
       }
     }
+    this.state.attractionReviews = this.state.attractionDataSet.attraction_reviews;
   };
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
@@ -118,10 +115,21 @@ export default class AttractionDetails extends Component {
     return null;
   }
 
+  countAverage = () => {
+    let rateSum = 0, divisor;
+    divisor = this.state.attractionReviews.length;
+    for (let i = 0; i < this.state.attractionReviews.length; i++) {
+      rateSum += this.state.attractionReviews[i].rate;
+    }
+    const result = (rateSum / divisor).toFixed(2);
+    console.log(result);
+    this.state.averageRate = result;
+  }
+
   render() {
     const attractionName = this.props.route.params;
-    console.log(attractionName);
     this.fetchAttractionData(attractionName);
+    this.countAverage();
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
         return (
@@ -156,11 +164,15 @@ export default class AttractionDetails extends Component {
                 </View>
               </View>
             </View>
+<<<<<<< HEAD
             <View
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
+=======
+            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+>>>>>>> 30243b7c75ddd21a9470b9cacc0d7b7ba6f0147b
               <View style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
@@ -171,6 +183,7 @@ export default class AttractionDetails extends Component {
                       {this.state.attractionDataSet.city_name},
                       {this.state.attractionDataSet.province}
                     </Text>
+<<<<<<< HEAD
                     <TouchableOpacity
                       onPress={() =>
                         this.props.navigation.navigate(
@@ -179,6 +192,35 @@ export default class AttractionDetails extends Component {
                         )
                       }>
                       <Text style={ats.cardMediumText}>(183 review)</Text>
+=======
+                    <View style={ats.starRatingView}>
+                      <StarRating
+                      disabled={true}
+                      maxStars={5}
+                      rating={this.state.averageRate}
+                      fullStarColor={Color.color6}
+                      starSize={17}
+                      />
+                      <Text style={[
+                      ats.textSmall,
+                      {color:Color.color6,
+                      marginLeft: 10}]}>
+                        {this.state.averageRate}
+                      </Text>
+                    </View>
+                    <TouchableOpacity
+                    style={ats.reviewBtn}
+                      onPress={() =>
+                        this.props.navigation.navigate(
+                          'Attraction Reviews',
+                          this.state.attractionDataSet,
+                        )
+                      }>
+                      <Text style={[ats.cardMediumText, 
+                      {fontWeight: "bold"}]}>
+                        ({this.state.attractionReviews.length} reviews)
+                      </Text>
+>>>>>>> 30243b7c75ddd21a9470b9cacc0d7b7ba6f0147b
                     </TouchableOpacity>
                   </View>
                   <TouchableOpacity
@@ -261,6 +303,7 @@ export default class AttractionDetails extends Component {
               </View>
             </View>
           </View>
+<<<<<<< HEAD
           <Modal transparent={true} visible={this.state.addToItineraryPopUp}>
             <View style={ats.modalOverlay}>
               <View style={ats.modal1MainContainer}>
@@ -270,60 +313,64 @@ export default class AttractionDetails extends Component {
                   }}>
                   <Text style={gs.cardTitle}>Tambahkan ke Itinerary</Text>
                 </View>
+=======
+        </ScrollView>
 
-                <View style={ats.modal1Bubble}>
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={ats.textMediumBold}>Jalan-jalan Hari 1</Text>
-                    <View style={ats.modal1SubBubble}>
-                      <View style={ats.modal1Container2}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'map-marker'}
-                          size={16}
-                          color={'black'}
-                        />
-                        <Text style={ats.textSmall}>4 Objek Wisata</Text>
-                      </View>
-                      <View style={ats.modal1Container2}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'clock-o'}
-                          size={16}
-                          color={'black'}
-                        />
-                        <Text style={ats.textSmall}>1 Hari</Text>
-                      </View>
-                      <View style={ats.modal1Container2}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'money'}
-                          size={16}
-                          color={'black'}
-                        />
-                        <Text style={ats.textSmall}>160.000</Text>
-                      </View>
+        <Modal transparent={true} visible={this.state.addToItineraryPopUp}>
+          <View style={ats.modalOverlay}>
+            <View style={ats.modal1MainContainer}>
+              <View
+                style={{
+                  paddingLeft: 15,
+                }}>
+                <Text style={gs.cardTitle}>Tambahkan ke Itinerary</Text>
+              </View>
+>>>>>>> 30243b7c75ddd21a9470b9cacc0d7b7ba6f0147b
+
+              <View style={ats.modal1Bubble}>
+                <View style={{flexDirection: 'column'}}>
+                  <Text style={ats.textMediumBold}>Jalan-jalan Hari 1</Text>
+                  <View style={ats.modal1SubBubble}>
+                    <View style={ats.modal1Container2}>
+                      <Icon
+                        style={{marginRight: 5}}
+                        name={'map-marker'}
+                        size={16}
+                        color={'black'}
+                      />
+                      <Text style={ats.textSmall}>4 Objek Wisata</Text>
                     </View>
-                  </View>
-                  <View style={ats.buttonContainer}>
-                    <TouchableOpacity
-                      style={ats.btnAddtoItinerary2}
-                      onPress={() => {
-                        this.setState({successPopUp: true});
-                      }}>
-                      <Text style={ats.btnText}>Tambahkan</Text>
-                    </TouchableOpacity>
+                    <View style={ats.modal1Container2}>
+                      <Icon
+                        style={{marginRight: 5}}
+                        name={'clock-o'}
+                        size={16}
+                        color={'black'}
+                      />
+                      <Text style={ats.textSmall}>1 Hari</Text>
+                    </View>
+                    <View style={ats.modal1Container2}>
+                      <Icon
+                        style={{marginRight: 5}}
+                        name={'money'}
+                        size={16}
+                        color={'black'}
+                      />
+                      <Text style={ats.textSmall}>160.000</Text>
+                    </View>
                   </View>
                 </View>
                 <View style={ats.buttonContainer}>
                   <TouchableOpacity
-                    style={ats.btn}
+                    style={ats.btnAddtoItinerary2}
                     onPress={() => {
-                      this.setState({addToItineraryPopUp: false});
+                      this.setState({successPopUp: true});
                     }}>
-                    <Text style={ats.btnText}> Tutup </Text>
+                    <Text style={ats.btnText}>Tambahkan</Text>
                   </TouchableOpacity>
                 </View>
               </View>
+<<<<<<< HEAD
             </View>
           </Modal>
 
@@ -344,21 +391,57 @@ export default class AttractionDetails extends Component {
                     <Text style={ats.btnText}>Lihat Itinerary</Text>
                   </TouchableOpacity>
                 </View>
+=======
+              <View style={ats.buttonContainer}>
+>>>>>>> 30243b7c75ddd21a9470b9cacc0d7b7ba6f0147b
                 <TouchableOpacity
                   style={ats.btn}
                   onPress={() => {
-                    this.setState({
-                      successPopUp: false,
-                      addToItineraryPopUp: false,
-                    });
+                    this.setState({addToItineraryPopUp: false});
                   }}>
                   <Text style={ats.btnText}> Tutup </Text>
                 </TouchableOpacity>
               </View>
             </View>
+<<<<<<< HEAD
           </Modal>
         </ScrollView>
 
+=======
+          </View>
+        </Modal>
+
+        <Modal transparent={true} visible={this.state.successPopUp}>
+          <View style={ats.modalOverlay}>
+            <View style={ats.modal2Container}>
+              <Icon name={'check-circle-o'} size={80} color={'#095185'} />
+              <Text style={ats.textMediumColor4}>Berhasil menambahkan</Text>
+              <Text style={ats.textMediumBoldColor4AlignCenter}>
+                {this.state.attractionDataSet.place_name}
+              </Text>
+              <Text style={ats.textMediumColor4}>ke</Text>
+              <Text style={ats.textMediumBoldColor4AlignCenter}>
+                Jalan-jalan Hari 1
+              </Text>
+              <View style={{marginTop: 10}}>
+                <TouchableOpacity style={ats.btnGotoItinerary}>
+                  <Text style={ats.btnText}>Lihat Itinerary</Text>
+                </TouchableOpacity>
+              </View>
+              <TouchableOpacity
+                style={ats.btn}
+                onPress={() => {
+                  this.setState({
+                    successPopUp: false,
+                    addToItineraryPopUp: false,
+                  });
+                }}>
+                <Text style={ats.btnText}> Tutup </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+>>>>>>> 30243b7c75ddd21a9470b9cacc0d7b7ba6f0147b
         <View style={ats.floatingButtonContainer}>
           {this.renderFloatingButton()}
         </View>

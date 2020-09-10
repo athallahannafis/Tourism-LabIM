@@ -103,7 +103,8 @@ export default class BottomTab extends Component {
         />
         <attractionStack.Screen
           component={TicketPayment}
-          name="Ticket Payment"/>
+          name="Ticket Payment"
+        />
       </attractionStack.Navigator>
     );
   };

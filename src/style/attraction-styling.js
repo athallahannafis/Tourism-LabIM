@@ -319,4 +319,23 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
   },
   textSmall: {fontSize: 11},
+  reviewBtn: {
+    flex: 0,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Color.color1,
+    maxWidth: 100,
+    borderRadius: 1000,
+    paddingVertical: 3,
+    paddingHorizontal: 2,
+    marginTop: 5
+  },
+  starRatingView: {
+    flex: 0,
+    width: 120,
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap"
+  }
 });

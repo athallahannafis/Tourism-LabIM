@@ -6,7 +6,6 @@ import StarRating from 'react-native-star-rating';
 import {globalStyling as gs} from '../../style/global-styling';
 import Color from '../../style/color.json';
 // data
-import Review from '../../data-dummy/attraction-data/attraction-review.json';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class AttractionReviews extends Component {
@@ -14,25 +13,16 @@ export default class AttractionReviews extends Component {
     super(props);
     this.state = ({
       num: 0,
-      reviewData: [],
     })
   }
 
   UNSAFE_componentWillMount = () => {
-    this.fetchReview();
-  }
 
-  fetchReview = () => {
-    for (let i = 0; i < Review.data.length; i++) {
-      this.state.reviewData.push(Review.data[i]);
-    }
-    console.log(this.state.reviewData);
   }
 
   render() {
-    const attractionName = this.props.route.params;
-    console.log(attractionName);
-    const renderReview = this.state.reviewData.map((item) => {
+    const attractionData = this.props.route.params;
+    const renderReview = attractionData.attraction_reviews.map((item) => {
       let images;
       if (item.photos.length != 0) {
         images = item.photos.map((photoSource) => {
@@ -77,8 +67,9 @@ export default class AttractionReviews extends Component {
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
-          <Text style={gs.cardTitle}>Seluruh ulasan untuk</Text>
-          <Text style={gs.cardTitle}>{attractionName}</Text>
+          <Text style={[gs.cardTitle, {width: 250, textAlign: "center"}]}>
+            Seluruh ulasan untuk {attractionData.place_name}
+          </Text>
           {renderReview}
         </View>
       </ScrollView>
