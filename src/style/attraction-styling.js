@@ -99,6 +99,7 @@ export const attractionStyling = StyleSheet.create({
     flexWrap: 'wrap',
   },
   columnInCard: {
+    width: '70%',
     flexDirection: 'column',
     paddingBottom: 10,
   },
@@ -106,6 +107,13 @@ export const attractionStyling = StyleSheet.create({
     flexDirection: 'column',
     width: '50%',
     paddingRight: 10,
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Color.white,
   },
   floatingButton: {
     width: 60,
@@ -137,11 +145,10 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     flex: 1,
-    marginTop: 5,
   },
   mainImage: {
-    width: 300,
-    height: 150,
+    width: Dimensions.get('window').width,
+    height: 250,
   },
   modalOverlay: {
     backgroundColor: '#000000aa',
@@ -228,8 +235,8 @@ export const attractionStyling = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 300,
-    paddingTop: 4,
+    width: Dimensions.get('window').width,
+    paddingTop: 6,
     paddingBottom: 20,
     flex: 1,
   },
@@ -247,10 +254,10 @@ export const attractionStyling = StyleSheet.create({
     flexWrap: 'wrap',
   },
   smallCircle: {
-    width: 15,
-    height: 15,
+    width: 12,
+    height: 12,
     borderRadius: 60,
-    backgroundColor: Color.color4,
+    backgroundColor: Color.color5,
     marginRight: 10,
   },
   smallCircle2: {
@@ -261,22 +268,22 @@ export const attractionStyling = StyleSheet.create({
     margin: 5,
   },
   smallImage2: {
-    width: 72,
-    height: 36,
+    width: Dimensions.get('window').width / 4 - 5,
+    height: 50,
   },
   smallImage2WithText: {
-    width: 72,
-    height: 36,
+    width: Dimensions.get('window').width / 4 - 5,
+    height: 50,
     opacity: 0.8,
   },
   smallImageBlackOverlay: {
     backgroundColor: 'black',
-    width: 72,
-    height: 36,
+    width: Dimensions.get('window').width / 4 - 5,
+    height: 50,
     opacity: 0.4,
     position: 'absolute',
-    top: 4,
-    left: 228,
+    top: 5,
+    left: 300,
   },
   textBubbleSmall: {
     flexWrap: 'wrap',
@@ -314,8 +321,8 @@ export const attractionStyling = StyleSheet.create({
   },
   textOnImageContainer: {
     position: 'absolute',
-    top: 6,
-    left: 232,
+    top: 12,
+    left: 315,
     alignItems: 'center',
   },
   textSmall: {fontSize: 11},
@@ -327,15 +334,14 @@ export const attractionStyling = StyleSheet.create({
     backgroundColor: Color.color1,
     maxWidth: 100,
     borderRadius: 1000,
-    paddingVertical: 3,
-    paddingHorizontal: 2,
-    marginTop: 5
+    paddingVertical: 1,
+    paddingHorizontal: 1,
   },
   starRatingView: {
     flex: 0,
     width: 120,
-    flexDirection: "row",
-    alignItems: "center",
-    flexWrap: "wrap"
-  }
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  },
 });
