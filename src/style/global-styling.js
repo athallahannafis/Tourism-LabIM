@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Color from './color.json';
 
 export const globalStyling = StyleSheet.create({
   mainContainer: {
@@ -27,7 +28,7 @@ export const globalStyling = StyleSheet.create({
     borderRadius: 15,
     flex: 0,
     flexDirection: 'column',
-    backgroundColor: '#f0f9f8',
+    backgroundColor: '#fff',
     paddingVertical: 10,
     paddingHorizontal: 15,
     width: '95%',
@@ -38,6 +39,7 @@ export const globalStyling = StyleSheet.create({
   cardTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: Color.color2,
     marginBottom: 10,
   },
   subCardTitle: {
@@ -53,7 +55,6 @@ export const globalStyling = StyleSheet.create({
     justifyContent: 'center',
     width: 100,
     borderRadius: 10,
-    backgroundColor: '#c2b9b8',
   },
   bigImage: {
     borderRadius: 10,
