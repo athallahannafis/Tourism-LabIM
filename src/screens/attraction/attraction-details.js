@@ -164,7 +164,7 @@ export default class AttractionDetails extends Component {
               <View style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
-                    <Text style={ats.cardTitleText}>
+                    <Text style={gs.cardTitle}>
                       {this.state.attractionDataSet.place_name}
                     </Text>
                     <Text style={ats.cardSmallText}>
@@ -218,7 +218,7 @@ export default class AttractionDetails extends Component {
 
               <View style={{padding: 10}}></View>
               <View style={gs.cardSection}>
-                <Text style={ats.cardTitleText}>Detail Objek Wisata</Text>
+                <Text style={gs.cardTitle}>Detail Objek Wisata</Text>
                 <View style={ats.rowFlexStart}>
                   {/*kolom kiri*/}
                   <View style={ats.columnTwo}>

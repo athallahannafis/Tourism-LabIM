@@ -257,7 +257,7 @@ export const attractionStyling = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 60,
-    backgroundColor: Color.color5,
+    backgroundColor: Color.color1,
     marginRight: 10,
   },
   smallCircle2: {
