@@ -102,6 +102,7 @@ export const attractionStyling = StyleSheet.create({
     width: '70%',
     flexDirection: 'column',
     paddingBottom: 10,
+    width: '70%',
   },
   columnTwo: {
     flexDirection: 'column',
@@ -236,7 +237,11 @@ export const attractionStyling = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: Dimensions.get('window').width,
+<<<<<<< HEAD
     paddingTop: 6,
+=======
+    paddingTop: 4,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
     paddingBottom: 20,
     flex: 1,
   },
@@ -257,7 +262,11 @@ export const attractionStyling = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 60,
+<<<<<<< HEAD
     backgroundColor: Color.color5,
+=======
+    backgroundColor: Color.color1,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
     marginRight: 10,
   },
   smallCircle2: {
@@ -268,21 +277,38 @@ export const attractionStyling = StyleSheet.create({
     margin: 5,
   },
   smallImage2: {
+<<<<<<< HEAD
     width: Dimensions.get('window').width / 4 - 5,
     height: 50,
   },
   smallImage2WithText: {
     width: Dimensions.get('window').width / 4 - 5,
     height: 50,
+=======
+    width: Dimensions.get('window').width / 4 - 4,
+    height: 55,
+  },
+  smallImage2WithText: {
+    width: Dimensions.get('window').width / 4 - 4,
+    height: 55,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
     opacity: 0.8,
   },
   smallImageBlackOverlay: {
     backgroundColor: 'black',
+<<<<<<< HEAD
     width: Dimensions.get('window').width / 4 - 5,
     height: 50,
     opacity: 0.4,
     position: 'absolute',
     top: 5,
+=======
+    width: Dimensions.get('window').width / 4 - 4,
+    height: 55,
+    opacity: 0.4,
+    position: 'absolute',
+    top: 4,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
     left: 300,
   },
   textBubbleSmall: {
@@ -321,8 +347,13 @@ export const attractionStyling = StyleSheet.create({
   },
   textOnImageContainer: {
     position: 'absolute',
+<<<<<<< HEAD
     top: 12,
     left: 315,
+=======
+    top: 15,
+    left: 318,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
     alignItems: 'center',
   },
   textSmall: {fontSize: 11},
@@ -334,8 +365,14 @@ export const attractionStyling = StyleSheet.create({
     backgroundColor: Color.color1,
     maxWidth: 100,
     borderRadius: 1000,
+<<<<<<< HEAD
     paddingVertical: 1,
     paddingHorizontal: 1,
+=======
+    paddingVertical: 3,
+    paddingHorizontal: 2,
+    marginTop: 5,
+>>>>>>> a13d9ecd9eec83f5ce53ee99f40c7a0251b95a0f
   },
   starRatingView: {
     flex: 0,

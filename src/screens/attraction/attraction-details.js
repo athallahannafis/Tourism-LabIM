@@ -11,8 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Color from '../../style/color.json';
 
 // data
-import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
-import AttractionInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
+import Attraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionDetails extends Component {
   constructor(props) {
@@ -22,32 +21,24 @@ export default class AttractionDetails extends Component {
       successPopUp: false,
       contactInfoPopUp: false,
       attractionDataSet: {},
-      attractionReviews: {},
+      attractionReviews: [],
       averageRate: 0,
+      temp: 0,
     };
   }
 
-  fetchAttractionData = (attractionName) => {
-    if (attractionName === WisataPopulerData.data.place_name) {
-      /*Jika atraksi ada di dalam data wisata populer */
-      this.state.attractionDataSet = WisataPopulerData.data;
-    } else if (
-      /*Jika atraksi merupakan popular place di data attraction in destination */
-      attractionName === AttractionInDestination.popular_place.place_name
-    ) {
-      this.state.attractionDataSet = AttractionInDestination.popular_place;
-    } else {
-      /*Jika atraksi ada di dalam data attraction in destination */
-      this.state.testMasuk = 'masukC';
-      const attList = AttractionInDestination.tourist_attraction;
-      for (let i = 0; i < attList.length; i++) {
-        if (attractionName === attList[i].place_name) {
-          this.state.attractionDataSet = attList[i];
+  fetchAttractionData = (attraction) => {
+    const attList = Attraction.data;
+    for (let i = 0; i < attList.length; i++) {
+      for (let j = 0; j < attList[i].attraction_list.length; j++) {
+        if (attraction == attList[i].attraction_list[j]) {
+          this.state.attractionDataSet = attList[i].attraction_list[j];
         }
       }
     }
     this.state.attractionReviews = this.state.attractionDataSet.attraction_reviews;
   };
+
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
       return (
@@ -128,8 +119,8 @@ export default class AttractionDetails extends Component {
   };
 
   render() {
-    const attractionName = this.props.route.params;
-    this.fetchAttractionData(attractionName);
+    const attraction = this.props.route.params;
+    this.fetchAttractionData(attraction);
     this.countAverage();
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
@@ -148,7 +139,7 @@ export default class AttractionDetails extends Component {
       },
     );
     return (
-      <View style={ats.container}>
+      <View style={[ats.container]}>
         <ScrollView>
           <View style={ats.mainContainer}>
             <View style={ats.mainImageContainer}>
@@ -165,11 +156,15 @@ export default class AttractionDetails extends Component {
                 </View>
               </View>
             </View>
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <View style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
-                    <Text style={ats.cardTitleText}>
+                    <Text style={gs.cardTitle}>
                       {this.state.attractionDataSet.place_name}
                     </Text>
                     <Text style={ats.cardSmallText}>
@@ -223,7 +218,7 @@ export default class AttractionDetails extends Component {
 
               <View style={{padding: 10}}></View>
               <View style={gs.cardSection}>
-                <Text style={ats.cardTitleText}>Detail Objek Wisata</Text>
+                <Text style={gs.cardTitle}>Detail Objek Wisata</Text>
                 <View style={ats.rowFlexStart}>
                   {/*kolom kiri*/}
                   <View style={ats.columnTwo}>
