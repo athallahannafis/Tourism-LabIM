@@ -13,16 +13,16 @@ export default class AttractionInDestination extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ATTRACTION_PLACE: "",
+      ATTRACTION_PLACE: '',
       destinationData: [],
-      lastTouristAtt: []
+      lastTouristAtt: [],
     };
   }
 
   UNSAFE_componentWillMount = () => {
     this.state.ATTRACTION_PLACE = this.props.route.params;
     this.fetchAttraction(this.state.ATTRACTION_PLACE);
-  }
+  };
 
   fetchAttraction = (attractionPlace) => {
     for (let i = 0; i < AllAttraction.data.length; i++) {
@@ -31,27 +31,26 @@ export default class AttractionInDestination extends Component {
       }
     }
     console.log(this.state.destinationData.length);
-  }
+  };
 
   render() {
     const objekWisataRender = this.state.destinationData.map((item) => {
       if (item.isPopular === false) {
         const len = this.state.destinationData.length;
-        if (item === this.state.destinationData[len-1]) {
+        if (item === this.state.destinationData[len - 1]) {
           return (
             <>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate(
-                    'Attraction Details'
-                    // TODO: Pass data to attraction detail
-                  )
+                  this.props.navigation.navigate('Attraction Details', item)
                 }>
-                <View
-                  style={[gs.rowContainer, {paddingVertical: 20}]}>
+                <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
                   <View style={[gs.rowContainer, {width: 100}]}>
-                    <Image source={{uri: item.image_source}} style={gs.smallImage} />
+                    <Image
+                      source={{uri: item.image_source}}
+                      style={gs.smallImage}
+                    />
                   </View>
                   {/* Right section */}
                   <View style={[{width: 230, marginLeft: 20}]}>
@@ -61,22 +60,21 @@ export default class AttractionInDestination extends Component {
                 </View>
               </TouchableOpacity>
             </>
-          )
+          );
         } else {
           return (
             <>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate(
-                    'Attraction Details'
-                    // TODO: Pass data to attraction detail
-                  )
+                  this.props.navigation.navigate('Attraction Details', item)
                 }>
-                <View
-                  style={[gs.rowContainer, {paddingVertical: 20}]}>
+                <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
                   <View style={[gs.rowContainer, {width: 100}]}>
-                    <Image source={{uri: item.image_source}} style={gs.smallImage} />
+                    <Image
+                      source={{uri: item.image_source}}
+                      style={gs.smallImage}
+                    />
                   </View>
                   {/* Right section */}
                   <View style={[{width: 230, marginLeft: 20}]}>
@@ -96,13 +94,12 @@ export default class AttractionInDestination extends Component {
       if (item.isPopular === true) {
         return (
           <View style={gs.cardSection}>
-            <Text style={gs.cardTitle}>Objek wisata populer di {this.state.ATTRACTION_PLACE}</Text>
+            <Text style={gs.cardTitle}>
+              Objek wisata populer di {this.state.ATTRACTION_PLACE}
+            </Text>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate(
-                  'Attraction Details'
-                  // TODO: Pass data to attraction detail
-                )
+                this.props.navigation.navigate('Attraction Details', item)
               }>
               <View style={gs.rowContainer}>
                 {/* Left section */}
@@ -115,17 +112,15 @@ export default class AttractionInDestination extends Component {
                 </View>
                 {/* Right Section */}
                 <View style={{width: 180}}>
-                  <Text style={gs.subCardTitle}>
-                    {item.place_name}
-                  </Text>
+                  <Text style={gs.subCardTitle}>{item.place_name}</Text>
                   <Text>{item.description}</Text>
                 </View>
               </View>
             </TouchableOpacity>
           </View>
-        )
+        );
       }
-    })
+    });
 
     return (
       <ScrollView>
@@ -133,10 +128,10 @@ export default class AttractionInDestination extends Component {
           {wisataPopulerRender}
 
           <View style={[gs.cardSection, {marginTop: 20}]}>
-            <Text style={gs.cardTitle}>Objek Wisata di {this.state.ATTRACTION_PLACE}</Text>
-            <View>
-              {objekWisataRender}
-            </View>
+            <Text style={gs.cardTitle}>
+              Objek Wisata di {this.state.ATTRACTION_PLACE}
+            </Text>
+            <View>{objekWisataRender}</View>
           </View>
         </View>
       </ScrollView>
