@@ -15,6 +15,7 @@ export default class AttractionHome extends Component {
       ATTRACTION_LIST: AllAttraction.data,
       city: [],
       recommendImage: [],
+      popularPlace: {},
     };
   }
 
@@ -34,12 +35,25 @@ export default class AttractionHome extends Component {
     }
   };
 
+  fetchPopularPlace = () => {
+    const places = this.state.ATTRACTION_LIST;
+    for (let i = places.length - 1; i >= 0; i--) {
+      for (let j = places[i].attraction_list.length - 1; j >= 0; j--) {
+        if (places[i].attraction_list[j].isPopular == true) {
+          this.state.popularPlace = places[i].attraction_list[j];
+        }
+      }
+    }
+  };
+
   render() {
     this.fetchCities();
     this.fetchFirstRecommendation();
+    this.fetchPopularPlace();
     let index = 0;
     const cityRender = this.state.city.map((item) => {
-      const imageURL = this.state.ATTRACTION_LIST[index].attraction_list[1].image_source;
+      const imageURL = this.state.ATTRACTION_LIST[index].attraction_list[1]
+        .image_source;
       index++;
       return (
         <View style={{margin: 10}}>
@@ -48,11 +62,15 @@ export default class AttractionHome extends Component {
             onPress={() =>
               this.props.navigation.navigate('Attraction in Destination', item)
             }>
-            <Image style={gs.smallRectangularCard} source={{uri: imageURL}}/>
-            <View style={[gs.smallRectangularCard,
-            {backgroundColor: "black", position: "absolute", opacity: 0.4}]}/>
-            <View style={[gs.smallRectangularCard, {position: "absolute"}]}>
-              <Text style={{color: "white", fontWeight: "bold"}}>{item}</Text>
+            <Image style={gs.smallRectangularCard} source={{uri: imageURL}} />
+            <View
+              style={[
+                gs.smallRectangularCard,
+                {backgroundColor: 'black', position: 'absolute', opacity: 0.4},
+              ]}
+            />
+            <View style={[gs.smallRectangularCard, {position: 'absolute'}]}>
+              <Text style={{color: 'white', fontWeight: 'bold'}}>{item}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -62,7 +80,10 @@ export default class AttractionHome extends Component {
     const dummyRecommendation = this.state.recommendImage.map((item) => {
       return (
         <View>
-          <Image style={[gs.smallImage, {marginHorizontal: 5}]} source={{uri: item}} />
+          <Image
+            style={[gs.smallImage, {marginHorizontal: 5}]}
+            source={{uri: item}}
+          />
         </View>
       );
     });
@@ -83,15 +104,15 @@ export default class AttractionHome extends Component {
               style={gs.rowContainer}
               onPress={() =>
                 this.props.navigation.navigate(
-                  'Attraction Details'
-                  // TODO: Pass data to attraction detail
+                  'Attraction Details',
+                  this.state.popularPlace,
                 )
               }>
               {/* left section */}
               <View style={{width: 180}}>
-                <Text>Malang</Text>
+                <Text>{this.state.popularPlace.city_name}</Text>
                 <Image
-                  source={{uri: WisataPopulerData.data.image_source}}
+                  source={{uri: this.state.popularPlace.image_source}}
                   style={gs.bigImage}
                 />
               </View>
@@ -99,9 +120,9 @@ export default class AttractionHome extends Component {
               {/* Right Section */}
               <View style={{width: 180}}>
                 <Text style={gs.subCardTitle}>
-                  {WisataPopulerData.data.place_name}
+                  {this.state.popularPlace.place_name}
                 </Text>
-                <Text>{WisataPopulerData.data.description}</Text>
+                <Text>{this.state.popularPlace.description}</Text>
               </View>
             </TouchableOpacity>
           </View>
