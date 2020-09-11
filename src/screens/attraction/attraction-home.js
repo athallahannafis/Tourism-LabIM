@@ -1,60 +1,68 @@
 import React, {Component} from 'react';
-
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {View, Text, Image} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 // data
-import ExploreData from '../../data-dummy/attraction-data/explore-indonesia.json';
 import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
+import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      ATTRACTION_LIST: AllAttraction.data,
       city: [],
-      dummyRecImg: [],
+      recommendImage: [],
     };
   }
 
   // methods
   fetchCities = () => {
-    const cityList = ExploreData.data;
-    for (let i = 0; i < cityList.length; i++) {
-      this.state.city.push(cityList[i].city_name);
+    const city_num = 6;
+    for (let i = 0; i < city_num; i++) {
+      this.state.city.push(this.state.ATTRACTION_LIST[i].attraction_place);
     }
   };
 
   fetchFirstRecommendation = () => {
-    const imagePath = require('../../images/dummy-image2.jpeg');
+    const temp = this.state.ATTRACTION_LIST;
     for (let i = 0; i < 3; i++) {
-      this.state.dummyRecImg.push(imagePath);
+      const imageURL = temp[i].attraction_list[0].image_source;
+      this.state.recommendImage.push(imageURL);
     }
   };
 
   render() {
     this.fetchCities();
     this.fetchFirstRecommendation();
-
-    const cityRender = this.state.city.map((city) => {
+    let index = 0;
+    const cityRender = this.state.city.map((item) => {
+      const imageURL = this.state.ATTRACTION_LIST[index].attraction_list[1].image_source;
+      index++;
       return (
         <View style={{margin: 10}}>
           <TouchableOpacity
             style={gs.smallRectangularCard}
             onPress={() =>
-              this.props.navigation.navigate('Attraction in Destination', city)
+              this.props.navigation.navigate('Attraction in Destination', item)
             }>
-            <Text>{city}</Text>
+            <Image style={gs.smallRectangularCard} source={{uri: imageURL}}/>
+            <View style={[gs.smallRectangularCard,
+            {backgroundColor: "black", position: "absolute", opacity: 0.4}]}/>
+            <View style={[gs.smallRectangularCard, {position: "absolute"}]}>
+              <Text style={{color: "white", fontWeight: "bold"}}>{item}</Text>
+            </View>
           </TouchableOpacity>
         </View>
       );
     });
 
-    const dummyRecommendation = this.state.dummyRecImg.map((item) => {
+    const dummyRecommendation = this.state.recommendImage.map((item) => {
       return (
         <View>
-          <Image style={[gs.smallImage, {marginHorizontal: 5}]} source={item} />
+          <Image style={[gs.smallImage, {marginHorizontal: 5}]} source={{uri: item}} />
         </View>
       );
     });
@@ -75,8 +83,8 @@ export default class AttractionHome extends Component {
               style={gs.rowContainer}
               onPress={() =>
                 this.props.navigation.navigate(
-                  'Attraction Details',
-                  WisataPopulerData.data.place_name,
+                  'Attraction Details'
+                  // TODO: Pass data to attraction detail
                 )
               }>
               {/* left section */}
