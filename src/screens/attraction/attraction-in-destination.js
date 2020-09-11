@@ -7,115 +7,135 @@ import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 // data
 import attInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
+import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionInDestination extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      touristAtt: [],
-      lastTouristAtt: [],
+      ATTRACTION_PLACE: "",
+      destinationData: [],
+      lastTouristAtt: []
     };
   }
 
-  fetchAttraction = () => {
-    const attList = attInDestination.tourist_attraction;
-    for (let i = 0; i < attList.length; i++) {
-      this.state.touristAtt.push(attList[i]);
+  UNSAFE_componentWillMount = () => {
+    this.state.ATTRACTION_PLACE = this.props.route.params;
+    this.fetchAttraction(this.state.ATTRACTION_PLACE);
+  }
+
+  fetchAttraction = (attractionPlace) => {
+    for (let i = 0; i < AllAttraction.data.length; i++) {
+      if (attractionPlace === AllAttraction.data[i].attraction_place) {
+        this.state.destinationData = AllAttraction.data[i].attraction_list;
+      }
     }
-    this.state.lastTouristAtt.push(this.state.touristAtt.pop());
-  };
+    console.log(this.state.destinationData.length);
+  }
 
   render() {
-    const cityName = this.props.route.params;
-    this.fetchAttraction();
-    const objekWisata = this.state.touristAtt.map((item) => {
-      return (
-        <TouchableOpacity
-          onPress={() =>
-            this.props.navigation.navigate(
-              'Attraction Details',
-              item.place_name,
-            )
-          }>
-          <View
-            style={[
-              gs.rowContainer,
-              {paddingVertical: 20, borderBottomWidth: 1},
-            ]}>
-            {/* Left section */}
-            <View style={[gs.rowContainer, {width: 100}]}>
-              <Image source={{uri: item.image_source}} style={gs.smallImage} />
-            </View>
-            {/* Right section */}
-            <View style={[{width: 230, marginLeft: 20}]}>
-              <Text style={gs.subCardTitle}>{item.place_name}</Text>
-              <Text>{item.description}</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      );
-    });
-    const lastObjekWisata = this.state.lastTouristAtt.map((item) => {
-      return (
-        <TouchableOpacity
-          onPress={() =>
-            this.props.navigation.navigate(
-              'Attraction Details',
-              item.place_name,
-            )
-          }>
-          <View style={[gs.rowContainer, {paddingVertical: 20}]}>
-            {/* Left section */}
-            <View style={[gs.rowContainer, {width: 100}]}>
-              <Image source={{uri: item.image_source}} style={gs.smallImage} />
-            </View>
-            {/* Right section */}
-            <View style={[{width: 230, marginLeft: 20}]}>
-              <Text style={gs.subCardTitle}>{item.place_name}</Text>
-              <Text>{item.description}</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      );
+    const objekWisataRender = this.state.destinationData.map((item) => {
+      if (item.isPopular === false) {
+        const len = this.state.destinationData.length;
+        if (item === this.state.destinationData[len-1]) {
+          return (
+            <>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate(
+                    'Attraction Details'
+                    // TODO: Pass data to attraction detail
+                  )
+                }>
+                <View
+                  style={[gs.rowContainer, {paddingVertical: 20}]}>
+                  {/* Left section */}
+                  <View style={[gs.rowContainer, {width: 100}]}>
+                    <Image source={{uri: item.image_source}} style={gs.smallImage} />
+                  </View>
+                  {/* Right section */}
+                  <View style={[{width: 230, marginLeft: 20}]}>
+                    <Text style={gs.subCardTitle}>{item.place_name}</Text>
+                    <Text>{item.description}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </>
+          )
+        } else {
+          return (
+            <>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate(
+                    'Attraction Details'
+                    // TODO: Pass data to attraction detail
+                  )
+                }>
+                <View
+                  style={[gs.rowContainer, {paddingVertical: 20}]}>
+                  {/* Left section */}
+                  <View style={[gs.rowContainer, {width: 100}]}>
+                    <Image source={{uri: item.image_source}} style={gs.smallImage} />
+                  </View>
+                  {/* Right section */}
+                  <View style={[{width: 230, marginLeft: 20}]}>
+                    <Text style={gs.subCardTitle}>{item.place_name}</Text>
+                    <Text>{item.description}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <View style={{borderBottomWidth: 1}}></View>
+            </>
+          );
+        }
+      }
     });
 
-    return (
-      <ScrollView>
-        <View style={gs.mainContainer}>
+    const wisataPopulerRender = this.state.destinationData.map((item) => {
+      if (item.isPopular === true) {
+        return (
           <View style={gs.cardSection}>
-            <Text style={gs.cardTitle}>Objek wisata populer di {cityName}</Text>
+            <Text style={gs.cardTitle}>Objek wisata populer di {this.state.ATTRACTION_PLACE}</Text>
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.navigate(
-                  'Attraction Details',
-                  attInDestination.popular_place.place_name,
+                  'Attraction Details'
+                  // TODO: Pass data to attraction detail
                 )
               }>
               <View style={gs.rowContainer}>
                 {/* Left section */}
                 <View style={{width: 180}}>
-                  <Text>{attInDestination.popular_place.province}</Text>
+                  <Text>{item.city_name}</Text>
                   <Image
-                    source={{uri: attInDestination.popular_place.image_source}}
+                    source={{uri: item.image_source}}
                     style={gs.bigImage}
                   />
                 </View>
                 {/* Right Section */}
                 <View style={{width: 180}}>
                   <Text style={gs.subCardTitle}>
-                    {attInDestination.popular_place.place_name}
+                    {item.place_name}
                   </Text>
-                  <Text>{attInDestination.popular_place.description}</Text>
+                  <Text>{item.description}</Text>
                 </View>
               </View>
             </TouchableOpacity>
           </View>
+        )
+      }
+    })
+
+    return (
+      <ScrollView>
+        <View style={gs.mainContainer}>
+          {wisataPopulerRender}
 
           <View style={[gs.cardSection, {marginTop: 20}]}>
-            <Text style={gs.cardTitle}>Objek Wisata di {cityName}</Text>
+            <Text style={gs.cardTitle}>Objek Wisata di {this.state.ATTRACTION_PLACE}</Text>
             <View>
-              {objekWisata}
-              {lastObjekWisata}
+              {objekWisataRender}
             </View>
           </View>
         </View>
