@@ -11,8 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Color from '../../style/color.json';
 
 // data
-import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
-import AttractionInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
+import Attraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionDetails extends Component {
   constructor(props) {
@@ -22,32 +21,24 @@ export default class AttractionDetails extends Component {
       successPopUp: false,
       contactInfoPopUp: false,
       attractionDataSet: {},
-      attractionReviews: {},
+      attractionReviews: [],
       averageRate: 0,
+      temp: 0,
     };
   }
 
-  fetchAttractionData = (attractionName) => {
-    if (attractionName === WisataPopulerData.data.place_name) {
-      /*Jika atraksi ada di dalam data wisata populer */
-      this.state.attractionDataSet = WisataPopulerData.data;
-    } else if (
-      /*Jika atraksi merupakan popular place di data attraction in destination */
-      attractionName === AttractionInDestination.popular_place.place_name
-    ) {
-      this.state.attractionDataSet = AttractionInDestination.popular_place;
-    } else {
-      /*Jika atraksi ada di dalam data attraction in destination */
-      this.state.testMasuk = 'masukC';
-      const attList = AttractionInDestination.tourist_attraction;
-      for (let i = 0; i < attList.length; i++) {
-        if (attractionName === attList[i].place_name) {
-          this.state.attractionDataSet = attList[i];
+  fetchAttractionData = (attraction) => {
+    const attList = Attraction.data;
+    for (let i = 0; i < attList.length; i++) {
+      for (let j = 0; j < attList[i].attraction_list.length; j++) {
+        if (attraction == attList[i].attraction_list[j]) {
+          this.state.attractionDataSet = attList[i].attraction_list[j];
         }
       }
     }
     this.state.attractionReviews = this.state.attractionDataSet.attraction_reviews;
   };
+
   renderFloatingButton() {
     if (this.state.attractionDataSet.booking_available) {
       return (
@@ -116,7 +107,8 @@ export default class AttractionDetails extends Component {
   }
 
   countAverage = () => {
-    let rateSum = 0, divisor;
+    let rateSum = 0,
+      divisor;
     divisor = this.state.attractionReviews.length;
     for (let i = 0; i < this.state.attractionReviews.length; i++) {
       rateSum += this.state.attractionReviews[i].rate;
@@ -124,11 +116,11 @@ export default class AttractionDetails extends Component {
     const result = (rateSum / divisor).toFixed(2);
     console.log(result);
     this.state.averageRate = result;
-  }
+  };
 
   render() {
-    const attractionName = this.props.route.params;
-    this.fetchAttractionData(attractionName);
+    const attraction = this.props.route.params;
+    this.fetchAttractionData(attraction);
     this.countAverage();
     const attrFacilities = this.state.attractionDataSet.detail.facilities.map(
       (item) => {
@@ -147,7 +139,7 @@ export default class AttractionDetails extends Component {
       },
     );
     return (
-      <View style={[gs.mainContainer]}>
+      <View style={[ats.container]}>
         <ScrollView>
           <View style={ats.mainContainer}>
             <View style={ats.mainImageContainer}>
@@ -164,11 +156,15 @@ export default class AttractionDetails extends Component {
                 </View>
               </View>
             </View>
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <View style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
-                    <Text style={ats.cardTitleText}>
+                    <Text style={gs.cardTitle}>
                       {this.state.attractionDataSet.place_name}
                     </Text>
                     <Text style={ats.cardSmallText}>
@@ -177,29 +173,29 @@ export default class AttractionDetails extends Component {
                     </Text>
                     <View style={ats.starRatingView}>
                       <StarRating
-                      disabled={true}
-                      maxStars={5}
-                      rating={this.state.averageRate}
-                      fullStarColor={Color.color6}
-                      starSize={17}
+                        disabled={true}
+                        maxStars={5}
+                        rating={this.state.averageRate}
+                        fullStarColor={Color.color6}
+                        starSize={17}
                       />
-                      <Text style={[
-                      ats.textSmall,
-                      {color:Color.color6,
-                      marginLeft: 10}]}>
+                      <Text
+                        style={[
+                          ats.textSmall,
+                          {color: Color.color6, marginLeft: 10},
+                        ]}>
                         {this.state.averageRate}
                       </Text>
                     </View>
                     <TouchableOpacity
-                    style={ats.reviewBtn}
+                      style={ats.reviewBtn}
                       onPress={() =>
                         this.props.navigation.navigate(
                           'Attraction Reviews',
                           this.state.attractionDataSet,
                         )
                       }>
-                      <Text style={[ats.cardMediumText, 
-                      {fontWeight: "bold"}]}>
+                      <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                         ({this.state.attractionReviews.length} reviews)
                       </Text>
                     </TouchableOpacity>
@@ -222,7 +218,7 @@ export default class AttractionDetails extends Component {
 
               <View style={{padding: 10}}></View>
               <View style={gs.cardSection}>
-                <Text style={ats.cardTitleText}>Detail Objek Wisata</Text>
+                <Text style={gs.cardTitle}>Detail Objek Wisata</Text>
                 <View style={ats.rowFlexStart}>
                   {/*kolom kiri*/}
                   <View style={ats.columnTwo}>
