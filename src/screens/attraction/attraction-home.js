@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
 // style
 import {globalStyling as gs} from '../../style/global-styling';
+import {attractionStyling as ats} from '../../style/attraction-styling';
 import {View, Text, Image} from 'react-native';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native-gesture-handler';
+import {SearchBar} from 'react-native-elements';
+import Color from '../../style/color.json';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // data
 import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
@@ -16,6 +24,7 @@ export default class AttractionHome extends Component {
       city: [],
       recommendImage: [],
       popularPlace: {},
+      search: '',
     };
   }
 
@@ -46,6 +55,10 @@ export default class AttractionHome extends Component {
     }
   };
 
+  handleSearch = (search) => {
+    this.setState({search: search});
+  };
+
   render() {
     this.fetchCities();
     this.fetchFirstRecommendation();
@@ -55,6 +68,7 @@ export default class AttractionHome extends Component {
       const imageURL = this.state.ATTRACTION_LIST[index].attraction_list[1]
         .image_source;
       index++;
+      console.log(imageURL);
       return (
         <View style={{margin: 10}}>
           <TouchableOpacity
@@ -91,6 +105,53 @@ export default class AttractionHome extends Component {
     return (
       <ScrollView>
         <View style={[gs.mainContainer]}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              paddingBottom: 20,
+            }}>
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.navigate(
+                  'Attraction Search Result',
+                  this.state.search,
+                )
+              }>
+              <Icon
+                style={{marginRight: 5}}
+                name={'search'}
+                size={18}
+                color={Color.color2}
+              />
+            </TouchableOpacity>
+
+            <View
+              style={{
+                width: '80%',
+                height: 25,
+                borderRadius: 5,
+                backgroundColor: Color.color3,
+                shadowColor: 'black',
+                shadowOpacity: 1.0,
+                elevation: 8,
+                marginLeft: 10,
+              }}>
+              <TextInput
+                style={{
+                  fontSize: 12,
+                  color: 'black',
+                  textAlign: 'left',
+                  textAlignVertical: 'center',
+                  paddingBottom: 2,
+                  paddingTop: 2,
+                  paddingLeft: 5,
+                }}
+                placeholder={'Search...'}
+                onChangeText={this.handleSearch}
+              />
+            </View>
+          </View>
           {/* Explore Indonesia */}
           <View style={[gs.cardSection]}>
             <Text style={gs.cardTitle}>Explore Indonesia</Text>
