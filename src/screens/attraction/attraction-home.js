@@ -29,6 +29,12 @@ export default class AttractionHome extends Component {
   }
 
   // methods
+  UNSAFE_componentWillMount = () => {
+    this.fetchCities();
+    this.fetchFirstRecommendation();
+    this.fetchPopularPlace();
+  };
+
   fetchCities = () => {
     const city_num = 6;
     for (let i = 0; i < city_num; i++) {
@@ -55,20 +61,23 @@ export default class AttractionHome extends Component {
     }
   };
 
-  handleSearch = (search) => {
+  changeText = (search) => {
     this.setState({search: search});
   };
 
+  handleSearch = (e) => {
+    this.props.navigation.navigate(
+      'Attraction Search Results',
+      e.nativeEvent.text,
+    );
+  };
+
   render() {
-    this.fetchCities();
-    this.fetchFirstRecommendation();
-    this.fetchPopularPlace();
     let index = 0;
     const cityRender = this.state.city.map((item) => {
       const imageURL = this.state.ATTRACTION_LIST[index].attraction_list[1]
         .image_source;
       index++;
-      console.log(imageURL);
       return (
         <View style={{margin: 10}}>
           <TouchableOpacity
@@ -114,7 +123,7 @@ export default class AttractionHome extends Component {
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.navigate(
-                  'Attraction Search Result',
+                  'Attraction Search Results',
                   this.state.search,
                 )
               }>
@@ -148,7 +157,8 @@ export default class AttractionHome extends Component {
                   paddingLeft: 5,
                 }}
                 placeholder={'Search...'}
-                onChangeText={this.handleSearch}
+                onChangeText={this.changeText}
+                onEndEditing={this.handleSearch}
               />
             </View>
           </View>

@@ -16,20 +16,22 @@ export default class AttractionInDestination extends Component {
       searchedPlace: '',
       destinationData: [],
       lastTouristAtt: [],
+      empty: false,
     };
   }
 
   UNSAFE_componentWillMount = () => {
-    this.state.searchedPlace = this.props.route.params;
+    this.state.searchedPlace = this.props.route.params.toLowerCase();
     this.fetchAttraction(this.state.searchedPlace);
   };
 
   fetchAttraction = (searchedPlace) => {
+    console.log(searchedPlace);
     let the_data = AllAttraction.data;
     for (let i = 0; i < the_data.length; i++) {
       attr_list = the_data[i].attraction_list;
       //kalo keyword bagian dari nama kota misal "Jakarta" atau "Jak"
-      if (searchedPlace in the_data[i].attraction_place) {
+      if (the_data[i].attraction_place.toLowerCase().includes(searchedPlace)) {
         for (let j = 0; j < attr_list.length; j++) {
           this.state.destinationData.push(attr_list[j]);
         }
@@ -37,10 +39,11 @@ export default class AttractionInDestination extends Component {
       //kalo keyword bagian dari nama tempat/destinasi misal "Monas"
       for (let l = 0; l < attr_list.length; l++) {
         if (
-          (searchedPlace in attr_list[l].place_name) |
-          (searchedPlace in attr_list[l].city_name)
+          attr_list[l].place_name.toLowerCase().includes(searchedPlace) |
+          attr_list[l].city_name.toLowerCase().includes(searchedPlace)
         ) {
-          if (!(attr_list[l] in this.state.destinationData)) {
+          console.log('okeeii');
+          if (!this.state.destinationData.includes(attr_list[l])) {
             this.state.destinationData.push(attr_list[l]);
           }
         }
@@ -102,6 +105,8 @@ export default class AttractionInDestination extends Component {
             </>
           );
         }
+      } else {
+        return null;
       }
     });
 
@@ -139,12 +144,13 @@ export default class AttractionInDestination extends Component {
       <ScrollView>
         <View style={gs.mainContainer}>
           {wisataPopulerRender}
-
-          <View style={[gs.cardSection, {marginTop: 20}]}>
-            <Text style={gs.cardTitle}>
-              Objek Wisata terkait {this.state.searchedPlace}
-            </Text>
-            <View>{objekWisataRender}</View>
+          <View>
+            <View style={[gs.cardSection, {marginTop: 20}]}>
+              <Text style={gs.cardTitle}>
+                Objek Wisata terkait {this.state.searchedPlace}
+              </Text>
+              <View>{objekWisataRender}</View>
+            </View>
           </View>
         </View>
       </ScrollView>
