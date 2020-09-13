@@ -25,6 +25,7 @@
     "react-native-action-button": "^2.8.5",
     "react-native-floating-action": "^1.21.0",
     "react-native-gesture-handler": "^1.7.0",
+    "react-native-maps": "^0.27.1",
     "react-native-modal-datetime-picker": "^8.9.3",
     "react-native-safe-area-context": "^3.1.6",
     "react-native-screens": "^2.10.1",
