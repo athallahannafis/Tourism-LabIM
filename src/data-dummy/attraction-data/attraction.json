@@ -16,6 +16,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -111,6 +118,13 @@
             "https://1.bp.blogspot.com/-ak8r4HDWcK8/XlARnhxjcrI/AAAAAAAACpQ/hamG7DBX7NQamAIBywmLzlgQ6MzSFpzqwCLcBGAsYHQ/s1600/D395886D-F968-47BD-962C-9854EB284B36.jpeg",
             "https://travelspromo.com/wp-content/uploads/2018/05/Air-Mancur-Monas-Monumen-Nasional.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 04.00 PM",
@@ -206,6 +220,13 @@
             "https://live.staticflickr.com/5060/5555815688_81674188cb_b.jpg",
             "https://img.beritasatu.com/cache/investor/798x449-2/1561356001.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": true,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 09.00 PM",
@@ -301,6 +322,13 @@
             "https://cdn-image.hipwee.com/wp-content/uploads/2018/07/hipwee-31326588_226921401398455_801165757533650944_n-750x422.jpg",
             "https://awsimages.detik.net.id/community/media/visual/2018/07/02/181b0482-3d81-4859-93a1-a6141e79e81f_169.jpeg?w=780&q=90"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "08.00 AM - 06.00 PM",
@@ -402,6 +430,13 @@
             "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
             "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
@@ -497,6 +532,13 @@
             "https://www.malang-guidance.com/wp-content/uploads/2012/04/Batu-Night-Spectacular-BNS.jpg",
             "https://i2.wp.com/macamtiket.com/wp-content/uploads/2017/12/harga-tiket-masuk-bns-macamtiket.jpg?w=516&ssl=1"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "03.00 PM - 11.00 PM",
@@ -592,6 +634,13 @@
             "https://www.mldspot.com/sites/default/files/content/Review%20Museum%20Angkut%20Malang%20Tiket1.jpg",
             "https://www.mldspot.com/sites/default/files/content/Review-Museum-Angkut-Malang-Tiket2.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
@@ -687,6 +736,13 @@
             "https://www.malang-guidance.com/wp-content/uploads/2012/02/Taman-Rekreasi-Sengkaling.jpg",
             "https://www.hargatiket.net/wp-content/uploads/2019/01/gambar-wahana-sengkaling.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
@@ -788,6 +844,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -883,6 +946,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -984,6 +1054,13 @@
             "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
             "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
@@ -1079,6 +1156,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -1180,6 +1264,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -1275,6 +1366,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -1376,6 +1474,13 @@
             "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
             "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
@@ -1471,6 +1576,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",

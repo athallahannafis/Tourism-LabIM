@@ -98,6 +98,11 @@ export const attractionStyling = StyleSheet.create({
     flex: 1,
     flexWrap: 'wrap',
   },
+  checkListContainer: {
+    justifyContent: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
   columnInCard: {
     width: '70%',
     flexDirection: 'column',
@@ -227,6 +232,17 @@ export const attractionStyling = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
   },
+  modal4Container: {
+    backgroundColor: 'white',
+    width: 200,
+    borderRadius: 10,
+    borderColor: Color.color6,
+    borderWidth: 2,
+    padding: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlignVertical: 'center',
+  },
   rowFlexStart: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
@@ -340,7 +356,7 @@ export const attractionStyling = StyleSheet.create({
     marginTop: 5,
   },
   searchBox: {
-    width: '80%',
+    width: '70%',
     height: 25,
     borderRadius: 5,
     backgroundColor: Color.color3,
@@ -348,10 +364,12 @@ export const attractionStyling = StyleSheet.create({
     shadowOpacity: 1.0,
     elevation: 8,
     marginLeft: 10,
+    marginRight: 10,
   },
   searchBoxContainer: {
+    width: Dimensions.get('window').width - 5,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingBottom: 20,
   },
   searchBoxTextInput: {
