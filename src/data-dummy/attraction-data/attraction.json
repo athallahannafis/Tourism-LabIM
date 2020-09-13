@@ -2,6 +2,7 @@
   "data": [
     {
       "attraction_place": "Jakarta",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -387,6 +388,7 @@
     },
     {
       "attraction_place": "Malang",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -772,6 +774,7 @@
     },
     {
       "attraction_place": "Bandung",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -967,6 +970,7 @@
     },
     {
       "attraction_place": "Sulawesi",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -1162,6 +1166,7 @@
     },
     {
       "attraction_place": "Lombok",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -1357,6 +1362,7 @@
     },
     {
       "attraction_place": "Sumatra",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,

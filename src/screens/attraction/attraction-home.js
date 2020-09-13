@@ -8,12 +8,10 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native-gesture-handler';
-import {SearchBar} from 'react-native-elements';
 import Color from '../../style/color.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 // data
-import WisataPopulerData from '../../data-dummy/attraction-data/wisata-populer.json';
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionHome extends Component {
@@ -66,6 +64,8 @@ export default class AttractionHome extends Component {
   };
 
   handleSearch = (e) => {
+    this.state.search.clear();
+    this.setState({search: ''});
     this.props.navigation.navigate(
       'Attraction Search Results',
       e.nativeEvent.text,
@@ -114,12 +114,7 @@ export default class AttractionHome extends Component {
     return (
       <ScrollView>
         <View style={[gs.mainContainer]}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'flex-start',
-              paddingBottom: 20,
-            }}>
+          <View style={ats.searchBoxContainer}>
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.navigate(
@@ -135,30 +130,16 @@ export default class AttractionHome extends Component {
               />
             </TouchableOpacity>
 
-            <View
-              style={{
-                width: '80%',
-                height: 25,
-                borderRadius: 5,
-                backgroundColor: Color.color3,
-                shadowColor: 'black',
-                shadowOpacity: 1.0,
-                elevation: 8,
-                marginLeft: 10,
-              }}>
+            <View style={ats.searchBox}>
               <TextInput
-                style={{
-                  fontSize: 12,
-                  color: 'black',
-                  textAlign: 'left',
-                  textAlignVertical: 'center',
-                  paddingBottom: 2,
-                  paddingTop: 2,
-                  paddingLeft: 5,
-                }}
+                autoCorrect={false}
+                style={ats.searchBoxTextInput}
                 placeholder={'Search...'}
                 onChangeText={this.changeText}
                 onEndEditing={this.handleSearch}
+                ref={(input) => {
+                  this.state.search = input;
+                }}
               />
             </View>
           </View>
