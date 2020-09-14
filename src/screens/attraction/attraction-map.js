@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
-import MapView from 'react-native-maps';
+import { View, Text, StyleSheet } from 'react-native';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 // style
 import { globalStyling as gs } from '../../style/global-styling';
@@ -16,20 +16,24 @@ export default class AttractionMap extends Component {
 
   render () {
     return (
-      <View style={gs.mainContainer}>
-        <Text>Screen for map</Text>
+      <View style={{
+        flex: 0,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+        <Text>Screen for map Test</Text>
         <View style={{
-          width: 400,
-          height: 400,
+          minWidth: 200,
+          minHeight: 200,
         }}>
           <MapView
-          // provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-          region={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.0121
-          }}>
+          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+          style={{
+            width: 300,
+            height: 300,
+          }}
+          >
           </MapView>
         </View>
       </View>
