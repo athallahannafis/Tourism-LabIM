@@ -10,6 +10,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
       <meta-data
       android:name="com.google.android.geo.API_KEY"
       android:value="AIzaSyBIyTdeJLCI9YdWSFG2cV6C8z7SUQM-eOI"/>
