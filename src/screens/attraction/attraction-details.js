@@ -161,7 +161,9 @@ export default class AttractionDetails extends Component {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <View style={gs.cardSection}>
+              <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Attraction Map")}
+              style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
                     <Text style={gs.cardTitle}>
@@ -214,7 +216,7 @@ export default class AttractionDetails extends Component {
                 <Text style={ats.cardMediumText}>
                   {this.state.attractionDataSet.description}
                 </Text>
-              </View>
+              </TouchableOpacity>
 
               <View style={{padding: 10}}></View>
               <View style={gs.cardSection}>

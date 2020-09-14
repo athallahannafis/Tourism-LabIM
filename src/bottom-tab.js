@@ -16,6 +16,7 @@ import TicketReservation from './screens/ticket-reservation/reserve-ticket';
 import TicketPayment from './screens/ticket-reservation/payment-ticket';
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
+import AttractionMap from './screens/attraction/attraction-map';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -104,6 +105,10 @@ export default class BottomTab extends Component {
         <attractionStack.Screen
           component={TicketPayment}
           name="Ticket Payment"
+        />
+        <attractionStack.Screen
+          component = {AttractionMap}
+          name="Attraction Map"
         />
       </attractionStack.Navigator>
     );
