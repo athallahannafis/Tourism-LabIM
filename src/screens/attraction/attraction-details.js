@@ -162,7 +162,8 @@ export default class AttractionDetails extends Component {
                 alignItems: 'center',
               }}>
               <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Attraction Map")}
+              onPress={() => this.props.navigation.navigate(
+                "Attraction Map", this.state.attractionDataSet)}
               style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
