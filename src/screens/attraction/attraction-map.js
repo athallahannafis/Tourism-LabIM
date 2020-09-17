@@ -63,10 +63,6 @@ export default class AttractionMap extends Component {
   }
 
   render () {
-    console.log("self_lat: " + this.state.self_latitude);
-    console.log("self_long: " + this.state.self_longitude);
-    console.log("place_lat: " + this.state.place_latitude);
-    console.log("place_long: " + this.state.place_longitude);
     return (
       <View style={ls.mainContainer}>
 
