@@ -41,7 +41,8 @@ export default class AttractionMap extends Component {
       (error) => {
         console.log(error);
       },
-      {enableHighAccuracy: Platform.OS == "android", timeout: 10000, maximumAge: 5000}
+      {enableHighAccuracy: Platform.OS == "android",
+      timeout: 100000, maximumAge: 100000}
     )
   }
 
@@ -96,8 +97,8 @@ export default class AttractionMap extends Component {
           region={{
             latitude: this.state.current_latitude,
             longitude: this.state.current_longitude,
-            latitudeDelta: 0.5,
-            longitudeDelta: 0.5
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
           }}
           showsMyLocationButton={true}
           style={ls.map}>
