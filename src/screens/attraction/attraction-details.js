@@ -161,10 +161,7 @@ export default class AttractionDetails extends Component {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <TouchableOpacity
-              onPress={() => this.props.navigation.navigate(
-                "Attraction Map", this.state.attractionDataSet)}
-              style={gs.cardSection}>
+              <View style={gs.cardSection}>
                 <View style={ats.rowSpaceBetweenInCard}>
                   <View style={ats.columnInCard}>
                     <Text style={gs.cardTitle}>
@@ -190,18 +187,32 @@ export default class AttractionDetails extends Component {
                         {this.state.averageRate}
                       </Text>
                     </View>
-                    <TouchableOpacity
-                      style={ats.reviewBtn}
-                      onPress={() =>
-                        this.props.navigation.navigate(
-                          'Attraction Reviews',
-                          this.state.attractionDataSet,
-                        )
-                      }>
-                      <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
-                        ({this.state.attractionReviews.length} reviews)
-                      </Text>
-                    </TouchableOpacity>
+                    
+                    <View style={[ats.rowContainer, {
+                      width: 200, marginTop: 5}]}>
+                      <TouchableOpacity
+                        style={ats.reviewBtn}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Attraction Reviews', this.state.attractionDataSet,
+                          )
+                        }>
+                        <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                          ({this.state.attractionReviews.length} reviews)
+                        </Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={ats.reviewBtn}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Attraction Map', this.state.attractionDataSet)
+                        }>
+                        <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                          Show on map
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
+
                   </View>
                   <TouchableOpacity
                     style={ats.btnAddtoItinerary}
@@ -217,7 +228,7 @@ export default class AttractionDetails extends Component {
                 <Text style={ats.cardMediumText}>
                   {this.state.attractionDataSet.description}
                 </Text>
-              </TouchableOpacity>
+              </View>
 
               <View style={{padding: 10}}></View>
               <View style={gs.cardSection}>

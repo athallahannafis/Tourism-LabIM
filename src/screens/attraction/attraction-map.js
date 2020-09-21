@@ -24,7 +24,8 @@ export default class AttractionMap extends Component {
       current_delta: 0.1,
       showMyLoc: {
         opacity: 0.5,
-        disabled: true
+        disabled: true,
+        buttonMsg: "Getting your location..."
       },
       destination: props.route.params,
     });
@@ -44,7 +45,8 @@ export default class AttractionMap extends Component {
           self_longitude: position.coords.longitude,
           showMyLoc: {
             opacity: 1,
-            disabled: false
+            disabled: false,
+            buttonMsg: "Go to my location"
           }
         })
       },
@@ -138,14 +140,16 @@ export default class AttractionMap extends Component {
             disabled={this.state.showMyLoc.disabled}
             style={[ls.locationButton, {opacity: this.state.showMyLoc.opacity}]}
             onPress={this.moveToMyLocation}>
-              <Text style={{fontWeight: "bold", color: "white"}}>
-                Go to my location
+              <Text style={{fontWeight: "bold", color: "white", 
+              width: 135, textAlign: "center"}}>
+                {this.state.showMyLoc.buttonMsg}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
             style={ls.locationButton}
             onPress={this.moveToPlaceLocation}>
-              <Text style={{fontWeight: "bold", color: "white"}}>
+              <Text style={{fontWeight: "bold", color: "white", 
+              width: 135, textAlign: "center"}}>
                 Go to place location
               </Text>
             </TouchableOpacity>
