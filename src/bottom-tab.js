@@ -16,11 +16,14 @@ import TicketReservation from './screens/ticket-reservation/reserve-ticket';
 import TicketPayment from './screens/ticket-reservation/payment-ticket';
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
+// Accomodation
+import AccomodationHome from './screens/accomodation/accomodation-home';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
 const profileStack = createStackNavigator();
 const attractionStack = createStackNavigator();
+const accomodationStack = createStackNavigator();
 
 export default class BottomTab extends Component {
   constructor(props) {
@@ -109,6 +112,21 @@ export default class BottomTab extends Component {
     );
   };
 
+  accomodationStackScreen = (props) => {
+    return (
+      <accomodationStack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: '#2E99A3'},
+        headerTintColor: 'white',
+      }}>
+        <accomodationStack.Screen
+          component={AccomodationHome}
+          name="Accomodation"
+        />
+      </accomodationStack.Navigator>
+    )
+  }
+
   render() {
     return (
       <bottomTab.Navigator
@@ -142,7 +160,7 @@ export default class BottomTab extends Component {
         />
 
         <bottomTab.Screen
-          component={this.testScreenStack}
+          component={this.accomodationStackScreen}
           options={{
             tabBarIcon: () => {
               return (
