@@ -20,6 +20,12 @@ export default class AttractionMap extends Component {
       self_longitude: 0,
       place_latitude: 0,
       place_longitude: 0,
+      current_delta: 0.1,
+      current_delta: 0.1,
+      showMyLoc: {
+        opacity: 0.5,
+        disabled: true
+      },
       destination: props.route.params,
     });
   }
@@ -36,6 +42,10 @@ export default class AttractionMap extends Component {
         this.setState({
           self_latitude: position.coords.latitude,
           self_longitude: position.coords.longitude,
+          showMyLoc: {
+            opacity: 1,
+            disabled: false
+          }
         })
       },
       (error) => {
@@ -48,6 +58,7 @@ export default class AttractionMap extends Component {
 
   getPlaceLocation = () => {
     const temp = this.state.destination;
+
     this.setState({
       place_latitude: temp.coordinates.latitude,
       place_longitude: temp.coordinates.longitude,
@@ -73,9 +84,10 @@ export default class AttractionMap extends Component {
   }
 
   render () {
+    console.log(`Self coordinate: (${this.state.self_latitude}, ${this.state.self_longitude})`);
+    console.log(`Place coordinate: (${this.state.place_longitude}, ${this.state.place_longitude})`)
     return (
       <View style={ls.mainContainer}>
-
         {/* Map */}
         <View style={ls.mapContainer}>
           <MapView
@@ -84,8 +96,8 @@ export default class AttractionMap extends Component {
           region={{
             latitude: this.state.current_latitude,
             longitude: this.state.current_longitude,
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05
+            latitudeDelta: 1,
+            longitudeDelta: 1
           }}
           showsMyLocationButton={true}
           style={ls.map}>
@@ -123,7 +135,8 @@ export default class AttractionMap extends Component {
             justifyContent: "center",
           }}>
             <TouchableOpacity
-            style={ls.locationButton}
+            disabled={this.state.showMyLoc.disabled}
+            style={[ls.locationButton, {opacity: this.state.showMyLoc.opacity}]}
             onPress={this.moveToMyLocation}>
               <Text style={{fontWeight: "bold", color: "white"}}>
                 Go to my location
