@@ -42,7 +42,7 @@ export default class AttractionMap extends Component {
         console.log(error);
       },
       {enableHighAccuracy: Platform.OS == "android",
-      timeout: 100000, maximumAge: 100000}
+      timeout: 100000, maximumAge: 1000}
     )
   }
 
@@ -61,33 +61,20 @@ export default class AttractionMap extends Component {
       current_latitude: this.state.self_latitude,
       current_longitude: this.state.self_longitude
     })
+    console.log(this.state.current_latitude);
+    console.log(this.state.current_longitude);
+  }
+
+  moveToPlaceLocation = () => {
+    this.setState({
+      current_latitude: this.state.place_latitude,
+      current_longitude: this.state.place_longitude
+    });
   }
 
   render () {
     return (
       <View style={ls.mainContainer}>
-
-        <View style={ls.searchBarContainer}>
-          <View style={ls.columnContainer}>
-            <Text style={{marginBottom: 7}}>Dari:</Text>
-            <Text>Ke:</Text>
-          </View>
-          <View style={[ls.columnContainer, {marginLeft: 20}]}>
-            <View style={[ls.bubble, {marginBottom: 7}]}>
-              <Text>Lokasi anda</Text>
-            </View>
-            <View style={[ls.bubble]}>
-              <Text>{this.state.destination.place_name}</Text>
-            </View>
-          </View>
-        </View>
-
-        <View>
-          <TouchableOpacity
-          onPress={this.moveToMyLocation}>
-            <Text>Go to my location</Text>
-          </TouchableOpacity>
-        </View>
 
         {/* Map */}
         <View style={ls.mapContainer}>
@@ -97,8 +84,8 @@ export default class AttractionMap extends Component {
           region={{
             latitude: this.state.current_latitude,
             longitude: this.state.current_longitude,
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01
+            latitudeDelta: 0.05,
+            longitudeDelta: 0.05
           }}
           showsMyLocationButton={true}
           style={ls.map}>
@@ -112,19 +99,59 @@ export default class AttractionMap extends Component {
           </MapView>
         </View>
 
+        <View style={ls.upperSectionContainer}>
+          <View style={ls.searchBarContainer}>
+            <View style={ls.columnContainer}>
+              <Text style={{marginBottom: 15}}>Dari:</Text>
+              <Text>Ke:</Text>
+            </View>
+            <View style={[ls.columnContainer, {marginLeft: 20}]}>
+              <View style={[ls.bubble, {marginBottom: 7}]}>
+                <Text>Lokasi anda</Text>
+              </View>
+              <View style={[ls.bubble]}>
+                <Text>{this.state.destination.place_name}</Text>
+              </View>
+            </View>
+          </View>
+
+          <View
+          style={{
+            flex: 0,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+            <TouchableOpacity
+            style={ls.locationButton}
+            onPress={this.moveToMyLocation}>
+              <Text style={{fontWeight: "bold", color: "white"}}>
+                Go to my location
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            style={ls.locationButton}
+            onPress={this.moveToPlaceLocation}>
+              <Text style={{fontWeight: "bold", color: "white"}}>
+                Go to place location
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     )
   }
 }
 const fullHeight = 100;
-const mapHeight = 80;
+const mapHeight = 75;
 const searchBarHeight = fullHeight - mapHeight;
 
 const ls = StyleSheet.create({
   mainContainer: {
     flex: 1,
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#fff"
   },
   columnContainer: {
     flex: 0,
@@ -143,6 +170,16 @@ const ls = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    paddingVertical: 0,
+    // height: searchBarHeight + "%",
+    width: "100%",
+    backgroundColor: "#fff",
+  },
+  upperSectionContainer: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: "5%",
     height: searchBarHeight + "%",
     width: "100%",
@@ -157,11 +194,21 @@ const ls = StyleSheet.create({
     width: "100%",
   },
   bubble: {
-    padding: 2,
-    paddingLeft: 5,
+    paddingHorizontal: 5,
+    paddingVertical: 5,
     borderRadius: 5,
     width: 200,
     backgroundColor: Color.color1,
-    
-  }
+  },
+  locationButton: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Color.color2,
+    paddingVertical: 13,
+    paddingHorizontal: 10,
+    marginHorizontal: 3,
+    borderRadius: 1000,
+  },
 })
