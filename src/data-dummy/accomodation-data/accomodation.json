@@ -4,6 +4,159 @@
       "accomodation_name": "HARRIS Virtu Malang",
       "description": "Hotel bergaya modern dengan fasilitas lengkap serta lokasi sangat strategis di pusat kota Malang.",
       "rate": 4.5,
+      "details": {
+        "price": 499.000,
+        "facility": [
+          "AC", "Kolam Renang", "Parkiran",
+          "Restoran", "Ruang Meeting", "Elevator"
+        ],
+        "lokasi": {
+          "latitude": -6.387412,
+          "longitude": 106.827118
+        },
+        "checkin": "mulai 14:00",
+        "checkout": "sebelum 12:00"
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ]
+    },
+    {
+      "accomodation_name": "The Palace Batu",
+      "description": "Hotel area bukit dengan pemandangan menakjubkan kala matahari terbenam.",
+      "rate": 4,
+      "details": {
+        "price": 499.000,
+        "facility": [
+          "AC", "Kolam Renang", "Parkiran",
+          "Restoran", "Ruang Meeting", "Elevator"
+        ],
+        "lokasi": {
+          "latitude": -6.387412,
+          "longitude": 106.827118
+        },
+        "checkin": "mulai 14:00",
+        "checkout": "sebelum 12:00"
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ]
+    },
+    {
+      "accomodation_name": "Santika Margona Raya",
+      "description": "Hotel mewah berlokasi sangat strategis di jalan Margonda Raya.",
+      "rate": 4.5,
+      "details": {
+        "price": 499.000,
+        "facility": [
+          "AC", "Kolam Renang", "Parkiran",
+          "Restoran", "Ruang Meeting", "Elevator"
+        ],
+        "lokasi": {
+          "latitude": -6.387412,
+          "longitude": 106.827118
+        },
+        "checkin": "mulai 14:00",
+        "checkout": "sebelum 12:00"
+      },
       "reviews": [
         {
           "username": "Sterling",
