@@ -243,6 +243,9 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
     textAlignVertical: 'center',
   },
+  picker: {
+    width: '50%',
+  },
   rowFlexStart: {
     flexDirection: 'row',
     justifyContent: 'flex-start',

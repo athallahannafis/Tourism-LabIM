@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Modal} from 'react-native';
+import {View, Text, Image, Modal, TouchableOpacity} from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {profilStyling as ps} from '../../style/profil-styling';
-import {
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native-gesture-handler';
+import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CheckBox from '@react-native-community/checkbox';
@@ -17,7 +13,7 @@ import CheckBox from '@react-native-community/checkbox';
 // data
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
-export default class AttractionInDestination extends Component {
+export default class AttractionSearchFilter extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +25,7 @@ export default class AttractionInDestination extends Component {
       empty: false,
       filter: false,
       filterPopUp: false,
+      isLoading: true,
       wisata_alam: false,
       tantangan: false,
       budaya_lokal: false,
@@ -42,6 +39,17 @@ export default class AttractionInDestination extends Component {
     let searchedLowerCase = this.state.searchedPlace.toLowerCase();
     this.fetchAttraction(searchedLowerCase);
   };
+
+  componentDidMount() {
+    this.setState({
+      isLoading: false,
+      wisata_alam: false,
+      tantangan: false,
+      budaya_lokal: false,
+      kuliner: false,
+      perbelanjaan: false,
+    });
+  }
 
   fetchAttraction = (searchedPlace) => {
     console.log(searchedPlace);
@@ -179,6 +187,12 @@ export default class AttractionInDestination extends Component {
         }
       }
     }
+  };
+
+  saveSearchFilter = () => {
+    console.log('pressed');
+    this.state.filterPopUp = false;
+    this.UNSAFE_componentWillMount();
   };
 
   render() {
@@ -414,11 +428,7 @@ export default class AttractionInDestination extends Component {
         <Modal transparent={true} visible={this.state.filterPopUp}>
           <View style={ats.modalOverlay}>
             <View style={ats.modal4Container}>
-              <View
-                style={{
-                  alignItems: 'flex-end',
-                  width: '100%',
-                }}>
+              <View style={gs.closeIcon}>
                 <TouchableOpacity
                   onPress={() => this.setState({filterPopUp: false})}>
                   <Icon
@@ -479,6 +489,11 @@ export default class AttractionInDestination extends Component {
                   />
                   <Text style={ps.fontCheckList}>Perbelanjaan</Text>
                 </View>
+                <TouchableOpacity
+                  style={[ats.btn]}
+                  onPress={() => this.componentDidMount}>
+                  <Text style={ats.btnText}> Tutup </Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
