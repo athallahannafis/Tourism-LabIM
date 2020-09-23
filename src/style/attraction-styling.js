@@ -334,9 +334,9 @@ export const attractionStyling = StyleSheet.create({
     backgroundColor: Color.color1,
     maxWidth: 100,
     borderRadius: 1000,
-    paddingVertical: 3,
-    paddingHorizontal: 2,
-    marginTop: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginHorizontal: 4
   },
   starRatingView: {
     flex: 0,
@@ -345,4 +345,9 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
   },
+  rowContainer: {
+    flex: 0,
+    flexDirection: "row",
+    alignItems: "center",
+  }
 });
