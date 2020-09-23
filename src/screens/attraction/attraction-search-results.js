@@ -491,7 +491,7 @@ export default class AttractionSearchFilter extends Component {
                 </View>
                 <TouchableOpacity
                   style={[ats.btn]}
-                  onPress={() => this.componentDidMount}>
+                  onPress={() => this.setState({filterPopUp: false})}>
                   <Text style={ats.btnText}> Tutup </Text>
                 </TouchableOpacity>
               </View>
