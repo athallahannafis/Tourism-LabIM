@@ -3,7 +3,14 @@
     {
       "accomodation_name": "HARRIS Virtu Malang",
       "description": "Hotel bergaya modern dengan fasilitas lengkap serta lokasi sangat strategis di pusat kota Malang.",
-      "rate": 4.5,
+      "images_source": [
+        "https://origin.pegipegi.com/jalan/images/pict1L/Y5/Y957075/Y957075018.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075011.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075010.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075014.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict1L/Y5/Y957075/Y957075018.jpg"
+      ],
+      "rate": 4.3,
       "details": {
         "price": 499.000,
         "facility": [
@@ -71,9 +78,16 @@
       ]
     },
     {
-      "accomodation_name": "The Palace Batu",
+      "accomodation_name": "The Batu Hotel & Vilas",
       "description": "Hotel area bukit dengan pemandangan menakjubkan kala matahari terbenam.",
-      "rate": 4,
+      "images_source": [
+        "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+        "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVDqeIif5q17y9TkJGSD8uN9XYUaHmPdlql+KX4YsmUxCP+6q/7XgJKHx2en4/0V1cRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+        "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUKkjZLIhiPE2cOLGTLGN1hb8LOLrsjtD4vDiLmWNsrNWSH39geaqAai7H/5CX7lxARTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+        "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVC3kXcJm7RM2qfs8D5NPbTH7036ZCnaFq3Uq3ONfZJni9tZtghJ5eqh7CG2GCWupYRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+        "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA=="
+      ],
+      "rate": 4.5,
       "details": {
         "price": 499.000,
         "facility": [
@@ -143,7 +157,14 @@
     {
       "accomodation_name": "Santika Margona Raya",
       "description": "Hotel mewah berlokasi sangat strategis di jalan Margonda Raya.",
-      "rate": 4.5,
+      "images_source": [
+        "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict2L/Y2/Y937792/Y937792033.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict2L/Y2/Y937792/Y937792034.jpg",
+        "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg"
+      ],
+      "rate": 3.5,
       "details": {
         "price": 499.000,
         "facility": [
