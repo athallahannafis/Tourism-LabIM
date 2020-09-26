@@ -2,6 +2,7 @@
   "data": [
     {
       "attraction_place": "Jakarta",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -19,6 +20,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -34,7 +42,7 @@
             {
               "username": "Sterling",
               "rate": 5,
-              "review_time": "2 minggu yang lalu",
+              "review_time": "2 bulan yang lalu",
               "review": "It was a breathtaking experience to see it in person.",
               "photos": [
                 "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
@@ -106,7 +114,7 @@
           "isPopular": false,
           "city_name": "Jakarta Pusat",
           "place_name": "National Monument (Monumen Nasional)",
-          "coordinates":{
+          "coordinates": {
             "latitude": -6.175372,
             "longitude": 106.827148
           },
@@ -118,6 +126,13 @@
             "https://1.bp.blogspot.com/-ak8r4HDWcK8/XlARnhxjcrI/AAAAAAAACpQ/hamG7DBX7NQamAIBywmLzlgQ6MzSFpzqwCLcBGAsYHQ/s1600/D395886D-F968-47BD-962C-9854EB284B36.jpeg",
             "https://travelspromo.com/wp-content/uploads/2018/05/Air-Mancur-Monas-Monumen-Nasional.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 04.00 PM",
@@ -217,6 +232,13 @@
             "https://live.staticflickr.com/5060/5555815688_81674188cb_b.jpg",
             "https://img.beritasatu.com/cache/investor/798x449-2/1561356001.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": true,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 09.00 PM",
@@ -316,6 +338,13 @@
             "https://cdn-image.hipwee.com/wp-content/uploads/2018/07/hipwee-31326588_226921401398455_801165757533650944_n-750x422.jpg",
             "https://awsimages.detik.net.id/community/media/visual/2018/07/02/181b0482-3d81-4859-93a1-a6141e79e81f_169.jpeg?w=780&q=90"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "08.00 AM - 06.00 PM",
@@ -403,6 +432,7 @@
     },
     {
       "attraction_place": "Malang",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
@@ -420,6 +450,13 @@
             "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
             "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
@@ -519,6 +556,13 @@
             "https://www.malang-guidance.com/wp-content/uploads/2012/04/Batu-Night-Spectacular-BNS.jpg",
             "https://i2.wp.com/macamtiket.com/wp-content/uploads/2017/12/harga-tiket-masuk-bns-macamtiket.jpg?w=516&ssl=1"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "03.00 PM - 11.00 PM",
@@ -607,7 +651,7 @@
           "city_name": "Kota Batu, Jawa Timur",
           "place_name": "Museum Angkut",
           "coordinates": {
-            "latitude": -7.878810,
+            "latitude": -7.87881,
             "longitude": 112.520186
           },
           "description": "Museum transportasi dan tempat wisata modern yang terletak di Kota Batu, Jawa Timur. Museum ini memiliki lebih dari 300 koleksi jenis angkutan tradisional hingga modern.",
@@ -618,6 +662,13 @@
             "https://www.mldspot.com/sites/default/files/content/Review%20Museum%20Angkut%20Malang%20Tiket1.jpg",
             "https://www.mldspot.com/sites/default/files/content/Review-Museum-Angkut-Malang-Tiket2.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
@@ -717,6 +768,13 @@
             "https://www.malang-guidance.com/wp-content/uploads/2012/02/Taman-Rekreasi-Sengkaling.jpg",
             "https://www.hargatiket.net/wp-content/uploads/2019/01/gambar-wahana-sengkaling.jpg"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
@@ -804,16 +862,17 @@
     },
     {
       "attraction_place": "Bandung",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
-          "city_name": "Ancol, Jakarta Pusat",
-          "place_name": "Pantai Karnaval",
+          "city_name": "Ciwidey, Bandung",
+          "place_name": "Kawah Putih",
+          "description": "Wisata kawah ini terbentuk dari letusan gunung Patuha yang terjadi beberapa ratus tahun silam. Seiring berjalannya waktu bekas dari erupsi dahsyat tersebut berbekas dan membentuk sebuah kawah.",
           "coordinates": {
             "latitude": -6.116402,
             "longitude": 106.859842
           },
-          "description": "Rasakan sensasi berjalan di jembatan panjang dan indah sembari menikmati sunset di ujung utara kota Jakarta.",
           "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
           "images_source": [
             "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
@@ -821,6 +880,13 @@
             "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
             "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
@@ -906,229 +972,38 @@
         },
         {
           "isPopular": false,
-          "city_name": "Jakarta Pusat",
-          "place_name": "National Monument (Monumen Nasional)",
-          "coordinates":{
+          "city_name": "Kota Bandung",
+          "place_name": "Trans Studio Bandung",
+          "description": "Bermain bersama anak di dunia permainan yang seru!",
+          "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+          "coordinates": {
             "latitude": -6.175372,
             "longitude": 106.827148
           },
-          "description": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!",
-          "image_source": "https://i0.wp.com/www.holamigo.id/wp-content/uploads/2020/01/49238511562_c578353bdc_c.jpg?fit=800%2C600&ssl=1",
           "images_source": [
-            "https://mmc.tirto.id/image/2018/07/28/ilustrasi-monas-2_ratio-16x9.jpg",
-            "https://img.okezone.com/content/2019/12/20/338/2144501/jelang-tahun-baru-2020-monas-tampilkan-video-mapping-sejarah-jakarta-OASQdqRGMN.jpg",
-            "https://1.bp.blogspot.com/-ak8r4HDWcK8/XlARnhxjcrI/AAAAAAAACpQ/hamG7DBX7NQamAIBywmLzlgQ6MzSFpzqwCLcBGAsYHQ/s1600/D395886D-F968-47BD-962C-9854EB284B36.jpeg",
-            "https://travelspromo.com/wp-content/uploads/2018/05/Air-Mancur-Monas-Monumen-Nasional.jpg"
+            "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+            "https://cdn2.tstatic.net/travel/foto/bank/images2/ancol_20180618_174633.jpg",
+            "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+            "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": false,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": true
+          },
           "detail": {
             "open_days": "Senin - Minggu",
-            "open_hours": "10.00 AM - 04.00 PM",
+            "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp10.000,00",
-            "visitor_capacity": "3.000",
+            "ticket_price": "Rp25.000,00",
+            "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
-          "booking_available": false,
-          "phone_number": "(021)3504333",
-          "email": "-",
-          "attraction_reviews": [
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": []
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            }
-          ]
-        },
-        {
-          "isPopular": false,
-          "city_name": "Menteng, Jakarta Pusat",
-          "place_name": "Plaza Indonesia",
-          "coordinates": {
-            "latitude": -6.194304,
-            "longitude": 106.822562
-          },
-          "description": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT.",
-          "image_source": "https://images.bisnis-cdn.com/posts/2020/03/24/1217241/rsz_inpp_plaza_indonesia.jpg",
-          "images_source": [
-            "https://merahputih.com/media/28/a1/d4/28a1d45c3a8db9de67c97e13a1842083.png",
-            "https://akcdn.detik.net.id/visual/2019/05/24/d665e4ea-a6dc-4836-956f-ae34299a07f9_169.jpeg?w=715&q=90",
-            "https://live.staticflickr.com/5060/5555815688_81674188cb_b.jpg",
-            "https://img.beritasatu.com/cache/investor/798x449-2/1561356001.jpg"
-          ],
-          "detail": {
-            "open_days": "Senin - Minggu",
-            "open_hours": "10.00 AM - 09.00 PM",
-            "facilities": ["Area Parkir", "ATMs", "Kamar Mandi"],
-            "ticket_price": "Rp0",
-            "visitor_capacity": "1.000",
-            "current_status": "Sedang ramai"
-          },
-          "booking_available": false,
-          "phone_number": "(021) 29920000",
-          "email": "https://www.plazaindonesia.com",
-          "attraction_reviews": [
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": []
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            }
-          ]
-        },
-        {
-          "isPopular": false,
-          "city_name": "Pasar Baru, Jakarta Pusat",
-          "place_name": "Taman Lapangan Banteng",
-          "coordinates": {
-            "latitude": -6.170553,
-            "longitude": 106.835081
-          },
-          "description": "Rasakan sensasi rempah dan gurihnya daging kambing yang sangat nikmat!",
-          "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
-          "images_source": [
-            "https://3.bp.blogspot.com/-p_o1LU7Rl-8/W0Ak5jVYtZI/AAAAAAABDNQ/-tNE6uh7k8QFtktDJBMJ2AsH2ER7cz6RgCLcBGAs/s640/36662253_138963780322051_8775003392754843648_n.jpg",
-            "https://www.indovoices.com/wp-content/uploads/2018/06/IMG-20180622-WA0003.jpg",
-            "https://cdn-image.hipwee.com/wp-content/uploads/2018/07/hipwee-31326588_226921401398455_801165757533650944_n-750x422.jpg",
-            "https://awsimages.detik.net.id/community/media/visual/2018/07/02/181b0482-3d81-4859-93a1-a6141e79e81f_169.jpeg?w=780&q=90"
-          ],
-          "detail": {
-            "open_days": "Senin - Minggu",
-            "open_hours": "08.00 AM - 06.00 PM",
-            "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp0",
-            "visitor_capacity": "3.000",
-            "current_status": "Sedang ramai"
-          },
-          "booking_available": false,
-          "phone_number": "-",
-          "email": "-",
+          "booking_available": true,
+          "phone_number": "(+62-21) 29 222 222",
+          "email": "customercare@ancol.com",
           "attraction_reviews": [
             {
               "username": "Sterling",
@@ -1205,23 +1080,466 @@
     },
     {
       "attraction_place": "Sulawesi",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
       "attraction_list": [
         {
           "isPopular": true,
-          "city_name": "Lumajang, Malang, Jawa Timur",
-          "place_name": "Bromo Tengger Semeru",
-          "coordinates": {
-            "latitude": -7.941689,
-            "longitude": 112.950069
-          },
-          "description": "Pemandangan gunung indah yang dihiasi padang savana, rasakan pengalaman tak terlupakan di Bromo Tengger Semeru!",
+          "city_name": "Manado, Sulawesi Utara",
+          "place_name": "Taman Laut Bunaken",
+          "description": "Bunaken memiliki beragam biota laut yang luar biasa seperti 70 karang yang berbeda, lima spesies penyu, serta banyak spesies ikan dan para duyung yang nyaris punah bahkan hiu putih dan karang hitam, serta barracuda dan bahkan buaya air asin!",
           "image_source": "https://upload.wikimedia.org/wikipedia/commons/3/39/The_Beauty_of_Bromo_Mountains.jpg",
+          "coordinates": {
+            "latitude": -6.194304,
+            "longitude": 106.822562
+          },
           "images_source": [
             "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
             "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
             "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
             "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
+          "detail": {
+            "open_days": "Senin - Minggu",
+            "open_hours": "09.00 AM - 04.00 PM",
+            "facilities": ["Area Parkir", "Kamar Mandi"],
+            "ticket_price": "Rp15.000,00",
+            "visitor_capacity": "20.000",
+            "current_status": "Sedang ramai"
+          },
+          "booking_available": true,
+          "phone_number": "087712121212",
+          "email": "bromotengger@malang.gov.id",
+          "attraction_reviews": [
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": []
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            }
+          ]
+        },
+        {
+          "isPopular": true,
+          "city_name": "Sulawesi Tenggara",
+          "place_name": "Wakatobi",
+          "description": "Bahkan banyak yang berpendapat bahwa taman nasional wakatobi merupakan salah satu surga bawah laut paling indah di muka bumi.",
+          "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+          "coordinates": {
+            "latitude": -6.170553,
+            "longitude": 106.835081
+          },
+          "images_source": [
+            "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+            "https://cdn2.tstatic.net/travel/foto/bank/images2/ancol_20180618_174633.jpg",
+            "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+            "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
+          ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
+          "detail": {
+            "open_days": "Senin - Minggu",
+            "open_hours": "10.00 AM - 08.00 PM",
+            "facilities": ["Area Parkir", "Kamar Mandi"],
+            "ticket_price": "Rp25.000,00",
+            "visitor_capacity": "30.000",
+            "current_status": "Sedang ramai"
+          },
+          "booking_available": true,
+          "phone_number": "(+62-21) 29 222 222",
+          "email": "customercare@ancol.com",
+          "attraction_reviews": [
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": []
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attraction_place": "Lombok",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
+      "attraction_list": [
+        {
+          "isPopular": true,
+          "place_name": "Gili Trawangan",
+          "description": "Gili Trawangan (atau bisa disebut dengan julukan Gili T) adalah tempat terbaik untuk berpesta. Semuanya ada di sini: bir di tepi pantai, pesta di atas kapal, bar serta aneka kelab. Kalau ke Gili Trawangan, pokoknya siapkan bikini atau celana pendek dan berpesta sepuasnya!",
+          "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+          "city_name": "Lumajang, Malang, Jawa Timur",
+          "coordinates": {
+            "latitude": -7.941689,
+            "longitude": 112.950069
+          },
+          "images_source": [
+            "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+            "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+            "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
+          ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
+          "detail": {
+            "open_days": "Senin - Minggu",
+            "open_hours": "10.00 AM - 08.00 PM",
+            "facilities": ["Area Parkir", "Kamar Mandi"],
+            "ticket_price": "Rp25.000,00",
+            "visitor_capacity": "30.000",
+            "current_status": "Sedang ramai"
+          },
+          "booking_available": true,
+          "phone_number": "(+62-21) 29 222 222",
+          "email": "customercare@ancol.com",
+          "attraction_reviews": [
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": []
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            }
+          ]
+        },
+        {
+          "isPopular": false,
+          "city_name": "Lombok Tengah",
+          "place_name": "Gua Bangkang",
+          "description": "Gua berusia ratusan tahun ini terletak di desa yang masih belum dijelajahi oleh wisatawan. Agar lebih sempurna, siapkan lensa fisheye atau wide-angle agar Anda bisa mengambil gambar dengan maksimal!",
+          "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+          "coordinates": {
+            "latitude": -7.896532,
+            "longitude": 112.534538
+          },
+          "images_source": [
+            "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+            "https://cdn2.tstatic.net/travel/foto/bank/images2/ancol_20180618_174633.jpg",
+            "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+            "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
+          ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": true,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
+          "detail": {
+            "open_days": "Senin - Minggu",
+            "open_hours": "10.00 AM - 08.00 PM",
+            "facilities": ["Area Parkir", "Kamar Mandi"],
+            "ticket_price": "Rp25.000,00",
+            "visitor_capacity": "30.000",
+            "current_status": "Sedang ramai"
+          },
+          "booking_available": true,
+          "phone_number": "(+62-21) 29 222 222",
+          "email": "customercare@ancol.com",
+          "attraction_reviews": [
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": []
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Morlock",
+              "rate": 4,
+              "review_time": "2 bulan yang lalu",
+              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Gaddard",
+              "rate": 3,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": []
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            },
+            {
+              "username": "Sterling",
+              "rate": 5,
+              "review_time": "2 minggu yang lalu",
+              "review": "It was a breathtaking experience to see it in person.",
+              "photos": [
+                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attraction_place": "Sumatra",
+      "attraction_place_description": "Sebuah daerah di Jawa Timur yang terkenal karena suhunya yang dingin dan berbagai objek wisata menarik.",
+      "attraction_list": [
+        {
+          "isPopular": true,
+          "city_name": "Sumatra Utara",
+          "place_name": "Danau Toba",
+          "description": "Pemandangan gunung indah yang dihiasi padang savana, rasakan pengalaman tak terlupakan di Bromo Tengger Semeru!",
+          "image_source": "https://upload.wikimedia.org/wikipedia/commons/3/39/The_Beauty_of_Bromo_Mountains.jpg",
+          "coordinates": {
+            "latitude": -7.87881,
+            "longitude": 112.520186
+          },
+          "images_source": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": true,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
@@ -1307,221 +1625,31 @@
         },
         {
           "isPopular": false,
-          "city_name": "Kota Batu, Jawa Timur",
-          "place_name": "Batu Night Spectacular",
-          "coordinates": {
-            "latitude": -7.896532,
-            "longitude": 112.534538
-          },
-          "description": "Wisata yang hanya beroperasi pada malam hari, menggabungkan konsep pusat perbelanjaan, permainan, olahraga, dan hiburan di dalamnya.",
-          "image_source": "https://travelspromo.com/wp-content/uploads/2018/10/Kawasan-Batu-Night-Spectacular-BNS-Malang-Astri-Yuliatul-640x480.jpg",
-          "images_source": [
-            "https://www.malang-guidance.com/wp-content/uploads/2011/03/bns-1.png",
-            "https://www.malang-guidance.com/wp-content/uploads/2011/03/Batu-Night-Spectacular.jpg",
-            "https://www.malang-guidance.com/wp-content/uploads/2012/04/Batu-Night-Spectacular-BNS.jpg",
-            "https://i2.wp.com/macamtiket.com/wp-content/uploads/2017/12/harga-tiket-masuk-bns-macamtiket.jpg?w=516&ssl=1"
-          ],
-          "detail": {
-            "open_days": "Senin - Minggu",
-            "open_hours": "03.00 PM - 11.00 PM",
-            "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
-            "visitor_capacity": "20.000",
-            "current_status": "Sedang ramai"
-          },
-          "booking_available": false,
-          "phone_number": "(0341) 5025111",
-          "email": "-",
-          "attraction_reviews": [
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": []
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            }
-          ]
-        },
-        {
-          "isPopular": false,
-          "city_name": "Kota Batu, Jawa Timur",
-          "place_name": "Museum Angkut",
-          "coordinates": {
-            "latitude": -7.878810,
-            "longitude": 112.520186
-          },
-          "description": "Museum transportasi dan tempat wisata modern yang terletak di Kota Batu, Jawa Timur. Museum ini memiliki lebih dari 300 koleksi jenis angkutan tradisional hingga modern.",
-          "image_source": "https://www.mldspot.com/sites/default/files/styles/wide_big/public/field/image/Review%20Museum%20Angkut%20Malang%20Tiket.jpg?itok=i30XKMP1",
-          "images_source": [
-            "https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2019/02/18/2558490045.jpg",
-            "https://asset-a.grid.id/crop/0x0:0x0/700x0/photo/2019/02/18/3149749310.jpg",
-            "https://www.mldspot.com/sites/default/files/content/Review%20Museum%20Angkut%20Malang%20Tiket1.jpg",
-            "https://www.mldspot.com/sites/default/files/content/Review-Museum-Angkut-Malang-Tiket2.jpg"
-          ],
-          "detail": {
-            "open_days": "Senin - Minggu",
-            "open_hours": "12.00 AM - 08.00 PM",
-            "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
-            "visitor_capacity": "20.000",
-            "current_status": "Sedang ramai"
-          },
-          "booking_available": false,
-          "phone_number": "(0341) 5025111",
-          "email": "-",
-          "attraction_reviews": [
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": []
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Morlock",
-              "rate": 4,
-              "review_time": "2 bulan yang lalu",
-              "review": "Fantastic scenery, but sadly the plastic litters are everywhere, hurting the majestic view.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Gaddard",
-              "rate": 3,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": []
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            },
-            {
-              "username": "Sterling",
-              "rate": 5,
-              "review_time": "2 minggu yang lalu",
-              "review": "It was a breathtaking experience to see it in person.",
-              "photos": [
-                "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
-                "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
-                "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
-                "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
-              ]
-            }
-          ]
-        },
-        {
-          "isPopular": false,
-          "city_name": "Mulyoagung, Sengkaling Jawa Timur",
-          "place_name": "Sengkaling Water Park",
+          "city_name": "Sumatra Utara",
+          "place_name": "Air Terjun Sipiso Piso",
+          "description": "Air Terjun Sipiso Piso adalah salah satu air terjun tertinggi di dunia!",
+          "image_source": "https://cdns.klimg.com/dream.co.id/resized/750x500/news/2017/12/22/73534/malam-pergantian-tahun-ancol-gelar-pertunjukan-spektakuler-171222q_3x2.jpg",
+
           "coordinates": {
             "latitude": -7.915458,
             "longitude": 112.588828
           },
-          "description": "Pengunjung juga bisa menikmati udara yang segar. Di area wisata seluas 6 hektar yang ditumbuhi taman dengan berbagai jenis tanaman. Sangat cocok untuk melepas penat bersama keluarga di sela-sela rutinitas kerja. Selain menawarkan wahana air yang merupakan unggulannya, di Sengkaling Malang kita juga menikmati wahana permainan dan satwa.",
-          "image_source": "https://alampriangan.com/wp-content/uploads/2013/12/Wisata-Sengkaling-Malang.jpg",
           "images_source": [
-            "https://alampriangan.com/wp-content/uploads/2013/12/Wisata-Sengkaling-Malang.jpg",
-            "https://alampriangan.com/wp-content/uploads/2013/12/kapal-misteri-bajak-laut-taman-rekreasi-sengkaling-malang.jpg",
-            "https://www.malang-guidance.com/wp-content/uploads/2012/02/Taman-Rekreasi-Sengkaling.jpg",
-            "https://www.hargatiket.net/wp-content/uploads/2019/01/gambar-wahana-sengkaling.jpg"
+            "https://korporat.ancol.com/fm/app/public/WhatsApp%20Image%202019-06-13%20at%2008.11.14.jpeg",
+            "https://cdn2.tstatic.net/travel/foto/bank/images2/ancol_20180618_174633.jpg",
+            "https://statik.tempo.co/data/2020/06/02/id_942386/942386_720.jpg",
+            "https://www.suarakarya.id/timthumb.php?src=https://cdn.suarakarya.id/20181222015914ancol.jpg&w=720&a=t"
           ],
+          "categories": {
+            "wisata_alam": true,
+            "tantangan": false,
+            "budaya_lokal": false,
+            "kuliner": false,
+            "perbelanjaan": false
+          },
           "detail": {
             "open_days": "Senin - Minggu",
-            "open_hours": "12.00 AM - 08.00 PM",
+            "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
             "ticket_price": "Rp80.000",
             "visitor_capacity": "20.000",
@@ -1710,7 +1838,7 @@
           "isPopular": false,
           "city_name": "Jakarta Pusat",
           "place_name": "National Monument (Monumen Nasional)",
-          "coordinates":{
+          "coordinates": {
             "latitude": -6.175372,
             "longitude": 106.827148
           },
@@ -2211,7 +2339,7 @@
           "city_name": "Kota Batu, Jawa Timur",
           "place_name": "Museum Angkut",
           "coordinates": {
-            "latitude": -7.878810,
+            "latitude": -7.87881,
             "longitude": 112.520186
           },
           "description": "Museum transportasi dan tempat wisata modern yang terletak di Kota Batu, Jawa Timur. Museum ini memiliki lebih dari 300 koleksi jenis angkutan tradisional hingga modern.",
