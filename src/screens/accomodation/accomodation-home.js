@@ -12,6 +12,7 @@ import {attractionStyling as ats} from '../../style/attraction-styling';
 
 // data
 import AccomodationData from '../../data-dummy/accomodation-data/accomodation.json';
+import StarRating from 'react-native-star-rating';
 
 export default class AccomodationHome extends Component {
   constructor(props) {
@@ -96,6 +97,9 @@ export default class AccomodationHome extends Component {
       if (item === DATASET[last]) {
         return (
           <TouchableOpacity
+          onPress={() => this.props.navigation.navigate(
+            "Accomodation Details", item
+          )}
           style={[gs.rowContainer, {paddingVertical: 20}]}>
             {/* left section */}
             <View style={{width: 180}}>
@@ -110,6 +114,14 @@ export default class AccomodationHome extends Component {
               <Text style={gs.subCardTitle}>
                 {item.accomodation_name}
               </Text>
+              <View style={ats.starRatingView}>
+                <Text
+                  style={[
+                    ats.textSmall,
+                    {color: Color.color6, marginLeft: 10},
+                  ]}>
+                </Text>
+              </View>
               <Text>{item.description}</Text>
             </View>
           </TouchableOpacity>
@@ -118,6 +130,9 @@ export default class AccomodationHome extends Component {
         return (
           <>
             <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(
+              "Accomodation Details", item
+            )}
             style={[gs.rowContainer, {paddingVertical: 20}]}>
               {/* left section */}
               <View style={{width: 180}}>
@@ -302,6 +317,9 @@ export default class AccomodationHome extends Component {
               Rekomendasi Akomodasi sekitar anda
             </Text>
             <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(
+              "Accomodation Details", this.state.recommendedAcc
+            )}
             style={gs.rowContainer}>
               {/* left section */}
               <View style={{width: 180}}>
