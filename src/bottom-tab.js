@@ -18,11 +18,15 @@ import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
 import AttractionSearchResults from './screens/attraction/attraction-search-results';
 import AttractionMap from './screens/attraction/attraction-map';
+// Accomodation
+import AccomodationHomeScreen from './screens/accomodation/accomodation-home';
+import AccomodationDetailScreen from './screens/accomodation/accomodation-details';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
 const profileStack = createStackNavigator();
 const attractionStack = createStackNavigator();
+const accomodationStack = createStackNavigator();
 
 export default class BottomTab extends Component {
   constructor(props) {
@@ -122,6 +126,25 @@ export default class BottomTab extends Component {
     );
   };
 
+  accomodationStackScreen = (props) => {
+    return (
+      <accomodationStack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: '#2E99A3'},
+        headerTintColor: 'white',
+      }}>
+        <accomodationStack.Screen
+          component={AccomodationHomeScreen}
+          name="Accomodation"
+        />
+        <accomodationStack.Screen
+          component={AccomodationDetailScreen}
+          name="Accomodation Details"
+        />
+      </accomodationStack.Navigator>
+    )
+  }
+
   render() {
     return (
       <bottomTab.Navigator
@@ -155,7 +178,7 @@ export default class BottomTab extends Component {
         />
 
         <bottomTab.Screen
-          component={this.testScreenStack}
+          component={this.accomodationStackScreen}
           options={{
             tabBarIcon: () => {
               return (
