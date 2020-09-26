@@ -245,7 +245,7 @@ export default class AttractionSearchFilter extends Component {
                 </View>
               </View>
             </TouchableOpacity>
-            <View style={{borderBottomWidth: 1}}></View>
+            <View style={{borderBottomWidth: 1, borderColor: Color.color1}}></View>
           </>
         );
       }
@@ -302,7 +302,7 @@ export default class AttractionSearchFilter extends Component {
                   </View>
                 </View>
               </TouchableOpacity>
-              <View style={{borderBottomWidth: 1}}></View>
+              <View style={{borderBottomWidth: 1, borderColor: Color.color1}}></View>
             </>
           );
         }
@@ -362,7 +362,7 @@ export default class AttractionSearchFilter extends Component {
                   </View>
                 </View>
               </TouchableOpacity>
-              <View style={{borderBottomWidth: 1}}></View>
+              <View style={{borderBottomWidth: 1, borderColor: Color.color1}}></View>
             </>
           );
         }
