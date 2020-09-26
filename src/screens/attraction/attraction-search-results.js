@@ -373,35 +373,14 @@ export default class AttractionSearchFilter extends Component {
       <>
         <ScrollView>
           <View style={gs.mainContainer}>
-            <View style={ats.searchBoxContainer}>
-              <TouchableOpacity>
-                <Icon
-                  style={{marginRight: 5}}
-                  name={'search'}
-                  size={18}
-                  color={Color.color2}
-                />
-              </TouchableOpacity>
-
-              <View style={ats.searchBox}>
-                <TextInput
-                  autoCorrect={false}
-                  style={ats.searchBoxTextInput}
-                  placeholder={'Search...'}
-                  value={this.state.searchedPlace}
-                  // onChangeText={this.changeText}
-                  // onEndEditing={this.handleSearch}
-                  // ref={(input) => {
-                  //   this.state.search = input;
-                  // }}
-                />
-              </View>
+            <View style={ats.filterBoxContainer}>
+              <Text>Filter Pencarian</Text>
               <TouchableOpacity
                 onPress={() => {
                   this.setState({filterPopUp: true});
                 }}>
                 <Icon
-                  style={{marginRight: 5}}
+                  style={{marginRight: 5, marginLeft: 10}}
                   name={'filter'}
                   size={18}
                   color={Color.color2}

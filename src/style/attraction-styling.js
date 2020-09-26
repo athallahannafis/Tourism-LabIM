@@ -130,6 +130,13 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  filterBoxContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    width: Dimensions.get('window').width - 30,
+    marginBottom: 10,
+  },
   floatingButtonContainer: {
     position: 'absolute',
     bottom: 10,
@@ -354,9 +361,9 @@ export const attractionStyling = StyleSheet.create({
     backgroundColor: Color.color1,
     maxWidth: 100,
     borderRadius: 1000,
-    paddingVertical: 3,
-    paddingHorizontal: 2,
-    marginTop: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginHorizontal: 4,
   },
   searchBox: {
     width: '70%',
@@ -390,5 +397,10 @@ export const attractionStyling = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
+  },
+  rowContainer: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

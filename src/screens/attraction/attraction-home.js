@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 // style
 import {globalStyling as gs} from '../../style/global-styling';
+import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
-import {View, Text, Image} from 'react-native';
-import {
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native-gesture-handler';
+import {View, Text, Image, Modal, TouchableOpacity} from 'react-native';
+import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import CheckBox from '@react-native-community/checkbox';
 // data
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
@@ -23,6 +20,12 @@ export default class AttractionHome extends Component {
       recommendImage: [],
       popularPlace: {},
       search: '',
+      filterPopUp: false,
+      wisata_alam: false,
+      tantangan: false,
+      budaya_lokal: false,
+      kuliner: false,
+      perbelanjaan: false,
     };
   }
 
@@ -142,6 +145,18 @@ export default class AttractionHome extends Component {
                 }}
               />
             </View>
+
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({filterPopUp: true});
+              }}>
+              <Icon
+                style={{marginRight: 5, marginLeft: 10}}
+                name={'filter'}
+                size={18}
+                color={Color.color2}
+              />
+            </TouchableOpacity>
           </View>
           {/* Explore Indonesia */}
           <View style={[gs.cardSection]}>
@@ -198,6 +213,80 @@ export default class AttractionHome extends Component {
             </View>
           </View>
         </View>
+        {/*Pop up untuk memilih filter pencarian jika icon filter diklik */}
+        <Modal transparent={true} visible={this.state.filterPopUp}>
+          <View style={ats.modalOverlay}>
+            <View style={ats.modal4Container}>
+              <View style={gs.closeIcon}>
+                <TouchableOpacity
+                  onPress={() => this.setState({filterPopUp: false})}>
+                  <Icon
+                    style={{marginRight: 5}}
+                    name={'close'}
+                    size={18}
+                    color={Color.color6}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View style={ps.titleContainer}>
+                <Text style={ps.fontJudul2}>Filter Pencarian</Text>
+              </View>
+
+              <View style={ats.checkListContainer}>
+                <View style={ps.checkItemContainer}>
+                  <CheckBox
+                    value={this.state.wisata_alam}
+                    onValueChange={(value) =>
+                      this.setState({wisata_alam: value})
+                    }
+                  />
+                  <Text style={ps.fontCheckList}>Wisata Alam</Text>
+                </View>
+
+                <View style={ps.checkItemContainer}>
+                  <CheckBox
+                    value={this.state.tantangan}
+                    onValueChange={(value) => this.setState({tantangan: value})}
+                  />
+                  <Text style={ps.fontCheckList}>Tantangan</Text>
+                </View>
+
+                <View style={ps.checkItemContainer}>
+                  <CheckBox
+                    value={this.state.budaya_lokal}
+                    onValueChange={(value) =>
+                      this.setState({budaya_lokal: value})
+                    }
+                  />
+                  <Text style={ps.fontCheckList}>Budaya Lokal</Text>
+                </View>
+
+                <View style={ps.checkItemContainer}>
+                  <CheckBox
+                    value={this.state.kuliner}
+                    onValueChange={(value) => this.setState({kuliner: value})}
+                  />
+                  <Text style={ps.fontCheckList}>Kuliner</Text>
+                </View>
+
+                <View style={ps.checkItemContainer}>
+                  <CheckBox
+                    value={this.state.perbelanjaan}
+                    onValueChange={(value) =>
+                      this.setState({perbelanjaan: value})
+                    }
+                  />
+                  <Text style={ps.fontCheckList}>Perbelanjaan</Text>
+                </View>
+                <TouchableOpacity
+                  style={[ats.btn]}
+                  onPress={() => this.setState({filterPopUp: false})}>
+                  <Text style={ats.btnText}> Tutup </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     );
   }
