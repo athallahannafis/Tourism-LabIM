@@ -16,6 +16,7 @@ import TicketReservation from './screens/ticket-reservation/reserve-ticket';
 import TicketPayment from './screens/ticket-reservation/payment-ticket';
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
+import AttractionSearchResults from './screens/attraction/attraction-search-results';
 import AttractionMap from './screens/attraction/attraction-map';
 
 const testStack = createStackNavigator();
@@ -107,7 +108,14 @@ export default class BottomTab extends Component {
           name="Ticket Payment"
         />
         <attractionStack.Screen
-          component = {AttractionMap}
+          component={AttractionSearchResults}
+          name="Attraction Search Results"
+          options={{
+            title: 'Pencarian Objek Wisata dan Destinasi',
+          }}
+        />
+        <attractionStack.Screen
+          component={AttractionMap}
           name="Attraction Map"
         />
       </attractionStack.Navigator>

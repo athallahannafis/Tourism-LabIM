@@ -4,7 +4,6 @@ import StarRating from 'react-native-star-rating';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
-import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
