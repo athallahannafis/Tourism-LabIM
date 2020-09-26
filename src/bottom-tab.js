@@ -18,7 +18,8 @@ import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
 import AttractionMap from './screens/attraction/attraction-map';
 // Accomodation
-import AccomodationHome from './screens/accomodation/accomodation-home';
+import AccomodationHomeScreen from './screens/accomodation/accomodation-home';
+import AccomodationDetailScreen from './screens/accomodation/accomodation-details';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -125,8 +126,12 @@ export default class BottomTab extends Component {
         headerTintColor: 'white',
       }}>
         <accomodationStack.Screen
-          component={AccomodationHome}
+          component={AccomodationHomeScreen}
           name="Accomodation"
+        />
+        <accomodationStack.Screen
+          component={AccomodationDetailScreen}
+          name="Accomodation Details"
         />
       </accomodationStack.Navigator>
     )
