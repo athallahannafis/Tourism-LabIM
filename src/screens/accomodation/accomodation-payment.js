@@ -11,14 +11,11 @@ import Color from '../../style/color.json';
 // Data
 import JumlahTicket from '../../data-dummy/attraction-data/jumlah-ticket.json';
 
-export default class PaymentTicket extends Component {
+export default class AccomodationPayment extends Component {
   constructor(props) {
     super(props);
     this.state = {
       RESERVE_DATA: props.route.params,
-      adultPrice: 0,
-      childPrice: 0,
-      totalPrice: 0,
       eWalletFlag: false,
       transferBankFlag: false,
       paySuccessAlert: false,
@@ -26,21 +23,7 @@ export default class PaymentTicket extends Component {
     };
   }
 
-  UNSAFE_componentWillMount = () => {
-    this.fetchPrice();
-  };
-
-  fetchPrice = () => {
-    const adultPrice =
-      this.state.RESERVE_DATA.adultTickets * JumlahTicket.data.harga_dewasa;
-    const childPrice =
-      this.state.RESERVE_DATA.childTickets * JumlahTicket.data.harga_anak;
-    this.setState({
-      adultPrice: adultPrice,
-      childPrice: childPrice,
-      totalPrice: adultPrice + childPrice,
-    });
-  };
+  UNSAFE_componentWillMount = () => {};
 
   eWalletChosen = () => {
     this.setState({
@@ -84,7 +67,7 @@ export default class PaymentTicket extends Component {
                 style={ts.okButton}
                 onPress={() => {
                   this.setState({paySuccessAlert: false});
-                  this.props.navigation.navigate('Objek Wisata dan Destinasi');
+                  this.props.navigation.navigate('Accomodation');
                 }}>
                 <Text style={[ts.title, {color: 'white'}]}>OK</Text>
               </TouchableOpacity>
@@ -115,38 +98,43 @@ export default class PaymentTicket extends Component {
         </Text>
         <View style={gs.cardSection}>
           {/* Title */}
-          <Text style={ts.title}> {this.state.RESERVE_DATA.place_name} </Text>
-          <Text> {this.state.RESERVE_DATA.city_name} </Text>
+          <Text style={ts.title}>
+            {' '}
+            {this.state.RESERVE_DATA.accomodationName}{' '}
+          </Text>
+          <Text> {this.state.RESERVE_DATA.accomodationPlace} </Text>
 
           {/* Payment details */}
           <View style={(gs.columnContainer, {width: '100%'})}>
             {/* Upper side */}
             <View style={ls.rowDetail}>
-              <View style={{marginBottom: 20}}>
-                <Text style={ls.detailFont}>
-                  {this.state.RESERVE_DATA.chosenDate}
-                </Text>
-                <Text style={ls.detailFont}>
-                  {this.state.RESERVE_DATA.chosenTicket}
-                </Text>
+              <View style={{marginBottom: 20, marginTop: 20}}>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{fontWeight: 'bold'}}>Check in</Text>
+                  <Text>:</Text>
+                  <Text style={{marginLeft: 6}}>16 April 2020</Text>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{fontWeight: 'bold'}}>Check out</Text>
+                  <Text>:</Text>
+                  <Text style={{marginLeft: 6}}>18 April 2020</Text>
+                </View>
               </View>
             </View>
 
             {/* Lower side */}
-            <View style={ls.rowDetail}>
+            <View style={[ls.rowDetail, {justifyContent: 'space-between'}]}>
               {/* Left side */}
               <View style={ls.columnDetail}>
                 <Text style={ls.detailFont}>
-                  Dewasa x {this.state.RESERVE_DATA.adultTickets}
-                </Text>
-                <Text style={ls.detailFont}>
-                  Anak x {this.state.RESERVE_DATA.childTickets}
+                  1 x {this.state.RESERVE_DATA.room.category} (2 malam)
                 </Text>
               </View>
               {/* Right side */}
               <View style={ls.columnDetail}>
-                <Text style={ls.detailFont}>Rp{this.state.adultPrice}</Text>
-                <Text style={ls.detailFont}>Rp{this.state.childPrice}</Text>
+                <Text style={ls.detailFont}>
+                  Rp{this.state.RESERVE_DATA.room.price}
+                </Text>
               </View>
             </View>
           </View>
@@ -154,8 +142,18 @@ export default class PaymentTicket extends Component {
           <View style={[ls.rowDetail, {borderTopWidth: 1}]}>
             <View style={ls.columnDetail}></View>
             {/* Right side */}
-            <View style={ls.columnDetail}>
-              <Text style={ls.detailFont}>Rp{this.state.totalPrice}</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+                width: '100%',
+              }}>
+              <View style={ls.columnDetail}>
+                <Text style={ls.detailFont}>
+                  Rp{this.state.RESERVE_DATA.room.price}
+                </Text>
+              </View>
             </View>
           </View>
           {/* Payment method */}
@@ -191,16 +189,14 @@ export default class PaymentTicket extends Component {
 
 const ls = StyleSheet.create({
   rowDetail: {
-    flex: 0,
     flexDirection: 'row',
     marginTop: 10,
   },
   columnDetail: {
     flex: 0,
     flexDirection: 'column',
-    minWidth: '50%',
   },
   detailFont: {
-    fontSize: 17,
+    fontSize: 16,
   },
 });
