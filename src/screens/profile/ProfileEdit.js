@@ -244,6 +244,9 @@ export default class ProfileEdit extends Component {
                   style={ps.bubbleTextInput}
                   placeholder={'Nama Belakang'}
                   defaultValue={this.state.dataSource.namaBelakang}
+                  onChangeText={(newNamaBelakang) =>
+                    this.setState({newNamaBelakang})
+                  }
                 />
               </View>
             </View>
