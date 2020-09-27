@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+  Dimensions,
   Image,
   ScrollView,
   StyleSheet,
@@ -17,6 +18,8 @@ import {Picker} from '@react-native-community/picker';
 import Color from '../../style/color.json';
 import {globalStyling as gs} from '../../style/global-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
+import {accomodationStyling as acs} from '../../style/accomodation-styling';
+import Slider from '@react-native-community/slider';
 
 // data
 import AccomodationData from '../../data-dummy/accomodation-data/accomodation.json';
@@ -35,6 +38,7 @@ export default class AccomodationHome extends Component {
       starValue: null,
       checkinValue: 'Tanggal check-in',
       checkoutValue: 'Tanggal check-out',
+      sliderValue: 0,
     };
   }
 
@@ -307,6 +311,46 @@ export default class AccomodationHome extends Component {
                     </Picker>
                   </View>
                 </View>
+              </View>
+              <View style={acs.sliderContainer}>
+                <View style={{flexDirection: 'row'}}>
+                  <Text
+                    style={{fontWeight: 'bold', fontSize: 15, marginRight: 5}}>
+                    Cari harga /kamar/malam :
+                  </Text>
+                  <Text>Rp.{this.state.sliderValue}</Text>
+                </View>
+
+                <View style={{marginTop: 5}}>
+                  <Slider
+                    maximumValue={20000000}
+                    minimumValue={0}
+                    thumbTintColor={Color.color6}
+                    minimumTrackTintColor={Color.color6}
+                    maximumTrackTintColor="#000000"
+                    step={100000}
+                    value={this.state.sliderValue}
+                    onValueChange={(sliderValue) =>
+                      this.setState({sliderValue: sliderValue})
+                    }
+                  />
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                    }}>
+                    <Text>Rp 0</Text>
+                    <Text>Rp 20.000.000+</Text>
+                  </View>
+                </View>
+              </View>
+
+              <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                <TouchableOpacity style={acs.pilihButton}>
+                  <Text style={{color: Color.white, fontWeight: 'bold'}}>
+                    Cari
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>

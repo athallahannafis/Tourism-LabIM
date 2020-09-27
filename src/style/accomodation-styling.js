@@ -35,4 +35,14 @@ export const accomodationStyling = StyleSheet.create({
   smallCardText: {
     fontSize: 10,
   },
+  sliderContainer: {
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  subSliderContainer: {
+    marginTop: 15,
+    height: 60,
+    justifyContent: 'center',
+    padding: 10,
+  },
 });
