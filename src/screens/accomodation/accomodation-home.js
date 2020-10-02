@@ -423,7 +423,7 @@ export default class AccomodationHome extends Component {
 
                 <View style={{marginTop: 5}}>
                   <Slider
-                    maximumValue={20000000}
+                    maximumValue={5000000}
                     minimumValue={0}
                     thumbTintColor={Color.color6}
                     minimumTrackTintColor={Color.color6}
@@ -440,7 +440,7 @@ export default class AccomodationHome extends Component {
                       justifyContent: 'space-between',
                     }}>
                     <Text>Rp 0</Text>
-                    <Text>Rp 20.000.000+</Text>
+                    <Text>Rp 5.000.000+</Text>
                   </View>
                 </View>
               </View>

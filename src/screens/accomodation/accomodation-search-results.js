@@ -86,29 +86,36 @@ export default class AccomodationHome extends Component {
       }
     }
 
-    //Filter berdasarkan rate
-    for (let j = 0; j < this.state.list.length; j++) {
+    var j = this.state.list.length;
+    while (j--) {
+      //Filter berdasarkan harga /kamar/malam mulai dari Rp.x (nilai slider)
+      if (searched.price > this.state.list[j].details.price) {
+        this.state.list.splice(j, 1);
+      } else {
+        continue;
+      }
+      //Filter berdasarkan rate
       if (searched.star == 1 && this.state.list[j].rate >= 2) {
-        this.state.list.pop(this.state.list[j]);
+        this.state.list.splice(j, 1);
       } else if (
         searched.star == 2 &&
         (this.state.list[j].rate < 2 || this.state.list[j].rate >= 3)
       ) {
-        this.state.list.pop(this.state.list[j]);
+        this.state.list.splice(j, 1);
       } else if (
         searched.star == 3 &&
         (this.state.list[j].rate < 3 || this.state.list[j].rate >= 4)
       ) {
-        this.state.list.pop(this.state.list[j]);
+        this.state.list.splice(j, 1);
       } else if (
         searched.star == 4 &&
         (this.state.list[j].rate < 4 || this.state.list[j].rate >= 5)
       ) {
-        this.state.list.pop(this.state.list[j]);
+        this.state.list.splice(j, 1);
       } else if (searched.star == 5 && this.state.list[j].rate < 5) {
-        this.state.list.pop(this.state.list[j]);
+        this.state.list.splice(j, 1);
       } else {
-        continue;
+        console.log('masuk sini');
       }
     }
   };
@@ -431,6 +438,7 @@ export default class AccomodationHome extends Component {
                       </View>
                     </View>
                   </View>
+                  {/* Price Slider */}
                   <View style={acs.sliderContainer}>
                     <View style={{flexDirection: 'row'}}>
                       <Text
@@ -452,7 +460,7 @@ export default class AccomodationHome extends Component {
                         minimumTrackTintColor={Color.color6}
                         maximumTrackTintColor="#000000"
                         step={100000}
-                        value={this.state.sliderValue}
+                        value={this.state.searchedData.price}
                         onValueChange={(sliderValue) =>
                           this.setState({sliderValue: sliderValue})
                         }
