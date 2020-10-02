@@ -75,7 +75,10 @@ export default class AccomodationDetails extends Component {
               <View style={[ats.rowContainer, {
                 width: 200, marginTop: 5}]}>
                 <TouchableOpacity
-                  style={ats.reviewBtn}>
+                style={ats.reviewBtn}
+                onPress={() => this.props.navigation.navigate(
+                  "Accomodation Review", this.state.DATA
+                )}>
                   <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                     ({this.state.DATA.reviews.length} reviews)
                   </Text>
