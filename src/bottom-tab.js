@@ -22,6 +22,7 @@ import AttractionMap from './screens/attraction/attraction-map';
 import AccomodationHomeScreen from './screens/accomodation/accomodation-home';
 import AccomodationDetailScreen from './screens/accomodation/accomodation-details';
 import AccomodationMapScreen from './screens/accomodation/accomodation-map';
+import AccomodationReviewScreen from './screens/accomodation/accomodation-reviews';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -145,6 +146,10 @@ export default class BottomTab extends Component {
         <accomodationStack.Screen
           component={AccomodationMapScreen}
           name="Accomodation Map"
+        />
+        <accomodationStack.Screen
+          component={AccomodationReviewScreen}
+          name="Accomodation Review"
         />
       </accomodationStack.Navigator>
     )
