@@ -32,6 +32,11 @@ export const accomodationStyling = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  segmentOfCardInSearchResult: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '32%',
+  },
   smallCardText: {
     fontSize: 10,
   },

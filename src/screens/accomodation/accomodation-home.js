@@ -8,6 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Modal,
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
@@ -19,6 +20,7 @@ import Color from '../../style/color.json';
 import {globalStyling as gs} from '../../style/global-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {accomodationStyling as acs} from '../../style/accomodation-styling';
+import {ticketStyling as ts} from '../../style/ticket-styling';
 import Slider from '@react-native-community/slider';
 
 // data
@@ -31,14 +33,20 @@ export default class AccomodationHome extends Component {
     this.state = {
       accDataSet: [],
       recommendedAcc: {},
+      nameValue: '',
       checkinVisible: false,
       checkoutVisible: false,
-      bedValue: null,
-      tamuValue: null,
+      bedValue: 1,
+      tamuValue: 1,
       starValue: null,
+      checkinDate: null,
+      checkoutDate: null,
       checkinValue: 'Tanggal check-in',
       checkoutValue: 'Tanggal check-out',
       sliderValue: 0,
+      dataToPost: {},
+      alertPopup: false,
+      alertMessage: '',
     };
   }
 
@@ -67,6 +75,7 @@ export default class AccomodationHome extends Component {
   handleCheckin = (date) => {
     this.setState({
       checkinVisible: false,
+      checkinDate: moment(date),
       checkinValue: moment(date).format('DD MMMM YYYY'),
     });
   };
@@ -74,6 +83,7 @@ export default class AccomodationHome extends Component {
   handleCheckout = (date) => {
     this.setState({
       checkoutVisible: false,
+      checkoutDate: moment(date),
       checkoutValue: moment(date).format('DD MMMM YYYY'),
     });
   };
@@ -100,6 +110,80 @@ export default class AccomodationHome extends Component {
 
   setStarValue = (value) => {
     this.setState({starValue: value});
+  };
+
+  daysRemaining = (from, to) => {
+    if ((from == null) | (to == null)) {
+      return 0;
+    }
+    let remainingDays = to.diff(from, 'days');
+    return remainingDays;
+  };
+
+  searchCheck = (data) => {
+    if (data.name === '') {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Tujuan akomodasi belum diisi',
+      });
+      return true;
+    } else if (data.checkIn === 'Tanggal check-in') {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Tanggal belum ditentukan',
+      });
+      return true;
+    } else if (data.checkOut === 'Tanggal check-out') {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Tanggal belum ditentukan',
+      });
+      return true;
+    } else if (data.stayPeriod <= 0) {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Tanggal yang dimasukkan tidak valid',
+      });
+      return true;
+    } else if (data.bed === 'Bed') {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Jumlah kasur belum ditentukan',
+      });
+      return true;
+    } else if (data.guest === 'Tamu') {
+      this.setState({
+        alertPopup: true,
+        alertMessage: 'Jumlah tamu belum ditentukan',
+      });
+      return true;
+    }
+    return false;
+  };
+
+  search = () => {
+    const nights = this.daysRemaining(
+      this.state.checkinDate,
+      this.state.checkoutDate,
+    );
+    // DATA REQUEST STRUCTURE
+    this.state.dataToPost = {
+      name: this.state.nameValue,
+      checkIn: this.state.checkinValue,
+      checkOut: this.state.checkoutValue,
+      stayPeriod: nights,
+      bed: this.state.bedValue,
+      guest: this.state.tamuValue,
+      star: this.state.starValue,
+      price: this.state.sliderValue,
+    };
+    console.log(this.state.dataToPost);
+    if (this.searchCheck(this.state.dataToPost)) return;
+    else
+      this.props.navigation.navigate(
+        'Accomodation Search Results',
+        this.state.dataToPost,
+      );
   };
 
   render() {
@@ -165,6 +249,22 @@ export default class AccomodationHome extends Component {
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
+          <Modal
+            transparent={true}
+            visible={this.state.alertPopup}
+            animationType="slide">
+            <View style={gs.columnContainer}>
+              <View style={ts.modalContainer}>
+                <Icon name={'times-circle'} size={80} color={'red'} />
+                <Text style={[ts.alertMessage]}>{this.state.alertMessage}</Text>
+                <TouchableOpacity
+                  style={ts.okButton}
+                  onPress={() => this.setState({alertPopup: false})}>
+                  <Text style={[ts.title, {color: 'white'}]}>OK</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
           <DateTimePicker
             isVisible={this.state.checkinVisible}
             onCancel={this.hideDate}
@@ -195,7 +295,7 @@ export default class AccomodationHome extends Component {
                 <TextInput
                   style={[ls.textInput, {width: '85%', marginLeft: 18}]}
                   placeholder={'Akomodasi di sekitar anda...'}
-                  onChangeText={(value) => this.setState({value})}
+                  onChangeText={(value) => this.setState({nameValue: value})}
                 />
               </View>
 
@@ -346,7 +446,9 @@ export default class AccomodationHome extends Component {
               </View>
 
               <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                <TouchableOpacity style={acs.pilihButton}>
+                <TouchableOpacity
+                  style={acs.pilihButton}
+                  onPress={() => this.search()}>
                   <Text style={{color: Color.white, fontWeight: 'bold'}}>
                     Cari
                   </Text>

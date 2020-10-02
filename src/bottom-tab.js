@@ -27,6 +27,7 @@ import AccomodationDetail from './screens/accomodation/accomodation-details';
 import AccomodationReservation from './screens/accomodation/accomodation-reservation';
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
+import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -169,6 +170,13 @@ export default class BottomTab extends Component {
           name="Accomodation Review"
           options={{
             title: 'Seluruh Ulasan',
+          }}
+        />
+        <accomodationStack.Screen
+          component={AccomodationSearchResults}
+          name="Accomodation Search Results"
+          options={{
+            title: 'Pencarian Akomodasi',
           }}
         />
       </accomodationStack.Navigator>
