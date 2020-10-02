@@ -23,7 +23,10 @@ export default class AccomodationPayment extends Component {
     };
   }
 
-  UNSAFE_componentWillMount = () => {};
+  UNSAFE_componentWillMount = () => {
+    console.log('~~~~~~');
+    console.log(this.state.RESERVE_DATA.user_order);
+  };
 
   eWalletChosen = () => {
     this.setState({
@@ -112,12 +115,16 @@ export default class AccomodationPayment extends Component {
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{fontWeight: 'bold'}}>Check in</Text>
                   <Text>:</Text>
-                  <Text style={{marginLeft: 6}}>16 April 2020</Text>
+                  <Text style={{marginLeft: 6}}>
+                    {this.state.RESERVE_DATA.user_order.checkIn}
+                  </Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{fontWeight: 'bold'}}>Check out</Text>
                   <Text>:</Text>
-                  <Text style={{marginLeft: 6}}>18 April 2020</Text>
+                  <Text style={{marginLeft: 6}}>
+                    {this.state.RESERVE_DATA.user_order.checkOut}
+                  </Text>
                 </View>
               </View>
             </View>
@@ -127,7 +134,8 @@ export default class AccomodationPayment extends Component {
               {/* Left side */}
               <View style={ls.columnDetail}>
                 <Text style={ls.detailFont}>
-                  1 x {this.state.RESERVE_DATA.room.category} (2 malam)
+                  1 x {this.state.RESERVE_DATA.room.category} (
+                  {this.state.RESERVE_DATA.user_order.stayPeriod} malam)
                 </Text>
               </View>
               {/* Right side */}

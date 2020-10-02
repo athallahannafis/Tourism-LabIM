@@ -69,7 +69,7 @@ export default class AccomodationHome extends Component {
       }
     }
     this.state.recommendedAcc = best;
-    console.log(this.state.recommendedAcc);
+    //console.log(this.state.recommendedAcc);
   };
 
   handleCheckin = (date) => {
@@ -177,7 +177,21 @@ export default class AccomodationHome extends Component {
       star: this.state.starValue,
       price: this.state.sliderValue,
     };
-    console.log(this.state.dataToPost);
+    //console.log(this.state.dataToPost);
+
+    this.setState({
+      nameValue: '',
+      checkinVisible: false,
+      checkoutVisible: false,
+      bedValue: 1,
+      tamuValue: 1,
+      starValue: null,
+      checkinDate: null,
+      checkoutDate: null,
+      checkinValue: 'Tanggal check-in',
+      checkoutValue: 'Tanggal check-out',
+      sliderValue: 0,
+    });
     if (this.searchCheck(this.state.dataToPost)) return;
     else
       this.props.navigation.navigate(
@@ -462,10 +476,11 @@ export default class AccomodationHome extends Component {
             <Text style={gs.cardTitle}>Rekomendasi Akomodasi sekitar anda</Text>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate(
-                  'Accomodation Details',
-                  this.state.recommendedAcc,
-                )
+                this.props.navigation.navigate('Accomodation Details', {
+                  acc: this.state.recommendedAcc,
+                  date_exist: false,
+                  user_order: {},
+                })
               }
               style={gs.rowContainer}>
               {/* left section */}

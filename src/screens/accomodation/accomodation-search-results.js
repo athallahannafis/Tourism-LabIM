@@ -40,8 +40,8 @@ export default class AccomodationHome extends Component {
   };
 
   fetchResult = () => {
-    console.log('======================================================');
     const searched = this.state.searchedData;
+    const nameValue = String(searched.name).toLowerCase();
 
     //Jika keyword bagian dari nama akomodasi
     //Prioritas Satu
@@ -49,7 +49,7 @@ export default class AccomodationHome extends Component {
       if (
         AccomodationData.data[i].accomodation_name
           .toLowerCase()
-          .includes(searched.name.toLowerCase())
+          .includes(nameValue)
       ) {
         if (!this.state.list.includes(AccomodationData.data[i])) {
           this.state.list.push(AccomodationData.data[i]);
@@ -63,9 +63,8 @@ export default class AccomodationHome extends Component {
       if (
         AccomodationData.data[i].accomodation_place
           .toLowerCase()
-          .includes(searched.name.toLowerCase())
+          .includes(nameValue)
       ) {
-        console.log('MASUK PRIORITAS DUA');
         if (!this.state.list.includes(AccomodationData.data[i])) {
           this.state.list.push(AccomodationData.data[i]);
         }
@@ -76,9 +75,7 @@ export default class AccomodationHome extends Component {
     //Prioritas Tiga
     for (let i = 0; i < AccomodationData.data.length; i++) {
       if (
-        AccomodationData.data[i].description
-          .toLowerCase()
-          .includes(searched.name.toLowerCase())
+        AccomodationData.data[i].description.toLowerCase().includes(nameValue)
       ) {
         if (!this.state.list.includes(AccomodationData.data[i])) {
           this.state.list.push(AccomodationData.data[i]);
@@ -121,15 +118,16 @@ export default class AccomodationHome extends Component {
   };
 
   render() {
-    console.log(this.state.list);
     const result = this.state.list.map((item) => {
-      console.log('~~~~~~~~~~~~');
-      console.log(item);
       return (
         <>
           <TouchableOpacity
             onPress={() =>
-              this.props.navigation.navigate('Accomodation Details', item)
+              this.props.navigation.navigate('Accomodation Details', {
+                acc: item,
+                date_exist: true,
+                user_order: this.state.searchedData,
+              })
             }
             style={[gs.rowContainer, {paddingVertical: 20}]}>
             {/* left section */}
@@ -143,7 +141,44 @@ export default class AccomodationHome extends Component {
             {/* Right Section */}
             <View style={{width: 180}}>
               <Text style={gs.subCardTitle}>{item.accomodation_name}</Text>
-              <Text>{item.description}</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Icon name={'map-marker'} size={10} style={{marginRight: 2}} />
+                <Text style={acs.smallCardText}>{item.accomodation_place}</Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 2,
+                  alignItems: 'center',
+                }}>
+                <StarRating
+                  disabled={true}
+                  maxStars={5}
+                  rating={item.rate}
+                  fullStarColor={Color.color6}
+                  starSize={10}
+                />
+                <Text
+                  style={[
+                    acs.smallCardText,
+                    {fontWeight: 'bold', marginLeft: 4},
+                  ]}>
+                  {item.rate}
+                </Text>
+                <Text style={[acs.smallCardText, {marginLeft: 4}]}>
+                  ({item.reviews.length} reviews)
+                </Text>
+              </View>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Text style={acs.smallCardText}>Mulai dari </Text>
+                <Text style={{fontWeight: 'bold', fontSize: 13}}>
+                  Rp. {item.details.price}
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
         </>
@@ -313,8 +348,6 @@ export default class AccomodationHome extends Component {
                 <View style={[ls.searchContainer]}>
                   {/* Akomodasi sekitar anda */}
                   <View style={[ats.rowContainer, {width: '100%'}]}>
-                    {/* <Image style={ls.smallIcons}
-                source={require('../../images/bottomtab-icons/objekWisata.png')}/> */}
                     <Icon
                       name={'map-marker'}
                       size={25}
@@ -335,8 +368,6 @@ export default class AccomodationHome extends Component {
                     style={[ats.rowContainer, {width: '100%', marginTop: 8}]}>
                     <View style={ats.rowContainer}>
                       <View style={ats.rowContainer}>
-                        {/* <Image style={ls.smallIcons}
-                    source={require("../../images/ticket-icons/calendar.png")}/> */}
                         <Icon
                           name={'calendar'}
                           size={25}

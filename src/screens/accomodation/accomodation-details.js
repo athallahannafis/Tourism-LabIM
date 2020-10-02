@@ -20,13 +20,18 @@ export default class AccomodationDetails extends Component {
     super(props);
     this.state = {
       num: 0,
-      DATA: props.route.params,
+      DATA: props.route.params.acc,
+      dateExist: props.route.params.date_exist,
+      user_order: props.route.params.user_order,
     };
   }
 
   render() {
+    console.log('=======');
+    console.log(this.state.dateExist);
+    console.log(this.state.user_order);
+
     const accImages = this.state.DATA.images_source.map((item) => {
-      console.log(item);
       return <Image source={{uri: item}} style={ats.smallImage2} />;
     });
 
@@ -182,20 +187,24 @@ export default class AccomodationDetails extends Component {
             </View>
           </View>
         </ScrollView>
-        <View style={ats.floatingButtonContainer}>
-          <TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate(
-                  'Accomodation Reservation',
-                  this.state.DATA,
-                )
-              }
-              style={ats.floatingButton}>
-              <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
+        {this.state.dateExist ? (
+          <View style={ats.floatingButtonContainer}>
+            <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Accomodation Reservation', {
+                    data: this.state.DATA,
+                    user_order: this.state.user_order,
+                  })
+                }
+                style={ats.floatingButton}>
+                <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
+              </TouchableOpacity>
             </TouchableOpacity>
-          </TouchableOpacity>
-        </View>
+          </View>
+        ) : (
+          <></>
+        )}
       </View>
     );
   }

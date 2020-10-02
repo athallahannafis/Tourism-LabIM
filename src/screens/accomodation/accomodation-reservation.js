@@ -22,11 +22,14 @@ export default class AccomodationReservation extends Component {
     super(props);
     this.state = {
       num: 0,
-      DATA: props.route.params,
+      DATA: props.route.params.data,
+      user_order: props.route.params.user_order,
     };
   }
 
   render() {
+    console.log('=!=!=!=!');
+    console.log(this.state.user_order);
     const rooms = this.state.DATA.rooms.map((item) => {
       if (item.breakfast === true) {
         return (
@@ -79,6 +82,7 @@ export default class AccomodationReservation extends Component {
                     accomodationName: this.state.DATA.accomodation_name,
                     accomodationPlace: this.state.DATA.accomodation_place,
                     room: item,
+                    user_order: this.state.user_order,
                   })
                 }>
                 <Text
@@ -145,6 +149,7 @@ export default class AccomodationReservation extends Component {
                       accomodationName: this.state.DATA.accomodation_name,
                       accomodationPlace: this.state.DATA.accomodation_place,
                       room: item,
+                      user_order: this.state.user_order,
                     })
                   }>
                   <Text
@@ -179,7 +184,9 @@ export default class AccomodationReservation extends Component {
                     alignItems: 'center',
                     width: '30%',
                   }}>
-                  <Text>16 April 2020</Text>
+                  <Text style={{fontSize: 12}}>
+                    {this.state.user_order.checkIn}
+                  </Text>
                 </View>
                 <View
                   style={{
@@ -193,7 +200,9 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text>2 Malam</Text>
+                    <Text style={{fontSize: 12}}>
+                      {this.state.user_order.stayPeriod} Malam
+                    </Text>
                   </View>
                   <View
                     style={{
@@ -201,7 +210,9 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text>1 Kamar</Text>
+                    <Text style={{fontSize: 12}}>
+                      {this.state.user_order.bed} Kamar
+                    </Text>
                   </View>
                   <View
                     style={{
@@ -209,7 +220,9 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text>2 Tamu</Text>
+                    <Text style={{fontSize: 12}}>
+                      {this.state.user_order.guest} Tamu
+                    </Text>
                   </View>
                 </View>
               </View>
