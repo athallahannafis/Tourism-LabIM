@@ -52,9 +52,9 @@ export default class AttractionMap extends Component {
       },
       (error) => {
         console.log(error);
+        this.getMyLocation();
       },
-      {enableHighAccuracy: Platform.OS == "android",
-      timeout: 100000, maximumAge: 1000}
+      {timeout: 100000}
     )
   }
 
@@ -98,8 +98,8 @@ export default class AttractionMap extends Component {
           region={{
             latitude: this.state.current_latitude,
             longitude: this.state.current_longitude,
-            latitudeDelta: 1,
-            longitudeDelta: 1
+            latitudeDelta: 0.05,
+            longitudeDelta: 0.05
           }}
           showsMyLocationButton={true}
           style={ls.map}>
@@ -109,7 +109,7 @@ export default class AttractionMap extends Component {
               longitude: this.state.destination.coordinates.longitude
             }}
             title="Lokasi"
-            description="Hi"/>
+            description={this.state.destination.place_name}/>
           </MapView>
         </View>
 
