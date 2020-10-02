@@ -72,13 +72,6 @@ export default class AccomodationDetails extends Component {
               ]}>
                 {this.state.DATA.rate}
               </Text>
-              <View style={ats.rowContainer}>
-                <Text style={{fontSize: 20, fontWeight: "bold", color: Color.color4}}>
-                  Rp{this.state.DATA.details.price.toString()}
-                </Text>
-                <Text style={{color: Color.color4}}> / malam</Text>
-              </View>
-
               <View style={[ats.rowContainer, {
                 width: 200, marginTop: 5}]}>
                 <TouchableOpacity
@@ -88,7 +81,23 @@ export default class AccomodationDetails extends Component {
                   </Text>
                 </TouchableOpacity>
                 {/* TODO: Implement map */}
+                <TouchableOpacity
+                style={ats.reviewBtn}
+                onPress={() => this.props.navigation.navigate(
+                  "Accomodation Map", this.state.DATA
+                )}>
+                  <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                    Show on map
+                  </Text>
+                </TouchableOpacity>
               </View>
+              <View style={ats.rowContainer}>
+                <Text style={{fontSize: 20, fontWeight: "bold", color: Color.color4}}>
+                  Rp{this.state.DATA.details.price.toString()}
+                </Text>
+                <Text style={{color: Color.color4}}> / malam</Text>
+              </View>
+
             </View>
             <Text style={[ats.cardMediumText, {marginTop: 10}]}>
               {this.state.DATA.description}
