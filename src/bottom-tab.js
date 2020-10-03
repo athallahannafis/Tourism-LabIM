@@ -16,13 +16,12 @@ import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
 import TicketReservation from './screens/ticket-reservation/reserve-ticket';
 import TicketPayment from './screens/ticket-reservation/payment-ticket';
-//Attraction
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
 import AttractionSearchResults from './screens/attraction/attraction-search-results';
 import AttractionMap from './screens/attraction/attraction-map';
 // Accomodation
-import AccomodationMapScreen from './screens/accomodation/accomodation-map';
+import AccomodationMap from './screens/accomodation/accomodation-map';
 import AccomodationHome from './screens/accomodation/accomodation-home';
 import AccomodationDetail from './screens/accomodation/accomodation-details';
 import AccomodationReservation from './screens/accomodation/accomodation-reservation';
@@ -153,7 +152,7 @@ export default class BottomTab extends Component {
           name="Accomodation Details"
         />
         <accomodationStack.Screen
-          component={AccomodationMapScreen}
+          component={AccomodationMap}
           name="Accomodation Map"
         />
         <accomodationStack.Screen
