@@ -82,7 +82,7 @@ export default class AttractionReviews extends Component {
       }
       return (
         <View style={[gs.cardSection, {marginBottom: 20}]}>
-          <View style={[ls.rowContainer, {width: '100%'}]}>
+          <View style={[ls.rowContainerNoWrap, {width: '100%'}]}>
             {/* leftside */}
             <View
               style={{
@@ -161,4 +161,9 @@ const ls = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
   },
+  rowContainerNoWrap: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  }
 });
