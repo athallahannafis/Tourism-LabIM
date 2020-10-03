@@ -208,7 +208,11 @@ export default class AccomodationHome extends Component {
         return (
           <TouchableOpacity
             onPress={() =>
-              this.props.navigation.navigate('Accomodation Details', item)
+              this.props.navigation.navigate('Accomodation Details', {
+                acc: item,
+                date_exist: false,
+                user_order: {},
+              })
             }
             style={[gs.rowContainer, {paddingVertical: 20}]}>
             {/* left section */}
@@ -238,7 +242,11 @@ export default class AccomodationHome extends Component {
           <>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate('Accomodation Details', item)
+                this.props.navigation.navigate('Accomodation Details', {
+                  acc: item,
+                  date_exist: false,
+                  user_order: {},
+                })
               }
               style={[gs.rowContainer, {paddingVertical: 20}]}>
               {/* left section */}
