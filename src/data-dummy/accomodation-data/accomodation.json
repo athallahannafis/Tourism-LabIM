@@ -14,16 +14,52 @@
       "details": {
         "price": 499000,
         "facility": [
-          "AC", "Kolam Renang", "Parkiran",
-          "Restoran", "Ruang Meeting", "Elevator"
+          "AC",
+          "Kolam Renang",
+          "Parkiran",
+          "Restoran",
+          "Ruang Meeting",
+          "Elevator"
         ],
         "coordinates": {
           "latitude": -6.164269,
-          "longitude": 106.820690
+          "longitude": 106.82069
         },
         "checkin": "14.00",
         "checkout": "12:00"
       },
+      "rooms": [
+        {
+          "category": "Standard Room",
+          "price": 499000,
+          "room_images": [
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075011.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075010.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075014.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y5/Y957075/Y957075018.jpg"
+          ],
+          "room_details": {
+            "bed": "1 double bed/2 single bed",
+            "guest": "2 guests/room",
+            "breakfast": true
+          }
+        },
+        {
+          "category": "Double Room",
+          "price": 899000,
+          "room_images": [
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075011.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075010.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y5/Y957075/Y957075014.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y5/Y957075/Y957075018.jpg"
+          ],
+          "room_details": {
+            "bed": "2 double bed",
+            "guest": "4 guests/room",
+            "breakfast": true
+          }
+        }
+      ],
       "reviews": [
         {
           "username": "Sterling",
@@ -91,16 +127,52 @@
       "details": {
         "price": 499000,
         "facility": [
-          "AC", "Kolam Renang", "Parkiran",
-          "Restoran", "Ruang Meeting", "Elevator"
+          "AC",
+          "Kolam Renang",
+          "Parkiran",
+          "Restoran",
+          "Ruang Meeting",
+          "Elevator"
         ],
         "coordinates": {
-          "latitude": -7.879257, 
+          "latitude": -7.879257,
           "longitude": 112.522596
         },
         "checkin": "14.00",
         "checkout": "12:00"
       },
+      "rooms": [
+        {
+          "category": "Standard Room",
+          "price": 499000,
+          "room_images": [
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVDqeIif5q17y9TkJGSD8uN9XYUaHmPdlql+KX4YsmUxCP+6q/7XgJKHx2en4/0V1cRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVC3kXcJm7RM2qfs8D5NPbTH7036ZCnaFq3Uq3ONfZJni9tZtghJ5eqh7CG2GCWupYRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA=="
+          ],
+          "room_details": {
+            "bed": "1 double bed/2 single bed",
+            "guest": "2 guests/room",
+            "breakfast": true
+          }
+        },
+        {
+          "category": "Double Room",
+          "price": 899000,
+          "room_images": [
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVDqeIif5q17y9TkJGSD8uN9XYUaHmPdlql+KX4YsmUxCP+6q/7XgJKHx2en4/0V1cRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMVC3kXcJm7RM2qfs8D5NPbTH7036ZCnaFq3Uq3ONfZJni9tZtghJ5eqh7CG2GCWupYRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA==",
+            "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA=="
+          ],
+          "room_details": {
+            "bed": "2 double bed",
+            "guest": "4 guests/room",
+            "breakfast": true
+          }
+        }
+      ],
       "reviews": [
         {
           "username": "Sterling",
@@ -129,7 +201,7 @@
         {
           "username": "Gaddard",
           "rate": 5,
-          "review_time": "2 minggu yang lalu",
+          "review_time": "2 bulan yang lalu",
           "review": "Beds nice, service is good.",
           "photos": []
         },
@@ -166,10 +238,14 @@
       ],
       "rate": 3.5,
       "details": {
-        "price": 499000,
+        "price": 599000,
         "facility": [
-          "AC", "Kolam Renang", "Parkiran",
-          "Restoran", "Ruang Meeting", "Elevator"
+          "AC",
+          "Kolam Renang",
+          "Parkiran",
+          "Restoran",
+          "Ruang Meeting",
+          "Elevator"
         ],
         "coordinates": {
           "latitude": -6.387412,
@@ -178,6 +254,38 @@
         "checkin": "14.00",
         "checkout": "12:00"
       },
+      "rooms": [
+        {
+          "category": "Standard Room",
+          "price": 499000,
+          "room_images": [
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y2/Y937792/Y937792034.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg"
+          ],
+          "room_details": {
+            "bed": "1 double bed/2 single bed",
+            "guest": "2 guests/room",
+            "breakfast": true
+          }
+        },
+        {
+          "category": "Double Room",
+          "price": 899000,
+          "room_images": [
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict2L/Y2/Y937792/Y937792034.jpg",
+            "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg"
+          ],
+          "room_details": {
+            "bed": "2 double bed",
+            "guest": "4 guests/room",
+            "breakfast": true
+          }
+        }
+      ],
       "reviews": [
         {
           "username": "Sterling",

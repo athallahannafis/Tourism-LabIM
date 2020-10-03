@@ -278,7 +278,7 @@ export default class ProfileEdit extends Component {
                       this.state.bornMonth,
                       this.state.bornDate,
                     )
-                  } //nanti diganti yaa
+                  }
                   isVisible={this.state.isVisible}
                   onConfirm={this.handlePicker}
                   onCancel={this.hidePicker}

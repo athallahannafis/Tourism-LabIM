@@ -5,24 +5,30 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // Screen
-import TestScreen from './screens/Test.js';
-import ProfileHomeScreen from './screens/profile/ProfileHome.js';
-import ProfileEditScreen from './screens/profile/ProfileEdit.js';
-import PreferensiObjekWisataScreen from './screens/profile/PreferensiObjekWisata.js';
-import PreferensiAkomodasiScreen from './screens/profile/PreferensiAkomodasi.js';
+import TestScreen from './screens/Test';
+//Profile
+import ProfileHome from './screens/profile/ProfileHome';
+import ProfileEdit from './screens/profile/ProfileEdit';
+import PreferensiObjekWisata from './screens/profile/PreferensiObjekWisata';
+import PreferensiAkomodasi from './screens/profile/PreferensiAkomodasi';
+//Attraction
 import AttractionHome from './screens/attraction/attraction-home';
 import AttractionInDestination from './screens/attraction/attraction-in-destination';
 import TicketReservation from './screens/ticket-reservation/reserve-ticket';
 import TicketPayment from './screens/ticket-reservation/payment-ticket';
+//Attraction
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
 import AttractionSearchResults from './screens/attraction/attraction-search-results';
 import AttractionMap from './screens/attraction/attraction-map';
 // Accomodation
-import AccomodationHomeScreen from './screens/accomodation/accomodation-home';
-import AccomodationDetailScreen from './screens/accomodation/accomodation-details';
 import AccomodationMapScreen from './screens/accomodation/accomodation-map';
-import AccomodationReviewScreen from './screens/accomodation/accomodation-reviews';
+import AccomodationHome from './screens/accomodation/accomodation-home';
+import AccomodationDetail from './screens/accomodation/accomodation-details';
+import AccomodationReservation from './screens/accomodation/accomodation-reservation';
+import AccomodationPayment from './screens/accomodation/accomodation-payment';
+import AccomodationReview from './screens/accomodation/accomodation-reviews';
+import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -38,7 +44,7 @@ export default class BottomTab extends Component {
   testScreenStack = (props) => {
     return (
       <testStack.Navigator>
-        <testStack.Screen component={TestScreen} name="Test Stack" />
+        <testStack.Screen component={TestScreen} name="Test" />
       </testStack.Navigator>
     );
   };
@@ -51,28 +57,28 @@ export default class BottomTab extends Component {
           headerTintColor: 'white',
         }}>
         <profileStack.Screen
-          component={ProfileHomeScreen}
+          component={ProfileHome}
           name="ProfileHome"
           options={{
             title: 'Profil Pengguna',
           }}
         />
         <profileStack.Screen
-          component={ProfileEditScreen}
+          component={ProfileEdit}
           name="ProfileEdit"
           options={{
             title: 'Edit Profil Pengguna',
           }}
         />
         <profileStack.Screen
-          component={PreferensiObjekWisataScreen}
+          component={PreferensiObjekWisata}
           name="PreferensiObjekWisata"
           options={{
             title: '',
           }}
         />
         <profileStack.Screen
-          component={PreferensiAkomodasiScreen}
+          component={PreferensiAkomodasi}
           name="PreferensiAkomodasi"
           options={{
             title: '',
@@ -104,6 +110,9 @@ export default class BottomTab extends Component {
         <attractionStack.Screen
           component={AttractionReview}
           name="Attraction Reviews"
+          option={{
+            title: 'Seluruh Ulasan',
+          }}
         />
         <attractionStack.Screen
           component={TicketReservation}
@@ -131,16 +140,16 @@ export default class BottomTab extends Component {
   accomodationStackScreen = (props) => {
     return (
       <accomodationStack.Navigator
-      screenOptions={{
-        headerStyle: {backgroundColor: '#2E99A3'},
-        headerTintColor: 'white',
-      }}>
+        screenOptions={{
+          headerStyle: {backgroundColor: '#2E99A3'},
+          headerTintColor: 'white',
+        }}>
         <accomodationStack.Screen
-          component={AccomodationHomeScreen}
+          component={AccomodationHome}
           name="Accomodation"
         />
         <accomodationStack.Screen
-          component={AccomodationDetailScreen}
+          component={AccomodationDetail}
           name="Accomodation Details"
         />
         <accomodationStack.Screen
@@ -148,12 +157,44 @@ export default class BottomTab extends Component {
           name="Accomodation Map"
         />
         <accomodationStack.Screen
-          component={AccomodationReviewScreen}
+          component={AccomodationReservation}
+          name="Accomodation Reservation"
+          options={{
+            title: 'Reservasi Akomodasi',
+          }}
+        />
+        <accomodationStack.Screen
+          component={AccomodationPayment}
+          name="Accomodation Payment"
+          options={{
+            title: 'Reservasi Akomodasi',
+          }}
+        />
+        <accomodationStack.Screen
+          component={AccomodationReview}
           name="Accomodation Review"
+          options={{
+            title: 'Seluruh Ulasan',
+          }}
+        />
+        <accomodationStack.Screen
+          component={AccomodationSearchResults}
+          name="Accomodation Search Results"
+          options={{
+            title: 'Pencarian Akomodasi',
+          }}
         />
       </accomodationStack.Navigator>
-    )
-  }
+    );
+  };
+
+  myTripScreenStack = (props) => {
+    return (
+      <testStack.Navigator>
+        <testStack.Screen component={TestScreen} name="My Trip" />
+      </testStack.Navigator>
+    );
+  };
 
   render() {
     return (
@@ -203,7 +244,7 @@ export default class BottomTab extends Component {
         />
 
         <bottomTab.Screen
-          component={this.testScreenStack}
+          component={this.myTripScreenStack}
           options={{
             tabBarIcon: () => {
               // <Image source={require("path")}
