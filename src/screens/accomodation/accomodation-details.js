@@ -122,6 +122,15 @@ export default class AccomodationDetails extends Component {
                     </Text>
                   </TouchableOpacity>
                   {/* TODO: Implement map */}
+                  <TouchableOpacity
+                  style={ats.reviewBtn}
+                  onPress={() => this.props.navigation.navigate(
+                    "Accomodation Map", this.state.DATA
+                  )}>
+                    <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                      Show on map
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </View>
               <Text style={[ats.cardMediumText, {marginTop: 10}]}>

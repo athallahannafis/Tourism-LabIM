@@ -62,10 +62,10 @@ export default class AttractionMap extends Component {
     const temp = this.state.destination;
 
     this.setState({
-      place_latitude: temp.coordinates.latitude,
-      place_longitude: temp.coordinates.longitude,
-      current_latitude: temp.coordinates.latitude,
-      current_longitude: temp.coordinates.longitude
+      place_latitude: temp.details.coordinates.latitude,
+      place_longitude: temp.details.coordinates.longitude,
+      current_latitude: temp.details.coordinates.latitude,
+      current_longitude: temp.details.coordinates.longitude
     });
   }
 
@@ -86,8 +86,6 @@ export default class AttractionMap extends Component {
   }
 
   render () {
-    console.log(`Self coordinate: (${this.state.self_latitude}, ${this.state.self_longitude})`);
-    console.log(`Place coordinate: (${this.state.place_longitude}, ${this.state.place_longitude})`)
     return (
       <View style={ls.mainContainer}>
         {/* Map */}
@@ -105,11 +103,11 @@ export default class AttractionMap extends Component {
           style={ls.map}>
             <MapView.Marker
             coordinate={{
-              latitude: this.state.destination.coordinates.latitude,
-              longitude: this.state.destination.coordinates.longitude
+              latitude: this.state.destination.details.coordinates.latitude,
+              longitude: this.state.destination.details.coordinates.longitude
             }}
             title="Lokasi"
-            description={this.state.destination.place_name}/>
+            description={this.state.destination.accomodation_name}/>
           </MapView>
         </View>
 
@@ -124,7 +122,7 @@ export default class AttractionMap extends Component {
                 <Text>Lokasi anda</Text>
               </View>
               <View style={[ls.bubble]}>
-                <Text>{this.state.destination.place_name}</Text>
+                <Text>{this.state.destination.accomodation_name}</Text>
               </View>
             </View>
           </View>
