@@ -29,6 +29,8 @@ export default class MyTripHome extends Component {
       addNewDestinationPopUp: false,
       dateStartVisible: false,
       dateEndVisible: false,
+      destinationName1: 'Jakarta',
+      destinationName2: 'Bali',
     };
   }
 
@@ -71,7 +73,9 @@ export default class MyTripHome extends Component {
       <>
         {this.state.addNewDestinationPopUp ? (
           <ScrollView>
+            {/*Jika ADA pop up untuk membuat destinasi tujuan baru */}
             <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+              {/*Tombol Buat Tujuan Destinasi */}
               <TouchableOpacity
                 style={mts.buttonAddDestination}
                 onPress={() => this.setState({addNewDestinationPopUp: true})}>
@@ -85,8 +89,11 @@ export default class MyTripHome extends Component {
                   color={Color.white}
                 />
               </TouchableOpacity>
+
+              {/* Pop up form untuk membuat tujuan destinasi baru */}
               <View style={gs.cardSection}>
                 <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                  {/* Text input Tujuan Destinasi */}
                   <View
                     style={{
                       flexDirection: 'row',
@@ -103,6 +110,7 @@ export default class MyTripHome extends Component {
                     />
                   </View>
 
+                  {/* Text input tanggal mulai */}
                   <View
                     style={{
                       flexDirection: 'row',
@@ -136,6 +144,7 @@ export default class MyTripHome extends Component {
                     </TouchableOpacity>
                   </View>
 
+                  {/* Text input tanggal selesai */}
                   <View
                     style={{
                       flexDirection: 'row',
@@ -163,6 +172,8 @@ export default class MyTripHome extends Component {
                       />
                     </TouchableOpacity>
                   </View>
+
+                  {/* Button simpan */}
                   <View
                     style={{
                       alignItems: 'flex-end',
@@ -171,14 +182,7 @@ export default class MyTripHome extends Component {
                       height: 50,
                     }}>
                     <TouchableOpacity
-                      style={{
-                        width: 70,
-                        height: 27,
-                        backgroundColor: Color.color5,
-                        borderRadius: 10,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
+                      style={mts.buttonSimpan}
                       onPress={() =>
                         this.setState({addNewDestinationPopUp: false})
                       }>
@@ -187,13 +191,22 @@ export default class MyTripHome extends Component {
                   </View>
                 </View>
               </View>
+
+              {/* Daftar Tujuan Destinasi Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
                 <Text style={[gs.cardTitle]}>Daftar Tujuan Destinasi</Text>
-                <TouchableOpacity style={mts.destinationBubble}>
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Tujuan Destinasi',
+                      this.state.destinationName1,
+                    )
+                  }>
                   <View style={{flexDirection: 'row'}}>
                     <View style={{flexDirection: 'column'}}>
                       <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        Jakarta
+                        {this.state.destinationName1}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 4}}>
                         <Icon
@@ -216,11 +229,18 @@ export default class MyTripHome extends Component {
                     </View>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={mts.destinationBubble}>
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Tujuan Destinasi',
+                      this.state.destinationName2,
+                    )
+                  }>
                   <View style={{flexDirection: 'row'}}>
                     <View style={{flexDirection: 'column'}}>
                       <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        Jakarta
+                        {this.state.destinationName2}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 4}}>
                         <Icon
@@ -244,6 +264,8 @@ export default class MyTripHome extends Component {
                   </View>
                 </TouchableOpacity>
               </View>
+
+              {/* Rekomendasi Destinasi Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
@@ -316,7 +338,9 @@ export default class MyTripHome extends Component {
           </ScrollView>
         ) : (
           <ScrollView>
+            {/*Jika TIDAK ADA pop up untuk membuat destinasi tujuan baru */}
             <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+              {/*Tombol Buat Tujuan Destinasi */}
               <TouchableOpacity
                 style={mts.buttonAddDestination}
                 onPress={() => this.setState({addNewDestinationPopUp: true})}>
@@ -331,13 +355,21 @@ export default class MyTripHome extends Component {
                 />
               </TouchableOpacity>
 
+              {/* Daftar Tujuan Destinasi Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
                 <Text style={[gs.cardTitle]}>Daftar Tujuan Destinasi</Text>
-                <TouchableOpacity style={mts.destinationBubble}>
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Tujuan Destinasi',
+                      this.state.destinationName1,
+                    )
+                  }>
                   <View style={{flexDirection: 'row'}}>
                     <View style={{flexDirection: 'column'}}>
                       <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        Jakarta
+                        {this.state.destinationName1}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 4}}>
                         <Icon
@@ -360,11 +392,18 @@ export default class MyTripHome extends Component {
                     </View>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={mts.destinationBubble}>
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Tujuan Destinasi',
+                      this.state.destinationName2,
+                    )
+                  }>
                   <View style={{flexDirection: 'row'}}>
                     <View style={{flexDirection: 'column'}}>
                       <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        Jakarta
+                        {this.state.destinationName2}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 4}}>
                         <Icon
@@ -388,6 +427,8 @@ export default class MyTripHome extends Component {
                   </View>
                 </TouchableOpacity>
               </View>
+
+              {/* Rekomendasi Destinasi Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu

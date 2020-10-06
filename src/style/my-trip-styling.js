@@ -2,6 +2,22 @@ import {StyleSheet, Dimensions} from 'react-native';
 import Color from '../style/color.json';
 
 export const myTripStyling = StyleSheet.create({
+  bigImageContainer: {
+    width: Dimensions.get('window').width,
+  },
+  bigImage: {
+    width: Dimensions.get('window').width,
+    height: 270,
+  },
+  blackOverlay: {
+    backgroundColor: 'black',
+    opacity: 0.6,
+    width: Dimensions.get('window').width,
+    height: 270,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
   buttonAddDestination: {
     width: 220,
     height: 55,
@@ -30,12 +46,29 @@ export const myTripStyling = StyleSheet.create({
     color: Color.white,
     fontWeight: 'bold',
   },
+  buttonSimpan: {
+    width: 70,
+    height: 27,
+    backgroundColor: Color.color5,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   destinationBubble: {
     width: '100%',
     backgroundColor: Color.color3,
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
+  },
+  itineraryButton: {
+    marginTop: 20,
+    backgroundColor: Color.color4,
+    width: 240,
+    height: 35,
+    borderRadius: 13,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   recommendationImage: {
     borderRadius: 10,
@@ -51,5 +84,19 @@ export const myTripStyling = StyleSheet.create({
     paddingLeft: 10,
     backgroundColor: Color.white,
     borderRadius: 10,
+  },
+  reservationBubble: {
+    width: '100%',
+    backgroundColor: Color.color1,
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+  },
+  textOnOverlay: {
+    position: 'absolute',
+    left: 115,
+    top: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
