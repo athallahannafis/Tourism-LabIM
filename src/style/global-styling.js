@@ -42,6 +42,10 @@ export const globalStyling = StyleSheet.create({
     color: Color.color2,
     marginBottom: 10,
   },
+  closeIcon: {
+    alignItems: 'flex-end',
+    width: '100%',
+  },
   subCardTitle: {
     fontSize: 15,
     marginBottom: 15,

@@ -4,6 +4,7 @@ import {View, Text, Image} from 'react-native';
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import Color from '../../style/color.json';
 
 // data
 import attInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
@@ -83,7 +84,7 @@ export default class AttractionInDestination extends Component {
                   </View>
                 </View>
               </TouchableOpacity>
-              <View style={{borderBottomWidth: 1}}></View>
+              <View style={{borderBottomWidth: 1, borderColor: Color.color1}}></View>
             </>
           );
         }

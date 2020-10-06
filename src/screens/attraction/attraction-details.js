@@ -4,7 +4,6 @@ import StarRating from 'react-native-star-rating';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
-import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -187,18 +186,42 @@ export default class AttractionDetails extends Component {
                         {this.state.averageRate}
                       </Text>
                     </View>
-                    <TouchableOpacity
-                      style={ats.reviewBtn}
-                      onPress={() =>
-                        this.props.navigation.navigate(
-                          'Attraction Reviews',
-                          this.state.attractionDataSet,
-                        )
-                      }>
-                      <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
-                        ({this.state.attractionReviews.length} reviews)
-                      </Text>
-                    </TouchableOpacity>
+
+                    <View
+                      style={[
+                        ats.rowContainer,
+                        {
+                          width: 200,
+                          marginTop: 5,
+                        },
+                      ]}>
+                      <TouchableOpacity
+                        style={ats.reviewBtn}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Attraction Reviews',
+                            this.state.attractionDataSet,
+                          )
+                        }>
+                        <Text
+                          style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                          ({this.state.attractionReviews.length} reviews)
+                        </Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={ats.reviewBtn}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Attraction Map',
+                            this.state.attractionDataSet,
+                          )
+                        }>
+                        <Text
+                          style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
+                          Show on map
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                   <TouchableOpacity
                     style={ats.btnAddtoItinerary}

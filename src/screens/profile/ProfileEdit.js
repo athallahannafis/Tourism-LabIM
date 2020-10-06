@@ -244,6 +244,9 @@ export default class ProfileEdit extends Component {
                   style={ps.bubbleTextInput}
                   placeholder={'Nama Belakang'}
                   defaultValue={this.state.dataSource.namaBelakang}
+                  onChangeText={(newNamaBelakang) =>
+                    this.setState({newNamaBelakang})
+                  }
                 />
               </View>
             </View>
@@ -275,7 +278,7 @@ export default class ProfileEdit extends Component {
                       this.state.bornMonth,
                       this.state.bornDate,
                     )
-                  } //nanti diganti yaa
+                  }
                   isVisible={this.state.isVisible}
                   onConfirm={this.handlePicker}
                   onCancel={this.hidePicker}
