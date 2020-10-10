@@ -2,6 +2,11 @@ import {StyleSheet, Dimensions} from 'react-native';
 import Color from '../style/color.json';
 
 export const myTripStyling = StyleSheet.create({
+  threeImagesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5,
+  },
   bigImageContainer: {
     width: Dimensions.get('window').width,
   },
@@ -29,6 +34,21 @@ export const myTripStyling = StyleSheet.create({
     flexDirection: 'row',
   },
   buttonAddDestinationText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Color.white,
+  },
+  buttonAddItinerary: {
+    width: 220,
+    height: 35,
+    margin: 25,
+    backgroundColor: Color.color4,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonAddItineraryText: {
     fontSize: 16,
     fontWeight: 'bold',
     color: Color.white,
@@ -61,6 +81,11 @@ export const myTripStyling = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
   },
+  imageInCard: {
+    width: (Dimensions.get('window').width - 130) / 2,
+    height: 70,
+    borderRadius: 6,
+  },
   itineraryButton: {
     marginTop: 20,
     backgroundColor: Color.color4,
@@ -91,6 +116,16 @@ export const myTripStyling = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
+  },
+  smallImageInCard: {
+    width: (Dimensions.get('window').width - 130) / 4 - 2,
+    height: 35,
+    borderRadius: 4,
+  },
+  squareImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 5,
   },
   textOnOverlay: {
     position: 'absolute',

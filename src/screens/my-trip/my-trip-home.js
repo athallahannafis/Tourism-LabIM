@@ -14,9 +14,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
-// data
-import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
-
 export default class MyTripHome extends Component {
   constructor(props) {
     super(props);
@@ -223,7 +220,14 @@ export default class MyTripHome extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                       }}>
-                      <TouchableOpacity style={mts.buttonDetail}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Tujuan Destinasi',
+                            this.state.destinationName1,
+                          )
+                        }>
                         <Text style={mts.buttonDetailText}>Detail</Text>
                       </TouchableOpacity>
                     </View>
@@ -257,7 +261,14 @@ export default class MyTripHome extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                       }}>
-                      <TouchableOpacity style={mts.buttonDetail}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Tujuan Destinasi',
+                            this.state.destinationName2,
+                          )
+                        }>
                         <Text style={mts.buttonDetailText}>Detail</Text>
                       </TouchableOpacity>
                     </View>
@@ -386,7 +397,14 @@ export default class MyTripHome extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                       }}>
-                      <TouchableOpacity style={mts.buttonDetail}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Tujuan Destinasi',
+                            this.state.destinationName1,
+                          )
+                        }>
                         <Text style={mts.buttonDetailText}>Detail</Text>
                       </TouchableOpacity>
                     </View>
@@ -420,7 +438,14 @@ export default class MyTripHome extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                       }}>
-                      <TouchableOpacity style={mts.buttonDetail}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Tujuan Destinasi',
+                            this.state.destinationName2,
+                          )
+                        }>
                         <Text style={mts.buttonDetailText}>Detail</Text>
                       </TouchableOpacity>
                     </View>

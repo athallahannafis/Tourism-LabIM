@@ -10,12 +10,6 @@ import {myTripStyling as mts} from '../../style/my-trip-styling';
 //adition
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import DateTimePicker from 'react-native-modal-datetime-picker';
-import moment from 'moment';
-
-// data
-import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class MyTripDestinationDetails extends Component {
   constructor(props) {
@@ -55,7 +49,9 @@ export default class MyTripDestinationDetails extends Component {
           </View>
 
           {/*Itinerary */}
-          <TouchableOpacity style={mts.itineraryButton}>
+          <TouchableOpacity
+            style={mts.itineraryButton}
+            onPress={() => this.props.navigation.navigate('Itinerary')}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
               Itinerary
