@@ -28,6 +28,8 @@ import AccomodationReservation from './screens/accomodation/accomodation-reserva
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
 import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
+// My trip
+import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -189,8 +191,13 @@ export default class BottomTab extends Component {
 
   myTripScreenStack = (props) => {
     return (
-      <testStack.Navigator>
-        <testStack.Screen component={TestScreen} name="My Trip" />
+      <testStack.Navigator
+        screenOptions={{
+          headerStyle: {backgroundColor: '#2E99A3'},
+          headerTintColor: 'white'
+        }}>
+        <testStack.Screen component={ItineraryRecommendation}
+          name="Itinerary Recommendation"/>
       </testStack.Navigator>
     );
   };
