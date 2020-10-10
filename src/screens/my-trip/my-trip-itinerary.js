@@ -18,12 +18,17 @@ export default class MyTripItinerary extends Component {
     super(props);
     this.state = {};
   }
+
+  UNSAFE_componentWillMount = () => {};
+
   render() {
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
           {/*Button Buat Itinerary */}
-          <TouchableOpacity style={mts.buttonAddItinerary}>
+          <TouchableOpacity
+            style={mts.buttonAddItinerary}
+            onPress={() => this.props.navigation.navigate('Buat Itinerary')}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
               style={{marginLeft: 15}}
