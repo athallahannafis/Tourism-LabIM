@@ -62,7 +62,7 @@ export default class ItineraryRecommendation extends Component {
         <TouchableOpacity
         onPress={() => {this.props.navigation.navigate(
           "Detail Rekomendasi", this.state.temporary_data)}}
-        style={[its.cardInside, {marginBottom: 15}]}>
+        style={[gs.cardSection, {marginBottom: 15, backgroundColor: Color.color3, width: "100%"}]}>
           {/* Top section: pictures */}
           <View>
             {/* Bigger Images */}
@@ -105,7 +105,7 @@ export default class ItineraryRecommendation extends Component {
       <ScrollView>
         <View style={gs.mainContainer}>
           <View style={gs.cardSection}>
-          <Text style={gs.cardTitle}>Rekomendasi itinerary di Jakarta</Text>
+          <Text style={gs.cardTitle}>Rekomendasi itinerary di {this.state.city_name}</Text>
             {recommendation}
           </View>
         </View>
