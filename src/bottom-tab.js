@@ -30,12 +30,14 @@ import AccomodationReview from './screens/accomodation/accomodation-reviews';
 import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
 // My trip
 import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
+import ItineraryDetails from './screens/my-trip/itinerary-details';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
 const profileStack = createStackNavigator();
 const attractionStack = createStackNavigator();
 const accomodationStack = createStackNavigator();
+const myTripStack = createStackNavigator();
 
 export default class BottomTab extends Component {
   constructor(props) {
@@ -189,16 +191,19 @@ export default class BottomTab extends Component {
     );
   };
 
-  myTripScreenStack = (props) => {
+  myTripStackScreen = (props) => {
     return (
-      <testStack.Navigator
+      <myTripStack.Navigator
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
           headerTintColor: 'white'
         }}>
-        <testStack.Screen component={ItineraryRecommendation}
-          name="Itinerary Recommendation"/>
-      </testStack.Navigator>
+        <myTripStack.Screen component={ItineraryRecommendation}
+          name="Rekomendasi Destinasi"/>
+        <myTripStack.Screen component={ItineraryDetails} 
+          name="Detail Rekomendasi"/>
+        
+      </myTripStack.Navigator>
     );
   };
 
@@ -250,7 +255,7 @@ export default class BottomTab extends Component {
         />
 
         <bottomTab.Screen
-          component={this.myTripScreenStack}
+          component={this.myTripStackScreen}
           options={{
             tabBarIcon: () => {
               // <Image source={require("path")}
