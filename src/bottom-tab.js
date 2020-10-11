@@ -28,12 +28,18 @@ import AccomodationReservation from './screens/accomodation/accomodation-reserva
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
 import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
+// My Trip
+import MyTripHome from './screens/my-trip/my-trip-home';
+import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
+import MyTripItinerary from './screens/my-trip/my-trip-itinerary';
+import MyTripNewItinerary from './screens/my-trip/my-trip-new-itinerary';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
 const profileStack = createStackNavigator();
 const attractionStack = createStackNavigator();
 const accomodationStack = createStackNavigator();
+const myTripStack = createStackNavigator();
 
 export default class BottomTab extends Component {
   constructor(props) {
@@ -187,11 +193,24 @@ export default class BottomTab extends Component {
     );
   };
 
-  myTripScreenStack = (props) => {
+  myTripStackScreen = (props) => {
     return (
-      <testStack.Navigator>
-        <testStack.Screen component={TestScreen} name="My Trip" />
-      </testStack.Navigator>
+      <myTripStack.Navigator
+        screenOptions={{
+          headerStyle: {backgroundColor: '#2E99A3'},
+          headerTintColor: 'white',
+        }}>
+        <myTripStack.Screen component={MyTripHome} name="My Trip" />
+        <myTripStack.Screen
+          component={MyTripDestinationDetails}
+          name="Detail Tujuan Destinasi"
+        />
+        <myTripStack.Screen component={MyTripItinerary} name="Itinerary" />
+        <myTripStack.Screen
+          component={MyTripNewItinerary}
+          name="Buat Itinerary"
+        />
+      </myTripStack.Navigator>
     );
   };
 
@@ -243,7 +262,7 @@ export default class BottomTab extends Component {
         />
 
         <bottomTab.Screen
-          component={this.myTripScreenStack}
+          component={this.myTripStackScreen}
           options={{
             tabBarIcon: () => {
               // <Image source={require("path")}
