@@ -282,67 +282,75 @@ export default class MyTripHome extends Component {
                   Rekomendasi Destinasi untuk kamu
                 </Text>
                 <View>
-                  <Text>Karena kamu melihat Jakarta</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 5,
-                      marginBottom: 5,
-                    }}>
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                  </View>
+                  <TouchableOpacity onPress={() => {this.props.navigation.navigate(
+                    "Rekomendasi Destinasi", "Jakarta"
+                  )}} style={mts.recommendationCard} >
+                    <Text>Karena kamu melihat Jakarta</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}>
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                    </View>
+                  </TouchableOpacity>
 
-                  <Text>Karena kamu melihat Yogyakarta</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 5,
-                      marginBottom: 5,
-                    }}>
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                  </View>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate(
+                    "Rekomendasi Destinasi", "Yogyakarta"
+                  )} style={mts.recommendationCard}>
+                    <Text>Karena kamu melihat Yogyakarta</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}>
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                    </View>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
@@ -459,67 +467,75 @@ export default class MyTripHome extends Component {
                   Rekomendasi Destinasi untuk kamu
                 </Text>
                 <View>
-                  <Text>Karena kamu melihat Jakarta</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 5,
-                      marginBottom: 5,
-                    }}>
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                  </View>
+                  <TouchableOpacity onPress={() => {this.props.navigation.navigate(
+                    "Rekomendasi Destinasi", "Jakarta"
+                  )}} style={mts.recommendationCard} >
+                    <Text>Karena kamu melihat Jakarta</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}>
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                    </View>
+                  </TouchableOpacity>
 
-                  <Text>Karena kamu melihat Yogyakarta</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 5,
-                      marginBottom: 5,
-                    }}>
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                    <Image
-                      source={{
-                        uri:
-                          'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                      }}
-                      style={mts.recommendationImage}
-                    />
-                  </View>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate(
+                    "Rekomendasi Destinasi", "Yogyakarta"
+                  )} style={mts.recommendationCard}>
+                    <Text>Karena kamu melihat Yogyakarta</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}>
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                      <Image
+                        source={{
+                          uri:
+                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
+                        }}
+                        style={mts.recommendationImage}
+                      />
+                    </View>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
