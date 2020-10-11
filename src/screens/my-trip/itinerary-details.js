@@ -36,7 +36,7 @@ export default class ItineraryDetails extends Component {
       return (
         <>
           <View style={{marginBottom: 20}}>
-            <View style={[its.cardInsideDetail, {width: "100%"}]}>
+            <View style={[gs.cardSection, its.cardInsideDetail, {width: "100%"}]}>
               {/* Left side: Image */}
               <View style={{marginRight:20}}>
                 <Image source={imagePath}
@@ -46,8 +46,11 @@ export default class ItineraryDetails extends Component {
               {/* Right side: name and details */}
               <View style={{width: "78%"}}>
                 <Text style={its.cardInsideTitle}>{item}</Text>
-                <Text>Itinerary Description</Text>
-                <View style={gs.rowContainerNoWrap}>
+                <Text>
+                  Situ Patenggang adalah sebuah danau yang 
+                  berlokasi di kawasan wisata alam Ciwidey, Bandung.
+                </Text>
+                <View style={[gs.rowContainerNoWrap, {marginTop: 10}]}>
                   <Icon
                   name={"history"}
                   size={15}
