@@ -13,8 +13,7 @@ export const itineraryStyling = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 7,
-    borderWidth: 2,
-    borderColor: Color.color1,
+    backgroundColor: Color.color3,
     borderRadius: 7
   },
   columnContainer: {
