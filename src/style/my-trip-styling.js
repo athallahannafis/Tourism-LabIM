@@ -97,7 +97,7 @@ export const myTripStyling = StyleSheet.create({
   },
   recommendationImage: {
     borderRadius: 10,
-    width: Dimensions.get('window').width / 3 - 25,
+    width: Dimensions.get('window').width / 3 - 35,
     height: 50,
   },
   textInput: {
@@ -133,5 +133,37 @@ export const myTripStyling = StyleSheet.create({
     top: 100,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  cardInside: {
+    padding: 7,
+    backgroundColor: Color.color1,
+    width: "100%",
+    borderRadius: 7
+  },
+  cardInsideDetail: {
+    flex: 0,
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 7,
+    backgroundColor: Color.color3,
+    borderRadius: 7
+  },
+  columnContainer: {
+    flex: 0,
+    flexDirection: "column",
+  },
+  cardInsideTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  recommendationCard: {
+    borderRadius: 15,
+    backgroundColor: Color.color3,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 3,
+    marginBottom: 10
   },
 });
