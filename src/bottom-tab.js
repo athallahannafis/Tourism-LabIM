@@ -31,6 +31,11 @@ import AccomodationSearchResults from './screens/accomodation/accomodation-searc
 // My trip
 import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
 import ItineraryDetails from './screens/my-trip/itinerary-details';
+// My Trip
+import MyTripHome from './screens/my-trip/my-trip-home';
+import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
+import MyTripItinerary from './screens/my-trip/my-trip-itinerary';
+import MyTripNewItinerary from './screens/my-trip/my-trip-new-itinerary';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -198,11 +203,20 @@ export default class BottomTab extends Component {
           headerStyle: {backgroundColor: '#2E99A3'},
           headerTintColor: 'white'
         }}>
+        <myTripStack.Screen component={MyTripHome} name="My Trip" />
         <myTripStack.Screen component={ItineraryRecommendation}
           name="Rekomendasi Destinasi"/>
         <myTripStack.Screen component={ItineraryDetails} 
           name="Detail Rekomendasi"/>
-        
+        <myTripStack.Screen
+          component={MyTripDestinationDetails}
+          name="Detail Tujuan Destinasi"
+        />
+        <myTripStack.Screen component={MyTripItinerary} name="Itinerary" />
+        <myTripStack.Screen
+          component={MyTripNewItinerary}
+          name="Buat Itinerary"
+        />
       </myTripStack.Navigator>
     );
   };
