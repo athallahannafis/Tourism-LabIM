@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
+import {itineraryStyling as its} from '../../style/itinerary-styling';
 import Color from '../../style/color.json';
 import ImagePath from '../../images/dummy-image2.jpeg';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ItineraryRecommendation extends Component {
   constructor(props) {
@@ -17,7 +19,8 @@ export default class ItineraryRecommendation extends Component {
         price: "200.000 - 250.000"
       },
       temp_biggerImage: [],
-      temp_smallerImage: []
+      temp_smallerImage: [],
+      city_name: props.route.params
     }
   }
 
@@ -53,52 +56,60 @@ export default class ItineraryRecommendation extends Component {
       )
     })
 
+    const recommendation = this.state.temp_smallerImage.map((item) => {
+      return (
+        <>
+        <TouchableOpacity
+        onPress={() => {this.props.navigation.navigate(
+          "Detail Rekomendasi", this.state.temporary_data)}}
+        style={[its.cardInside, {marginBottom: 15}]}>
+          {/* Top section: pictures */}
+          <View>
+            {/* Bigger Images */}
+            <View style={[gs.rowContainerNoWrap, {width: "100%"}]}>
+              {biggerImage}
+            </View>
+            {/* Smaller images */}
+            <View style={[gs.rowContainerNoWrap, {width: "100%", marginTop: 5}]}>
+              {smallerImage}
+            </View>
+          </View>
+          {/* Bottom section: details */}
+          <View style={[its.columnContainer, {marginTop: 20}]}>
+            <Text style={{fontWeight:"bold"}}>{this.state.temporary_data.list_name}</Text>
+            <View style={gs.rowContainerNoWrap}>
+              <Icon
+                name={'history'}
+                size={15}
+                color={Color.color6}
+                style={{marginRight: 5}}
+              />
+              <Text>{this.state.temporary_data.duration}</Text>
+            </View>
+            <View style={gs.rowContainerNoWrap}>
+              <Icon
+              name={'money'}
+              size={15}
+              color={Color.color6}
+              style={{marginRight: 5}}
+              />
+              <Text>{this.state.temporary_data.price}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        </>
+      )
+    })
+
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
           <View style={gs.cardSection}>
-
-            {/* List of recommendation */}
-            <View style={ls.cardInside}>
-              {/* Top section: pictures */}
-              <View>
-                {/* Bigger Images */}
-                <View style={[ls.rowContainer, {width: "100%"}]}>
-                  {biggerImage}
-                </View>
-                {/* Smaller images */}
-                <View style={[ls.rowContainer, {width: "100%"}]}>
-                  {smallerImage}
-                </View>
-              </View>
-              {/* Bottom section: details */}
-              <View style={ls.columnContainer}>
-                <Text>{this.state.temporary_data.list_name}</Text>
-                <Text>{this.state.temporary_data.duration}</Text>
-                <Text>{this.state.temporary_data.price}</Text>
-              </View>
-            </View>
-
+          <Text style={gs.cardTitle}>Rekomendasi itinerary di Jakarta</Text>
+            {recommendation}
           </View>
         </View>
       </ScrollView>
     )
   }
 }
-
-const ls = StyleSheet.create({
-  cardInside: {
-    padding: 7,
-    backgroundColor: Color.color1,
-    borderRadius: 7
-  },
-  columnContainer: {
-    flex: 0,
-    flexDirection: "column",
-  },
-  rowContainer: {
-    flex: 0,
-    flexDirection: "row",
-    alignItems: "center"
-  }
-})
