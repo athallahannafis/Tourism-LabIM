@@ -31,6 +31,7 @@ import AccomodationSearchResults from './screens/accomodation/accomodation-searc
 // My trip
 import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
 import ItineraryDetails from './screens/my-trip/itinerary-details';
+import RestaurantRecommendation from './screens/my-trip/restaurant-recommendations';
 // My Trip
 import MyTripHome from './screens/my-trip/my-trip-home';
 import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
@@ -217,6 +218,8 @@ export default class BottomTab extends Component {
           component={MyTripNewItinerary}
           name="Buat Itinerary"
         />
+        <myTripStack.Screen component={RestaurantRecommendation}
+        name="Rekomendasi Restoran" />
       </myTripStack.Navigator>
     );
   };
