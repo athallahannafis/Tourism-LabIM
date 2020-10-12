@@ -166,4 +166,32 @@ export const myTripStyling = StyleSheet.create({
     elevation: 3,
     marginBottom: 10
   },
+  restaurantRow: {
+    flex:0,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    marginBottom: 20,
+  },
+  restaurantCard: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems:"center",
+    justifyContent: "center",
+    width: "30%",
+    // height: "80%",
+    backgroundColor: Color.color3,
+    borderRadius: 15,
+    padding: 10,
+    marginRight: "1%",
+    marginLeft: "1%",
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 3,
+  },
+  restaurantName: {
+    fontWeight: "bold",
+    fontSize: 18
+  }
 });
