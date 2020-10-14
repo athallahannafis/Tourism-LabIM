@@ -28,6 +28,12 @@ import AccomodationReservation from './screens/accomodation/accomodation-reserva
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
 import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
+// My trip
+import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
+import ItineraryDetails from './screens/my-trip/itinerary-details';
+import RestaurantRecommendation from './screens/my-trip/restaurant-recommendations';
+import SouvenirRecommendation from './screens/my-trip/souvenir-recommendation';
+import RestaurantSouvenirDetail from  './screens/my-trip/detail';
 // My Trip
 import MyTripHome from './screens/my-trip/my-trip-home';
 import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
@@ -198,9 +204,13 @@ export default class BottomTab extends Component {
       <myTripStack.Navigator
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
-          headerTintColor: 'white',
+          headerTintColor: 'white'
         }}>
         <myTripStack.Screen component={MyTripHome} name="My Trip" />
+        <myTripStack.Screen component={ItineraryRecommendation}
+          name="Rekomendasi Destinasi"/>
+        <myTripStack.Screen component={ItineraryDetails} 
+          name="Detail Rekomendasi"/>
         <myTripStack.Screen
           component={MyTripDestinationDetails}
           name="Detail Tujuan Destinasi"
@@ -210,6 +220,12 @@ export default class BottomTab extends Component {
           component={MyTripNewItinerary}
           name="Buat Itinerary"
         />
+        <myTripStack.Screen component={RestaurantRecommendation}
+        name="Rekomendasi Restoran" />
+        <myTripStack.Screen component={SouvenirRecommendation}
+        name="Rekomendasi Cendera Mata"/>
+        <myTripStack.Screen component={RestaurantSouvenirDetail}
+        name="Detail" />
       </myTripStack.Navigator>
     );
   };

@@ -158,7 +158,9 @@ export default class MyTripItinerary extends Component {
           </View>
 
           {/*Rekomendasi Restoran Card */}
-          <View style={[gs.cardSection, {marginBottom: 20}]}>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
+          style={[gs.cardSection, {marginBottom: 20}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
@@ -253,10 +255,12 @@ export default class MyTripItinerary extends Component {
               </TouchableOpacity>
               <Icon name={'chevron-right'} size={25} />
             </View>
-          </View>
+          </TouchableOpacity>
 
           {/*Rekomendasi Cenderamata Card */}
-          <View style={[gs.cardSection, {marginBottom: 20}]}>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+          style={[gs.cardSection, {marginBottom: 20}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
             {/* Layout isi */}
@@ -352,7 +356,7 @@ export default class MyTripItinerary extends Component {
 
               <Icon name={'chevron-right'} size={25} />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );
