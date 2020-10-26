@@ -1,0 +1,38 @@
+{
+    "data":[
+        {
+            "destinationName": "Jakarta",
+            "relatedDestinations": [
+                {
+                    "destinationName": "Bali",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                },
+                {
+                    "destinationName": "Surabaya",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                },
+                {
+                    "destinationName": "Medan",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                }
+            ]
+        },
+        {
+            "destinationName": "Yogyakarta",
+            "relatedDestinations":[
+                {
+                    "destinationName": "Bandung",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                },
+                {
+                    "destinationName": "Solo",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                },
+                {
+                    "destinationName": "Malang",
+                    "image": "https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg"
+                }
+            ]
+        }
+    ]
+}

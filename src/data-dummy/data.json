@@ -18,6 +18,13 @@
       "akomodasi4": true,
       "akomodasi5": true,
       "akomodasi6": true
+    },
+    "reservedAccomodation":{
+      "accomodation_name": "HARRIS Hotel",
+      "accomodation_place": "Blimbing",
+      "checkinDate": "Sen, 24 Agu 2020",
+      "checkoutDate": "Rab, 26 Agu 2020",
+      "room_category": "Standard Room"
     }
   }
 }
