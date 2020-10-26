@@ -28,6 +28,15 @@ import AccomodationReservation from './screens/accomodation/accomodation-reserva
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
 import AccomodationSearchResults from './screens/accomodation/accomodation-search-results';
+<<<<<<< HEAD
+=======
+// My trip
+import ItineraryRecommendation from './screens/my-trip/itinerary-recommendation';
+import ItineraryDetails from './screens/my-trip/itinerary-details';
+import RestaurantRecommendation from './screens/my-trip/restaurant-recommendations';
+import SouvenirRecommendation from './screens/my-trip/souvenir-recommendation';
+import RestaurantSouvenirDetail from  './screens/my-trip/detail';
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
 // My Trip
 import MyTripHome from './screens/my-trip/my-trip-home';
 import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
@@ -198,9 +207,19 @@ export default class BottomTab extends Component {
       <myTripStack.Navigator
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
+<<<<<<< HEAD
           headerTintColor: 'white',
         }}>
         <myTripStack.Screen component={MyTripHome} name="My Trip" />
+=======
+          headerTintColor: 'white'
+        }}>
+        <myTripStack.Screen component={MyTripHome} name="My Trip" />
+        <myTripStack.Screen component={ItineraryRecommendation}
+          name="Rekomendasi Destinasi"/>
+        <myTripStack.Screen component={ItineraryDetails} 
+          name="Detail Rekomendasi"/>
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
         <myTripStack.Screen
           component={MyTripDestinationDetails}
           name="Detail Tujuan Destinasi"
@@ -210,6 +229,15 @@ export default class BottomTab extends Component {
           component={MyTripNewItinerary}
           name="Buat Itinerary"
         />
+<<<<<<< HEAD
+=======
+        <myTripStack.Screen component={RestaurantRecommendation}
+        name="Rekomendasi Restoran" />
+        <myTripStack.Screen component={SouvenirRecommendation}
+        name="Rekomendasi Cendera Mata"/>
+        <myTripStack.Screen component={RestaurantSouvenirDetail}
+        name="Detail" />
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
       </myTripStack.Navigator>
     );
   };

@@ -158,7 +158,13 @@ export default class MyTripItinerary extends Component {
           </View>
 
           {/*Rekomendasi Restoran Card */}
+<<<<<<< HEAD
           <View style={[gs.cardSection, {marginBottom: 20}]}>
+=======
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
+          style={[gs.cardSection, {marginBottom: 20}]}>
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
@@ -253,10 +259,19 @@ export default class MyTripItinerary extends Component {
               </TouchableOpacity>
               <Icon name={'chevron-right'} size={25} />
             </View>
+<<<<<<< HEAD
           </View>
 
           {/*Rekomendasi Cenderamata Card */}
           <View style={[gs.cardSection, {marginBottom: 20}]}>
+=======
+          </TouchableOpacity>
+
+          {/*Rekomendasi Cenderamata Card */}
+          <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+          style={[gs.cardSection, {marginBottom: 20}]}>
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
             {/* Layout isi */}
@@ -352,7 +367,11 @@ export default class MyTripItinerary extends Component {
 
               <Icon name={'chevron-right'} size={25} />
             </View>
+<<<<<<< HEAD
           </View>
+=======
+          </TouchableOpacity>
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
         </View>
       </ScrollView>
     );

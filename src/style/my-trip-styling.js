@@ -97,7 +97,11 @@ export const myTripStyling = StyleSheet.create({
   },
   recommendationImage: {
     borderRadius: 10,
+<<<<<<< HEAD
     width: Dimensions.get('window').width / 3 - 25,
+=======
+    width: Dimensions.get('window').width / 3 - 35,
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
     height: 50,
   },
   textInput: {
@@ -134,4 +138,67 @@ export const myTripStyling = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+<<<<<<< HEAD
+=======
+  cardInside: {
+    padding: 7,
+    backgroundColor: Color.color1,
+    width: "100%",
+    borderRadius: 7
+  },
+  cardInsideDetail: {
+    flex: 0,
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 7,
+    backgroundColor: Color.color3,
+    borderRadius: 7
+  },
+  columnContainer: {
+    flex: 0,
+    flexDirection: "column",
+  },
+  cardInsideTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  recommendationCard: {
+    borderRadius: 15,
+    backgroundColor: Color.color3,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 3,
+    marginBottom: 10
+  },
+  restaurantRow: {
+    flex:0,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    marginBottom: 20,
+  },
+  restaurantCard: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems:"center",
+    justifyContent: "center",
+    width: "30%",
+    // height: "80%",
+    backgroundColor: Color.color3,
+    borderRadius: 15,
+    padding: 10,
+    marginRight: "1%",
+    marginLeft: "1%",
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 3,
+  },
+  restaurantName: {
+    fontWeight: "bold",
+    fontSize: 18
+  }
+>>>>>>> db8bf8513192fed8dc2a8656d63eb223c536f658
 });

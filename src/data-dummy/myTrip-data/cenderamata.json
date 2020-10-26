@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "name": "Pasar Guwang",
+      "rate": 4,
+      "reviews": [],
+      "reviews_count": 183,
+      "description": "Sajian makanan cita rasa tradisional Bali dipadu dgn pemandangan Gunung Agung. Tersedia kelas memasak.",
+      "price": "40.000 - 200.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/guwang-art-market-8e440e90ff0ee429a6de2208ac1971d5.jpg"
+    },
+    {
+      "name": "Pasar Kuta",
+      "rate": 4.7,
+      "reviews": [],
+      "reviews_count": 200,
+      "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
+      "price": "20.000 - 50.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg"
+    },
+    {
+      "name": "Pasar Ubud",
+      "rate": 4.4,
+      "reviews": [],
+      "reviews_count": 134,
+      "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
+      "price": "50.000 - 100.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg"
+    }
+  ]
+}
