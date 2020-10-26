@@ -24,6 +24,11 @@ export const globalStyling = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
+  rowContainerNoWrap: {
+    flex:0,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   cardSection: {
     borderRadius: 15,
     flex: 0,
