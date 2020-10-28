@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
+import {View, Text, Image, Dimensions, TouchableOpacity, Modal} from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -10,6 +10,7 @@ import {myTripStyling as mts} from '../../style/my-trip-styling';
 //adition
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 //data
 import MyData from '../../data-dummy/data.json';
@@ -20,6 +21,8 @@ export default class MyTripDestinationDetails extends Component {
     this.state = {
       destinationName: props.route.params,
       trips: MyData.trips,
+      transportpopupform: false,
+      accomodationpopupform: false,
     };
   }
 
@@ -132,17 +135,72 @@ export default class MyTripDestinationDetails extends Component {
 
           {/*Reservasi Perjalanan */}
           <View style={[gs.cardSection, {marginTop: 20}]}>
+            <View style={{flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
             <Text style={gs.cardTitle}>Reservasi Perjalanan</Text>
+            </View>
+            
             {reservasiPerjalanan}
+            <View style={[mts.reservationBubble, {alignItems:'center', backgroundColor: 'white'}]}>
+              <TouchableOpacity onPress={() => this.setState({transportpopupform: true})}>
+                <Text style={{color:Color.color2, fontWeight:'bold'}}>Tambah reservasi +</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           {/*Reservasi Hotel */}
           <View style={[gs.cardSection, {marginTop: 20}]}>
             <Text style={gs.cardTitle}>Reservasi Hotel</Text>
             {reservasiAkomodasi}
+            <View style={[mts.reservationBubble, {alignItems:'center', backgroundColor: 'white'}]}>
+            <TouchableOpacity onPress={() => this.setState({accomodationpopupform: true})}>
+                <Text style={{color:Color.color2, fontWeight:'bold'}}>Tambah reservasi +</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
+
+        <Modal transparent={true} visible={this.state.transportpopupform}>
+          <View style={ats.modalOverlay}>
+            <View style={[ats.modal2Container, {alignItems:'flex-start'}]}>
+              <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%'}}>
+                <Text style={ats.textMediumColor4}>Tambah tiket perjalanan</Text>
+                <TouchableOpacity onPress={()=> this.setState({transportpopupform:false})}>
+                  <Icon name={'times'} size={16}/>
+                </TouchableOpacity>
+                
+              </View>
+              
+              <View style={{flexDirection:'row', marginTop:10, justifyContent:'center'}}>
+                <Text style={ats.textMediumBoldColor4AlignCenter}>
+                  Kode booking:
+                </Text>
+                <TextInput
+                      style={[mts.textInput, {width: '50%', marginLeft: 10}]}
+                      placeholder={'ketik disini'}
+                      onChangeText={(value) =>
+                        this.setState({destinationValue: value})
+                      }
+                />
+              </View>
+              
+              <View style={{alignItems:'center', width: '100%'}}>
+              
+              <TouchableOpacity
+                style={ats.btn}
+                onPress={() => {
+                  this.setState({
+                    transportpopupform: false,
+                  });
+                }}>
+                <Text style={ats.btnText}> Tambah </Text>
+              </TouchableOpacity>
+              </View>
+              
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
+      
     );
   }
 }
