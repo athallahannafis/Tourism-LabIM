@@ -23,6 +23,16 @@ export const myTripStyling = StyleSheet.create({
     top: 0,
     left: 0,
   },
+  blackOverlayHome: {
+    backgroundColor: 'black',
+    width: Dimensions.get('window').width / 3 - 35,
+    height: 60,
+    opacity: 0.4,
+    borderRadius: 10,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
   buttonAddDestination: {
     width: 220,
     height: 55,
@@ -81,6 +91,18 @@ export const myTripStyling = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
   },
+  fontContainerHome: {
+    position:'absolute',
+    width: Dimensions.get('window').width / 3 - 35,
+    top: 20,
+    left: 0,
+    alignItems:'center'
+  },
+  fontOnBlackOverlay: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 17
+  },
   imageInCard: {
     width: (Dimensions.get('window').width - 130) / 2,
     height: 70,
@@ -98,7 +120,7 @@ export const myTripStyling = StyleSheet.create({
   recommendationImage: {
     borderRadius: 10,
     width: Dimensions.get('window').width / 3 - 35,
-    height: 50,
+    height: 60,
   },
   textInput: {
     fontSize: 15,

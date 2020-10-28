@@ -18,13 +18,66 @@
       "akomodasi4": true,
       "akomodasi5": true,
       "akomodasi6": true
-    },
-    "reservedAccomodation":{
-      "accomodation_name": "HARRIS Hotel",
-      "accomodation_place": "Blimbing",
-      "checkinDate": "Sen, 24 Agu 2020",
-      "checkoutDate": "Rab, 26 Agu 2020",
-      "room_category": "Standard Room"
     }
-  }
+  },
+  "trips":[
+    {
+      "destinationName": "Bali",
+      "dateFrom": "Sen, 24 Agu",
+      "dateTo": "Min, 30 Agu",
+      "reservedTransportation": [
+        {
+          "bookingCode": "XYZ0245",
+          "transportName": "Garuda Indonesia GA-401",
+          "date": "Min, 22 Agu 2020",
+          "departCity": "Jakarta",
+          "departCityCode": "CGK",
+          "departStation": "Soekarno Hatta Intl (CGK)",
+          "departTime": "06.30",
+          "arriveCity": "Bali",
+          "arriveCityCode": "DPS",
+          "arriveStation": "Ngurah Rai Intl (DPS)",
+          "arriveTime": "07.30"
+        }
+      ],
+      "reservedAccomodation":[
+        {
+        "accomodation_name": "Parthi Puri Ubud",
+        "accomodation_place": "Br. Silungan, Lodtunduh, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571",
+        "checkinDate": "Sen, 24 Agu 2020",
+        "checkoutDate": "Rab, 26 Agu 2020",
+        "room_category": "Standard Room"
+      }
+    ]
+    },
+    {
+      "destinationName": "Jakarta",
+      "dateFrom": "Sen, 24 Agu",
+      "dateTo": "Min, 30 Agu",
+      "reservedTransportation": [
+        {
+          "bookingCode": "XYZ0245",
+          "transportName": "Garuda Indonesia GA-401",
+          "date": "Min, 22 Agu 2020",
+          "departCity": "Bali",
+          "departCityCode": "DPS",
+          "departStation": "Ngurah Rai Intl (DPS)",
+          "departTime": "07.30",
+          "arriveCity": "Jakarta",
+          "arriveCityCode": "CGK",
+          "arriveStation": "Soekarno Hatta Intl (CGK)",
+          "arriveTime": "06.30"
+        }
+      ],
+      "reservedAccomodation":[
+        {
+        "accomodation_name": "Harris Hotel",
+        "accomodation_place": "Jalan Dr.Sahardjo, Tebet",
+        "checkinDate": "Sen, 24 Agu 2020",
+        "checkoutDate": "Rab, 26 Agu 2020",
+        "room_category": "Standard Room"
+      }
+    ]
+    }
+  ]
 }

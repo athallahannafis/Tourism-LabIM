@@ -213,7 +213,7 @@ export default class BottomTab extends Component {
           name="Detail Rekomendasi"/>
         <myTripStack.Screen
           component={MyTripDestinationDetails}
-          name="Detail Tujuan Destinasi"
+          name="Detail Trip"
         />
         <myTripStack.Screen component={MyTripItinerary} name="Itinerary" />
         <myTripStack.Screen
