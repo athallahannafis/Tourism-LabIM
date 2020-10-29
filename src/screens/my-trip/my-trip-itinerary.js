@@ -47,10 +47,9 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
                 alignItems: 'center',
               }}>
-              <Icon name={'chevron-left'} size={25} />
               <TouchableOpacity
                 style={{width: (Dimensions.get('window').width - 130) / 2}}>
                 {/*Image Container */}
@@ -153,7 +152,6 @@ export default class MyTripItinerary extends Component {
                   <Text style={{fontSize: 10}}>200.000-500.000</Text>
                 </View>
               </TouchableOpacity>
-              <Icon name={'chevron-right'} size={25} />
             </View>
           </View>
 
@@ -168,10 +166,9 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
                 alignItems: 'center',
               }}>
-              <Icon name={'chevron-left'} size={25} />
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
@@ -253,7 +250,6 @@ export default class MyTripItinerary extends Component {
                   <Text style={{fontSize: 10}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
-              <Icon name={'chevron-right'} size={25} />
             </View>
           </TouchableOpacity>
 
@@ -268,10 +264,9 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
                 alignItems: 'center',
               }}>
-              <Icon name={'chevron-left'} size={25} />
               {/* Toko pertama */}
               <TouchableOpacity
                 style={{
@@ -353,8 +348,6 @@ export default class MyTripItinerary extends Component {
                   <Text style={{fontSize: 10}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
-
-              <Icon name={'chevron-right'} size={25} />
             </View>
           </TouchableOpacity>
         </View>
