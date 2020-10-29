@@ -120,9 +120,7 @@ export default class MyTripHome extends Component {
     const recommendationDestination = this.state.recommendationData.map((item) => {
       return(
         <View>
-                  <TouchableOpacity onPress={() => {this.props.navigation.navigate(
-                    "Rekomendasi Destinasi", item.destinationName
-                  )}} style={mts.recommendationCard} >
+                  <View style={mts.recommendationCard}>
                     <Text>Karena kamu melihat {item.destinationName}</Text>
                     <View
                       style={{
@@ -131,42 +129,65 @@ export default class MyTripHome extends Component {
                         marginTop: 5,
                         marginBottom: 5,
                       }}>
-                      <Image
+                      <TouchableOpacity
+                        onPress={() => {this.props.navigation.navigate(
+                        "Rekomendasi Destinasi", item.relatedDestinations[0].destinationName
+                        )}}>
+                        
+                        <Image
                         source={{
-                          uri: item.relatedDestinations[0].image
+                        uri: item.relatedDestinations[0].image
                         }}
                         style={mts.recommendationImage}
-                      />
-                      <View style={mts.blackOverlayHome}>
-                      </View>
-                      <View style={mts.fontContainerHome}>
-                      <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[0].destinationName}</Text>
-                      </View>
+                        />
+                        <View style={mts.blackOverlayHome}>
+                        </View>
+                        <View style={mts.fontContainerHome}>
+                        <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[0].destinationName}</Text>
+                        </View>
+                      </TouchableOpacity>
                       
-                      
-                      <Image
-                        source={{
+                      <TouchableOpacity
+                          onPress={() => {this.props.navigation.navigate(
+                          "Rekomendasi Destinasi", item.relatedDestinations[1].destinationName
+                          )}}>
+                          
+                          <Image
+                          source={{
                           uri: item.relatedDestinations[1].image
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <View style={[mts.blackOverlayHome, {left: 113}]}/>
-                      <View style={[mts.fontContainerHome, {left: 113}]}>
-                      <Text style={[mts.fontOnBlackOverlay]}>{item.relatedDestinations[1].destinationName}</Text>
-                      </View>
-                      
-                      <Image
-                        source={{
+                          }}
+                          style={mts.recommendationImage}
+                          />
+                          <View style={mts.blackOverlayHome}>
+                          </View>
+                          <View style={mts.fontContainerHome}>
+                          <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[1].destinationName}</Text>
+                          </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                          onPress={() => {this.props.navigation.navigate(
+                          "Rekomendasi Destinasi", item.relatedDestinations[2].destinationName
+                          )}}>
+                          
+                          <Image
+                          source={{
                           uri: item.relatedDestinations[2].image
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <View style={[mts.blackOverlayHome, {left: 228}]}/>
-                      <View style={[mts.fontContainerHome, {left: 228}]}>
-                      <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[2].destinationName}</Text>
-                      </View>
+                          }}
+                          style={mts.recommendationImage}
+                          />
+                          <View style={mts.blackOverlayHome}>
+                          </View>
+                          <View style={mts.fontContainerHome}>
+                          <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[2].destinationName}</Text>
+                          </View>
+                        </TouchableOpacity>
+                          
+                      
+                      
+                      
                     </View>
-                  </TouchableOpacity>
+                  </View>
                 </View>
       )
     });
