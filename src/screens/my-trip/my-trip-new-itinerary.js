@@ -19,11 +19,26 @@ export default class MyTripNewItinerary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      saveItineraryPopUp: false
+      saveItineraryPopUp: false,
+      namaItinerary: "",
+      alertPopUp: false,
+      alertMessage: "",
     };
   }
 
   UNSAFE_componentWillMount = () => {};
+
+  saveNewItinerary = () => {
+    if (this.state.namaItinerary == ''){
+      this.setState({
+        alertMessage: "Nama itinerary belum diisi",
+        alertPopUp : true})
+    }
+    else {
+      this.setState({saveItineraryPopUp: false})
+      this.props.navigation.navigate("Itinerary", this.state.namaItinerary)
+    }
+  }
 
   render() {
     return (
@@ -37,6 +52,9 @@ export default class MyTripNewItinerary extends Component {
                 <TextInput
                       style={[mts.textInput, {width: '50%', marginLeft: 10}]}
                       placeholder={'Nama Itinerary'}
+                      onChangeText={(value) =>
+                        this.setState({namaItinerary: value})
+                      }
                 />
               
               <View style={{flexDirection:'row',alignItems:'center', width: '100%', justifyContent:'flex-end'}}>
@@ -52,9 +70,7 @@ export default class MyTripNewItinerary extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={ats.btn}
-                  onPress={() =>
-                    this.props.navigation.navigate('Itinerary')
-                  }>
+                  onPress={() => this.saveNewItinerary()}>
                   <Text style={ats.btnText}> Simpan </Text>
                 </TouchableOpacity>
               </View>
@@ -62,6 +78,28 @@ export default class MyTripNewItinerary extends Component {
               
           </View>
         </Modal>
+
+        <Modal
+            transparent={true}
+            visible={this.state.alertPopUp}
+            animationType="slide">
+            <View style={gs.columnContainer}>
+              <View style={ts.modalContainer}>
+                <Icon name={'times-circle'} size={80} color={'red'} />
+                <Text style={[ts.alertMessage]}>{this.state.alertMessage}</Text>
+                <TouchableOpacity
+                  style={ts.okButton}
+                  onPress={() => this.setState({alertPopUp: false})}>
+                  <Text style={[ts.title, {color: 'white'}]}>OK</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+          <DateTimePicker
+            isVisible={this.state.checkinVisible}
+            onCancel={this.hideDate}
+            onConfirm={this.handleCheckin}
+          />
 
         <View style={[gs.mainContainer, {justifyContent: 'flex-start', minHeight: Dimensions.get('window').height}]}>
           <View

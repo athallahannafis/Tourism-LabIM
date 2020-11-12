@@ -196,6 +196,7 @@ export default class AttractionSearchFilter extends Component {
   };
 
   render() {
+    this.fetchAttraction(this.state.searchedPlace.toLowerCase());
     const destinasiRender = this.state.cityDestinationData.map((item) => {
       const imageURL = item.attraction_list[1].image_source;
       const len = this.state.cityDestinationData.length;
