@@ -198,7 +198,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary')}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: ''})}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
               Itinerary
@@ -262,7 +262,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary')}>
+            onPress={() => this.props.navigation.navigate('Itinerary'), {nama: ''}}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
               Itinerary
@@ -329,7 +329,7 @@ export default class MyTripDestinationDetails extends Component {
             {/*Itinerary */}
             <TouchableOpacity
               style={mts.itineraryButton}
-              onPress={() => this.props.navigation.navigate('Itinerary')}>
+              onPress={() => this.props.navigation.navigate('Itinerary', {nama: ''})}>
               <Text
                 style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
                 Itinerary
@@ -392,7 +392,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary')}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: ''})}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
               Itinerary

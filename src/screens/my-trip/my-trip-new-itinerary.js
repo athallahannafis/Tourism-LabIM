@@ -36,7 +36,7 @@ export default class MyTripNewItinerary extends Component {
     }
     else {
       this.setState({saveItineraryPopUp: false})
-      this.props.navigation.navigate("Itinerary", this.state.namaItinerary)
+      this.props.navigation.navigate("Itinerary", {nama: this.state.namaItinerary})
     }
   }
 
