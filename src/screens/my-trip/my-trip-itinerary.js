@@ -18,12 +18,13 @@ export default class MyTripItinerary extends Component {
     super(props);
     this.state = {
       name: '',
-      newitinerary_added : false
-
+      newitinerary_added : false,
+      destinationName: props.route.params.destinationName
     };
   }
 
-  UNSAFE_componentWillMount = () => {};
+  UNSAFE_componentWillMount = () => {
+  };
 
   capitalize = (str) => {
     if(str == null) {
@@ -48,7 +49,7 @@ export default class MyTripItinerary extends Component {
           {/*Button Buat Itinerary */}
           <TouchableOpacity
             style={mts.buttonAddItinerary}
-            onPress={() => this.props.navigation.navigate('Buat Itinerary')}>
+            onPress={() => this.props.navigation.navigate('Buat Itinerary', {destinationName: this.state.destinationName})}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
               style={{marginLeft: 15}}
@@ -424,7 +425,7 @@ export default class MyTripItinerary extends Component {
           {/*Button Buat Itinerary */}
           <TouchableOpacity
             style={mts.buttonAddItinerary}
-            onPress={() => this.props.navigation.navigate('Buat Itinerary')}>
+            onPress={() => this.props.navigation.navigate('Buat Itinerary', {destinationName: this.state.destinationName})}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
               style={{marginLeft: 15}}

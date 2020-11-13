@@ -15,6 +15,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
+//data
+import Attraction from '../../data-dummy/attraction-data/attraction.json';
+
 export default class MyTripNewItinerary extends Component {
   constructor(props) {
     super(props);
@@ -23,10 +26,15 @@ export default class MyTripNewItinerary extends Component {
       namaItinerary: "",
       alertPopUp: false,
       alertMessage: "",
+      destinationName: props.route.params.destinationName,
+      thisTripData: [],
+      search: ''
     };
   }
 
-  UNSAFE_componentWillMount = () => {};
+  UNSAFE_componentWillMount = () => {
+    console.log(this.props.route.params.destinationName);
+  };
 
   saveNewItinerary = () => {
     if (this.state.namaItinerary == ''){
@@ -40,6 +48,20 @@ export default class MyTripNewItinerary extends Component {
     }
   }
 
+  changeText = (search) => {
+    this.setState({search: search});
+  };
+
+  handleSearch = (e) => {
+    this.state.search.clear();
+    this.setState({search: ''});
+    this.props.navigation.navigate(
+      'Hasil pencarian untuk Itinerary',
+      {key: e.nativeEvent.text,
+      destinationName: this.state.destinationName}
+    );
+  };
+
   render() {
     return (
       <ScrollView>
@@ -51,10 +73,9 @@ export default class MyTripNewItinerary extends Component {
                 </Text>
                 <TextInput
                       style={[mts.textInput, {width: '50%', marginLeft: 10}]}
+                      autoCorrect={false}
                       placeholder={'Nama Itinerary'}
-                      onChangeText={(value) =>
-                        this.setState({namaItinerary: value})
-                      }
+                      onChangeText={(value) => {this.setState({namaItinerary: value})}}
                 />
               
               <View style={{flexDirection:'row',alignItems:'center', width: '100%', justifyContent:'flex-end'}}>

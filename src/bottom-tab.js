@@ -39,6 +39,7 @@ import MyTripHome from './screens/my-trip/my-trip-home';
 import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
 import MyTripItinerary from './screens/my-trip/my-trip-itinerary';
 import MyTripNewItinerary from './screens/my-trip/my-trip-new-itinerary';
+import MyTripNewItinerarySearchResults from './screens/my-trip/my-trip-new-itinerary-search-results';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -219,6 +220,10 @@ export default class BottomTab extends Component {
         <myTripStack.Screen
           component={MyTripNewItinerary}
           name="Buat Itinerary"
+        />
+        <myTripStack.Screen
+          component={MyTripNewItinerarySearchResults}
+          name="Hasil pencarian untuk Itinerary"
         />
         <myTripStack.Screen component={RestaurantRecommendation}
         name="Rekomendasi Restoran" />
