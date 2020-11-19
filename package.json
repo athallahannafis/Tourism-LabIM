@@ -22,6 +22,7 @@
     "@react-navigation/drawer": "^5.9.0",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
+    "add": "^2.0.6",
     "moment": "^2.27.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
@@ -34,11 +35,14 @@
     "react-native-image-slider-box": "^1.0.12",
     "react-native-maps": "0.27.1",
     "react-native-modal-datetime-picker": "^8.9.3",
+    "react-native-responsive-fontsize": "^0.5.0",
+    "react-native-responsive-screen": "^1.4.1",
     "react-native-safe-area-context": "^3.1.6",
     "react-native-screens": "^2.10.1",
     "react-native-star-rating": "^1.1.0",
     "react-native-vector-icons": "^7.0.0",
-    "react-navigation": "^4.4.0"
+    "react-navigation": "^4.4.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
