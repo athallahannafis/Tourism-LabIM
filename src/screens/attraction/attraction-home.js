@@ -8,6 +8,10 @@ import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CheckBox from '@react-native-community/checkbox';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as dp} from 'react-native-responsive-screen'
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize'
 // data
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
@@ -82,7 +86,7 @@ export default class AttractionHome extends Component {
         .image_source;
       index++;
       return (
-        <View style={{margin: 10}}>
+        <View style={{margin: dp(1)}}>
           <TouchableOpacity
             style={gs.smallRectangularCard}
             onPress={() =>
@@ -96,7 +100,11 @@ export default class AttractionHome extends Component {
               ]}
             />
             <View style={[gs.smallRectangularCard, {position: 'absolute'}]}>
-              <Text style={{color: 'white', fontWeight: 'bold'}}>{item}</Text>
+              <Text style={{
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: RFPercentage(2.2)
+                }}>{item}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -107,7 +115,7 @@ export default class AttractionHome extends Component {
       return (
         <View>
           <Image
-            style={[gs.smallImage, {marginHorizontal: 5}]}
+            style={[gs.smallRectangularCard, {marginHorizontal: 5}]}
             source={{uri: item}}
           />
         </View>
@@ -168,7 +176,7 @@ export default class AttractionHome extends Component {
           <View style={[gs.cardSection, {marginTop: 20}]}>
             <Text style={gs.cardTitle}>Objek Wisata Populer</Text>
             <TouchableOpacity
-              style={gs.rowContainer}
+              style={[gs.rowContainerNoWrap]}
               onPress={() =>
                 this.props.navigation.navigate(
                   'Attraction Details',
@@ -176,8 +184,10 @@ export default class AttractionHome extends Component {
                 )
               }>
               {/* left section */}
-              <View style={{width: 180}}>
-                <Text>{this.state.popularPlace.city_name}</Text>
+              <View style={{width: wp(40)}}>
+                <Text style={{fontSize: RFPercentage(1.4)}}>
+                  {this.state.popularPlace.city_name}
+                </Text>
                 <Image
                   source={{uri: this.state.popularPlace.image_source}}
                   style={gs.bigImage}
@@ -185,11 +195,13 @@ export default class AttractionHome extends Component {
               </View>
 
               {/* Right Section */}
-              <View style={{width: 180}}>
+              <View style={{width: wp(40)}}>
                 <Text style={gs.subCardTitle}>
                   {this.state.popularPlace.place_name}
                 </Text>
-                <Text>{this.state.popularPlace.description}</Text>
+                <Text style={{fontSize: RFPercentage(1.4)}}>
+                  {this.state.popularPlace.description}
+                </Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -199,14 +211,14 @@ export default class AttractionHome extends Component {
             <Text style={gs.cardTitle}>Rekomendasi Objek Wisata</Text>
 
             <View style={{marginBottom: 20}}>
-              <Text style={{marginBottom: 5}}>
+              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.4)}}>
                 Karena anda sempat melihat Bromo Tengger Semeru
               </Text>
               <View style={gs.rowContainer}>{dummyRecommendation}</View>
             </View>
 
             <View style={{marginBottom: 20}}>
-              <Text style={{marginBottom: 5}}>
+              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.4)}}>
                 Karena anda sempat melihat Mandalika
               </Text>
               <View style={gs.rowContainer}>{dummyRecommendation}</View>

@@ -1,5 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import Color from './color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen'
+import {RFPercentage} from 'react-native-responsive-fontsize'
 
 export const attractionStyling = StyleSheet.create({
   bottomImage: {
@@ -366,8 +370,8 @@ export const attractionStyling = StyleSheet.create({
     marginHorizontal: 4,
   },
   searchBox: {
-    width: '70%',
-    height: 25,
+    width: wp(70),
+    height: hp(3.5),
     borderRadius: 5,
     backgroundColor: Color.color3,
     shadowColor: 'black',
