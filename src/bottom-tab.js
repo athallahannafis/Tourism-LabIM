@@ -3,6 +3,10 @@ import {View, Image} from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // Screen
 import TestScreen from './screens/Test';
@@ -105,6 +109,9 @@ export default class BottomTab extends Component {
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
           headerTintColor: 'white',
+          headerTitleStyle:{
+            fontSize: RFPercentage(2.5)
+          }
         }}>
         <attractionStack.Screen
           component={AttractionHome}
@@ -239,7 +246,7 @@ export default class BottomTab extends Component {
             height: '10%',
           },
           labelStyle: {
-            fontSize: 14,
+            fontSize: RFPercentage(1.7),
             fontWeight: 'bold',
             color: '#2E99A3',
           },
@@ -253,7 +260,7 @@ export default class BottomTab extends Component {
               // TODO: put image icon here
               return (
                 <Image
-                  style={{width: 40, height: 40}}
+                  style={{width: wp(6), height: hp(5)}}
                   source={require('./images/bottomtab-icons/objekWisata.png')}
                 />
               );
@@ -268,7 +275,7 @@ export default class BottomTab extends Component {
             tabBarIcon: () => {
               return (
                 <Image
-                  style={{width: 40, height: 40}}
+                  style={{width: wp(6), height: hp(5)}}
                   source={require('./images/bottomtab-icons/akomodasi.png')}
                 />
               );
@@ -284,7 +291,7 @@ export default class BottomTab extends Component {
               // <Image source={require("path")}
               return (
                 <Image
-                  style={{width: 40, height: 40}}
+                  style={{width: wp(6), height: hp(5)}}
                   source={require('./images/bottomtab-icons/myTrip.png')}
                 />
               );
@@ -300,7 +307,7 @@ export default class BottomTab extends Component {
               // <Image source={require("path")}
               return (
                 <Image
-                  style={{width: 40, height: 40}}
+                  style={{width: wp(7), height: hp(5)}}
                   source={require('./images/bottomtab-icons/profile.png')}
                 />
               );
