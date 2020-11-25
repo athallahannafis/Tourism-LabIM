@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import {View, Text, Image} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as dp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Color from '../../style/color.json';
+
 
 // data
 import attInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
@@ -45,18 +50,20 @@ export default class AttractionInDestination extends Component {
                 onPress={() =>
                   this.props.navigation.navigate('Attraction Details', item)
                 }>
-                <View style={[gs.rowContainer, {paddingVertical: 20}]}>
+                <View style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={[gs.rowContainer, {width: wp(40)}]}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={[{width: wp(40), marginLeft: 20}]}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.4)}}>
+                      {item.description}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -69,18 +76,20 @@ export default class AttractionInDestination extends Component {
                 onPress={() =>
                   this.props.navigation.navigate('Attraction Details', item)
                 }>
-                <View style={[gs.rowContainer, {paddingVertical: 20}]}>
+                <View style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={[gs.rowContainer, {width: wp(40)}]}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={[{width: wp(40), marginLeft: 20}]}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.4)}}>
+                      {item.description}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -102,19 +111,23 @@ export default class AttractionInDestination extends Component {
               onPress={() =>
                 this.props.navigation.navigate('Attraction Details', item)
               }>
-              <View style={gs.rowContainer}>
+              <View style={gs.rowContainerNoWrap}>
                 {/* Left section */}
-                <View style={{width: 180}}>
-                  <Text>{item.city_name}</Text>
+                <View style={{width: wp(40)}}>
+                  <Text style={{fontSize: RFPercentage(1.4)}}>
+                    {item.city_name}
+                  </Text>
                   <Image
                     source={{uri: item.image_source}}
                     style={gs.bigImage}
                   />
                 </View>
                 {/* Right Section */}
-                <View style={{width: 180}}>
+                <View style={{width: wp(40)}}>
                   <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                  <Text>{item.description}</Text>
+                  <Text style={{fontSize: RFPercentage(1.4)}}>
+                    {item.description}
+                  </Text>
                 </View>
               </View>
             </TouchableOpacity>
