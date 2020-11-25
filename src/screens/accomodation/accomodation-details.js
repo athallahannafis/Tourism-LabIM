@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {
   Image,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -27,47 +28,59 @@ export default class AccomodationDetails extends Component {
   }
 
   render() {
+    console.log("TEST");
     console.log('=======');
     console.log(this.state.dateExist);
     console.log(this.state.user_order);
 
-    const accImages = this.state.DATA.images_source.map((item) => {
-      return <Image source={{uri: item}} style={ats.smallImage2} />;
+    const imageList = this.state.DATA.images_source;
+    const lastAccImg =
+      <View>
+        <Image source={{uri: imageList[imageList-1]}} style={ats.smallImage2} />
+        <View style={[ats.smallImageBlackOverlay]}>
+          <View style={[ats.textOnImageContainer]}>
+            <Text style={ats.textOnImage}>Lihat</Text>
+            <Text style={ats.textOnImage}>Semua Foto</Text>
+          </View>
+        </View>
+      </View>;
+    let index = 0;
+    const accImages = imageList.map((item) => {
+      if (index !== imageList.length-1) {
+        index++;
+        return <Image source={{uri: item}} style={ats.smallImage2} />;
+      } else {
+        index++;
+        return lastAccImg;
+      }
     });
 
     const facilities = this.state.DATA.details.facility.map((item) => {
       return (
         <>
-          <View style={ls.rowContainer}>
+          <View style={[ls.rowContainer]}>
             <View style={[ats.smallCircle, {marginLeft: 10}]}></View>
-            <Text>{item}</Text>
+            <Text style={{fontSize: RFPercentage(1.6)}}>{item}</Text>
           </View>
         </>
       );
     });
 
     return (
-      <View style={[ats.container]}>
-        <ScrollView>
-          <View style={ls.mainContainer}>
-            {/* Images */}
-            <View style={ats.mainImageContainer}>
-              <Image
-                source={{uri: this.state.DATA.images_source[0]}}
-                style={ats.mainImage}
-              />
-              <View style={ats.rowImageContainer}>
-                {accImages}
-                <View style={[ats.smallImageBlackOverlay, {marginLeft: 22}]} />
-                <View style={[ats.textOnImageContainer, {marginLeft: 22}]}>
-                  <Text style={ats.textOnImage}>Lihat</Text>
-                  <Text style={ats.textOnImage}>Semua foto</Text>
-                </View>
-              </View>
+      <ScrollView>
+        <View style={[ats.container, {backgroundColor: "white"}]}>
+          <View style={ats.mainImageContainer}>
+            <Image
+              source={{uri: this.state.DATA.images_source[0]}}
+              style={ats.mainImage}
+            />
+            <View style={ats.rowImageContainer}>
+              {accImages}
             </View>
+          </View>
 
-            {/* Price and description */}
-            <View style={gs.cardSection}>
+           {/* Price and description */}
+           <View style={gs.cardSection}>
               <Text style={gs.cardTitle}>
                 {this.state.DATA.accomodation_name}
               </Text>
@@ -95,10 +108,12 @@ export default class AccomodationDetails extends Component {
                       fontSize: 20,
                       fontWeight: 'bold',
                       color: Color.color4,
+                      fontSize: RFPercentage(2.5)
                     }}>
                     Rp{this.state.DATA.details.price.toString()}
                   </Text>
-                  <Text style={{color: Color.color4}}> / malam</Text>
+                  <Text style={{color: Color.color4,
+                  fontSize: RFPercentage(2.0)}}> / malam</Text>
                 </View>
 
                 <View
@@ -143,7 +158,10 @@ export default class AccomodationDetails extends Component {
               <Text style={gs.cardTitle}>Detail Akomodasi</Text>
               {/* Facilities */}
               <View>
-                <Text style={{fontWeight: 'bold'}}>Fasilitas:</Text>
+                <Text style={{
+                  fontWeight: 'bold',
+                  fontSize: RFPercentage(1.6)
+                  }}>Fasilitas:</Text>
                 <View
                   style={[
                     ats.rowContainer,
@@ -186,16 +204,19 @@ export default class AccomodationDetails extends Component {
                 </Text>
                 <View style={ls.rowContainer}>
                   <View style={ats.smallCircle} />
-                  <Text>Mulai: {this.state.DATA.details.checkin}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
+                    Mulai: {this.state.DATA.details.checkin}
+                  </Text>
                 </View>
                 <View style={ls.rowContainer}>
                   <View style={ats.smallCircle} />
-                  <Text>Sebelum: {this.state.DATA.details.checkout}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
+                    Sebelum: {this.state.DATA.details.checkout}
+                  </Text>
                 </View>
               </View>
             </View>
-          </View>
-        </ScrollView>
+        </View>
         {this.state.dateExist ? (
           <View style={ats.floatingButtonContainer}>
             <TouchableOpacity>
@@ -214,8 +235,8 @@ export default class AccomodationDetails extends Component {
         ) : (
           <></>
         )}
-      </View>
-    );
+      </ScrollView>
+    )
   }
 }
 
