@@ -2,8 +2,8 @@ import {StyleSheet, Dimensions} from 'react-native';
 import Color from './color.json';
 import {
   widthPercentageToDP as wp,
-  heightPercentageToDP as hp} from 'react-native-responsive-screen'
-import {RFPercentage} from 'react-native-responsive-fontsize'
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const attractionStyling = StyleSheet.create({
   bottomImage: {
