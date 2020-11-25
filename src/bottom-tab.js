@@ -28,6 +28,7 @@ import AttractionMap from './screens/attraction/attraction-map';
 import AccomodationMap from './screens/accomodation/accomodation-map';
 import AccomodationHome from './screens/accomodation/accomodation-home';
 import AccomodationDetail from './screens/accomodation/accomodation-details';
+// import AccomodationDetail from './screens/accomodation/accomodation-details2';
 import AccomodationReservation from './screens/accomodation/accomodation-reservation';
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
