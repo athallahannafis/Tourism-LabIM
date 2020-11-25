@@ -148,8 +148,8 @@ export default class AttractionDetails extends Component {
               />
               <View style={ats.rowImageContainer}>
                 {attrImages}
-                <View style={[ats.smallImageBlackOverlay, {marginLeft: 22}]} />
-                <View style={[ats.textOnImageContainer, {marginLeft: 22}]}>
+                <View style={[ats.smallImageBlackOverlay]} />
+                <View style={[ats.textOnImageContainer]}>
                   <Text style={ats.textOnImage}>Lihat</Text>
                   <Text style={ats.textOnImage}>Semua Foto</Text>
                 </View>

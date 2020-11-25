@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Modal, TouchableOpacity} from 'react-native';
+import {View, Text, Image, Modal, TouchableOpacity, Dimensions} from 'react-native';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -13,11 +13,12 @@ import CheckBox from '@react-native-community/checkbox';
 // data
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
-export default class AttractionSearchFilter extends Component {
+export default class MyTripItinerarySearchFilter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchedPlace: '',
+      destinationName: '',
       destinationData: [],
       popularDestinationData: [],
       cityDestinationData: [],
@@ -35,7 +36,10 @@ export default class AttractionSearchFilter extends Component {
   }
 
   UNSAFE_componentWillMount = () => {
-    this.state.searchedPlace = this.props.route.params;
+    this.state.searchedPlace = this.props.route.params.key;
+    console.log(this.state.searchedPlace);
+    this.state.destinationName = this.props.route.params.destinationName;
+    console.log(this.state.destinationName);
     let searchedLowerCase = this.state.searchedPlace.toLowerCase();
     this.fetchAttraction(searchedLowerCase);
   };
@@ -52,28 +56,24 @@ export default class AttractionSearchFilter extends Component {
   }
 
   fetchAttraction = (searchedPlace) => {
-    console.log(searchedPlace);
-    console.log('--------------------------------');
-    let the_data = AllAttraction.data;
+    let the_data = [];
+    for (let i=0; i<AllAttraction.data.length; i++){
+        if (AllAttraction.data[i].attraction_place == this.state.destinationName){
+          the_data = AllAttraction.data[i].attraction_list;
+        }
+      }
     let filteredDestination = [];
-
-    //Terdapat 3 kali for-loop yang berjalan menelusuri setiap item di the_data.
-    //For-loop dilakukan 3 kali agar urutan destinasi/tempat hasil pencarian yang keluar sesuai prioritas, yaitu:
+    //Terdapat 2 kali for-loop yang berjalan menelusuri setiap item di the_data.
+    //For-loop dilakukan 2 kali agar urutan destinasi/tempat hasil pencarian yang keluar sesuai prioritas, yaitu:
     //misal keyword: "An"
     //Prioritas 1: destinasi yang mengandung keyword, misal "Gili Trawang(an)"
-    //Prioritas 2: destinasi di kota yang mengandung keyword, misal "B(an)dung"
-    //Prioritas 3: destinasi di kota administrasi/provinsi yang mengandung keyword, misal "Jakarta Selat(an)"
+    //Prioritas 2: destinasi di kota administrasi/provinsi yang mengandung keyword, misal "Jakarta Selat(an)"
 
     //jika keyword bagian dari nama tempat/destinasi misal "Monas"
     //Prioritas Satu
-    for (let i = 0; i < the_data.length; i++) {
-      attr_list = the_data[i].attraction_list;
+      attr_list = the_data;
       for (let l = 0; l < attr_list.length; l++) {
         if (attr_list[l].place_name.toLowerCase().includes(searchedPlace)) {
-          //masukan nama kota dari destinasi tersebut ke list cityDestinationData agar kota bisa ditampilkan di bagian "Destinasi"
-          if (!this.state.cityDestinationData.includes(the_data[i])) {
-            this.state.cityDestinationData.push(the_data[i]);
-          }
 
           //jika user memasukan filter pencarian
           if (this.state.filter === true) {
@@ -109,55 +109,12 @@ export default class AttractionSearchFilter extends Component {
           }
         }
       }
-    }
-
-    //jika keyword bagian dari nama kota misal "Jakarta" atau "Jak"
-    //Prioritas 2
-    for (let i = 0; i < the_data.length; i++) {
-      attr_list = the_data[i].attraction_list;
-      if (the_data[i].attraction_place.toLowerCase().includes(searchedPlace)) {
-        if (!this.state.cityDestinationData.includes(the_data[i])) {
-          this.state.cityDestinationData.push(the_data[i]);
-        }
-        for (let j = 0; j < attr_list.length; j++) {
-          if (this.state.filter === true) {
-            if (
-              (attr_list[l].categories.wisata_alam === this.state.wisata_alam) |
-              (attr_list[l].categories.tantangan === this.state.tantangan) |
-              (attr_list[l].categories.budaya_lokal ===
-                this.state.budaya_lokal) |
-              (attr_list[l].categories.kuliner === this.state.kuliner) |
-              (attr_list[l].categories.perbelanjaan === this.state.perbelanjaan)
-            ) {
-              filteredDestination.push(attr_list[j]);
-            }
-          } else {
-            console.log('masuk B ');
-            filteredDestination.push(attr_list[j]);
-          }
-
-          for (let x = 0; x < filteredDestination.length; x++) {
-            if (!this.state.destinationData.includes(filteredDestination[x])) {
-              console.log('masuk B lagi');
-              this.state.destinationData.push(filteredDestination[x]);
-              if (filteredDestination[x].isPopular === true) {
-                this.state.popularDestinationData.push(filteredDestination[x]);
-              }
-            }
-          }
-        }
-      }
-    }
 
     //jika keyword bagian dari city_name / province misal "Teng" atau "Sulawesi Tenggara"
-    //Prioritas 3
-    for (let i = 0; i < the_data.length; i++) {
-      attr_list = the_data[i].attraction_list;
+    //Prioritas 2
+      attr_list = the_data;
       for (let l = 0; l < attr_list.length; l++) {
         if (attr_list[l].city_name.toLowerCase().includes(searchedPlace)) {
-          if (!this.state.cityDestinationData.includes(the_data[i])) {
-            this.state.cityDestinationData.push(the_data[i]);
-          }
 
           if (this.state.filter === true) {
             if (
@@ -185,7 +142,6 @@ export default class AttractionSearchFilter extends Component {
             }
           }
         }
-      }
     }
   };
 
@@ -197,60 +153,6 @@ export default class AttractionSearchFilter extends Component {
 
   render() {
     this.fetchAttraction(this.state.searchedPlace.toLowerCase());
-    const destinasiRender = this.state.cityDestinationData.map((item) => {
-      const imageURL = item.attraction_list[1].image_source;
-      const len = this.state.cityDestinationData.length;
-      if (item === this.state.cityDestinationData[len - 1]) {
-        return (
-          <>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate(
-                  'Attraction in Destination',
-                  item.attraction_place,
-                )
-              }>
-              <View style={[gs.rowContainer, {paddingVertical: 20}]}>
-                {/* Left section */}
-                <View style={[gs.rowContainer, {width: 100}]}>
-                  <Image source={{uri: imageURL}} style={gs.smallImage} />
-                </View>
-                {/* Right section */}
-                <View style={[{width: 230, marginLeft: 20}]}>
-                  <Text style={gs.subCardTitle}>{item.attraction_place}</Text>
-                  <Text>{item.attraction_place_description}</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </>
-        );
-      } else {
-        return (
-          <>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate(
-                  'Attraction in Destination',
-                  item.attraction_place,
-                )
-              }>
-              <View style={[gs.rowContainer, {paddingVertical: 20}]}>
-                {/* Left section */}
-                <View style={[gs.rowContainer, {width: 100}]}>
-                  <Image source={{uri: imageURL}} style={gs.smallImage} />
-                </View>
-                {/* Right section */}
-                <View style={[{width: 230, marginLeft: 20}]}>
-                  <Text style={gs.subCardTitle}>{item.attraction_place}</Text>
-                  <Text>{item.attraction_place_description}</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-            <View style={{borderBottomWidth: 1, borderColor: Color.color1}}></View>
-          </>
-        );
-      }
-    });
 
     const objekWisataRender = this.state.destinationData.map((item) => {
       if (item.isPopular === false) {
@@ -373,7 +275,7 @@ export default class AttractionSearchFilter extends Component {
     return (
       <>
         <ScrollView>
-          <View style={gs.mainContainer}>
+          <View style={[gs.mainContainer, {height: Dimensions.get('window').height, justifyContent:'flex-start'}]}>
             <View style={ats.filterBoxContainer}>
               <Text>Filter Pencarian</Text>
               <TouchableOpacity
@@ -387,10 +289,6 @@ export default class AttractionSearchFilter extends Component {
                   color={Color.color2}
                 />
               </TouchableOpacity>
-            </View>
-            <View style={[gs.cardSection]}>
-              <Text style={gs.cardTitle}>Destinasi</Text>
-              <View>{destinasiRender}</View>
             </View>
             <View style={[gs.cardSection, {marginTop: 20}]}>
               <Text style={gs.cardTitle}>Objek Wisata Populer</Text>

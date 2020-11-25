@@ -1,0 +1,38 @@
+{
+    "data":[
+        {
+            "destinationName": "Jakarta",
+            "relatedDestinations": [
+                {
+                    "destinationName": "Bali",
+                    "image": "https://a.cdn-hotels.com/gdcs/production143/d1112/c4fedab1-4041-4db5-9245-97439472cf2c.jpg"
+                },
+                {
+                    "destinationName": "Surabaya",
+                    "image": "https://www.blibli.com/friends/assets/2020/09/urbanasia-com.jpg"
+                },
+                {
+                    "destinationName": "Medan",
+                    "image": "https://cdns.klimg.com/merdeka.com/i/w/news/2020/04/15/1167190/540x270/5-fakta-menarik-tentang-kota-medan-tanah-kelahiran-bagi-suku-batak.jpg"
+                }
+            ]
+        },
+        {
+            "destinationName": "Yogyakarta",
+            "relatedDestinations":[
+                {
+                    "destinationName": "Bandung",
+                    "image": "https://static.republika.co.id/uploads/images/inpicture_slide/aktivitas-pengunjung-di-taman-gedung-sate-jalan-diponegoro-kota-bandung-_200102153956-975.jpg"
+                },
+                {
+                    "destinationName": "Solo",
+                    "image": "https://ik.imagekit.io/tvlk/loc-asset/gNr3hLh55ZCkPJisyxFK-v9MmzxPu57ZRVI%2B10VZ2S4b1PNW4T%2B%2BcbA6yK4gzhAhs9o2HLZ9vs7gy3rpcIU%2BoKi5EygzQLRjTUv7fRblEVA%3D/images/1506589618370-1200x600-FIT_AND_TRIM-62944cffe6eb5a747922cf8e20f6078f.jpeg?_src=imagekit&tr=c-at_max,h-400,q-40,w-1280"
+                },
+                {
+                    "destinationName": "Malang",
+                    "image": "https://www.blibli.com/friends/assets/2018/03/tempat-wisata-di-kota-Malang-3-1-1280x720.jpg"
+                }
+            ]
+        }
+    ]
+}

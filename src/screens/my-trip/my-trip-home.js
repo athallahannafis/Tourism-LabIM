@@ -14,6 +14,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
+//data
+import recommendationTrip from '../../data-dummy/myTrip-data/recommendationTrip.json';
+import myTrips from '../../data-dummy/data.json';
+
 export default class MyTripHome extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +32,8 @@ export default class MyTripHome extends Component {
       dateEndVisible: false,
       destinationName1: 'Jakarta',
       destinationName2: 'Bali',
+      recommendationData : recommendationTrip.data,
+      myTripsData: myTrips.trips
     };
   }
 
@@ -66,6 +72,125 @@ export default class MyTripHome extends Component {
     });
   };
   render() {
+    const daftarTrip = this.state.myTripsData.map((item)=>{
+      return(
+        <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Trip',
+                      item.destinationName,
+                    )
+                  }>
+                  <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                        {item.destinationName}
+                      </Text>
+                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                        <Icon
+                          style={{marginRight: 5}}
+                          name={'calendar'}
+                          size={16}
+                        />
+                        <Text>{item.dateFrom} - {item.dateTo}</Text>
+                      </View>
+                    </View>
+                    <View
+                      style={{
+                        width: '35%',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Trip',
+                            item.destinationName,
+                          )
+                        }>
+                        <Text style={mts.buttonDetailText}>Detail</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+      )
+    });
+    const recommendationDestination = this.state.recommendationData.map((item) => {
+      return(
+        <View>
+                  <View style={mts.recommendationCard}>
+                    <Text>Karena kamu melihat {item.destinationName}</Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}>
+                      <TouchableOpacity
+                        onPress={() => {this.props.navigation.navigate(
+                        "Rekomendasi Destinasi", item.relatedDestinations[0].destinationName
+                        )}}>
+                        
+                        <Image
+                        source={{
+                        uri: item.relatedDestinations[0].image
+                        }}
+                        style={mts.recommendationImage}
+                        />
+                        <View style={mts.blackOverlayHome}>
+                        </View>
+                        <View style={mts.fontContainerHome}>
+                        <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[0].destinationName}</Text>
+                        </View>
+                      </TouchableOpacity>
+                      
+                      <TouchableOpacity
+                          onPress={() => {this.props.navigation.navigate(
+                          "Rekomendasi Destinasi", item.relatedDestinations[1].destinationName
+                          )}}>
+                          
+                          <Image
+                          source={{
+                          uri: item.relatedDestinations[1].image
+                          }}
+                          style={mts.recommendationImage}
+                          />
+                          <View style={mts.blackOverlayHome}>
+                          </View>
+                          <View style={mts.fontContainerHome}>
+                          <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[1].destinationName}</Text>
+                          </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                          onPress={() => {this.props.navigation.navigate(
+                          "Rekomendasi Destinasi", item.relatedDestinations[2].destinationName
+                          )}}>
+                          
+                          <Image
+                          source={{
+                          uri: item.relatedDestinations[2].image
+                          }}
+                          style={mts.recommendationImage}
+                          />
+                          <View style={mts.blackOverlayHome}>
+                          </View>
+                          <View style={mts.fontContainerHome}>
+                          <Text style={mts.fontOnBlackOverlay}>{item.relatedDestinations[2].destinationName}</Text>
+                          </View>
+                        </TouchableOpacity>
+                          
+                      
+                      
+                      
+                    </View>
+                  </View>
+                </View>
+      )
+    });
     return (
       <>
         {this.state.addNewDestinationPopUp ? (
@@ -77,7 +202,7 @@ export default class MyTripHome extends Component {
                 style={mts.buttonAddDestination}
                 onPress={() => this.setState({addNewDestinationPopUp: true})}>
                 <Text style={mts.buttonAddDestinationText}>
-                  Buat Tujuan Destinasi
+                  Buat Trip
                 </Text>
                 <Icon
                   style={{marginLeft: 5}}
@@ -189,91 +314,10 @@ export default class MyTripHome extends Component {
                 </View>
               </View>
 
-              {/* Daftar Tujuan Destinasi Card */}
+              {/* Daftar Trip Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
-                <Text style={[gs.cardTitle]}>Daftar Tujuan Destinasi</Text>
-                <TouchableOpacity
-                  style={mts.destinationBubble}
-                  onPress={() =>
-                    this.props.navigation.navigate(
-                      'Detail Tujuan Destinasi',
-                      this.state.destinationName1,
-                    )
-                  }>
-                  <View style={{flexDirection: 'row'}}>
-                    <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        {this.state.destinationName1}
-                      </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'calendar'}
-                          size={16}
-                        />
-                        <Text>Sen, 3 Agustus - Min, 9 Agustus</Text>
-                      </View>
-                    </View>
-                    <View
-                      style={{
-                        width: '35%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}>
-                      <TouchableOpacity
-                        style={mts.buttonDetail}
-                        onPress={() =>
-                          this.props.navigation.navigate(
-                            'Detail Tujuan Destinasi',
-                            this.state.destinationName1,
-                          )
-                        }>
-                        <Text style={mts.buttonDetailText}>Detail</Text>
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={mts.destinationBubble}
-                  onPress={() =>
-                    this.props.navigation.navigate(
-                      'Detail Tujuan Destinasi',
-                      this.state.destinationName2,
-                    )
-                  }>
-                  <View style={{flexDirection: 'row'}}>
-                    <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        {this.state.destinationName2}
-                      </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'calendar'}
-                          size={16}
-                        />
-                        <Text>Sen, 3 Agustus - Min, 9 Agustus</Text>
-                      </View>
-                    </View>
-                    <View
-                      style={{
-                        width: '35%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}>
-                      <TouchableOpacity
-                        style={mts.buttonDetail}
-                        onPress={() =>
-                          this.props.navigation.navigate(
-                            'Detail Tujuan Destinasi',
-                            this.state.destinationName2,
-                          )
-                        }>
-                        <Text style={mts.buttonDetailText}>Detail</Text>
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                </TouchableOpacity>
+                <Text style={[gs.cardTitle]}>Daftar Trip</Text>
+                {daftarTrip}
               </View>
 
               {/* Rekomendasi Destinasi Card */}
@@ -281,77 +325,7 @@ export default class MyTripHome extends Component {
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>
-                <View>
-                  <TouchableOpacity onPress={() => {this.props.navigation.navigate(
-                    "Rekomendasi Destinasi", "Jakarta"
-                  )}} style={mts.recommendationCard} >
-                    <Text>Karena kamu melihat Jakarta</Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 5,
-                        marginBottom: 5,
-                      }}>
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                    </View>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate(
-                    "Rekomendasi Destinasi", "Yogyakarta"
-                  )} style={mts.recommendationCard}>
-                    <Text>Karena kamu melihat Yogyakarta</Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 5,
-                        marginBottom: 5,
-                      }}>
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                {recommendationDestination}
               </View>
             </View>
           </ScrollView>
@@ -364,7 +338,7 @@ export default class MyTripHome extends Component {
                 style={mts.buttonAddDestination}
                 onPress={() => this.setState({addNewDestinationPopUp: true})}>
                 <Text style={mts.buttonAddDestinationText}>
-                  Buat Tujuan Destinasi
+                  Buat Trip
                 </Text>
                 <Icon
                   style={{marginLeft: 5}}
@@ -374,91 +348,10 @@ export default class MyTripHome extends Component {
                 />
               </TouchableOpacity>
 
-              {/* Daftar Tujuan Destinasi Card */}
+              {/* Daftar Trip Card */}
               <View style={[gs.cardSection, {marginTop: 20}]}>
-                <Text style={[gs.cardTitle]}>Daftar Tujuan Destinasi</Text>
-                <TouchableOpacity
-                  style={mts.destinationBubble}
-                  onPress={() =>
-                    this.props.navigation.navigate(
-                      'Detail Tujuan Destinasi',
-                      this.state.destinationName1,
-                    )
-                  }>
-                  <View style={{flexDirection: 'row'}}>
-                    <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        {this.state.destinationName1}
-                      </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'calendar'}
-                          size={16}
-                        />
-                        <Text>Sen, 3 Agustus - Min, 9 Agustus</Text>
-                      </View>
-                    </View>
-                    <View
-                      style={{
-                        width: '35%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}>
-                      <TouchableOpacity
-                        style={mts.buttonDetail}
-                        onPress={() =>
-                          this.props.navigation.navigate(
-                            'Detail Tujuan Destinasi',
-                            this.state.destinationName1,
-                          )
-                        }>
-                        <Text style={mts.buttonDetailText}>Detail</Text>
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={mts.destinationBubble}
-                  onPress={() =>
-                    this.props.navigation.navigate(
-                      'Detail Tujuan Destinasi',
-                      this.state.destinationName2,
-                    )
-                  }>
-                  <View style={{flexDirection: 'row'}}>
-                    <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        {this.state.destinationName2}
-                      </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
-                        <Icon
-                          style={{marginRight: 5}}
-                          name={'calendar'}
-                          size={16}
-                        />
-                        <Text>Sen, 3 Agustus - Min, 9 Agustus</Text>
-                      </View>
-                    </View>
-                    <View
-                      style={{
-                        width: '35%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}>
-                      <TouchableOpacity
-                        style={mts.buttonDetail}
-                        onPress={() =>
-                          this.props.navigation.navigate(
-                            'Detail Tujuan Destinasi',
-                            this.state.destinationName2,
-                          )
-                        }>
-                        <Text style={mts.buttonDetailText}>Detail</Text>
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                </TouchableOpacity>
+                <Text style={[gs.cardTitle]}>Daftar Trip</Text>
+                {daftarTrip}
               </View>
 
               {/* Rekomendasi Destinasi Card */}
@@ -466,77 +359,7 @@ export default class MyTripHome extends Component {
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>
-                <View>
-                  <TouchableOpacity onPress={() => {this.props.navigation.navigate(
-                    "Rekomendasi Destinasi", "Jakarta"
-                  )}} style={mts.recommendationCard} >
-                    <Text>Karena kamu melihat Jakarta</Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 5,
-                        marginBottom: 5,
-                      }}>
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                    </View>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate(
-                    "Rekomendasi Destinasi", "Yogyakarta"
-                  )} style={mts.recommendationCard}>
-                    <Text>Karena kamu melihat Yogyakarta</Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 5,
-                        marginBottom: 5,
-                      }}>
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                      <Image
-                        source={{
-                          uri:
-                            'https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg',
-                        }}
-                        style={mts.recommendationImage}
-                      />
-                    </View>
-                  </TouchableOpacity>
-                </View>
+                {recommendationDestination}
               </View>
             </View>
           </ScrollView>
