@@ -281,7 +281,7 @@ export default class AccomodationHome extends Component {
             animationType="slide">
             <View style={gs.columnContainer}>
               <View style={ts.modalContainer}>
-                <Icon name={'times-circle'} size={80} color={'red'} />
+                <Icon name={'times-circle'} size={hp(15)} color={'red'} />
                 <Text style={[ts.alertMessage]}>{this.state.alertMessage}</Text>
                 <TouchableOpacity
                   style={ts.okButton}

@@ -7,6 +7,9 @@ import {
   View,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
@@ -93,7 +96,7 @@ export default class AccomodationDetails extends Component {
                   maxStars={5}
                   rating={this.state.DATA.rate}
                   fullStarColor={Color.color6}
-                  starSize={17}
+                  starSize={hp(3)}
                 />
                 <Text
                   style={[
@@ -154,7 +157,7 @@ export default class AccomodationDetails extends Component {
             </View>
 
             {/* Details */}
-            <View style={[gs.cardSection, {marginTop: 20}]}>
+            <View style={[gs.cardSection, {marginTop: 20, marginBottom: 20}]}>
               <Text style={gs.cardTitle}>Detail Akomodasi</Text>
               {/* Facilities */}
               <View>
