@@ -381,7 +381,7 @@ export const attractionStyling = StyleSheet.create({
     marginRight: 10,
   },
   searchBoxContainer: {
-    width: Dimensions.get('window').width - 5,
+    width: wp(100),
     flexDirection: 'row',
     justifyContent: 'center',
     paddingBottom: 20,
@@ -394,6 +394,7 @@ export const attractionStyling = StyleSheet.create({
     paddingBottom: 2,
     paddingTop: 2,
     paddingLeft: 5,
+    borderBottomWidth: 0
   },
   starRatingView: {
     flex: 0,
