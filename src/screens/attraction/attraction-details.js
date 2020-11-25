@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {View, Modal, Alert, Text, Image, TouchableOpacity} from 'react-native';
 import StarRating from 'react-native-star-rating';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
