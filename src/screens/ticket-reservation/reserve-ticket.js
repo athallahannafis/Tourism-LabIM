@@ -14,6 +14,10 @@ import moment from 'moment';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { Picker } from '@react-native-community/picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // data
 import Ticket from '../../data-dummy/attraction-data/ticket.json';
@@ -222,7 +226,7 @@ export default class ReserveTicket extends Component {
           <View style={gs.cardSection} >
             {/* Title */}
             <Text style={ts.title}> {CITY_DATA.place_name}</Text>
-            <Text> {CITY_DATA.city_name} </Text>
+            <Text style={{fontSize: RFPercentage(2.0)}}> {CITY_DATA.city_name} </Text>
 
             {/* Input section */}
             <View style={[gs.columnContainer, {marginTop: 10,}]}>
@@ -234,7 +238,7 @@ export default class ReserveTicket extends Component {
                 <View style={ts.bubble}>
                   <Picker
                   mode="dropdown"
-                  style={{width: "100%"}}
+                  style={{width: "100%", scaleX: 0.7, scaleY: 0.7}}
                   selectedValue={this.state.ticketValue}
                   onValueChange={(itemValue) => this.setTicketValue(itemValue)}>
                     <Picker.Item label="Tap to select ticket class" value={null}/>
@@ -249,7 +253,7 @@ export default class ReserveTicket extends Component {
                 source={require("../../images/ticket-icons/calendar.png")}/>
                 <TouchableOpacity style={ts.bubble}
                 onPress={() => this.showPicker()}>
-                  <Text style={{fontSize: 17}}> {this.state.dateValue} </Text>
+                  <Text style={{fontSize: RFPercentage(2.0)}}> {this.state.dateValue} </Text>
                 </TouchableOpacity>
               </View>
               {/* Person */}
@@ -262,7 +266,7 @@ export default class ReserveTicket extends Component {
                   <View style={[ts.littleBubble, {width: 130, marginRight: 10}]}>
                     <Picker
                     mode="dropdown"
-                    style={{width: "110%", scaleX: 0.9, scaleY: 0.9}}
+                    style={{width: "110%", scaleX: 0.7, scaleY: 0.7}}
                     selectedValue={this.state.adultTicketValue}
                     onValueChange={(itemValue) => this.setAdultValue(itemValue)}>
                       <Picker.Item label="Dewasa" value={null} />
@@ -273,7 +277,7 @@ export default class ReserveTicket extends Component {
                   <View style={[ts.littleBubble, {width: 130}]}>
                     <Picker
                     mode="dropdown"
-                    style={{width: "110%", scaleX: 0.9, scaleY: 0.9}}
+                    style={{width: "110%", scaleX: 0.7, scaleY: 0.7}}
                     selectedValue={this.state.childTicketValue}
                     onValueChange={(itemValue) => this.setChildValue(itemValue)}>
                       <Picker.Item label="Anak" value={null}/>
@@ -290,7 +294,10 @@ export default class ReserveTicket extends Component {
               onPress={() => this.orderTicket(
                 this.state.ticketValue, this.state.dateValue,
                 this.state.adultTicketValue, this.state.childTicketValue)}>
-                <Text style={{fontWeight: "bold", color: "white"}}>Pesan</Text>
+                <Text style={{fontWeight: "bold", 
+                color: "white", fontSize: RFPercentage(2.3)}}>
+                  Pesan
+                  </Text>
               </TouchableOpacity>
             </View>
 
