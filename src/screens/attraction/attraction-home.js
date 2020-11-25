@@ -11,7 +11,7 @@ import CheckBox from '@react-native-community/checkbox';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as dp} from 'react-native-responsive-screen'
-import {RFPercentage, RFValue} from 'react-native-responsive-fontsize'
+import {RFPercentage} from 'react-native-responsive-fontsize'
 // data
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
