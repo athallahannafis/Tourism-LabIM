@@ -14,6 +14,10 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Picker} from '@react-native-community/picker';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import Color from '../../style/color.json';
@@ -216,7 +220,7 @@ export default class AccomodationHome extends Component {
             }
             style={[gs.rowContainer, {paddingVertical: 20}]}>
             {/* left section */}
-            <View style={{width: 180}}>
+            <View style={{width: wp(40)}}>
               <Image
                 source={{uri: item.images_source[0]}}
                 style={gs.smallImage}
@@ -224,7 +228,7 @@ export default class AccomodationHome extends Component {
             </View>
 
             {/* Right Section */}
-            <View style={{width: 180}}>
+            <View style={{width: wp(40)}}>
               <Text style={gs.subCardTitle}>{item.accomodation_name}</Text>
               <View style={ats.starRatingView}>
                 <Text
@@ -233,7 +237,7 @@ export default class AccomodationHome extends Component {
                     {color: Color.color6, marginLeft: 10},
                   ]}></Text>
               </View>
-              <Text>{item.description}</Text>
+              <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
             </View>
           </TouchableOpacity>
         );
@@ -250,7 +254,7 @@ export default class AccomodationHome extends Component {
               }
               style={[gs.rowContainer, {paddingVertical: 20}]}>
               {/* left section */}
-              <View style={{width: 180}}>
+              <View style={{width: wp(40)}}>
                 <Image
                   source={{uri: item.images_source[0]}}
                   style={gs.smallImage}
@@ -258,9 +262,9 @@ export default class AccomodationHome extends Component {
               </View>
 
               {/* Right Section */}
-              <View style={{width: 180}}>
+              <View style={{width: wp(40)}}>
                 <Text style={gs.subCardTitle}>{item.accomodation_name}</Text>
-                <Text>{item.description}</Text>
+                <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
               </View>
             </TouchableOpacity>
             <View style={{borderBottomWidth: 1, borderColor: Color.color1}} />
@@ -310,12 +314,13 @@ export default class AccomodationHome extends Component {
                 source={require('../../images/bottomtab-icons/objekWisata.png')}/> */}
                 <Icon
                   name={'map-marker'}
-                  size={25}
+                  size={hp(4)}
                   color={Color.color6}
                   style={{marginLeft: 7}}
                 />
                 <TextInput
-                  style={[ls.textInput, {width: '85%', marginLeft: 18}]}
+                  style={[ls.textInput, {width: '85%', marginLeft: 18,
+                  paddingVertical: "3%"}]}
                   placeholder={'Akomodasi di sekitar anda...'}
                   onChangeText={(value) => this.setState({nameValue: value})}
                 />
@@ -329,7 +334,7 @@ export default class AccomodationHome extends Component {
                     source={require("../../images/ticket-icons/calendar.png")}/> */}
                     <Icon
                       name={'calendar'}
-                      size={25}
+                      size={hp(4)}
                       color={Color.color6}
                       style={{marginLeft: 3}}
                     />
@@ -338,12 +343,14 @@ export default class AccomodationHome extends Component {
                       style={[ls.bubble, {marginLeft: 14}]}
                       onPress={() => this.showCheckin()}>
                       {this.state.checkinValue === 'Tanggal check-in' ? (
-                        <Text style={{fontSize: 15, color: 'grey', width: 125}}>
+                        <Text style={{fontSize: RFPercentage(1.4), color: 'grey',
+                        width: "100%"}}>
                           {this.state.checkinValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          style={{fontSize: RFPercentage(1.4), color: 'black',
+                          width: "100%"}}>
                           {this.state.checkinValue}
                         </Text>
                       )}
@@ -353,12 +360,14 @@ export default class AccomodationHome extends Component {
                       style={[ls.bubble, {marginLeft: 26}]}
                       onPress={() => this.showCheckout()}>
                       {this.state.checkoutValue === 'Tanggal check-out' ? (
-                        <Text style={{fontSize: 15, color: 'grey', width: 127}}>
+                        <Text style={{fontSize: RFPercentage(1.4), color: 'grey',
+                        width: "100%"}}>
                           {this.state.checkoutValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 127}}>
+                          style={{fontSize: RFPercentage(1.4), color: 'black',
+                          width: "100%"}}>
                           {this.state.checkoutValue}
                         </Text>
                       )}
@@ -370,23 +379,22 @@ export default class AccomodationHome extends Component {
               {/* Kamar, tamu, dan bintang */}
               <View
                 style={[
-                  ats.rowContainer,
                   {
+                    flex:0,
+                    flexDirection: "column",
                     width: '100%',
-                    marginTop: 3 + 5,
-                    flexWrap: 'wrap',
                   },
                 ]}>
                 {/* Kamar section */}
                 <View
-                  style={[ats.rowContainer, {paddingLeft: 3, marginRight: 20}]}>
-                  <Icon name={'bed'} size={25} color={Color.color6} />
-                  <View style={[ls.bubble, {marginLeft: 8, maxWidth: 130}]}>
+                  style={[ats.rowContainer, {paddingLeft: 3}]}>
+                  <Icon name={'bed'} size={hp(4)} color={Color.color6} />
+                  <View style={[ls.bubble, {marginLeft: 8, marginTop: 8}]}>
                     <Picker
                       mode={'dropdown'}
                       selectedValue={this.state.bedValue}
                       onValueChange={(value) => this.setBedValue(value)}
-                      style={{width: 100, height: 18}}>
+                      style={{height: 20, scaleX: 0.6, scaleY: 0.6}}>
                       <Picker.Item label="Bed" value={null} />
                       <Picker.Item label="1 bed" value={1} />
                       <Picker.Item label="2 bed" value={2} />
@@ -396,14 +404,14 @@ export default class AccomodationHome extends Component {
                 </View>
                 {/* Tamu section */}
                 <View
-                  style={[ats.rowContainer, {paddingLeft: 3, marginLeft: 20}]}>
-                  <Icon name={'users'} size={25} color={Color.color6} />
-                  <View style={[ls.bubble, {marginLeft: 8, maxWidth: 130}]}>
+                  style={[ats.rowContainer, {paddingLeft: 3}]}>
+                  <Icon name={'users'} size={hp(4)} color={Color.color6} />
+                  <View style={[ls.bubble, {marginLeft: 8, marginTop: 8}]}>
                     <Picker
                       mode={'dropdown'}
                       selectedValue={this.state.tamuValue}
                       onValueChange={(value) => this.setTamuValue(value)}
-                      style={{width: 100, height: 18}}>
+                      style={{height: 20, scaleX: 0.6, scaleY: 0.6}}>
                       <Picker.Item label="Tamu" value={null} />
                       <Picker.Item label="1 tamu" value={1} />
                       <Picker.Item label="2 tamu" value={2} />
@@ -415,15 +423,15 @@ export default class AccomodationHome extends Component {
                 <View
                   style={[
                     ats.rowContainer,
-                    {paddingLeft: 3, marginLeft: 3, marginTop: 18},
+                    {paddingLeft: 3},
                   ]}>
-                  <Icon name={'star'} size={25} color={Color.color6} />
-                  <View style={[ls.bubble, {marginLeft: 10}]}>
+                  <Icon name={'star'} size={hp(4)} color={Color.color6} />
+                  <View style={[ls.bubble, {marginLeft: 8, marginTop: 8}]}>
                     <Picker
                       mode={'dropdown'}
                       selectedValue={this.state.starValue}
                       onValueChange={(value) => this.setStarValue(value)}
-                      style={{width: 150, height: 18}}>
+                      style={{height: 20, scaleX: 0.6, scaleY: 0.6}}>
                       <Picker.Item label="Bintang" value={null} />
                       <Picker.Item label="1 Bintang" value={1} />
                       <Picker.Item label="2 Bintang" value={2} />
@@ -437,10 +445,12 @@ export default class AccomodationHome extends Component {
               <View style={acs.sliderContainer}>
                 <View style={{flexDirection: 'row'}}>
                   <Text
-                    style={{fontWeight: 'bold', fontSize: 15, marginRight: 5}}>
+                    style={{fontWeight: 'bold', fontSize: RFPercentage(1.4), marginRight: 5}}>
                     Cari harga /kamar/malam :
                   </Text>
-                  <Text>Rp.{this.state.sliderValue}</Text>
+                  <Text style={{fontSize:RFPercentage(1.4)}}>
+                    Rp.{this.state.sliderValue}
+                  </Text>
                 </View>
 
                 <View style={{marginTop: 5}}>
@@ -461,8 +471,8 @@ export default class AccomodationHome extends Component {
                       flexDirection: 'row',
                       justifyContent: 'space-between',
                     }}>
-                    <Text>Rp 0</Text>
-                    <Text>Rp 5.000.000+</Text>
+                    <Text style={{fontSize: RFPercentage(2.0)}}>Rp 0</Text>
+                    <Text style={{fontSize: RFPercentage(2.0)}}>Rp 5.000.000+</Text>
                   </View>
                 </View>
               </View>
@@ -471,7 +481,9 @@ export default class AccomodationHome extends Component {
                 <TouchableOpacity
                   style={acs.pilihButton}
                   onPress={() => this.search()}>
-                  <Text style={{color: Color.white, fontWeight: 'bold'}}>
+                  <Text style={{color: Color.white,
+                    fontWeight: 'bold',
+                    fontSize: RFPercentage(2.0) }}>
                     Cari
                   </Text>
                 </TouchableOpacity>
@@ -492,7 +504,7 @@ export default class AccomodationHome extends Component {
               }
               style={gs.rowContainer}>
               {/* left section */}
-              <View style={{width: 180}}>
+              <View style={{width: wp(40)}}>
                 <Image
                   source={{uri: this.state.recommendedAcc.images_source[0]}}
                   style={gs.bigImage}
@@ -500,11 +512,11 @@ export default class AccomodationHome extends Component {
               </View>
 
               {/* Right Section */}
-              <View style={{width: 180}}>
+              <View style={{width: wp(40)}}>
                 <Text style={gs.subCardTitle}>
                   {this.state.recommendedAcc.accomodation_name}
                 </Text>
-                <Text>{this.state.recommendedAcc.description}</Text>
+                <Text style={{fontSize: RFPercentage(1.6)}}>{this.state.recommendedAcc.description}</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -526,7 +538,7 @@ const ls = StyleSheet.create({
     width: '100%',
   },
   textInput: {
-    fontSize: 15,
+    fontSize: RFPercentage(1.4),
     color: 'black',
     textAlign: 'left',
     textAlignVertical: 'center',
@@ -546,6 +558,7 @@ const ls = StyleSheet.create({
     borderColor: Color.color6,
     backgroundColor: '#fff',
     borderRadius: 1000,
+    width: "37%"
   },
   smallIcons: {
     height: 35,
