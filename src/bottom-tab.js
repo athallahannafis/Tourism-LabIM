@@ -71,6 +71,9 @@ export default class BottomTab extends Component {
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
           headerTintColor: 'white',
+          headerTitleStyle:{
+            fontSize: RFPercentage(2.5)
+          }
         }}>
         <profileStack.Screen
           component={ProfileHome}
@@ -162,6 +165,9 @@ export default class BottomTab extends Component {
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
           headerTintColor: 'white',
+          headerTitleStyle:{
+            fontSize: RFPercentage(2.5)
+          }
         }}>
         <accomodationStack.Screen
           component={AccomodationHome}
@@ -212,7 +218,10 @@ export default class BottomTab extends Component {
       <myTripStack.Navigator
         screenOptions={{
           headerStyle: {backgroundColor: '#2E99A3'},
-          headerTintColor: 'white'
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontSize: RFPercentage(2.5)
+          }
         }}>
         <myTripStack.Screen component={MyTripHome} name="My Trip" />
         <myTripStack.Screen component={ItineraryRecommendation}
