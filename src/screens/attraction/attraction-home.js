@@ -185,7 +185,7 @@ export default class AttractionHome extends Component {
               }>
               {/* left section */}
               <View style={{width: wp(40)}}>
-                <Text style={{fontSize: RFPercentage(1.4)}}>
+                <Text style={{fontSize: RFPercentage(1.6)}}>
                   {this.state.popularPlace.city_name}
                 </Text>
                 <Image
@@ -199,7 +199,7 @@ export default class AttractionHome extends Component {
                 <Text style={gs.subCardTitle}>
                   {this.state.popularPlace.place_name}
                 </Text>
-                <Text style={{fontSize: RFPercentage(1.4)}}>
+                <Text style={{fontSize: RFPercentage(1.6)}}>
                   {this.state.popularPlace.description}
                 </Text>
               </View>
@@ -211,14 +211,14 @@ export default class AttractionHome extends Component {
             <Text style={gs.cardTitle}>Rekomendasi Objek Wisata</Text>
 
             <View style={{marginBottom: 20}}>
-              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.4)}}>
+              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.6)}}>
                 Karena anda sempat melihat Bromo Tengger Semeru
               </Text>
               <View style={gs.rowContainer}>{dummyRecommendation}</View>
             </View>
 
             <View style={{marginBottom: 20}}>
-              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.4)}}>
+              <Text style={{marginBottom: 5, fontSize: RFPercentage(1.6)}}>
                 Karena anda sempat melihat Mandalika
               </Text>
               <View style={gs.rowContainer}>{dummyRecommendation}</View>
