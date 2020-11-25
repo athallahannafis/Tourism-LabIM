@@ -41,7 +41,7 @@ export const attractionStyling = StyleSheet.create({
     elevation: 10,
   },
   btnAddtoItinerary2: {
-    width: 90,
+    width: "100%",
     height: 25,
     borderRadius: 5,
     padding: 5,
@@ -79,7 +79,7 @@ export const attractionStyling = StyleSheet.create({
   },
   btnText: {
     color: 'white',
-    fontSize: 11,
+    fontSize: RFPercentage(1.5),
     fontWeight: 'bold',
     textAlign: 'center',
     paddingLeft: 10,
@@ -91,7 +91,7 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
   },
   cardMediumText: {
-    fontSize: RFPercentage(1.4),
+    fontSize: RFPercentage(1.5),
   },
   cardTitleText: {
     fontSize: 17,
@@ -189,7 +189,7 @@ export const attractionStyling = StyleSheet.create({
   },
   modal1Container2: {
     flexDirection: 'row',
-    marginRight: 18,
+    marginRight: 10,
   },
   modal1MainContainer: {
     backgroundColor: 'white',
@@ -333,17 +333,17 @@ export const attractionStyling = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   textMediumBold: {
-    fontSize: 14,
+    fontSize: RFPercentage(1.8),
     fontWeight: 'bold',
   },
   textMediumBoldColor4AlignCenter: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.5),
     fontWeight: 'bold',
     color: Color.color4,
     textAlign: 'center',
   },
   textMediumColor4: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.0),
     color: Color.color4,
   },
   textOnImage: {
@@ -356,7 +356,7 @@ export const attractionStyling = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
   },
-  textSmall: {fontSize: 11},
+  textSmall: {fontSize: RFPercentage(1.4)},
   reviewBtn: {
     flex: 0,
     flexDirection: 'column',
