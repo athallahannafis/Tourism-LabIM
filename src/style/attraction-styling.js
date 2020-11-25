@@ -58,7 +58,7 @@ export const attractionStyling = StyleSheet.create({
   },
   btnAddtoItineraryText: {
     color: 'white',
-    fontSize: 11,
+    fontSize: RFPercentage(1.5),
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -91,14 +91,14 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
   },
   cardMediumText: {
-    fontSize: 13,
+    fontSize: RFPercentage(1.4),
   },
   cardTitleText: {
     fontSize: 17,
     fontWeight: 'bold',
   },
   cardSmallText: {
-    fontSize: 11,
+    fontSize: RFPercentage(1.4),
     flex: 1,
     flexWrap: 'wrap',
   },
@@ -165,7 +165,7 @@ export const attractionStyling = StyleSheet.create({
   },
   mainImage: {
     width: Dimensions.get('window').width,
-    height: 250,
+    height: hp(30),
   },
   modalOverlay: {
     backgroundColor: '#000000aa',
@@ -300,21 +300,23 @@ export const attractionStyling = StyleSheet.create({
   },
   smallImage2: {
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
   },
   smallImage2WithText: {
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
     opacity: 0.8,
   },
   smallImageBlackOverlay: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: 'black',
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
     opacity: 0.4,
     position: 'absolute',
-    top: 4,
-    left: 300,
   },
   textBubbleSmall: {
     flexWrap: 'wrap',
@@ -345,15 +347,13 @@ export const attractionStyling = StyleSheet.create({
     color: Color.color4,
   },
   textOnImage: {
-    fontSize: 12,
+    fontSize: RFPercentage(1.7),
     fontWeight: 'bold',
-    opacity: 0.85,
+    opacity: 1,
     color: 'white',
   },
   textOnImageContainer: {
     position: 'absolute',
-    top: 15,
-    left: 318,
     alignItems: 'center',
   },
   textSmall: {fontSize: 11},

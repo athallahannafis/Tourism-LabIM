@@ -135,12 +135,29 @@ export default class AttractionDetails extends Component {
         );
       },
     );
-
-    const attrImages = this.state.attractionDataSet.images_source.map(
+    
+    const imageList = this.state.attractionDataSet.images_source;
+    const lastAttrImage = 
+    <View>
+      <Image source={{uri: imageList[imageList.length-1]}} style={ats.smallImage2} />
+      <View style={[ats.smallImageBlackOverlay]}>
+        <View style={[ats.textOnImageContainer]}>
+          <Text style={ats.textOnImage}>Lihat</Text>
+          <Text style={ats.textOnImage}>Semua Foto</Text>
+        </View>
+      </View>
+    </View>
+    ;
+    const attrImages = imageList.map(
       (item) => {
-        return <Image source={{uri: item}} style={ats.smallImage2} />;
+        if (item !== imageList[imageList.length-1]) {
+          return <Image source={{uri: item}} style={ats.smallImage2} />;
+        } else {
+          return lastAttrImage
+        }
       },
     );
+
     return (
       <View style={[ats.container]}>
         <ScrollView>
@@ -152,11 +169,6 @@ export default class AttractionDetails extends Component {
               />
               <View style={ats.rowImageContainer}>
                 {attrImages}
-                <View style={[ats.smallImageBlackOverlay, {marginLeft: 22}]} />
-                <View style={[ats.textOnImageContainer, {marginLeft: 22}]}>
-                  <Text style={ats.textOnImage}>Lihat</Text>
-                  <Text style={ats.textOnImage}>Semua Foto</Text>
-                </View>
               </View>
             </View>
             <View
