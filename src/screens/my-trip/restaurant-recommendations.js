@@ -45,13 +45,13 @@ export default class RestaurantRecommendation extends Component {
                 maxStars={5}
                 rating={item.rate}
                 fullStarColor={Color.color6}
-                starSize={10}
+                starSize={hp(1.5)}
               />
             </View>
             <View style={gs.rowContainerNoWrap}>
               <Icon
               name={"money"}
-              size={13}
+              size={hp(2)}
               color={Color.color6}
               style={{marginRight: 3}}
               />

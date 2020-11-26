@@ -7,6 +7,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -26,8 +30,26 @@ export default class RestaurantSouvenirDetail extends Component {
   }
 
   render() {
-    const accImages = this.state.smallImages.map((item) => {
-      return <Image source={{uri: this.state.DATA.image}} style={ats.smallImage2} />;
+    const imageList = this.state.DATA.images_source;
+    const lastAccImage =
+      <View>
+        <Image source={{uri: imageList[imageList.length-1]}} style={ats.smallImage2} />
+        <View style={[ats.smallImageBlackOverlay]}>
+          <View style={[ats.textOnImageContainer]}>
+            <Text style={ats.textOnImage}>Lihat</Text>
+            <Text style={ats.textOnImage}>Semua foto</Text>
+          </View>
+        </View>
+      </View>
+    let index = 0;
+    const accImages = this.state.DATA.images_source.map((item) => {
+      if (index !== imageList.length-1) {
+        index++;
+        return <Image source={{uri: item}} style={ats.smallImage2} />;
+      } else {
+        index++;
+        return lastAccImage;
+      }
     });
 
     console.log(this.state.DATA)
@@ -44,11 +66,6 @@ export default class RestaurantSouvenirDetail extends Component {
               />
               <View style={ats.rowImageContainer}>
                 {accImages}
-                <View style={[ats.smallImageBlackOverlay, {marginLeft: 22}]} />
-                <View style={[ats.textOnImageContainer, {marginLeft: 22}]}>
-                  <Text style={ats.textOnImage}>Lihat</Text>
-                  <Text style={ats.textOnImage}>Semua foto</Text>
-                </View>
               </View>
             </View>
 
@@ -63,7 +80,7 @@ export default class RestaurantSouvenirDetail extends Component {
                   maxStars={5}
                   rating={this.state.DATA.rate}
                   fullStarColor={Color.color6}
-                  starSize={17}
+                  starSize={hp(2.5)}
                 />
                 <Text
                   style={[
@@ -75,7 +92,7 @@ export default class RestaurantSouvenirDetail extends Component {
                 <View style={ats.rowContainer}>
                   <Text
                     style={{
-                      fontSize: 20,
+                      fontSize: RFPercentage(2.3),
                       fontWeight: 'bold',
                       color: Color.color4,
                     }}>

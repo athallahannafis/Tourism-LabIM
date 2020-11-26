@@ -7,7 +7,13 @@
       "reviews_count": 183,
       "description": "Sajian makanan cita rasa tradisional Bali dipadu dgn pemandangan Gunung Agung. Tersedia kelas memasak.",
       "price": "40.000 - 200.000",
-      "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg"
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+      "images_source": [
+        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg"
+      ]
     },
     {
       "name": "d'Alas Warung",
@@ -16,7 +22,13 @@
       "reviews_count": 200,
       "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
       "price": "20.000 - 50.000",
-      "image": "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1"
+      "image": "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1",
+      "images_source": [
+        "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1",
+        "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1",
+        "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1",
+        "https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/323c458ec254a243fd18eed1dd68ec08.jpg?v=1"
+      ]
     },
     {
       "name": "Cafe Lotus",
