@@ -1,5 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import Color from '../style/color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 export const myTripStyling = StyleSheet.create({
   threeImagesContainer: {
@@ -26,7 +30,7 @@ export const myTripStyling = StyleSheet.create({
   blackOverlayHome: {
     backgroundColor: 'black',
     width: Dimensions.get('window').width / 3 - 35,
-    height: 60,
+    height: hp(8),
     opacity: 0.4,
     borderRadius: 10,
     position: 'absolute',
@@ -34,17 +38,17 @@ export const myTripStyling = StyleSheet.create({
     left: 0,
   },
   buttonAddDestination: {
-    width: 220,
-    height: 55,
+    width: wp(55),
+    height: hp(7),
     margin: 25,
     backgroundColor: Color.color5,
-    borderRadius: 15,
+    borderRadius: hp(7)/7,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
   buttonAddDestinationText: {
-    fontSize: 16,
+    fontSize: RFPercentage(2.3),
     fontWeight: 'bold',
     color: Color.white,
   },
@@ -64,15 +68,15 @@ export const myTripStyling = StyleSheet.create({
     color: Color.white,
   },
   buttonDetail: {
-    borderRadius: 12,
-    width: 70,
-    height: 25,
+    borderRadius: hp(5)/5,
+    width: wp(20),
+    height: hp(5),
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonDetailText: {
-    fontSize: 13,
+    fontSize: RFPercentage(1.7),
     color: Color.white,
     fontWeight: 'bold',
   },
@@ -92,9 +96,12 @@ export const myTripStyling = StyleSheet.create({
     marginBottom: 10,
   },
   fontContainerHome: {
+    flex: 0,
+    flexDirection: "column",
+    justifyContent: "center",
     position:'absolute',
     width: Dimensions.get('window').width / 3 - 35,
-    top: 20,
+    height: hp(8),
     left: 0,
     alignItems:'center'
   },
@@ -120,7 +127,7 @@ export const myTripStyling = StyleSheet.create({
   recommendationImage: {
     borderRadius: 10,
     width: Dimensions.get('window').width / 3 - 35,
-    height: 60,
+    height: hp(8),
   },
   textInput: {
     fontSize: 15,
