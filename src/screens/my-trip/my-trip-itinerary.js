@@ -53,7 +53,11 @@ export default class MyTripItinerary extends Component {
           {/*Button Buat Itinerary */}
           <TouchableOpacity
             style={mts.buttonAddItinerary}
-            onPress={() => this.props.navigation.navigate('Buat Itinerary', {destinationName: this.state.destinationName})}>
+            onPress={() => this.props.navigation.navigate('Buat Itinerary', {
+              destinationName: this.state.destinationName,
+              passAttraction: false,
+              attraction: null
+              })}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
               style={{marginLeft: 15}}
@@ -77,7 +81,7 @@ export default class MyTripItinerary extends Component {
                         size={16}
                         color={'black'}
                       />
-                      <Text style={ats.textSmall}>4 Objek Wisata</Text>
+                      <Text style={ats.textSmall}>1 Objek Wisata</Text>
                     </View>
                     <View style={ats.modal1Container2}>
                       <Icon
@@ -103,7 +107,14 @@ export default class MyTripItinerary extends Component {
                   <TouchableOpacity
                     style={[ats.btnAddtoItinerary2, {width: '100%', padding:1, borderRadius:12}]}
                     onPress={() => {
-                      this.setState({successPopUp: true});
+                      this.props.navigation.navigate(
+                        "Detail Itinerary",
+                        {
+                          list_name:"Pantai Kuta, Pura Gunung Kawi",
+                          price: 160.000,
+                          duration: "1 Hari"
+                        }
+                      );
                     }}>
                     <Text style={ats.btnText}>Detail</Text>
                   </TouchableOpacity>
@@ -445,7 +456,11 @@ export default class MyTripItinerary extends Component {
           {/*Button Buat Itinerary */}
           <TouchableOpacity
             style={mts.buttonAddItinerary}
-            onPress={() => this.props.navigation.navigate('Buat Itinerary', {destinationName: this.state.destinationName})}>
+            onPress={() => this.props.navigation.navigate('Buat Itinerary', {
+              destinationName: this.state.destinationName,
+              passAttraction: false,
+              attraction: null
+              })}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
               style={{marginLeft: 15}}

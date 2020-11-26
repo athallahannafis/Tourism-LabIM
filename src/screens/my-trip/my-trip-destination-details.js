@@ -23,7 +23,9 @@ export default class MyTripDestinationDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      destinationName: props.route.params,
+      destinationName: props.route.params.destinationName,
+      startDate: props.route.params.startDate,
+      endDate: props.route.params.endDate,
       trips: MyData.trips,
       transportpopupform: false,
       accomodationpopupform: false,
@@ -210,7 +212,7 @@ export default class MyTripDestinationDetails extends Component {
               fontSize: RFPercentage(2.3),
               fontWeight: 'bold'
               }}>
-                Sen, 24 Agu - Min, 30 Agu
+                {this.state.startDate} - {this.state.endDate}
               </Text>
             </View>
           </View>
@@ -278,7 +280,7 @@ export default class MyTripDestinationDetails extends Component {
                 fontSize: RFPercentage(2.3),
                 fontWeight: 'bold'
                 }}>
-                Sen, 24 Agu - Min, 30 Agu
+                {this.state.startDate} - {this.state.endDate}
               </Text>
             </View>
           </View>
@@ -345,7 +347,7 @@ export default class MyTripDestinationDetails extends Component {
                   {this.state.destinationName}
                 </Text>
                 <Text style={{color: Color.white, fontWeight: 'bold'}}>
-                  Sen, 24 Agu - Min, 30 Agu
+                {this.state.startDate} - {this.state.endDate}
                 </Text>
               </View>
             </View>
@@ -412,7 +414,7 @@ export default class MyTripDestinationDetails extends Component {
                 fontSize: RFPercentage(2.3),
                 fontWeight: 'bold'
                 }}>
-                Sen, 24 Agu - Min, 30 Agu
+              {this.state.startDate} - {this.state.endDate}
               </Text>
             </View>
           </View>
