@@ -218,7 +218,7 @@ export default class AccomodationHome extends Component {
                 user_order: {},
               })
             }
-            style={[gs.rowContainer, {paddingVertical: 20}]}>
+            style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
             {/* left section */}
             <View style={{width: wp(40)}}>
               <Image
@@ -252,7 +252,7 @@ export default class AccomodationHome extends Component {
                   user_order: {},
                 })
               }
-              style={[gs.rowContainer, {paddingVertical: 20}]}>
+              style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
               {/* left section */}
               <View style={{width: wp(40)}}>
                 <Image
@@ -330,8 +330,6 @@ export default class AccomodationHome extends Component {
               <View style={[ats.rowContainer, {width: '100%', marginTop: 8}]}>
                 <View style={ats.rowContainer}>
                   <View style={ats.rowContainer}>
-                    {/* <Image style={ls.smallIcons}
-                    source={require("../../images/ticket-icons/calendar.png")}/> */}
                     <Icon
                       name={'calendar'}
                       size={hp(4)}
@@ -502,7 +500,7 @@ export default class AccomodationHome extends Component {
                   user_order: {},
                 })
               }
-              style={gs.rowContainer}>
+              style={gs.rowContainerNoWrap}>
               {/* left section */}
               <View style={{width: wp(40)}}>
                 <Image
