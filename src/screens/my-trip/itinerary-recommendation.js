@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -45,14 +49,14 @@ export default class ItineraryRecommendation extends Component {
     // TODO render items
     const biggerImage = this.state.temp_biggerImage.map((item) => {
       return (
-        <Image style={{width: 110, height: 60, marginLeft: 2, marginRight: 2}}
+        <Image style={{width: wp(26), height: hp(9), marginLeft: 2, marginRight: 2}}
         source={item}/>
       )
     });
 
     const smallerImage = this.state.temp_smallerImage.map((item) => {
       return (
-        <Image style={{width: 50, height: 25, marginLeft: 2, marginRight: 2}} source={item} />
+        <Image style={{width: wp(13), height: hp(4), marginLeft: 2, marginRight: 2}} source={item} />
       )
     })
 
@@ -76,24 +80,30 @@ export default class ItineraryRecommendation extends Component {
           </View>
           {/* Bottom section: details */}
           <View style={[its.columnContainer, {marginTop: 20}]}>
-            <Text style={{fontWeight:"bold"}}>{this.state.temporary_data.list_name}</Text>
+            <Text style={{fontWeight:"bold",
+            fontSize: RFPercentage(2)
+            }}>{this.state.temporary_data.list_name}</Text>
             <View style={gs.rowContainerNoWrap}>
               <Icon
                 name={'history'}
-                size={15}
+                size={hp(2.3)}
                 color={Color.color6}
                 style={{marginRight: 5}}
               />
-              <Text>{this.state.temporary_data.duration}</Text>
+              <Text style={{
+                fontSize: RFPercentage(1.6)
+              }}>{this.state.temporary_data.duration}</Text>
             </View>
             <View style={gs.rowContainerNoWrap}>
               <Icon
               name={'money'}
-              size={15}
+              size={hp(2.3)}
               color={Color.color6}
               style={{marginRight: 5}}
               />
-              <Text>{this.state.temporary_data.price}</Text>
+              <Text style={{
+                fontSize: RFPercentage(1.6)
+              }}>{this.state.temporary_data.price}</Text>
             </View>
           </View>
         </TouchableOpacity>

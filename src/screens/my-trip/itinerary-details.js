@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -46,31 +50,33 @@ export default class ItineraryDetails extends Component {
               {/* Right side: name and details */}
               <View style={{width: "78%"}}>
                 <Text style={its.cardInsideTitle}>{item}</Text>
-                <Text>
+                <Text style={{fontSize: RFPercentage(1.6)}}>
                   Situ Patenggang adalah sebuah danau yang 
                   berlokasi di kawasan wisata alam Ciwidey, Bandung.
                 </Text>
                 <View style={[gs.rowContainerNoWrap, {marginTop: 10}]}>
                   <Icon
                   name={"history"}
-                  size={15}
+                  size={hp(2.5)}
                   color={Color.color6}
                   style={{marginRight: 5}}
                   />
-                  <Text>{this.state.duration}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
+                    {this.state.duration}</Text>
                 </View>
                 <View style={gs.rowContainerNoWrap}>
                   <Icon
                   name={"money"}
-                  size={15}
+                  size={hp(2.5)}
                   color={Color.color6}
                   style={{marginRight: 5}}
                   />
-                  <Text>{this.state.price}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>{this.state.price}</Text>
                 </View>
               </View>
             </View>
-            <Text style={{marginTop: 5,fontSize: 15, color: "grey", opacity: 0.5}}>
+            <Text style={{marginTop: 5,fontSize: RFPercentage(1.6),
+              color: "grey", opacity: 0.5}}>
               5 menit menggunakan mobil
             </Text>
           </View>

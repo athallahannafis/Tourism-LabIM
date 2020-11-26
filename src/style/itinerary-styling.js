@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 import Color from './color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 export const itineraryStyling = StyleSheet.create({
   cardInside: {
@@ -21,7 +25,7 @@ export const itineraryStyling = StyleSheet.create({
     flexDirection: "column",
   },
   cardInsideTitle: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.5),
     fontWeight: "bold",
   }
 })
