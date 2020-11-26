@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import StarRating from 'react-native-star-rating';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // Style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -51,7 +55,7 @@ export default class RestaurantRecommendation extends Component {
               color={Color.color6}
               style={{marginRight: 3}}
               />
-              <Text>
+              <Text style={{fontSize: RFPercentage(1.25)}}>
                 {item.price}
               </Text>
             </View>

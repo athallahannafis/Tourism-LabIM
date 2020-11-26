@@ -225,6 +225,6 @@ export const myTripStyling = StyleSheet.create({
   },
   restaurantName: {
     fontWeight: "bold",
-    fontSize: 18
+    fontSize: RFPercentage(1.7)
   }
 });
