@@ -73,7 +73,7 @@ export default class AttractionHome extends Component {
     this.state.search.clear();
     this.setState({search: ''});
     this.props.navigation.navigate(
-      'Hasil pencarian untuk Itinerary',
+      'Attraction Search Results',
       e.nativeEvent.text,
     );
   };
