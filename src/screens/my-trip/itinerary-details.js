@@ -5,7 +5,6 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {globalStyling as gs} from '../../style/global-styling';
 import {itineraryStyling as its} from '../../style/itinerary-styling';
 import Color from '../../style/color.json';
-import imagePath from '../../images/dummy-image2.jpeg';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ItineraryDetails extends Component {
@@ -39,7 +38,9 @@ export default class ItineraryDetails extends Component {
             <View style={[gs.cardSection, its.cardInsideDetail, {width: "100%"}]}>
               {/* Left side: Image */}
               <View style={{marginRight:20}}>
-                <Image source={imagePath}
+                <Image source={{
+                  uri: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/09/1132029/540x270/6-tempat-wisata-baru-yang-viral-di-tahun-2019.jpg'
+                }}
                 style={{borderRadius: 1000, width: 50, height: 50}}
                 />
               </View>
@@ -82,7 +83,7 @@ export default class ItineraryDetails extends Component {
         <View style={ls.mainContainer}>
           {/* BIG IMAGE */}
           <View style={{width: "100%", height: 250}}>
-            <Image source={imagePath}
+            <Image source={{uri: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/09/1132029/540x270/6-tempat-wisata-baru-yang-viral-di-tahun-2019.jpg'}}
             style={{width: "100%", height: "100%"}}
             />
           </View>

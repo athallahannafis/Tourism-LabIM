@@ -43,7 +43,8 @@ export default class AttractionInDestination extends Component {
             <>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate('Attraction Details', item)
+                  this.props.navigation.navigate('Attraction Details', 
+                  {'attraction':item, 'fromItinerary':false})
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
@@ -67,7 +68,8 @@ export default class AttractionInDestination extends Component {
             <>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate('Attraction Details', item)
+                  this.props.navigation.navigate('Attraction Details', 
+                  {'attraction':item, 'fromItinerary':false})
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
@@ -100,7 +102,8 @@ export default class AttractionInDestination extends Component {
             </Text>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate('Attraction Details', item)
+                this.props.navigation.navigate('Attraction Details', 
+                  {'attraction':item, 'fromItinerary':false})
               }>
               <View style={gs.rowContainer}>
                 {/* Left section */}

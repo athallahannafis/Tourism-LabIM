@@ -158,8 +158,10 @@ export default class AttractionHome extends Component {
               style={gs.rowContainer}
               onPress={() =>
                 this.props.navigation.navigate(
-                  'Attraction Details',
-                  this.state.popularPlace,
+                  'Attraction Details', {
+                    'attraction': this.state.popularPlace,
+                    'fromItinerary': false
+                  }
                 )
               }>
               {/* left section */}
