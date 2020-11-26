@@ -70,6 +70,7 @@ export default class AccomodationDetails extends Component {
     });
 
     return (
+      <View>
       <ScrollView>
         <View style={[ats.container, {backgroundColor: "white"}]}>
           <View style={ats.mainImageContainer}>
@@ -220,25 +221,26 @@ export default class AccomodationDetails extends Component {
               </View>
             </View>
         </View>
-        {this.state.dateExist ? (
-          <View style={ats.floatingButtonContainer}>
-            <TouchableOpacity>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate('Accomodation Reservation', {
-                    data: this.state.DATA,
-                    user_order: this.state.user_order,
-                  })
-                }
-                style={ats.floatingButton}>
-                <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
-              </TouchableOpacity>
-            </TouchableOpacity>
-          </View>
-        ) : (
-          <></>
-        )}
       </ScrollView>
+      {this.state.dateExist ? (
+        <View style={ats.floatingButtonContainer}>
+          <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.navigate('Accomodation Reservation', {
+                  data: this.state.DATA,
+                  user_order: this.state.user_order,
+                })
+              }
+              style={ats.floatingButton}>
+              <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
+            </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <></>
+      )}
+      </View>
     )
   }
 }
