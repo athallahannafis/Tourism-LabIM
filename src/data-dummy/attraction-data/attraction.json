@@ -1733,12 +1733,12 @@
       ]
     },
     {
-      "attraction_place": "Lombok",
+      "attraction_place": "Bali",
       "attraction_list": [
         {
           "isPopular": true,
-          "city_name": "Ancol, Jakarta Pusat",
-          "place_name": "Pantai Karnaval",
+          "city_name": "Kuta, Bali",
+          "place_name": "Pantai Kuta",
           "coordinates": {
             "latitude": -6.116402,
             "longitude": 106.859842
@@ -1836,8 +1836,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Jakarta Pusat",
-          "place_name": "National Monument (Monumen Nasional)",
+          "city_name": "Jimbaran",
+          "place_name": "Pantai Jimbaran Bali",
           "coordinates": {
             "latitude": -6.175372,
             "longitude": 106.827148
@@ -1935,8 +1935,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Menteng, Jakarta Pusat",
-          "place_name": "Plaza Indonesia",
+          "city_name": "Denpasar, Bali",
+          "place_name": "Tanah Lot",
           "coordinates": {
             "latitude": -6.194304,
             "longitude": 106.822562
@@ -2034,8 +2034,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Pasar Baru, Jakarta Pusat",
-          "place_name": "Taman Lapangan Banteng",
+          "city_name": "Denpasar Timur, Bali",
+          "place_name": "Pantai Sanur",
           "coordinates": {
             "latitude": -6.170553,
             "longitude": 106.835081
@@ -2134,12 +2134,12 @@
       ]
     },
     {
-      "attraction_place": "Sumatra",
+      "attraction_place": "Depok",
       "attraction_list": [
         {
           "isPopular": true,
-          "city_name": "Lumajang, Malang, Jawa Timur",
-          "place_name": "Bromo Tengger Semeru",
+          "city_name": "Jalan Margonda, Kota Depok",
+          "place_name": "Margo City",
           "coordinates": {
             "latitude": -7.941689,
             "longitude": 112.950069
@@ -2237,8 +2237,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Kota Batu, Jawa Timur",
-          "place_name": "Batu Night Spectacular",
+          "city_name": "Limo, Depok",
+          "place_name": "Masjid Kubah Mas",
           "coordinates": {
             "latitude": -7.896532,
             "longitude": 112.534538
@@ -2336,8 +2336,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Kota Batu, Jawa Timur",
-          "place_name": "Museum Angkut",
+          "city_name": "Grand Depok City",
+          "place_name": "Aladin Waterpark",
           "coordinates": {
             "latitude": -7.87881,
             "longitude": 112.520186
@@ -2435,8 +2435,8 @@
         },
         {
           "isPopular": false,
-          "city_name": "Mulyoagung, Sengkaling Jawa Timur",
-          "place_name": "Sengkaling Water Park",
+          "city_name": "Depok lama",
+          "place_name": "Alun-alun Kota Depok",
           "coordinates": {
             "latitude": -7.915458,
             "longitude": 112.588828

@@ -19,5 +19,67 @@
       "akomodasi5": true,
       "akomodasi6": true
     }
-  }
+  },
+  "trips":[
+    {
+      "destinationName": "Bali",
+      "image": "https://a.cdn-hotels.com/gdcs/production143/d1112/c4fedab1-4041-4db5-9245-97439472cf2c.jpg",
+      "dateFrom": "Sen, 24 Agu",
+      "dateTo": "Min, 30 Agu",
+      "reservedTransportation": [
+        {
+          "bookingCode": "XYZ0245",
+          "transportName": "Garuda Indonesia GA-401",
+          "date": "Sen, 24 Agu 2020",
+          "departCity": "Jakarta",
+          "departCityCode": "CGK",
+          "departStation": "Soekarno Hatta Intl (CGK)",
+          "departTime": "06.30",
+          "arriveCity": "Bali",
+          "arriveCityCode": "DPS",
+          "arriveStation": "Ngurah Rai Intl (DPS)",
+          "arriveTime": "07.30"
+        }
+      ],
+      "reservedAccomodation":[
+        {
+        "accomodation_name": "Parthi Puri Ubud",
+        "accomodation_place": "Br. Silungan, Lodtunduh, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571",
+        "checkinDate": "Sen, 24 Agu 2020",
+        "checkoutDate": "Rab, 26 Agu 2020",
+        "room_category": "Standard Room"
+      }
+    ]
+    },
+    {
+      "destinationName": "Jakarta",
+      "image":"https://www.globalgovernmentforum.com/wp-content/uploads/2019/09/Jakarta_Rizky-Maharani_Wikimedia-Commons.jpg",
+      "dateFrom": "Sen, 24 Agu",
+      "dateTo": "Min, 30 Agu",
+      "reservedTransportation": [
+        {
+          "bookingCode": "XYZ0245",
+          "transportName": "Garuda Indonesia GA-401",
+          "date": "Sen, 24 Agu 2020",
+          "departCity": "Bali",
+          "departCityCode": "DPS",
+          "departStation": "Ngurah Rai Intl (DPS)",
+          "departTime": "07.30",
+          "arriveCity": "Jakarta",
+          "arriveCityCode": "CGK",
+          "arriveStation": "Soekarno Hatta Intl (CGK)",
+          "arriveTime": "06.30"
+        }
+      ],
+      "reservedAccomodation":[
+        {
+        "accomodation_name": "Harris Hotel",
+        "accomodation_place": "Jalan Dr.Sahardjo, Tebet",
+        "checkinDate": "Sen, 24 Agu 2020",
+        "checkoutDate": "Rab, 26 Agu 2020",
+        "room_category": "Standard Room"
+      }
+    ]
+    }
+  ]
 }
