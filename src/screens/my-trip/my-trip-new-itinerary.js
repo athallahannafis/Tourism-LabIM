@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity, Modal} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -371,10 +375,10 @@ export default class MyTripNewItinerary extends Component {
                     marginLeft: 10,
                     width: 190,
                   }}>
-                  <Text style={{fontSize: 17, fontWeight: 'bold'}}>
+                  <Text style={{fontSize: RFPercentage(2.3), fontWeight: 'bold'}}>
                     Pura Gunung Kawi
                   </Text>
-                  <Text style={{fontSize: 12, marginTop: 5}}>
+                  <Text style={{fontSize: RFPercentage(1.6), marginTop: 5}}>
                     Candi Tebing Kawi adalah situs purbakala yang dilindungi di
                     Bali. Terletak di Sungai Pakerisan
                   </Text>
@@ -382,19 +386,19 @@ export default class MyTripNewItinerary extends Component {
                     <Icon
                       style={{marginRight: 5}}
                       name={'clock-o'}
-                      size={16}
+                      size={hp(2.5)}
                       color={'black'}
                     />
-                    <Text style={{fontSize: 10}}>4-6 Hari</Text>
+                    <Text style={{fontSize: RFPercentage(1.5)}}>4-6 Hari</Text>
                   </View>
                   <View style={{flexDirection: 'row', marginTop: 5}}>
                     <Icon
                       style={{marginRight: 5}}
                       name={'money'}
-                      size={16}
+                      size={hp(2.5)}
                       color={'black'}
                     />
-                    <Text style={{fontSize: 10}}>600.000 - 800.000</Text>
+                    <Text style={{fontSize: RFPercentage(1.5)}}>600.000 - 800.000</Text>
                   </View>
                 </View>
               </View>

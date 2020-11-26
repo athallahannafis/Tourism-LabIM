@@ -1,10 +1,13 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import Color from '../style/color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 export const myTripStyling = StyleSheet.create({
   threeImagesContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     marginTop: 5,
   },
   bigImageContainer: {
@@ -26,7 +29,7 @@ export const myTripStyling = StyleSheet.create({
   blackOverlayHome: {
     backgroundColor: 'black',
     width: Dimensions.get('window').width / 3 - 35,
-    height: 60,
+    height: hp(8),
     opacity: 0.4,
     borderRadius: 10,
     position: 'absolute',
@@ -34,45 +37,45 @@ export const myTripStyling = StyleSheet.create({
     left: 0,
   },
   buttonAddDestination: {
-    width: 220,
-    height: 55,
+    width: wp(55),
+    height: hp(7),
     margin: 25,
     backgroundColor: Color.color5,
-    borderRadius: 15,
+    borderRadius: hp(7)/7,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
   buttonAddDestinationText: {
-    fontSize: 16,
+    fontSize: RFPercentage(2.3),
     fontWeight: 'bold',
     color: Color.white,
   },
   buttonAddItinerary: {
-    width: 220,
-    height: 35,
-    margin: 25,
+    width: wp(60),
+    height: hp(7),
+    margin: 15,
     backgroundColor: Color.color4,
-    borderRadius: 8,
+    borderRadius: hp(7)/7,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonAddItineraryText: {
-    fontSize: 16,
+    fontSize: RFPercentage(2.2),
     fontWeight: 'bold',
     color: Color.white,
   },
   buttonDetail: {
-    borderRadius: 12,
-    width: 70,
-    height: 25,
+    borderRadius: hp(5)/5,
+    width: wp(20),
+    height: hp(5),
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonDetailText: {
-    fontSize: 13,
+    fontSize: RFPercentage(1.7),
     color: Color.white,
     fontWeight: 'bold',
   },
@@ -92,9 +95,12 @@ export const myTripStyling = StyleSheet.create({
     marginBottom: 10,
   },
   fontContainerHome: {
+    flex: 0,
+    flexDirection: "column",
+    justifyContent: "center",
     position:'absolute',
     width: Dimensions.get('window').width / 3 - 35,
-    top: 20,
+    height: hp(8),
     left: 0,
     alignItems:'center'
   },
@@ -104,26 +110,27 @@ export const myTripStyling = StyleSheet.create({
     fontSize: 14
   },
   imageInCard: {
-    width: (Dimensions.get('window').width - 130) / 2,
-    height: 70,
+    // width: (Dimensions.get('window').width - 130) / 2,
+    width: wp(32),
+    height: hp(10),
     borderRadius: 6,
   },
   itineraryButton: {
     marginTop: 20,
     backgroundColor: Color.color4,
-    width: 240,
-    height: 35,
-    borderRadius: 13,
+    width: "50%",
+    height: "4%",
+    borderRadius: hp(4)/4,
     justifyContent: 'center',
     alignItems: 'center',
   },
   recommendationImage: {
     borderRadius: 10,
     width: Dimensions.get('window').width / 3 - 35,
-    height: 60,
+    height: hp(8),
   },
   textInput: {
-    fontSize: 15,
+    fontSize: RFPercentage(2.3),
     color: 'black',
     textAlign: 'left',
     textAlignVertical: 'center',
@@ -140,21 +147,25 @@ export const myTripStyling = StyleSheet.create({
     marginBottom: 10,
   },
   smallImageInCard: {
-    width: (Dimensions.get('window').width - 130) / 4 - 2,
-    height: 35,
+    // width: (Dimensions.get('window').width - 130) / 4 - 2,
+    width: wp(15),
+    height: hp(5),
     borderRadius: 4,
+    marginRight: "4%"
   },
   squareImage: {
-    width: 120,
-    height: 120,
+    width: wp(30),
+    height: hp(10),
     borderRadius: 5,
   },
   textOnOverlay: {
+    flex: 0,
+    flexDirection: "column",
     position: 'absolute',
-    left: 115,
-    top: 100,
     justifyContent: 'center',
     alignItems: 'center',
+    width: "100%",
+    height: "100%"
   },
   cardInside: {
     padding: 7,
@@ -214,6 +225,6 @@ export const myTripStyling = StyleSheet.create({
   },
   restaurantName: {
     fontWeight: "bold",
-    fontSize: 18
+    fontSize: RFPercentage(1.7)
   }
 });

@@ -7,10 +7,6 @@ import {
   View,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -61,16 +57,15 @@ export default class AccomodationDetails extends Component {
     const facilities = this.state.DATA.details.facility.map((item) => {
       return (
         <>
-          <View style={[ls.rowContainer]}>
+          <View style={ls.rowContainer}>
             <View style={[ats.smallCircle, {marginLeft: 10}]}></View>
-            <Text style={{fontSize: RFPercentage(1.6)}}>{item}</Text>
+            <Text>{item}</Text>
           </View>
         </>
       );
     });
 
     return (
-      <View>
       <ScrollView>
         <View style={[ats.container, {backgroundColor: "white"}]}>
           <View style={ats.mainImageContainer}>
@@ -97,7 +92,7 @@ export default class AccomodationDetails extends Component {
                   maxStars={5}
                   rating={this.state.DATA.rate}
                   fullStarColor={Color.color6}
-                  starSize={hp(3)}
+                  starSize={17}
                 />
                 <Text
                   style={[
@@ -112,12 +107,10 @@ export default class AccomodationDetails extends Component {
                       fontSize: 20,
                       fontWeight: 'bold',
                       color: Color.color4,
-                      fontSize: RFPercentage(2.5)
                     }}>
                     Rp{this.state.DATA.details.price.toString()}
                   </Text>
-                  <Text style={{color: Color.color4,
-                  fontSize: RFPercentage(2.0)}}> / malam</Text>
+                  <Text style={{color: Color.color4}}> / malam</Text>
                 </View>
 
                 <View
@@ -158,14 +151,11 @@ export default class AccomodationDetails extends Component {
             </View>
 
             {/* Details */}
-            <View style={[gs.cardSection, {marginTop: 20, marginBottom: 20}]}>
+            <View style={[gs.cardSection, {marginTop: 20}]}>
               <Text style={gs.cardTitle}>Detail Akomodasi</Text>
               {/* Facilities */}
               <View>
-                <Text style={{
-                  fontWeight: 'bold',
-                  fontSize: RFPercentage(1.6)
-                  }}>Fasilitas:</Text>
+                <Text style={{fontWeight: 'bold'}}>Fasilitas:</Text>
                 <View
                   style={[
                     ats.rowContainer,
@@ -208,39 +198,34 @@ export default class AccomodationDetails extends Component {
                 </Text>
                 <View style={ls.rowContainer}>
                   <View style={ats.smallCircle} />
-                  <Text style={{fontSize: RFPercentage(1.6)}}>
-                    Mulai: {this.state.DATA.details.checkin}
-                  </Text>
+                  <Text>Mulai: {this.state.DATA.details.checkin}</Text>
                 </View>
                 <View style={ls.rowContainer}>
                   <View style={ats.smallCircle} />
-                  <Text style={{fontSize: RFPercentage(1.6)}}>
-                    Sebelum: {this.state.DATA.details.checkout}
-                  </Text>
+                  <Text>Sebelum: {this.state.DATA.details.checkout}</Text>
                 </View>
               </View>
             </View>
         </View>
-      </ScrollView>
-      {this.state.dateExist ? (
-        <View style={ats.floatingButtonContainer}>
-          <TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('Accomodation Reservation', {
-                  data: this.state.DATA,
-                  user_order: this.state.user_order,
-                })
-              }
-              style={ats.floatingButton}>
-              <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
+        {this.state.dateExist ? (
+          <View style={ats.floatingButtonContainer}>
+            <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Accomodation Reservation', {
+                    data: this.state.DATA,
+                    user_order: this.state.user_order,
+                  })
+                }
+                style={ats.floatingButton}>
+                <Text style={ats.floatingButtonText}>Pesan Kamar</Text>
+              </TouchableOpacity>
             </TouchableOpacity>
-          </TouchableOpacity>
-        </View>
-      ) : (
-        <></>
-      )}
-      </View>
+          </View>
+        ) : (
+          <></>
+        )}
+      </ScrollView>
     )
   }
 }

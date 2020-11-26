@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Modal, TouchableOpacity} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as dp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -212,13 +216,15 @@ export default class AttractionSearchFilter extends Component {
               }>
               <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                 {/* Left section */}
-                <View style={[gs.rowContainer, {width: 100}]}>
+                <View style={{width: wp(40)}}>
                   <Image source={{uri: imageURL}} style={gs.smallImage} />
                 </View>
                 {/* Right section */}
-                <View style={[{width: 230, marginLeft: 20}]}>
+                <View style={[{width: wp(40)}]}>
                   <Text style={gs.subCardTitle}>{item.attraction_place}</Text>
-                  <Text>{item.attraction_place_description}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
+                    {item.attraction_place_description}
+                  </Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -236,13 +242,15 @@ export default class AttractionSearchFilter extends Component {
               }>
               <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                 {/* Left section */}
-                <View style={[gs.rowContainer, {width: 100}]}>
+                <View style={{width: wp(40)}}>
                   <Image source={{uri: imageURL}} style={gs.smallImage} />
                 </View>
                 {/* Right section */}
-                <View style={[{width: 230, marginLeft: 20}]}>
+                <View style={[{width: wp(40)}]}>
                   <Text style={gs.subCardTitle}>{item.attraction_place}</Text>
-                  <Text>{item.attraction_place_description}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
+                    {item.attraction_place_description}
+                  </Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -265,17 +273,19 @@ export default class AttractionSearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={{width: wp(40)}}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.description}
+                    </Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -291,17 +301,21 @@ export default class AttractionSearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={[{width: wp(40)}]}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.description}
+                    </Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.city_name}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -327,17 +341,19 @@ export default class AttractionSearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={{width: wp(40)}}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.description}
+                    </Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -353,17 +369,21 @@ export default class AttractionSearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={[{width: wp(40)}]}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.description}
+                    </Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
+                      {item.city_name}
+                    </Text>
                   </View>
                 </View>
               </TouchableOpacity>

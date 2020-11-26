@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -88,16 +92,20 @@ export default class MyTripHome extends Component {
                   }>
                   <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
                     <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                      <Text style={{
+                        fontSize: RFPercentage(2.0),
+                        fontWeight: 'bold'}}>
                         {item.destinationName}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 4}}>
                         <Icon
                           style={{marginRight: 5}}
                           name={'calendar'}
-                          size={16}
+                          size={hp(3)}
                         />
-                        <Text>{item.dateFrom} - {item.dateTo}</Text>
+                        <Text style={{
+                          fontSize: RFPercentage(1.6)
+                        }}>{item.dateFrom} - {item.dateTo}</Text>
                       </View>
                     </View>
                     <View
@@ -128,7 +136,9 @@ export default class MyTripHome extends Component {
       return(
         <View>
                   <View style={mts.recommendationCard}>
-                    <Text>Karena kamu melihat {item.destinationName}</Text>
+                    <Text style={{
+                      fontSize: RFPercentage(1.6)
+                    }}>Karena kamu melihat {item.destinationName}</Text>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -248,7 +258,7 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(3)} color={Color.color5} />
                     <TouchableOpacity
                       style={[mts.textInput, {width: '85%', marginLeft: 10}]}
                       onPress={() => this.showStartDate()}>

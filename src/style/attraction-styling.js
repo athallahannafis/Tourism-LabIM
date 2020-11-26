@@ -1,5 +1,9 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import Color from './color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const attractionStyling = StyleSheet.create({
   bottomImage: {
@@ -37,7 +41,7 @@ export const attractionStyling = StyleSheet.create({
     elevation: 10,
   },
   btnAddtoItinerary2: {
-    width: 90,
+    width: "100%",
     height: 25,
     borderRadius: 5,
     padding: 5,
@@ -54,7 +58,7 @@ export const attractionStyling = StyleSheet.create({
   },
   btnAddtoItineraryText: {
     color: 'white',
-    fontSize: 11,
+    fontSize: RFPercentage(1.5),
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -75,7 +79,7 @@ export const attractionStyling = StyleSheet.create({
   },
   btnText: {
     color: 'white',
-    fontSize: 11,
+    fontSize: RFPercentage(1.5),
     fontWeight: 'bold',
     textAlign: 'center',
     paddingLeft: 10,
@@ -87,14 +91,14 @@ export const attractionStyling = StyleSheet.create({
     alignItems: 'center',
   },
   cardMediumText: {
-    fontSize: 13,
+    fontSize: RFPercentage(1.5),
   },
   cardTitleText: {
     fontSize: 17,
     fontWeight: 'bold',
   },
   cardSmallText: {
-    fontSize: 11,
+    fontSize: RFPercentage(1.4),
     flex: 1,
     flexWrap: 'wrap',
   },
@@ -161,7 +165,7 @@ export const attractionStyling = StyleSheet.create({
   },
   mainImage: {
     width: Dimensions.get('window').width,
-    height: 250,
+    height: hp(30),
   },
   modalOverlay: {
     backgroundColor: '#000000aa',
@@ -185,7 +189,7 @@ export const attractionStyling = StyleSheet.create({
   },
   modal1Container2: {
     flexDirection: 'row',
-    marginRight: 18,
+    marginRight: 10,
   },
   modal1MainContainer: {
     backgroundColor: 'white',
@@ -204,7 +208,7 @@ export const attractionStyling = StyleSheet.create({
   },
   modal2Container: {
     backgroundColor: 'white',
-    width: 370,
+    width: "90%",
     borderRadius: 10,
     borderColor: Color.color4,
     borderWidth: 2,
@@ -296,21 +300,23 @@ export const attractionStyling = StyleSheet.create({
   },
   smallImage2: {
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
   },
   smallImage2WithText: {
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
     opacity: 0.8,
   },
   smallImageBlackOverlay: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: 'black',
     width: Dimensions.get('window').width / 4 - 4,
-    height: 55,
+    height: hp(7),
     opacity: 0.4,
     position: 'absolute',
-    top: 4,
-    left: 300,
   },
   textBubbleSmall: {
     flexWrap: 'wrap',
@@ -327,32 +333,30 @@ export const attractionStyling = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   textMediumBold: {
-    fontSize: 14,
+    fontSize: RFPercentage(1.8),
     fontWeight: 'bold',
   },
   textMediumBoldColor4AlignCenter: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.5),
     fontWeight: 'bold',
     color: Color.color4,
     textAlign: 'center',
   },
   textMediumColor4: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.0),
     color: Color.color4,
   },
   textOnImage: {
-    fontSize: 12,
+    fontSize: RFPercentage(1.7),
     fontWeight: 'bold',
-    opacity: 0.85,
+    opacity: 1,
     color: 'white',
   },
   textOnImageContainer: {
     position: 'absolute',
-    top: 15,
-    left: 318,
     alignItems: 'center',
   },
-  textSmall: {fontSize: 11},
+  textSmall: {fontSize: RFPercentage(1.4)},
   reviewBtn: {
     flex: 0,
     flexDirection: 'column',
@@ -366,8 +370,8 @@ export const attractionStyling = StyleSheet.create({
     marginHorizontal: 4,
   },
   searchBox: {
-    width: '70%',
-    height: 25,
+    width: wp(70),
+    height: hp(3.5),
     borderRadius: 5,
     backgroundColor: Color.color3,
     shadowColor: 'black',
@@ -377,7 +381,7 @@ export const attractionStyling = StyleSheet.create({
     marginRight: 10,
   },
   searchBoxContainer: {
-    width: Dimensions.get('window').width - 5,
+    width: wp(100),
     flexDirection: 'row',
     justifyContent: 'center',
     paddingBottom: 20,
@@ -390,6 +394,7 @@ export const attractionStyling = StyleSheet.create({
     paddingBottom: 2,
     paddingTop: 2,
     paddingLeft: 5,
+    borderBottomWidth: 0
   },
   starRatingView: {
     flex: 0,

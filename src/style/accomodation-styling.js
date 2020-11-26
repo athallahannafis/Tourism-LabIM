@@ -1,5 +1,10 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import Color from './color.json';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
+
 
 export const accomodationStyling = StyleSheet.create({
   cardTitle: {
@@ -7,12 +12,12 @@ export const accomodationStyling = StyleSheet.create({
     fontWeight: 'bold',
   },
   subCardTitle: {
-    fontSize: 17,
+    fontSize: RFPercentage(2.5),
     fontWeight: 'bold',
   },
   mainImageinCard: {
     width: Dimensions.get('window').width - 50,
-    height: 200,
+    height: hp(40),
   },
   mainImageinCardContainer: {
     justifyContent: 'center',
@@ -38,7 +43,7 @@ export const accomodationStyling = StyleSheet.create({
     width: '32%',
   },
   smallCardText: {
-    fontSize: 10,
+    fontSize: RFPercentage(1.4),
   },
   sliderContainer: {
     marginTop: 10,

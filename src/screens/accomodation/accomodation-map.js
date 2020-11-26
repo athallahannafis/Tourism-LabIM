@@ -4,6 +4,10 @@ import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Polyline from '@mapbox/polyline';
 import Geolocation from '@react-native-community/geolocation';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import { globalStyling as gs } from '../../style/global-styling';
@@ -114,15 +118,17 @@ export default class AttractionMap extends Component {
         <View style={ls.upperSectionContainer}>
           <View style={ls.searchBarContainer}>
             <View style={ls.columnContainer}>
-              <Text style={{marginBottom: 15}}>Dari:</Text>
-              <Text>Ke:</Text>
+              <Text style={{marginBottom: 15, fontSize: RFPercentage(1.4)}}>
+                Dari:
+              </Text>
+              <Text style={{fontSize: RFPercentage(1.4)}}>Ke:</Text>
             </View>
             <View style={[ls.columnContainer, {marginLeft: 20}]}>
               <View style={[ls.bubble, {marginBottom: 7}]}>
-                <Text>Lokasi anda</Text>
+                <Text style={{fontSize: RFPercentage(1.4)}}>Lokasi anda</Text>
               </View>
               <View style={[ls.bubble]}>
-                <Text>{this.state.destination.accomodation_name}</Text>
+                <Text style={{fontSize: RFPercentage(1.4)}}>{this.state.destination.place_name}</Text>
               </View>
             </View>
           </View>
@@ -139,7 +145,7 @@ export default class AttractionMap extends Component {
             style={[ls.locationButton, {opacity: this.state.showMyLoc.opacity}]}
             onPress={this.moveToMyLocation}>
               <Text style={{fontWeight: "bold", color: "white", 
-              width: 135, textAlign: "center"}}>
+              width: wp(100), textAlign: "center", fontSize: RFPercentage(1.4)}}>
                 {this.state.showMyLoc.buttonMsg}
               </Text>
             </TouchableOpacity>
@@ -147,7 +153,7 @@ export default class AttractionMap extends Component {
             style={ls.locationButton}
             onPress={this.moveToPlaceLocation}>
               <Text style={{fontWeight: "bold", color: "white", 
-              width: 135, textAlign: "center"}}>
+              width: wp(100), textAlign: "center", fontSize: RFPercentage(1.4)}}>
                 Go to place location
               </Text>
             </TouchableOpacity>
@@ -158,7 +164,7 @@ export default class AttractionMap extends Component {
   }
 }
 const fullHeight = 100;
-const mapHeight = 75;
+const mapHeight = 70;
 const searchBarHeight = fullHeight - mapHeight;
 
 const ls = StyleSheet.create({
@@ -172,7 +178,7 @@ const ls = StyleSheet.create({
     flex: 0,
     flexDirection: "column",
     justifyContent: "center",
-    height: 100
+    marginBottom: "4%"
   },
   rowContainer: {
     flex: 0,
@@ -221,7 +227,8 @@ const ls = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: Color.color2,
-    paddingVertical: 13,
+    width: wp(40),
+    paddingVertical: 8,
     paddingHorizontal: 10,
     marginHorizontal: 3,
     borderRadius: 1000,

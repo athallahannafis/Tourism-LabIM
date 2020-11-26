@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native'
 import Color from './color.json'
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const ticketStyling = StyleSheet.create({
   rowContainer: {
@@ -9,8 +13,8 @@ export const ticketStyling = StyleSheet.create({
     justifyContent: "center",
   },
   smallIcons: {
-    height: 40,
-    width: 40,
+    height: hp(4),
+    width: hp(4),
     marginRight: 5
   },
   bubble: {
@@ -52,9 +56,9 @@ export const ticketStyling = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: Color.color6,
     borderRadius: 1000,
-    width: 100,
+    width: "25%",
     marginTop: 10,
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 10
   },
   okButton: {
@@ -64,17 +68,17 @@ export const ticketStyling = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: Color.color4,
     borderRadius: 1000,
-    width: 100,
+    width: wp(30),
     paddingVertical: 5,
     paddingHorizontal: 5
   },
   title: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.5),
     fontWeight: "bold",
     marginBottom: 2
   },
   alertMessage: {
-    fontSize: 20,
+    fontSize: RFPercentage(3),
     fontWeight: "bold",
     marginVertical: 30,
     textAlign: "center"

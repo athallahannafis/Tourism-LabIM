@@ -1,6 +1,10 @@
 import React, {Component, useEffect, useState} from 'react';
 import {ScrollView, View, Text, Image, StyleSheet} from 'react-native';
 import StarRating from 'react-native-star-rating';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -87,11 +91,11 @@ export default class AttractionReviews extends Component {
             <View
               style={{
                 maxWidth: '30%',
-                marginRight: 14,
+                marginRight: "2%",
               }}>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: RFPercentage(2),
                   fontWeight: 'bold',
                 }}>
                 {item.username}
@@ -101,14 +105,16 @@ export default class AttractionReviews extends Component {
                 maxStars={5}
                 rating={item.rate}
                 fullStarColor={Color.color6}
-                starSize={20}
+                starSize={hp(3)}
               />
-              <Text>{item.review_time}</Text>
+              <Text style={{fontSize: RFPercentage(1.4)}}>{item.review_time}</Text>
             </View>
             {/* Right side */}
             <View
-              style={[gs.columnContainer, {maxWidth: '60%', marginLeft: 14}]}>
-              <Text style={{marginBottom: 10}}>{item.review}</Text>
+              style={[gs.columnContainer, {maxWidth: '60%', marginLeft: "3%"}]}>
+              <Text style={{ fontSize: RFPercentage(1.4)}}>
+                {item.review}
+              </Text>
               <View style={ls.rowContainer}>{images}</View>
             </View>
           </View>
@@ -128,10 +134,12 @@ export default class AttractionReviews extends Component {
               alignItems: 'center',
               flexDirection: 'row',
               marginBottom: 20,
+              width: "95%",
             }}>
-            <Text>Urutkan berdasarkan</Text>
+            <Text style={{fontSize: RFPercentage(2.0)}}>Urutkan berdasarkan: </Text>
             <Picker
-              style={{width: 200}}
+              style={{width: "40%", backgroundColor: Color.color1,
+            scaleX: 0.8, scaleY: 0.8}}
               selectedValue={this.state.sortBy}
               onValueChange={(itemValue, itemIndex) =>
                 this.setSelectedValue(itemValue)
@@ -150,9 +158,9 @@ export default class AttractionReviews extends Component {
 
 const ls = StyleSheet.create({
   smallImage: {
-    width: 64,
-    height: 36,
-    borderRadius: 10,
+    width: wp(16),
+    height: hp(5),
+    borderRadius: hp(5)/8,
     margin: 4,
   },
   rowContainer: {
@@ -160,6 +168,7 @@ const ls = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
+    width: "100%"
   },
   rowContainerNoWrap: {
     flex: 0,

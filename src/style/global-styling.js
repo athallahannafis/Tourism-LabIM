@@ -1,4 +1,8 @@
 import {StyleSheet} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen'
+import {RFPercentage} from 'react-native-responsive-fontsize'
 import Color from './color.json';
 
 export const globalStyling = StyleSheet.create({
@@ -34,15 +38,15 @@ export const globalStyling = StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     backgroundColor: '#fff',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingVertical: "3%",
+    paddingHorizontal: "3%",
     width: '95%',
     shadowColor: 'black',
     shadowOpacity: 1.0,
     elevation: 3,
   },
   cardTitle: {
-    fontSize: 20,
+    fontSize: RFPercentage(2.4),
     fontWeight: 'bold',
     color: Color.color2,
     marginBottom: 10,
@@ -52,23 +56,23 @@ export const globalStyling = StyleSheet.create({
     width: '100%',
   },
   subCardTitle: {
-    fontSize: 15,
+    fontSize: RFPercentage(2.1),
     marginBottom: 15,
     fontWeight: 'bold',
   },
   smallRectangularCard: {
     flex: 0,
     flexDirection: 'column',
-    height: 50,
+    height: hp(8),
     alignItems: 'center',
     justifyContent: 'center',
-    width: 100,
+    width: wp(25),
     borderRadius: 10,
   },
   bigImage: {
     borderRadius: 10,
-    width: 150,
-    height: 100,
+    width: wp(30),
+    height: hp(10),
     marginTop: 10,
   },
   smallImage: {

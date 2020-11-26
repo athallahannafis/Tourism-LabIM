@@ -8,6 +8,10 @@ import {
   View,
   Dimensions,
 } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -39,13 +43,13 @@ export default class AccomodationReservation extends Component {
               <SliderBox
                 images={item.room_images}
                 parentWidth={Dimensions.get('window').width - 50}
-                sliderBoxHeight={200}
+                sliderBoxHeight={hp(40)}
               />
             </View>
             <View style={{flexDirection: 'row', marginTop: 10}}>
               <Icon
                 name={'bed'}
-                size={15}
+                size={hp(1.8)}
                 style={{paddingRight: 5, width: 20}}
               />
               <Text style={acs.smallCardText}>{item.room_details.bed}</Text>
@@ -53,7 +57,7 @@ export default class AccomodationReservation extends Component {
             <View style={{flexDirection: 'row', marginTop: 10}}>
               <Icon
                 name={'user-alt'}
-                size={15}
+                size={hp(1.8)}
                 style={{paddingRight: 5, width: 20}}
               />
               <Text style={acs.smallCardText}>{item.room_details.guest}</Text>
@@ -61,7 +65,7 @@ export default class AccomodationReservation extends Component {
             <View style={{flexDirection: 'row', marginTop: 10}}>
               <Icon
                 name={'utensils'}
-                size={15}
+                size={hp(1.8)}
                 style={{paddingRight: 5, width: 20}}
               />
               <Text style={acs.smallCardText}>Breakfast not included</Text>
@@ -74,7 +78,7 @@ export default class AccomodationReservation extends Component {
                 width: '100%',
               }}>
               <Text style={acs.subCardTitle}>Rp. {item.price}</Text>
-              <Text style={{fontSize: 12}}>/kamar/malam</Text>
+              <Text style={{fontSize: RFPercentage(1.8)}}>/kamar/malam</Text>
               <TouchableOpacity
                 style={acs.pilihButton}
                 onPress={() =>
@@ -87,8 +91,9 @@ export default class AccomodationReservation extends Component {
                 }>
                 <Text
                   style={{
-                    fontSize: 15,
+                    fontSize: RFPercentage(1.8),
                     fontWeight: 'bold',
+                    color: "white"
                   }}>
                   Pilih
                 </Text>
@@ -105,13 +110,13 @@ export default class AccomodationReservation extends Component {
                 <SliderBox
                   images={item.room_images}
                   parentWidth={Dimensions.get('window').width - 50}
-                  sliderBoxHeight={200}
+                  sliderBoxHeight={hp(30)}
                 />
               </View>
               <View style={{flexDirection: 'row', marginTop: 10}}>
                 <Icon
                   name={'bed'}
-                  size={15}
+                  size={hp(1.8)}
                   style={{paddingRight: 5, width: 20}}
                 />
                 <Text style={acs.smallCardText}>{item.room_details.bed}</Text>
@@ -119,7 +124,7 @@ export default class AccomodationReservation extends Component {
               <View style={{flexDirection: 'row', marginTop: 10}}>
                 <Icon
                   name={'user-alt'}
-                  size={15}
+                  size={hp(1.8)}
                   style={{paddingRight: 5, width: 20}}
                 />
                 <Text style={acs.smallCardText}>{item.room_details.guest}</Text>
@@ -127,7 +132,7 @@ export default class AccomodationReservation extends Component {
               <View style={{flexDirection: 'row', marginTop: 10}}>
                 <Icon
                   name={'utensils'}
-                  size={15}
+                  size={hp(1.8)}
                   style={{paddingRight: 5, width: 20}}
                 />
                 <Text style={acs.smallCardText}>Breakfast not included</Text>
@@ -141,7 +146,7 @@ export default class AccomodationReservation extends Component {
                   width: '100%',
                 }}>
                 <Text style={acs.subCardTitle}>Rp. {item.price}</Text>
-                <Text style={{fontSize: 12}}>/kamar/malam</Text>
+                <Text style={{fontSize: RFPercentage(1.8)}}>/kamar/malam</Text>
                 <TouchableOpacity
                   style={acs.pilihButton}
                   onPress={() =>
@@ -154,8 +159,9 @@ export default class AccomodationReservation extends Component {
                   }>
                   <Text
                     style={{
-                      fontSize: 15,
+                      fontSize: hp(1.8),
                       fontWeight: 'bold',
+                      color: "white"
                     }}>
                     Pilih
                   </Text>
@@ -184,7 +190,7 @@ export default class AccomodationReservation extends Component {
                     alignItems: 'center',
                     width: '30%',
                   }}>
-                  <Text style={{fontSize: 12}}>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>
                     {this.state.user_order.checkIn}
                   </Text>
                 </View>
@@ -200,7 +206,7 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text style={{fontSize: 12}}>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
                       {this.state.user_order.stayPeriod} Malam
                     </Text>
                   </View>
@@ -210,7 +216,7 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text style={{fontSize: 12}}>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
                       {this.state.user_order.bed} Kamar
                     </Text>
                   </View>
@@ -220,7 +226,7 @@ export default class AccomodationReservation extends Component {
                       alignItems: 'center',
                       width: '32%',
                     }}>
-                    <Text style={{fontSize: 12}}>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>
                       {this.state.user_order.guest} Tamu
                     </Text>
                   </View>
@@ -229,10 +235,10 @@ export default class AccomodationReservation extends Component {
             </View>
             {/* Title */}
             <View style={[gs.cardSection, {marginTop: 10, marginBottom: 10}]}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+              <Text style={{fontSize: RFPercentage(2.7), fontWeight: 'bold'}}>
                 {this.state.DATA.accomodation_name}
               </Text>
-              <Text style={{fontSize: 12}}>
+              <Text style={{fontSize: RFPercentage(1.7)}}>
                 {this.state.DATA.accomodation_place}
               </Text>
             </View>

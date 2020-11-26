@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Modal} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -96,7 +100,8 @@ export default class AccomodationPayment extends Component {
           </View>
         </Modal>
 
-        <Text style={{marginBottom: 30, fontWeight: 'bold', fontSize: 30}}>
+        <Text style={{marginBottom: 30, fontWeight: 'bold',
+        fontSize: RFPercentage(3.0)}}>
           Order Payment
         </Text>
         <View style={gs.cardSection}>
@@ -105,7 +110,9 @@ export default class AccomodationPayment extends Component {
             {' '}
             {this.state.RESERVE_DATA.accomodationName}{' '}
           </Text>
-          <Text> {this.state.RESERVE_DATA.accomodationPlace} </Text>
+          <Text style={{fontSize: RFPercentage(2.3)}}>
+            {this.state.RESERVE_DATA.accomodationPlace}
+          </Text>
 
           {/* Payment details */}
           <View style={(gs.columnContainer, {width: '100%'})}>
@@ -113,16 +120,16 @@ export default class AccomodationPayment extends Component {
             <View style={ls.rowDetail}>
               <View style={{marginBottom: 20, marginTop: 20}}>
                 <View style={{flexDirection: 'row'}}>
-                  <Text style={{fontWeight: 'bold'}}>Check in</Text>
+                  <Text style={[ls.detailFont ,{fontWeight: 'bold'}]}>Check in</Text>
                   <Text>:</Text>
-                  <Text style={{marginLeft: 6}}>
+                  <Text style={[ls.detailFont ,{marginLeft: 6}]}>
                     {this.state.RESERVE_DATA.user_order.checkIn}
                   </Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
-                  <Text style={{fontWeight: 'bold'}}>Check out</Text>
+                  <Text style={[ls.detailFont ,{fontWeight: 'bold'}]}>Check out</Text>
                   <Text>:</Text>
-                  <Text style={{marginLeft: 6}}>
+                  <Text style={[ls.detailFont ,{marginLeft: 6}]}>
                     {this.state.RESERVE_DATA.user_order.checkOut}
                   </Text>
                 </View>
@@ -166,27 +173,31 @@ export default class AccomodationPayment extends Component {
           </View>
           {/* Payment method */}
           <View>
-            <Text>Metode pembayaran</Text>
+            <Text style={{
+              fontSize: RFPercentage(2.3),
+              marginTop: 20
+            }}>Metode pembayaran</Text>
             <View style={[ls.rowDetail, {alignItems: 'center'}]}>
               <CheckBox
                 value={this.state.transferBankFlag}
                 onValueChange={() => this.transferBankChosen()}
               />
-              <Text>Transfer Bank</Text>
+              <Text style={{fontSize: RFPercentage(1.6)}}>Transfer Bank</Text>
             </View>
             <View style={[ls.rowDetail, {alignItems: 'center'}]}>
               <CheckBox
                 value={this.state.eWalletFlag}
                 onValueChange={() => this.eWalletChosen()}
               />
-              <Text>E-Wallet</Text>
+              <Text style={{fontSize: RFPercentage(1.6)}}>E-Wallet</Text>
             </View>
           </View>
 
           {/* Pay button */}
           <View style={[gs.columnContainer, {marginTop: 20}]}>
             <TouchableOpacity onPress={() => this.pay()} style={ts.pesanButton}>
-              <Text style={{fontWeight: 'bold', color: 'white'}}>Bayar</Text>
+              <Text style={{fontWeight: 'bold', color: 'white',
+            fontSize: RFPercentage(2.0)}}>Bayar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -205,6 +216,6 @@ const ls = StyleSheet.create({
     flexDirection: 'column',
   },
   detailFont: {
-    fontSize: 16,
+    fontSize: RFPercentage(1.7),
   },
 });
