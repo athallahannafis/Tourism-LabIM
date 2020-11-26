@@ -56,9 +56,9 @@ export const ticketStyling = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: Color.color6,
     borderRadius: 1000,
-    width: "30%",
+    width: "25%",
     marginTop: 10,
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 10
   },
   okButton: {

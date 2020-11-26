@@ -12,12 +12,12 @@ export const accomodationStyling = StyleSheet.create({
     fontWeight: 'bold',
   },
   subCardTitle: {
-    fontSize: 17,
+    fontSize: RFPercentage(2.5),
     fontWeight: 'bold',
   },
   mainImageinCard: {
     width: Dimensions.get('window').width - 50,
-    height: 200,
+    height: hp(40),
   },
   mainImageinCardContainer: {
     justifyContent: 'center',
