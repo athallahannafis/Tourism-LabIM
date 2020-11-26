@@ -258,7 +258,7 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(3)} color={Color.color5} />
                     <TouchableOpacity
                       style={[mts.textInput, {width: '85%', marginLeft: 10}]}
                       onPress={() => this.showStartDate()}>
