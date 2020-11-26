@@ -37,7 +37,13 @@
       "reviews_count": 134,
       "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
       "price": "50.000 - 100.000",
-      "image": "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg"
+      "image": "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+      "images_source": [
+        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg"
+      ]
     }
   ]
 }
