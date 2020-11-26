@@ -28,6 +28,7 @@ export default class MyTripHome extends Component {
       dateStartTextValue: 'Tanggal mulai',
       dateEndTextValue: 'Tanggal selesai',
       addNewDestinationPopUp: false,
+      newDestionationAdded: false,
       dateStartVisible: false,
       dateEndVisible: false,
       destinationName1: 'Jakarta',
@@ -52,7 +53,7 @@ export default class MyTripHome extends Component {
     this.setState({
       dateStartVisible: false,
       dateStartValue: moment(date),
-      dateStartTextValue: moment(date).format('DD MMMM YYYY'),
+      dateStartTextValue: moment(date).format('DD MMMM'),
     });
   };
 
@@ -68,7 +69,7 @@ export default class MyTripHome extends Component {
     this.setState({
       dateEndVisible: false,
       dateEndValue: moment(date),
-      dateEndTextValue: moment(date).format('DD MMMM YYYY'),
+      dateEndTextValue: moment(date).format('DD MMMM'),
     });
   };
   render() {
@@ -78,8 +79,11 @@ export default class MyTripHome extends Component {
                   style={mts.destinationBubble}
                   onPress={() =>
                     this.props.navigation.navigate(
-                      'Detail Trip',
-                      item.destinationName,
+                      'Detail Trip', {
+                        destinationName: item.destinationName,
+                        startDate: item.dateFrom,
+                        endDate: item.dateTo
+                      }
                     )
                   }>
                   <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
@@ -106,8 +110,11 @@ export default class MyTripHome extends Component {
                         style={mts.buttonDetail}
                         onPress={() =>
                           this.props.navigation.navigate(
-                            'Detail Trip',
-                            item.destinationName,
+                            'Detail Trip', {
+                              destinationName: item.destinationName,
+                              startDate: item.dateFrom,
+                              endDate: item.dateTo
+                            }
                           )
                         }>
                         <Text style={mts.buttonDetailText}>Detail</Text>
@@ -196,7 +203,9 @@ export default class MyTripHome extends Component {
         {this.state.addNewDestinationPopUp ? (
           <ScrollView>
             {/*Jika ADA pop up untuk membuat destinasi tujuan baru */}
-            <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+            <>
+            {this.state.newDestionationAdded ? (
+              <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
               {/*Tombol Buat Tujuan Destinasi */}
               <TouchableOpacity
                 style={mts.buttonAddDestination}
@@ -306,7 +315,193 @@ export default class MyTripHome extends Component {
                     <TouchableOpacity
                       style={mts.buttonSimpan}
                       onPress={() =>
-                        this.setState({addNewDestinationPopUp: false})
+                        this.setState({
+                          addNewDestinationPopUp: false,
+                          newDestionationAdded: true
+                        })
+                      }>
+                      <Text style={mts.buttonDetailText}>Simpan</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+
+              {/* Daftar Trip Card */}
+              <View style={[gs.cardSection, {marginTop: 20}]}>
+                <Text style={[gs.cardTitle]}>Daftar Trip</Text>
+                {daftarTrip}
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Trip', {
+                        destinationName: this.state.destinationValue,
+                        startDate: this.state.dateStartTextValue,
+                        endDate: this.state.dateEndTextValue
+                      }
+                    )
+                  }>
+                  <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                        {this.state.destinationValue}
+                      </Text>
+                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                        <Icon
+                          style={{marginRight: 5}}
+                          name={'calendar'}
+                          size={16}
+                        />
+                        <Text>{this.state.dateStartTextValue} - {this.state.dateEndTextValue}</Text>
+                      </View>
+                    </View>
+                    <View
+                      style={{
+                        width: '35%',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Trip', {
+                              destinationName: this.state.destinationValue,
+                              startDate: this.state.dateStartTextValue,
+                              endDate: this.state.dateEndTextValue
+                            }
+                          )
+                        }>
+                        <Text style={mts.buttonDetailText}>Detail</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              {/* Rekomendasi Destinasi Card */}
+              <View style={[gs.cardSection, {marginTop: 20}]}>
+                <Text style={gs.cardTitle}>
+                  Rekomendasi Destinasi untuk kamu
+                </Text>
+                {recommendationDestination}
+              </View>
+            </View>
+            ) : (
+              <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+              {/*Tombol Buat Tujuan Destinasi */}
+              <TouchableOpacity
+                style={mts.buttonAddDestination}
+                onPress={() => this.setState({addNewDestinationPopUp: true})}>
+                <Text style={mts.buttonAddDestinationText}>
+                  Buat Trip
+                </Text>
+                <Icon
+                  style={{marginLeft: 5}}
+                  name={'plus-circle'}
+                  size={16}
+                  color={Color.white}
+                />
+              </TouchableOpacity>
+
+              {/* Pop up form untuk membuat tujuan destinasi baru */}
+              <View style={gs.cardSection}>
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                  {/* Text input Tujuan Destinasi */}
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      width: Dimensions.get('window').width - 120,
+                    }}>
+                    <Icon name={'map-marker'} size={25} color={Color.color5} />
+                    <TextInput
+                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      placeholder={'Tujuan destinasi'}
+                      onChangeText={(value) =>
+                        this.setState({destinationValue: value})
+                      }
+                    />
+                  </View>
+
+                  {/* Text input tanggal mulai */}
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      width: Dimensions.get('window').width - 117,
+                    }}>
+                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <TouchableOpacity
+                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      onPress={() => this.showStartDate()}>
+                      {this.state.dateStartTextValue === 'Tanggal mulai' ? (
+                        <Text
+                          style={{
+                            fontSize: 15,
+                            color: 'grey',
+                            width: 125,
+                          }}>
+                          {this.state.dateStartTextValue}
+                        </Text>
+                      ) : (
+                        <Text
+                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          {this.state.dateStartTextValue}
+                        </Text>
+                      )}
+                      <DateTimePicker
+                        isVisible={this.state.dateStartVisible}
+                        onCancel={this.hideStartDate}
+                        onConfirm={this.handleStartDate}
+                      />
+                    </TouchableOpacity>
+                  </View>
+
+                  {/* Text input tanggal selesai */}
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      width: Dimensions.get('window').width - 117,
+                    }}>
+                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <TouchableOpacity
+                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      onPress={() => this.showEndDate()}>
+                      {this.state.dateEndTextValue === 'Tanggal selesai' ? (
+                        <Text style={{fontSize: 15, color: 'grey', width: 125}}>
+                          {this.state.dateEndTextValue}
+                        </Text>
+                      ) : (
+                        <Text
+                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          {this.state.dateEndTextValue}
+                        </Text>
+                      )}
+                      <DateTimePicker
+                        isVisible={this.state.dateEndVisible}
+                        onCancel={this.hideEndDate}
+                        onConfirm={this.handleEndDate}
+                      />
+                    </TouchableOpacity>
+                  </View>
+
+                  {/* Button simpan */}
+                  <View
+                    style={{
+                      alignItems: 'flex-end',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: 50,
+                    }}>
+                    <TouchableOpacity
+                      style={mts.buttonSimpan}
+                      onPress={() =>
+                        this.setState({
+                          addNewDestinationPopUp: false,
+                          newDestionationAdded: true
+                        })
                       }>
                       <Text style={mts.buttonDetailText}>Simpan</Text>
                     </TouchableOpacity>
@@ -328,11 +523,94 @@ export default class MyTripHome extends Component {
                 {recommendationDestination}
               </View>
             </View>
+            )}
+            
+            </>
           </ScrollView>
         ) : (
           <ScrollView>
             {/*Jika TIDAK ADA pop up untuk membuat destinasi tujuan baru */}
-            <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+            <>
+            {this.state.newDestionationAdded ? (
+              <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
+              {/*Tombol Buat Tujuan Destinasi */}
+              <TouchableOpacity
+                style={mts.buttonAddDestination}
+                onPress={() => this.setState({addNewDestinationPopUp: true})}>
+                <Text style={mts.buttonAddDestinationText}>
+                  Buat Trip
+                </Text>
+                <Icon
+                  style={{marginLeft: 5}}
+                  name={'plus-circle'}
+                  size={16}
+                  color={Color.white}
+                />
+              </TouchableOpacity>
+
+              {/* Daftar Trip Card */}
+              <View style={[gs.cardSection, {marginTop: 20}]}>
+                <Text style={[gs.cardTitle]}>Daftar Trip</Text>
+                {daftarTrip}
+                <TouchableOpacity
+                  style={mts.destinationBubble}
+                  onPress={() =>
+                    this.props.navigation.navigate(
+                      'Detail Trip', {
+                        destinationName: this.state.destinationValue,
+                        startDate: this.state.dateStartTextValue,
+                        endDate: this.state.dateEndTextValue
+                      }
+                    )
+                  }>
+                  <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+                    <View style={{flexDirection: 'column'}}>
+                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                        {this.state.destinationValue}
+                      </Text>
+                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                        <Icon
+                          style={{marginRight: 5}}
+                          name={'calendar'}
+                          size={16}
+                        />
+                        <Text>{this.state.dateStartTextValue} - {this.state.dateEndTextValue}</Text>
+                      </View>
+                    </View>
+                    <View
+                      style={{
+                        width: '35%',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
+                      <TouchableOpacity
+                        style={mts.buttonDetail}
+                        onPress={() =>
+                          this.props.navigation.navigate(
+                            'Detail Trip', {
+                              destinationName: this.state.destinationValue,
+                              startDate: this.state.dateStartTextValue,
+                              endDate: this.state.dateEndTextValue
+                            }
+                          )
+                        }>
+                        <Text style={mts.buttonDetailText}>Detail</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              {/* Rekomendasi Destinasi Card */}
+              <View style={[gs.cardSection, {marginTop: 20}]}>
+                <Text style={gs.cardTitle}>
+                  Rekomendasi Destinasi untuk kamu
+                </Text>
+                {recommendationDestination}
+              </View>
+            </View>
+            ) : (
+              <View style={[gs.mainContainer, {justifyContent: 'flex-start'}]}>
               {/*Tombol Buat Tujuan Destinasi */}
               <TouchableOpacity
                 style={mts.buttonAddDestination}
@@ -362,6 +640,8 @@ export default class MyTripHome extends Component {
                 {recommendationDestination}
               </View>
             </View>
+            )}
+            </>
           </ScrollView>
         )}
       </>
