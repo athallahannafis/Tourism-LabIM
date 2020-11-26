@@ -118,9 +118,9 @@ export const myTripStyling = StyleSheet.create({
   itineraryButton: {
     marginTop: 20,
     backgroundColor: Color.color4,
-    width: 240,
-    height: 35,
-    borderRadius: 13,
+    width: "50%",
+    height: "4%",
+    borderRadius: hp(4)/4,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -130,7 +130,7 @@ export const myTripStyling = StyleSheet.create({
     height: hp(8),
   },
   textInput: {
-    fontSize: 15,
+    fontSize: RFPercentage(2.3),
     color: 'black',
     textAlign: 'left',
     textAlignVertical: 'center',
@@ -157,11 +157,13 @@ export const myTripStyling = StyleSheet.create({
     borderRadius: 5,
   },
   textOnOverlay: {
+    flex: 0,
+    flexDirection: "column",
     position: 'absolute',
-    left: 115,
-    top: 100,
     justifyContent: 'center',
     alignItems: 'center',
+    width: "100%",
+    height: "100%"
   },
   cardInside: {
     padding: 7,

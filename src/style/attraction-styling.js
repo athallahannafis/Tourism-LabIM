@@ -208,7 +208,7 @@ export const attractionStyling = StyleSheet.create({
   },
   modal2Container: {
     backgroundColor: 'white',
-    width: 370,
+    width: "90%",
     borderRadius: 10,
     borderColor: Color.color4,
     borderWidth: 2,
