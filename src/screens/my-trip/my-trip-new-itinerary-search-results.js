@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {View, Text, Image, Modal, TouchableOpacity, Dimensions} from 'react-native';
 
 // style
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as dp} from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 import {globalStyling as gs} from '../../style/global-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {profilStyling as ps} from '../../style/profil-styling';
@@ -166,17 +170,17 @@ export default class MyTripItinerarySearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={[{width: wp(40)}]}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -191,17 +195,17 @@ export default class MyTripItinerarySearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={{width: wp(40)}}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -226,17 +230,17 @@ export default class MyTripItinerarySearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={{width: wp(40)}}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -251,17 +255,17 @@ export default class MyTripItinerarySearchFilter extends Component {
                 }>
                 <View style={[gs.rowContainer, {paddingVertical: 20}]}>
                   {/* Left section */}
-                  <View style={[gs.rowContainer, {width: 100}]}>
+                  <View style={{width: wp(40)}}>
                     <Image
                       source={{uri: item.image_source}}
                       style={gs.smallImage}
                     />
                   </View>
                   {/* Right section */}
-                  <View style={[{width: 230, marginLeft: 20}]}>
+                  <View style={{width: wp(40)}}>
                     <Text style={gs.subCardTitle}>{item.place_name}</Text>
-                    <Text>{item.description}</Text>
-                    <Text>{item.city_name}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.description}</Text>
+                    <Text style={{fontSize: RFPercentage(1.6)}}>{item.city_name}</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -275,7 +279,7 @@ export default class MyTripItinerarySearchFilter extends Component {
     return (
       <>
         <ScrollView>
-          <View style={[gs.mainContainer, {height: Dimensions.get('window').height, justifyContent:'flex-start'}]}>
+          <View style={[gs.mainContainer, {height:Dimensions.get('window').height, justifyContent:'flex-start'}]}>
             <View style={ats.filterBoxContainer}>
               <Text>Filter Pencarian</Text>
               <TouchableOpacity
@@ -290,7 +294,7 @@ export default class MyTripItinerarySearchFilter extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={[gs.cardSection, {marginTop: 20}]}>
+            <View style={[gs.cardSection]}>
               <Text style={gs.cardTitle}>Objek Wisata Populer</Text>
               {wisataPopulerRender}
             </View>
