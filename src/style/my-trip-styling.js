@@ -8,7 +8,6 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 export const myTripStyling = StyleSheet.create({
   threeImagesContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     marginTop: 5,
   },
   bigImageContainer: {
@@ -53,17 +52,17 @@ export const myTripStyling = StyleSheet.create({
     color: Color.white,
   },
   buttonAddItinerary: {
-    width: 220,
-    height: 35,
-    margin: 25,
+    width: wp(60),
+    height: hp(7),
+    margin: 15,
     backgroundColor: Color.color4,
-    borderRadius: 8,
+    borderRadius: hp(7)/7,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonAddItineraryText: {
-    fontSize: 16,
+    fontSize: RFPercentage(2.2),
     fontWeight: 'bold',
     color: Color.white,
   },
@@ -111,8 +110,9 @@ export const myTripStyling = StyleSheet.create({
     fontSize: 14
   },
   imageInCard: {
-    width: (Dimensions.get('window').width - 130) / 2,
-    height: 70,
+    // width: (Dimensions.get('window').width - 130) / 2,
+    width: wp(32),
+    height: hp(10),
     borderRadius: 6,
   },
   itineraryButton: {
@@ -147,13 +147,15 @@ export const myTripStyling = StyleSheet.create({
     marginBottom: 10,
   },
   smallImageInCard: {
-    width: (Dimensions.get('window').width - 130) / 4 - 2,
-    height: 35,
+    // width: (Dimensions.get('window').width - 130) / 4 - 2,
+    width: wp(15),
+    height: hp(5),
     borderRadius: 4,
+    marginRight: "4%"
   },
   squareImage: {
-    width: 120,
-    height: 120,
+    width: wp(30),
+    height: hp(10),
     borderRadius: 5,
   },
   textOnOverlay: {

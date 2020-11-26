@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
@@ -116,11 +120,14 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               <TouchableOpacity
-                style={{width: (Dimensions.get('window').width - 130) / 2}}>
+                style={{
+                  width: "50%"
+                }}
+              >
                 {/*Image Container */}
                 <View>
                   <Image
@@ -147,7 +154,9 @@ export default class MyTripItinerary extends Component {
                     />
                   </View>
                 </View>
-                <Text style={{fontWeight: 'bold'}}>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.6)
+              }}>
                   Objek A, Objek B, Objek C, Objek D
                 </Text>
                 <View style={{flexDirection: 'row'}}>
@@ -157,7 +166,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>4-6 Hari</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>4-6 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
@@ -166,12 +175,12 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>600.000 - 800.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>600.000 - 800.000</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  width: (Dimensions.get('window').width - 130) / 2,
+                  width: "50%",
                 }}>
                 {/*Image Container */}
                 <View>
@@ -199,7 +208,8 @@ export default class MyTripItinerary extends Component {
                     />
                   </View>
                 </View>
-                <Text style={{fontWeight: 'bold'}}>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.6)}}>
                   Objek A, Objek B, Objek C, Objek D
                 </Text>
                 <View style={{flexDirection: 'row'}}>
@@ -209,7 +219,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>2-4 Hari</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>2-4 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
@@ -218,7 +228,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>200.000-500.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>200.000-500.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -241,7 +251,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -250,21 +260,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Bali Asli</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.6)
+                  }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)(3)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -275,7 +288,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
 
@@ -298,14 +311,15 @@ export default class MyTripItinerary extends Component {
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -316,7 +330,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -348,21 +362,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Souvenir Bali</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.8)
+                }}>Souvenir Bali</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -373,7 +390,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
 
@@ -389,21 +406,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Krisna Oleh-oleh</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.8)
+                }}>Krisna Oleh-oleh</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -414,7 +434,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -444,11 +464,11 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               <TouchableOpacity
-                style={{width: (Dimensions.get('window').width - 130) / 2}}>
+                style={{width: "50%"}}>
                 {/*Image Container */}
                 <View>
                   <Image
@@ -475,7 +495,8 @@ export default class MyTripItinerary extends Component {
                     />
                   </View>
                 </View>
-                <Text style={{fontWeight: 'bold'}}>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.6)}}>
                   Objek A, Objek B, Objek C, Objek D
                 </Text>
                 <View style={{flexDirection: 'row'}}>
@@ -485,7 +506,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>4-6 Hari</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>4-6 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
@@ -494,12 +515,12 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>600.000 - 800.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>600.000 - 800.000</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  width: (Dimensions.get('window').width - 130) / 2,
+                  width: "50%",
                 }}>
                 {/*Image Container */}
                 <View>
@@ -527,7 +548,8 @@ export default class MyTripItinerary extends Component {
                     />
                   </View>
                 </View>
-                <Text style={{fontWeight: 'bold'}}>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.6)}}>
                   Objek A, Objek B, Objek C, Objek D
                 </Text>
                 <View style={{flexDirection: 'row'}}>
@@ -537,7 +559,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>2-4 Hari</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>2-4 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
@@ -546,7 +568,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>200.000-500.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>200.000-500.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -561,15 +583,16 @@ export default class MyTripItinerary extends Component {
             {/* Layout isi */}
             <View
               style={{
+                flex:0,
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%",
                 }}>
                 <Image
                   source={{
@@ -578,21 +601,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Bali Asli</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(2)
+                }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -603,14 +629,14 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
 
               {/*Restoran kedua */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%",
                 }}>
                 <Image
                   source={{
@@ -619,21 +645,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Bali Asli</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(2)
+                }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -644,7 +673,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -659,15 +688,16 @@ export default class MyTripItinerary extends Component {
             {/* Layout isi */}
             <View
               style={{
+                flex: 0,
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               {/* Toko pertama */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -676,21 +706,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Souvenir Bali</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.8)
+                }}>Souvenir Bali</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -701,14 +734,14 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
 
               {/*Restoran kedua */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -717,21 +750,24 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Krisna Oleh-oleh</Text>
+                <Text style={{fontWeight: 'bold',
+                fontSize: RFPercentage(1.8)
+                }}>Krisna Oleh-oleh</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={10}
+                    starSize={hp(1.5)}
                   />
                   <Text
-                    style={{fontSize: 10, fontWeight: 'bold', marginLeft: 5}}>
+                    style={{fontSize: RFPercentage(1.5),
+                    fontWeight: 'bold', marginLeft: 5}}>
                     (173 Reviews)
                   </Text>
                 </View>
-                <Text style={{fontSize: 10}}>
+                <Text style={{fontSize: RFPercentage(1.5)}}>
                   Sajian makanan cita rasa tradisional Bali dipadu dgn
                   pemandangan Gunung Agung. Tersedia kelas memasak.
                 </Text>
@@ -742,7 +778,7 @@ export default class MyTripItinerary extends Component {
                     size={16}
                     color={'black'}
                   />
-                  <Text style={{fontSize: 10}}>100.000-300.000</Text>
+                  <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                 </View>
               </TouchableOpacity>
             </View>
