@@ -40,6 +40,9 @@ export default class MyTripItinerary extends Component {
 
   render() {
     const itinerary_name = this.props.route.params.nama;
+    const price = this.props.route.params.price;
+    const listnama = this.props.route.params.listnama;
+    const list_harga = this.props.route.params.listharga;
     const capitalized_itinerary_name = this.capitalize(itinerary_name);
     this.state.name = itinerary_name;
     if (this.state.name != ''){
@@ -81,7 +84,7 @@ export default class MyTripItinerary extends Component {
                         size={16}
                         color={'black'}
                       />
-                      <Text style={ats.textSmall}>1 Objek Wisata</Text>
+                      <Text style={ats.textSmall}>2 Objek Wisata</Text>
                     </View>
                     <View style={ats.modal1Container2}>
                       <Icon
@@ -99,7 +102,7 @@ export default class MyTripItinerary extends Component {
                         size={16}
                         color={'black'}
                       />
-                      <Text style={ats.textSmall}>160.000</Text>
+                      <Text style={ats.textSmall}>{price}</Text>
                     </View>
                   </View>
                 </View>
@@ -110,8 +113,9 @@ export default class MyTripItinerary extends Component {
                       this.props.navigation.navigate(
                         "Detail Itinerary",
                         {
-                          list_name:"Pantai Kuta, Pura Gunung Kawi",
-                          price: 160.000,
+                          list_name: listnama,
+                          list_harga: list_harga,
+                          price: price,
                           duration: "1 Hari"
                         }
                       );
@@ -280,7 +284,7 @@ export default class MyTripItinerary extends Component {
                     maxStars={5}
                     rating={5}
                     fullStarColor={'grey'}
-                    starSize={hp(1.5)(3)}
+                    starSize={hp(1.5)}
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),

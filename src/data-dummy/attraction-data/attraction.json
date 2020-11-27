@@ -1941,7 +1941,7 @@
             "latitude": -6.194304,
             "longitude": 106.822562
           },
-          "description": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! Berlokasi sangat strategis di sekitar area Sudirman dengan akses MRT.",
+          "description": "Kunjungi dan rasakan pengalaman belanja di salah satu mall terbaik di Jakarta! ",
           "image_source": "https://images.bisnis-cdn.com/posts/2020/03/24/1217241/rsz_inpp_plaza_indonesia.jpg",
           "images_source": [
             "https://merahputih.com/media/28/a1/d4/28a1d45c3a8db9de67c97e13a1842083.png",
@@ -2052,7 +2052,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "08.00 AM - 06.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp0",
+            "ticket_price": "Rp0,00",
             "visitor_capacity": "3.000",
             "current_status": "Sedang ramai"
           },

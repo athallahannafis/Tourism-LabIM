@@ -16,7 +16,6 @@ export default class ItineraryDetails extends Component {
     super(props);
     this.state = {
       itinerary_names: props.route.params.list_name,
-      price: props.route.params.price,
       duration: props.route.params.duration,
       itinerary_nameList: [],
       num: 0,
