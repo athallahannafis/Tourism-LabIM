@@ -7,7 +7,6 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // style
 import {globalStyling as gs} from '../../style/global-styling';
-import {profilStyling as ps} from '../../style/profil-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import {myTripStyling as mts} from '../../style/my-trip-styling';
 
@@ -41,8 +40,7 @@ export default class MyTripItinerary extends Component {
   render() {
     const itinerary_name = this.props.route.params.nama;
     const price = this.props.route.params.price;
-    const listnama = this.props.route.params.listnama;
-    const list_harga = this.props.route.params.listharga;
+    const listAttractions = this.props.route.params.list_attractions;
     const capitalized_itinerary_name = this.capitalize(itinerary_name);
     this.state.name = itinerary_name;
     if (this.state.name != ''){
@@ -63,15 +61,15 @@ export default class MyTripItinerary extends Component {
               })}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
-              style={{marginLeft: 15}}
+              style={{marginLeft: hp(2.3)}}
               name={'plus-circle'}
-              size={16}
+              size={hp(1.5)}
               color={Color.white}
             />
           </TouchableOpacity>
 
           {/*Daftar Itinerary Card */}
-          <View style={[gs.cardSection, {marginBottom: 20}]}>
+          <View style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             <Text  style={gs.cardTitle}>Daftar Itinerary</Text>
             <View style={ats.modal1Bubble}>
                 <View style={{flexDirection: 'column'}}>
@@ -79,27 +77,27 @@ export default class MyTripItinerary extends Component {
                   <View style={ats.modal1SubBubble}>
                     <View style={ats.modal1Container2}>
                       <Icon
-                        style={{marginRight: 5}}
+                        style={{marginRight: hp(1)}}
                         name={'map-marker'}
-                        size={16}
+                        size={hp(1.5)}
                         color={'black'}
                       />
                       <Text style={ats.textSmall}>2 Objek Wisata</Text>
                     </View>
                     <View style={ats.modal1Container2}>
                       <Icon
-                        style={{marginRight: 5}}
+                        style={{marginRight: hp(1)}}
                         name={'clock-o'}
-                        size={16}
+                        size={hp(1.5)}
                         color={'black'}
                       />
                       <Text style={ats.textSmall}>1 Hari</Text>
                     </View>
                     <View style={ats.modal1Container2}>
                       <Icon
-                        style={{marginRight: 5}}
+                        style={{marginRight: hp(1)}}
                         name={'money'}
-                        size={16}
+                        size={hp(1.5)}
                         color={'black'}
                       />
                       <Text style={ats.textSmall}>{price}</Text>
@@ -108,15 +106,16 @@ export default class MyTripItinerary extends Component {
                 </View>
                 <View style={ats.buttonContainer}>
                   <TouchableOpacity
-                    style={[ats.btnAddtoItinerary2, {width: '100%', padding:1, borderRadius:12}]}
+                    style={[ats.btnAddtoItinerary2, {width: '100%', padding:1, borderRadius:hp(1.7)}]}
                     onPress={() => {
                       this.props.navigation.navigate(
                         "Detail Itinerary",
                         {
-                          list_name: listnama,
-                          list_harga: list_harga,
+                          list_attractions: listAttractions,
                           price: price,
-                          duration: "1 Hari"
+                          duration: "1 Hari",
+                          destinationName: this.state.destinationName,
+                          itinerary_name: capitalized_itinerary_name
                         }
                       );
                     }}>
@@ -127,7 +126,7 @@ export default class MyTripItinerary extends Component {
           </View>
 
           {/*Rekomendasi Itinerary Card */}
-          <View style={[gs.cardSection, {marginBottom: 20}]}>
+          <View style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Itinerary</Text>
             {/* Layout isi */}
@@ -135,12 +134,12 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'center',
+                justifyContent: 'space-around',
                 alignItems: 'center',
               }}>
               <TouchableOpacity
                 style={{
-                  width: "50%"
+                  width: Dimensions.get('window').width - 250
                 }}
               >
                 {/*Image Container */}
@@ -176,18 +175,18 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'clock-o'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.6)}}>4-6 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>600.000 - 800.000</Text>
@@ -195,7 +194,7 @@ export default class MyTripItinerary extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  width: "50%",
+                  width: Dimensions.get('window').width - 250
                 }}>
                 {/*Image Container */}
                 <View>
@@ -229,18 +228,18 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'clock-o'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>2-4 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>200.000-500.000</Text>
@@ -252,7 +251,7 @@ export default class MyTripItinerary extends Component {
           {/*Rekomendasi Restoran Card */}
           <TouchableOpacity
           onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
-          style={[gs.cardSection, {marginBottom: 20}]}>
+          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
@@ -266,7 +265,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
-                  width: "50%"
+                  width: Dimensions.get('window').width - 270
                 }}>
                 <Image
                   source={{
@@ -288,7 +287,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -298,9 +297,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -330,7 +329,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -340,9 +339,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -354,7 +353,7 @@ export default class MyTripItinerary extends Component {
           {/*Rekomendasi Cenderamata Card */}
           <TouchableOpacity
           onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
-          style={[gs.cardSection, {marginBottom: 20}]}>
+          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
             {/* Layout isi */}
@@ -390,7 +389,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -400,9 +399,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -434,7 +433,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -444,9 +443,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -467,15 +466,15 @@ export default class MyTripItinerary extends Component {
               })}>
             <Text style={mts.buttonAddItineraryText}>Buat Itinerary</Text>
             <Icon
-              style={{marginLeft: 15}}
+              style={{marginLeft: hp(2.3)}}
               name={'plus-circle'}
-              size={16}
+              size={hp(1.5)}
               color={Color.white}
             />
           </TouchableOpacity>
 
           {/*Rekomendasi Itinerary Card */}
-          <View style={[gs.cardSection, {marginBottom: 20}]}>
+          <View style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Itinerary</Text>
             {/* Layout isi */}
@@ -520,18 +519,18 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'clock-o'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.6)}}>4-6 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>600.000 - 800.000</Text>
@@ -573,18 +572,18 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'clock-o'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>2-4 Hari</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>200.000-500.000</Text>
@@ -596,7 +595,7 @@ export default class MyTripItinerary extends Component {
           {/*Rekomendasi Restoran Card */}
           <TouchableOpacity
           onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
-          style={[gs.cardSection, {marginBottom: 20}]}>
+          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
@@ -633,7 +632,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -643,9 +642,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -677,7 +676,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -687,9 +686,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -701,7 +700,7 @@ export default class MyTripItinerary extends Component {
           {/*Rekomendasi Cenderamata Card */}
           <TouchableOpacity
           onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
-          style={[gs.cardSection, {marginBottom: 20}]}>
+          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
             {/* Layout isi */}
@@ -738,7 +737,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -748,9 +747,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
@@ -782,7 +781,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text
                     style={{fontSize: RFPercentage(1.5),
-                    fontWeight: 'bold', marginLeft: 5}}>
+                    fontWeight: 'bold', marginLeft: hp(1)}}>
                     (173 Reviews)
                   </Text>
                 </View>
@@ -792,9 +791,9 @@ export default class MyTripItinerary extends Component {
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   <Icon
-                    style={{marginRight: 5}}
+                    style={{marginRight: hp(1)}}
                     name={'money'}
-                    size={16}
+                    size={hp(1.5)}
                     color={'black'}
                   />
                   <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>

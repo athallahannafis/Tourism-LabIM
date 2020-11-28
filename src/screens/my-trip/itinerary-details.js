@@ -8,15 +8,22 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 // style
 import {globalStyling as gs} from '../../style/global-styling';
 import {itineraryStyling as its} from '../../style/itinerary-styling';
+import {myTripStyling as mts} from '../../style/my-trip-styling';
 import Color from '../../style/color.json';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+//data
+import MyData from '../../data-dummy/data.json'
 
 export default class ItineraryDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itinerary_names: props.route.params.list_name,
+      itinerary_attractions: props.route.params.list_attractions,
       duration: props.route.params.duration,
+      destinationName: props.route.params.destinationName,
+      itinerary_name: props.route.params.itinerary_name,
+      trips: MyData.trips,
       itinerary_nameList: [],
       num: 0,
 
@@ -24,42 +31,40 @@ export default class ItineraryDetails extends Component {
   }
 
   UNSAFE_componentWillMount = () => {
-    this.splitItineraryNames();
-  }
-
-  splitItineraryNames = () => {
-    let temp;
-    temp = this.state.itinerary_names.split(", ");
-    this.state.itinerary_nameList = temp;
   }
 
   render() {
-    const itineraryList = this.state.itinerary_nameList.map((item) => {
+    let index = 0;
+    for (let i=0; i<this.state.trips.length; i++){
+      if (this.state.trips[i].destinationName == this.state.destinationName){
+        index = i;
+      }
+    }
+    const itineraryList = this.state.itinerary_attractions.map((item) => {
       return (
         <>
-          <View style={{marginBottom: 20}}>
+          <View style={{marginBottom: hp(2)}}>
             <View style={[gs.cardSection, its.cardInsideDetail, {width: "100%"}]}>
               {/* Left side: Image */}
-              <View style={{marginRight:20}}>
+              <View style={{marginRight: hp(2)}}>
                 <Image source={{
-                  uri: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/09/1132029/540x270/6-tempat-wisata-baru-yang-viral-di-tahun-2019.jpg'
+                  uri: item.image_source
                 }}
-                style={{borderRadius: 1000, width: 50, height: 50}}
+                style={{borderRadius: hp(50), width: wp(16), height: hp(8)}}
                 />
               </View>
               {/* Right side: name and details */}
               <View style={{width: "78%"}}>
-                <Text style={its.cardInsideTitle}>{item}</Text>
+                <Text style={its.cardInsideTitle}>{item.place_name}</Text>
                 <Text style={{fontSize: RFPercentage(1.6)}}>
-                  Situ Patenggang adalah sebuah danau yang 
-                  berlokasi di kawasan wisata alam Ciwidey, Bandung.
+                  {item.description}
                 </Text>
-                <View style={[gs.rowContainerNoWrap, {marginTop: 10}]}>
+                <View style={[gs.rowContainerNoWrap, {marginTop: hp(1.5)}]}>
                   <Icon
                   name={"history"}
                   size={hp(2.5)}
                   color={Color.color6}
-                  style={{marginRight: 5}}
+                  style={{marginRight: hp(1)}}
                   />
                   <Text style={{fontSize: RFPercentage(1.6)}}>
                     {this.state.duration}</Text>
@@ -69,13 +74,13 @@ export default class ItineraryDetails extends Component {
                   name={"money"}
                   size={hp(2.5)}
                   color={Color.color6}
-                  style={{marginRight: 5}}
+                  style={{marginRight: hp(1)}}
                   />
-                  <Text style={{fontSize: RFPercentage(1.6)}}>{this.state.price}</Text>
+                  <Text style={{fontSize: RFPercentage(1.6)}}>{item.detail.ticket_price}</Text>
                 </View>
               </View>
             </View>
-            <Text style={{marginTop: 5,fontSize: RFPercentage(1.6),
+            <Text style={{marginTop: hp(1),fontSize: RFPercentage(1.6),
               color: "grey", opacity: 0.5}}>
               5 menit menggunakan mobil
             </Text>
@@ -87,13 +92,24 @@ export default class ItineraryDetails extends Component {
       <ScrollView>
         <View style={ls.mainContainer}>
           {/* BIG IMAGE */}
-          <View style={{width: "100%", height: 250}}>
-            <Image source={{uri: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/09/1132029/540x270/6-tempat-wisata-baru-yang-viral-di-tahun-2019.jpg'}}
+          <View style={{width: "100%", height: hp(31)}}>
+            <Image source={{uri: this.state.trips[index].image}}
             style={{width: "100%", height: "100%"}}
             />
+            <View style={[mts.blackOverlay, {height:"100%"}]} />
+            <View style={mts.textOnOverlay}>
+              <Text
+                style={{
+                  fontSize: RFPercentage(4),
+                  color: Color.white,
+                  fontWeight: 'bold',
+                }}>
+                {this.state.itinerary_name}
+              </Text>
+            </View>
           </View>
 
-          <View style={[gs.cardSection, {marginTop: 30}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
             {itineraryList}
           </View>
         </View>

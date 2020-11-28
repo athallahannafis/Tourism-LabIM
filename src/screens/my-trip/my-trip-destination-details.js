@@ -49,15 +49,15 @@ export default class MyTripDestinationDetails extends Component {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Text
                   style={{fontSize: RFPercentage(2.3),
-                  fontWeight: 'bold', marginRight: 10}}>
+                  fontWeight: 'bold', marginRight: hp(1.5)}}>
                   {item.departCityCode} - {item.arriveCityCode}
                 </Text>
-                <Text style={{fontSize: RFPercentage(2.3)}}>
+                <Text style={{fontSize: RFPercentage(1.6)}}>
                   {item.transportName}
                 </Text>
               </View>
               {/*Detail pesanan */}
-              <View style={{marginTop: 5, marginLeft:"2.5%"}}>
+              <View style={{marginTop: "2.5%", marginLeft:"2.5%"}}>
                 <Text style={{fontSize: RFPercentage(2),
                   fontWeight: 'bold'}}>
                   {item.date}
@@ -72,7 +72,7 @@ export default class MyTripDestinationDetails extends Component {
                     <Text style={{fontSize: RFPercentage(1.6)}}>Berangkat {item.departTime}</Text>
                   </View>
                   {/*Kolom kanan */}
-                  <View style={{flexDirection: 'column', marginLeft: 10}}>
+                  <View style={{flexDirection: 'column', marginLeft: hp(1.5)}}>
                     <Text style={{fontSize: RFPercentage(1.6)}}>{item.arriveCity}</Text>
                     <Text style={{fontSize: RFPercentage(1.6)}}>{item.arriveStation})</Text>
                     <Text style={{fontSize: RFPercentage(1.6)}}>Tiba {item.arriveTime}</Text>
@@ -89,20 +89,20 @@ export default class MyTripDestinationDetails extends Component {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Text
                   style={{fontSize: RFPercentage(2.3),
-                  fontWeight: 'bold', marginRight: 10}}>
+                  fontWeight: 'bold', marginRight: hp(1.5)}}>
                   DPS - CGK
                 </Text>
-                <Text style={{fontSize: RFPercentage(2.3)}}>Garuda Indonesia</Text>
+                <Text style={{fontSize: RFPercentage(1.6)}}>Garuda Indonesia</Text>
               </View>
               {/*Detail pesanan */}
-              <View style={{marginLeft: "2.5%", marginTop: 5}}>
+              <View style={{marginLeft: "2.5%", marginTop: "2.5%"}}>
                 <Text style={{fontSize: RFPercentage(2),
                   fontWeight: 'bold'}}>
                   Min, 30 Agustus 2020
                 </Text>
                 <View style={{flexDirection: 'row'}}>
                   {/*Kolom kiri */}
-                  <View style={{flexDirection: 'column', marginLeft: 10}}>
+                  <View style={{flexDirection: 'column', marginLeft: hp(1.5)}}>
                     <Text style={{fontSize: RFPercentage(1.6)}}>Bali</Text>
                     <Text style={{fontSize: RFPercentage(1.6)}}>
                       Ngurah Rai Intl (DPS)
@@ -110,7 +110,7 @@ export default class MyTripDestinationDetails extends Component {
                     <Text style={{fontSize: RFPercentage(1.6)}}>Berangkat 18.00</Text>
                   </View>
                   {/*Kolom kanan */}
-                  <View style={{flexDirection: 'column', marginLeft: 10}}>
+                  <View style={{flexDirection: 'column', marginLeft: hp(1.5)}}>
                     <Text style={{fontSize: RFPercentage(1.6)}}>Jakarta</Text>
                     <Text style={{fontSize: RFPercentage(1.6)}}>Soekarno Hatta Intl (CGK)</Text>
                     <Text style={{fontSize: RFPercentage(1.6)}}>Tiba 19.00</Text>
@@ -127,12 +127,12 @@ export default class MyTripDestinationDetails extends Component {
               <Text style={{fontWeight: 'bold',
                 fontSize: RFPercentage(2.3)
               }}>{item.accomodation_name}</Text>
-              <Text style={{marginTop: 5, fontSize: RFPercentage(1.6),
+              <Text style={{marginTop: "2.5%", fontSize: RFPercentage(1.6),
               marginLeft: "3%"}}>
                 {item.accomodation_place}
               </Text>
               <View
-                style={{flexDirection: 'row', marginTop: 5, marginLeft: "3%"}}>
+                style={{flexDirection: 'row', marginTop: "2.5%", marginLeft: "3%"}}>
                 {/*Kolom kiri */}
                 <View style={{flexDirection: 'column'}}>
                   <Text style={{fontSize: RFPercentage(1.6)}}>Check in:</Text>
@@ -141,7 +141,7 @@ export default class MyTripDestinationDetails extends Component {
                   </Text>
                 </View>
                 {/*Kolom kanan */}
-                <View style={{flexDirection: 'column', marginLeft: 25}}>
+                <View style={{flexDirection: 'column', marginLeft: hp(3)}}>
                   <Text style={{fontSize: RFPercentage(1.6)}}>Check out:</Text>
                   <Text style={{fontSize: RFPercentage(1.6), fontWeight: 'bold'}}>
                     {item.checkoutDate}
@@ -159,11 +159,11 @@ export default class MyTripDestinationDetails extends Component {
                 fontsize: RFPercentage(2.3)
               }}>Harris Hotel</Text>
               <Text style={{marginLeft: "3%",
-              marginTop: 5, fontSize: RFPercentage(1.6)}}>
+              marginTop: "2.5%", fontSize: RFPercentage(1.6)}}>
                 Jalan Pariwangan No 16
               </Text>
               <View
-                style={{flexDirection: 'row', marginLeft: "3%", marginTop: 5}}>
+                style={{flexDirection: 'row', marginLeft: "3%", marginTop: "2.5%"}}>
                 {/*Kolom kiri */}
                 <View style={{flexDirection: 'column'}}>
                   <Text style={{fontSize: RFPercentage(1.6)}}>Check in:</Text>
@@ -172,7 +172,7 @@ export default class MyTripDestinationDetails extends Component {
                   </Text>
                 </View>
                 {/*Kolom kanan */}
-                <View style={{flexDirection: 'column', marginLeft: 25}}>
+                <View style={{flexDirection: 'column', marginLeft: hp(3)}}>
                   <Text style={{fontSize: RFPercentage(1.6)}}>Check out:</Text>
                   <Text style={{fontSize: RFPercentage(1.6), fontWeight: 'bold'}}>
                     Min, 30 Agu 2020
@@ -222,13 +222,13 @@ export default class MyTripDestinationDetails extends Component {
             style={mts.itineraryButton}
             onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
             <Text
-              style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
+              style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
               Itinerary
             </Text>
           </TouchableOpacity>
 
           {/*Reservasi Perjalanan */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <View style={{flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
             <Text style={gs.cardTitle}>Reservasi Perjalanan</Text>
             </View>
@@ -243,7 +243,7 @@ export default class MyTripDestinationDetails extends Component {
           </View>
 
           {/*Reservasi Hotel */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <Text style={gs.cardTitle}>Reservasi Hotel</Text>
             {reservasiAkomodasi}
             {reservasiAkomodasiBaru}
@@ -288,15 +288,15 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary'), {nama: '', destinationName: this.state.destinationName}}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
             <Text
-              style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
+              style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
               Itinerary
             </Text>
           </TouchableOpacity>
 
           {/*Reservasi Perjalanan */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <View style={{flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
             <Text style={gs.cardTitle}>Reservasi Perjalanan</Text>
             </View>
@@ -311,7 +311,7 @@ export default class MyTripDestinationDetails extends Component {
           </View>
 
           {/*Reservasi Hotel */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <Text style={gs.cardTitle}>Reservasi Hotel</Text>
             {reservasiAkomodasi}
             <View style={[mts.reservationBubble, {alignItems:'center', backgroundColor: 'white'}]}>
@@ -340,7 +340,7 @@ export default class MyTripDestinationDetails extends Component {
               <View style={mts.textOnOverlay}>
                 <Text
                   style={{
-                    fontSize: 30,
+                    fontSize: RFPercentage(2),
                     color: Color.white,
                     fontWeight: 'bold',
                   }}>
@@ -357,13 +357,13 @@ export default class MyTripDestinationDetails extends Component {
               style={mts.itineraryButton}
               onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
               <Text
-                style={{color: Color.white, fontWeight: 'bold', fontSize: 15}}>
+                style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
                 Itinerary
               </Text>
             </TouchableOpacity>
   
             {/*Reservasi Perjalanan */}
-            <View style={[gs.cardSection, {marginTop: 20}]}>
+            <View style={[gs.cardSection, {marginTop: hp(2)}]}>
               <View style={{flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
               <Text style={gs.cardTitle}>Reservasi Perjalanan</Text>
               </View>
@@ -377,7 +377,7 @@ export default class MyTripDestinationDetails extends Component {
             </View>
   
             {/*Reservasi Hotel */}
-            <View style={[gs.cardSection, {marginTop: 20}]}>
+            <View style={[gs.cardSection, {marginTop: hp(2)}]}>
               <Text style={gs.cardTitle}>Reservasi Hotel</Text>
               {reservasiAkomodasi}
               {reservasiAkomodasiBaru}
@@ -431,7 +431,7 @@ export default class MyTripDestinationDetails extends Component {
           </TouchableOpacity>
 
           {/*Reservasi Perjalanan */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <View style={{flexDirection:'row', justifyContent:'space-between', marginBottom:10}}>
             <Text style={gs.cardTitle}>Reservasi Perjalanan</Text>
             </View>
@@ -445,7 +445,7 @@ export default class MyTripDestinationDetails extends Component {
           </View>
 
           {/*Reservasi Hotel */}
-          <View style={[gs.cardSection, {marginTop: 20}]}>
+          <View style={[gs.cardSection, {marginTop: hp(2)}]}>
             <Text style={gs.cardTitle}>Reservasi Hotel</Text>
             {reservasiAkomodasi}
             <View style={[mts.reservationBubble, {alignItems:'center', backgroundColor: 'white'}]}>
@@ -471,12 +471,12 @@ export default class MyTripDestinationDetails extends Component {
                 
               </View>
               
-              <View style={{flexDirection:'row', marginTop:10, justifyContent:'center'}}>
+              <View style={{flexDirection:'row', marginTop:hp(1.5), justifyContent:'center'}}>
                 <Text style={ats.textMediumBoldColor4AlignCenter}>
                   Kode booking:
                 </Text>
                 <TextInput
-                      style={[mts.textInput, {width: '50%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '50%', marginLeft: hp(1.5)}]}
                       placeholder={'ketik disini'}
                       onChangeText={(value) =>
                         this.setState({transportCode: value})
@@ -513,12 +513,12 @@ export default class MyTripDestinationDetails extends Component {
                 
               </View>
               
-              <View style={{flexDirection:'row', marginTop:10, justifyContent:'center'}}>
+              <View style={{flexDirection:'row', marginTop:hp(1.5), justifyContent:'center'}}>
                 <Text style={ats.textMediumBoldColor4AlignCenter}>
                   Kode booking:
                 </Text>
                 <TextInput
-                      style={[mts.textInput, {width: '50%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '50%', marginLeft: hp(1.5)}]}
                       placeholder={'ketik disini'}
                       onChangeText={(value) =>
                         this.setState({hotelCode: value})

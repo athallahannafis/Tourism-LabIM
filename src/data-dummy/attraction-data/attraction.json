@@ -31,7 +31,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -137,7 +137,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp10.000,00",
+            "ticket_price": "Rp10000,00",
             "visitor_capacity": "3.000",
             "current_status": "Sedang ramai"
           },
@@ -243,8 +243,8 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 09.00 PM",
             "facilities": ["Area Parkir", "ATMs", "Kamar Mandi"],
-            "ticket_price": "Rp0",
-            "visitor_capacity": "1.000",
+            "ticket_price": "Rp0,00",
+            "visitor_capacity": "1000",
             "current_status": "Sedang ramai"
           },
           "booking_available": false,
@@ -349,7 +349,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "08.00 AM - 06.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp0",
+            "ticket_price": "Rp0,00",
             "visitor_capacity": "3.000",
             "current_status": "Sedang ramai"
           },
@@ -461,7 +461,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -567,7 +567,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "03.00 PM - 11.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -673,7 +673,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
+            "ticket_price": "Rp80000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -779,7 +779,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
+            "ticket_price": "Rp80000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -891,7 +891,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -997,7 +997,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -1109,7 +1109,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -1215,7 +1215,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -1326,7 +1326,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -1432,7 +1432,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -1544,7 +1544,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -1651,7 +1651,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
+            "ticket_price": "Rp80000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -1755,7 +1755,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp25.000,00",
+            "ticket_price": "Rp25000,00",
             "visitor_capacity": "30.000",
             "current_status": "Sedang ramai"
           },
@@ -1854,7 +1854,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp10.000,00",
+            "ticket_price": "Rp10000,00",
             "visitor_capacity": "3.000",
             "current_status": "Sedang ramai"
           },
@@ -1953,7 +1953,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "10.00 AM - 09.00 PM",
             "facilities": ["Area Parkir", "ATMs", "Kamar Mandi"],
-            "ticket_price": "Rp0",
+            "ticket_price": "Rp0,00",
             "visitor_capacity": "1.000",
             "current_status": "Sedang ramai"
           },
@@ -2156,7 +2156,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "09.00 AM - 04.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -2255,7 +2255,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "03.00 PM - 11.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp15.000,00",
+            "ticket_price": "Rp15000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -2354,7 +2354,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
+            "ticket_price": "Rp80000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
@@ -2453,7 +2453,7 @@
             "open_days": "Senin - Minggu",
             "open_hours": "12.00 AM - 08.00 PM",
             "facilities": ["Area Parkir", "Kamar Mandi"],
-            "ticket_price": "Rp80.000",
+            "ticket_price": "Rp80000,00",
             "visitor_capacity": "20.000",
             "current_status": "Sedang ramai"
           },
