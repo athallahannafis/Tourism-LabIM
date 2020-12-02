@@ -3,6 +3,10 @@
     {
       "name": "Bali Asli",
       "rate": 4,
+      "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+      },
       "reviews": [],
       "reviews_count": 183,
       "description": "Sajian makanan cita rasa tradisional Bali dipadu dgn pemandangan Gunung Agung. Tersedia kelas memasak.",
@@ -18,6 +22,10 @@
     {
       "name": "d'Alas Warung",
       "rate": 4.7,
+      "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+      },
       "reviews": [],
       "reviews_count": 200,
       "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
@@ -33,6 +41,10 @@
     {
       "name": "Cafe Lotus",
       "rate": 4.4,
+      "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+      },
       "reviews": [],
       "reviews_count": 134,
       "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
