@@ -25,12 +25,9 @@ import TicketPayment from './screens/ticket-reservation/payment-ticket';
 import AttractionDetails from './screens/attraction/attraction-details';
 import AttractionReview from './screens/attraction/attraction-reviews';
 import AttractionSearchResults from './screens/attraction/attraction-search-results';
-import AttractionMap from './screens/attraction/attraction-map';
 // Accomodation
-import AccomodationMap from './screens/accomodation/accomodation-map';
 import AccomodationHome from './screens/accomodation/accomodation-home';
 import AccomodationDetail from './screens/accomodation/accomodation-details';
-// import AccomodationDetail from './screens/accomodation/accomodation-details2';
 import AccomodationReservation from './screens/accomodation/accomodation-reservation';
 import AccomodationPayment from './screens/accomodation/accomodation-payment';
 import AccomodationReview from './screens/accomodation/accomodation-reviews';
@@ -41,7 +38,6 @@ import ItineraryDetails from './screens/my-trip/itinerary-details';
 import RestaurantRecommendation from './screens/my-trip/restaurant-recommendations';
 import SouvenirRecommendation from './screens/my-trip/souvenir-recommendation';
 import RestaurantSouvenirDetail from  './screens/my-trip/detail';
-// My Trip
 import MyTripHome from './screens/my-trip/my-trip-home';
 import MyTripDestinationDetails from './screens/my-trip/my-trip-destination-details';
 import MyTripItinerary from './screens/my-trip/my-trip-itinerary';
@@ -156,10 +152,6 @@ export default class BottomTab extends Component {
           }}
         />
         <attractionStack.Screen
-          component={AttractionMap}
-          name="Attraction Map"
-        />
-        <attractionStack.Screen
           component={MapScreen}
           name="Map Screen"
         />
@@ -184,10 +176,6 @@ export default class BottomTab extends Component {
         <accomodationStack.Screen
           component={AccomodationDetail}
           name="Accomodation Details"
-        />
-        <accomodationStack.Screen
-          component={AccomodationMap}
-          name="Accomodation Map"
         />
         <accomodationStack.Screen
           component={AccomodationReservation}
