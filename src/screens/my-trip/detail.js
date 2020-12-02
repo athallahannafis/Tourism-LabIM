@@ -112,6 +112,9 @@ export default class RestaurantSouvenirDetail extends Component {
                   <TouchableOpacity
                     style={ats.reviewBtn}
                     // TODO: Navigate to reviews
+                    onPress={() => this.props.navigation.navigate(
+                      "Review", this.state.DATA.reviews
+                    )}
                     >
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                       ({this.state.DATA.reviews_count} reviews)
