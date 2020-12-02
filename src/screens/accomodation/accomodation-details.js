@@ -144,7 +144,7 @@ export default class AccomodationDetails extends Component {
                   <TouchableOpacity
                   style={ats.reviewBtn}
                   onPress={() => this.props.navigation.navigate(
-                    "Accomodation Map", this.state.DATA
+                    "Map Screen", this.state.DATA
                   )}>
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                       Show on map
@@ -188,15 +188,15 @@ export default class AccomodationDetails extends Component {
                   showsUserLocation={true}
                   showsBuildings={true}
                   region={{
-                    latitude: this.state.DATA.details.coordinates.latitude,
-                    longitude: this.state.DATA.details.coordinates.longitude,
+                    latitude: this.state.DATA.coordinates.latitude,
+                    longitude: this.state.DATA.coordinates.longitude,
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01,
                   }}>
                   <MapView.Marker
                     coordinate={{
-                      latitude: this.state.DATA.details.coordinates.latitude,
-                      longitude: this.state.DATA.details.coordinates.longitude,
+                      latitude: this.state.DATA.coordinates.latitude,
+                      longitude: this.state.DATA.coordinates.longitude,
                     }}
                   />
                 </MapView>

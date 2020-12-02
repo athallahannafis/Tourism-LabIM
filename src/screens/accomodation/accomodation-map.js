@@ -66,10 +66,10 @@ export default class AttractionMap extends Component {
     const temp = this.state.destination;
 
     this.setState({
-      place_latitude: temp.details.coordinates.latitude,
-      place_longitude: temp.details.coordinates.longitude,
-      current_latitude: temp.details.coordinates.latitude,
-      current_longitude: temp.details.coordinates.longitude
+      place_latitude: temp.coordinates.latitude,
+      place_longitude: temp.coordinates.longitude,
+      current_latitude: temp.coordinates.latitude,
+      current_longitude: temp.coordinates.longitude
     });
   }
 
@@ -107,8 +107,8 @@ export default class AttractionMap extends Component {
           style={ls.map}>
             <MapView.Marker
             coordinate={{
-              latitude: this.state.destination.details.coordinates.latitude,
-              longitude: this.state.destination.details.coordinates.longitude
+              latitude: this.state.destination.coordinates.latitude,
+              longitude: this.state.destination.coordinates.longitude
             }}
             title="Lokasi"
             description={this.state.destination.accomodation_name}/>

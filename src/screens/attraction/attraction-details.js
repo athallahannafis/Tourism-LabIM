@@ -240,7 +240,7 @@ export default class AttractionDetails extends Component {
                         style={ats.reviewBtn}
                         onPress={() =>
                           this.props.navigation.navigate(
-                            'Attraction Map',
+                            'Map Screen',
                             this.state.attractionDataSet,
                           )
                         }>
@@ -503,7 +503,7 @@ export default class AttractionDetails extends Component {
                         style={ats.reviewBtn}
                         onPress={() =>
                           this.props.navigation.navigate(
-                            'Attraction Map',
+                            'Map Screen',
                             this.state.attractionDataSet,
                           )
                         }>

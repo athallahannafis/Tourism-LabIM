@@ -11,6 +11,10 @@
         "https://origin.pegipegi.com/jalan/images/pict1L/Y5/Y957075/Y957075018.jpg"
       ],
       "rate": 4.3,
+      "coordinates": {
+        "latitude": -6.164269,
+        "longitude": 106.82069
+      },
       "details": {
         "price": 499000,
         "facility": [
@@ -21,10 +25,6 @@
           "Ruang Meeting",
           "Elevator"
         ],
-        "coordinates": {
-          "latitude": -6.164269,
-          "longitude": 106.82069
-        },
         "checkin": "14.00",
         "checkout": "12:00"
       },
@@ -124,6 +124,10 @@
         "https://d1nabgopwop1kh.cloudfront.net/v2/hotel-asset/guys1L+Yyer9kzI3sp/pb0CG1j2bhflZGFUZOoIf1YMAPxdns1/9rJ+BHEJCrKdz6LqwkXZuiE42qoA91xJccP/lnYA8uyMHdZvxYh3WFMUoc97HxtqcZOl6AGVzct8Lxdf2fHOJngD0f4G9mYggsrP1Vbrydr14wLTeIfAYXhkRTo5EXv00nmoAUBcrufQdJGj/A4UBTzD/z7w69UkprA=="
       ],
       "rate": 4.5,
+      "coordinates": {
+        "latitude": -7.879257,
+        "longitude": 112.522596
+      },
       "details": {
         "price": 499000,
         "facility": [
@@ -134,10 +138,6 @@
           "Ruang Meeting",
           "Elevator"
         ],
-        "coordinates": {
-          "latitude": -7.879257,
-          "longitude": 112.522596
-        },
         "checkin": "14.00",
         "checkout": "12:00"
       },
@@ -237,6 +237,10 @@
         "https://origin.pegipegi.com/jalan/images/pict1L/Y2/Y937792/Y937792039.jpg"
       ],
       "rate": 3.5,
+      "coordinates": {
+        "latitude": -6.387412,
+        "longitude": 106.827118
+      },
       "details": {
         "price": 599000,
         "facility": [
@@ -247,10 +251,6 @@
           "Ruang Meeting",
           "Elevator"
         ],
-        "coordinates": {
-          "latitude": -6.387412,
-          "longitude": 106.827118
-        },
         "checkin": "14.00",
         "checkout": "12:00"
       },
