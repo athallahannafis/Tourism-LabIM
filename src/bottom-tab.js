@@ -10,6 +10,8 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 // Screen
 import TestScreen from './screens/Test';
+// Map
+import MapScreen from './screens/map/map';
 //Profile
 import ProfileHome from './screens/profile/ProfileHome';
 import ProfileEdit from './screens/profile/ProfileEdit';
@@ -157,6 +159,10 @@ export default class BottomTab extends Component {
           component={AttractionMap}
           name="Attraction Map"
         />
+        <attractionStack.Screen
+          component={MapScreen}
+          name="Map Screen"
+        />
       </attractionStack.Navigator>
     );
   };
@@ -211,6 +217,10 @@ export default class BottomTab extends Component {
             title: 'Pencarian Akomodasi',
           }}
         />
+        <accomodationStack.Screen
+          component={MapScreen}
+          name="Map Screen"
+        />
       </accomodationStack.Navigator>
     );
   };
@@ -253,6 +263,10 @@ export default class BottomTab extends Component {
         name="Rekomendasi Cendera Mata"/>
         <myTripStack.Screen component={RestaurantSouvenirDetail}
         name="Detail" />
+        <myTripStack.Screen
+          component={MapScreen}
+          name="Map Screen"
+        />
       </myTripStack.Navigator>
     );
   };
