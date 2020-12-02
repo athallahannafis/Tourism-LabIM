@@ -44,6 +44,7 @@ import MyTripItinerary from './screens/my-trip/my-trip-itinerary';
 import MyTripNewItinerary from './screens/my-trip/my-trip-new-itinerary';
 import MyTripNewItinerarySearchResults from './screens/my-trip/my-trip-new-itinerary-search-results';
 import MyTripItineraryDetails from './screens/my-trip/itinerary-details';
+import RestoSouvenirReview from './screens/my-trip/resto-souvenir-review';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -254,6 +255,13 @@ export default class BottomTab extends Component {
         <myTripStack.Screen
           component={MapScreen}
           name="Map Screen"
+        />
+        <myTripStack.Screen
+          component={RestoSouvenirReview}
+          name="Review"
+          options={{
+            title: "Seluruh ulasan"
+          }}
         />
       </myTripStack.Navigator>
     );
