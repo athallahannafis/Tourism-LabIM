@@ -17,7 +17,7 @@ import {globalStyling as gs} from '../../style/global-styling';
 import {attractionStyling as ats} from '../../style/attraction-styling';
 import StarRating from 'react-native-star-rating';
 import Color from '../../style/color.json';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class RestaurantSouvenirDetail extends Component {
   constructor(props) {
@@ -113,17 +113,20 @@ export default class RestaurantSouvenirDetail extends Component {
                     style={ats.reviewBtn}
                     // TODO: Navigate to reviews
                     onPress={() => this.props.navigation.navigate(
-                      "Review", this.state.DATA.reviews
+                      "Review", this.state.DATA
                     )}
                     >
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
-                      ({this.state.DATA.reviews_count} reviews)
+                      {this.state.DATA.reviews.length} reviews
                     </Text>
                   </TouchableOpacity>
                   {/* TODO: Implement map */}
                   <TouchableOpacity
                   style={ats.reviewBtn}
                   // TODO: navigate to map
+                  onPress={() => this.props.navigation.navigate(
+                    "Map Screen", this.state.DATA
+                  )}
                   >
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                       Show on map
@@ -134,6 +137,17 @@ export default class RestaurantSouvenirDetail extends Component {
               <Text style={[ats.cardMediumText, {marginTop: 10}]}>
                 {this.state.DATA.description}
               </Text>
+              <View style={[gs.rowContainerNoWrap, {marginTop: 10}]}>
+                <Icon
+                name={"clock-o"}
+                size={hp(2)}
+                color={Color.color6}
+                style={{marginRight: 3}}
+                />
+                <Text style={ats.cardMediumText}>
+                  {this.state.DATA.open} - {this.state.DATA.close}
+                </Text>
+              </View>
             </View>
           </View>
         </ScrollView>
