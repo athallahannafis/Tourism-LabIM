@@ -55,6 +55,10 @@ export default class AttractionSearchFilter extends Component {
     });
   }
 
+  componentDidUpdate = (prevState) => {
+    this.fetchAttraction;
+  }
+
   fetchAttraction = (searchedPlace) => {
     console.log(searchedPlace);
     console.log('--------------------------------');
@@ -197,6 +201,7 @@ export default class AttractionSearchFilter extends Component {
     console.log('pressed');
     this.state.filterPopUp = false;
     this.UNSAFE_componentWillMount();
+    this.componentDidUpdate();
   };
 
   render() {
