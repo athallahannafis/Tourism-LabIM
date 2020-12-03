@@ -2,10 +2,12 @@
   "data": [
     {
       "name": "Bali Asli",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -6.163411, 
+        "longitude": 106.750537
       },
       "reviews": [
         {
@@ -72,10 +74,12 @@
     },
     {
       "name": "d'Alas Warung",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.7,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -8.422261, 
+        "longitude": 115.278884
       },
       "reviews": [
         {
@@ -142,10 +146,12 @@
     },
     {
       "name": "Cafe Lotus",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.4,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -8.50617, 
+        "longitude": 115.26126
       },
       "reviews": [
         {
@@ -202,12 +208,12 @@
       "reviews_count": 134,
       "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
       "price": "50.000 - 100.000",
-      "image": "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+      "image": "https://m.justgola.com/media/a/00/11/71271_og_1.jpeg",
       "images_source": [
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg"
+        "https://www.befreetour.com/img/attraction/cafe-lotus-ubud%C2%A020191101093148.jpg",
+        "https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Caf%C3%A9%20Lotus%20Ubud/pic_1.jpg",
+        "https://www.cafelotusubud.com/wp-content/themes/cafelotus/content/the-restaurant-pic3.jpg",
+        "https://m.justgola.com/media/a/00/11/71271_og_1.jpeg"
       ]
     }
   ]

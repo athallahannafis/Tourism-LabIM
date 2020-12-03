@@ -2,10 +2,12 @@
   "data": [
     {
       "name": "Pasar Guwang",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -8.610622,
+        "longitude":  115.283836
       },
       "reviews": [
         {
@@ -72,10 +74,12 @@
     },
     {
       "name": "Pasar Kuta",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.7,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -8.722830, 
+        "longitude": 115.176609
       },
       "reviews": [
         {
@@ -142,10 +146,12 @@
     },
     {
       "name": "Pasar Ubud",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.4,
       "coordinates": {
-        "latitude": 0,
-        "longitude": 0
+        "latitude": -8.507087,
+        "longitude": 115.262743
       },
       "reviews": [
         {
