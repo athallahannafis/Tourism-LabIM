@@ -65,7 +65,9 @@ export default class SouvenirRecommendation extends Component {
     });
 
     return (
-      <ScrollView>
+      <ScrollView style={{
+        backgroundColor:"white"
+      }}>
         <View style={gs.mainContainer}>
           <View style={{width: "100%", paddingHorizontal:"3%"}}>
             <Text style={gs.cardTitle}>Toko souvenir di sekitar anda</Text>

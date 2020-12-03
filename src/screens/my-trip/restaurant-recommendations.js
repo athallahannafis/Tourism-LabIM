@@ -64,7 +64,9 @@ export default class RestaurantRecommendation extends Component {
       )
     })
     return (
-      <ScrollView>
+      <ScrollView style={{
+        backgroundColor: "white"
+      }}>
         <View style={gs.mainContainer}>
           <View style={{width: "100%", paddingHorizontal:"3%"}}>
             <Text style={gs.cardTitle}>Rekomendasi restoran di sekitar anda</Text>
