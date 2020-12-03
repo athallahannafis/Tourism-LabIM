@@ -17,6 +17,7 @@ export default class AccomodationReviews extends Component {
     super(props);
     this.state = {
       ReviewData: [],
+      DATA: props.route.params,
       num: 0,
       selectedValue: '',
       sortBy: 'rating',
@@ -34,10 +35,7 @@ export default class AccomodationReviews extends Component {
   };
 
   render() {
-    const fetchData = this.props.route.params;
-    console.log(JSON.stringify(fetchData, null, 4));
-    const fetchReview = fetchData.reviews;
-    this.state.ReviewData = fetchReview;
+    this.state.ReviewData = this.state.DATA.reviews
     if (this.state.sortBy === 'rating') {
       this.state.ReviewData.sort(function (a, b) {
         return b.rate - a.rate;
@@ -62,7 +60,7 @@ export default class AccomodationReviews extends Component {
       //   }
       // }
     }
-    const renderReview = fetchReview.map((item) => {
+    const renderReview = this.state.DATA.reviews.map((item) => {
       let images;
       if (item.photos.length != 0) {
         images = item.photos.map((photoSource) => {
@@ -109,7 +107,7 @@ export default class AccomodationReviews extends Component {
       <ScrollView>
         <View style={gs.mainContainer}>
           <Text style={[gs.cardTitle, {width: 250, textAlign: 'center'}]}>
-            Seluruh ulasan untuk {fetchData.accomodation_name}
+            Seluruh ulasan untuk {this.state.DATA.name}
           </Text>
           <View
             style={{
