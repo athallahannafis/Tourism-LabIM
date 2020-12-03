@@ -31,13 +31,25 @@ export default class AttractionMap extends Component {
         disabled: true,
         buttonMsg: "Getting your location..."
       },
-      destination: props.route.params,
+      DATA: props.route.params,
+      destinationName: "",
     });
   }
 
   componentDidMount = () => {
     this.getMyLocation();
     this.getPlaceLocation();
+    this.getDestinationName();
+  }
+
+  getDestinationName = () => {
+    if (this.state.DATA.place_name != undefined) {
+      this.state.destinationName = this.state.DATA.place_name;
+    } else if (this.state.DATA.accomodation_name != undefined) {
+      this.state.destinationName = this.state.DATA.accomodation_name;
+    } else {  // Restaurant or cenderamata
+      this.state.destinationName = this.state.DATA.name;
+    }
   }
 
   getMyLocation = () => {
@@ -63,7 +75,7 @@ export default class AttractionMap extends Component {
   }
 
   getPlaceLocation = () => {
-    const temp = this.state.destination;
+    const temp = this.state.DATA;
 
     this.setState({
       place_latitude: temp.coordinates.latitude,
@@ -109,11 +121,11 @@ export default class AttractionMap extends Component {
           style={ls.map}>
             <MapView.Marker
             coordinate={{
-              latitude: this.state.destination.coordinates.latitude,
-              longitude: this.state.destination.coordinates.longitude
+              latitude: this.state.DATA.coordinates.latitude,
+              longitude: this.state.DATA.coordinates.longitude
             }}
             title="Lokasi"
-            description={this.state.destination.place_name}/>
+            description={this.state.destinationName}/>
           </MapView>
         </View>
 
@@ -130,7 +142,7 @@ export default class AttractionMap extends Component {
                 <Text style={{fontSize: RFPercentage(1.4)}}>Lokasi anda</Text>
               </View>
               <View style={[ls.bubble]}>
-                <Text style={{fontSize: RFPercentage(1.4)}}>{this.state.destination.place_name}</Text>
+                <Text style={{fontSize: RFPercentage(1.4)}}>{this.state.destinationName}</Text>
               </View>
             </View>
           </View>
