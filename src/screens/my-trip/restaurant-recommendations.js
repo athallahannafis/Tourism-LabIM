@@ -63,20 +63,20 @@ export default class RestaurantRecommendation extends Component {
         </TouchableOpacity>
       )
     })
-    const restaurantRow = this.state.row.map((item) => {
-      return (
-        <View style={mts.restaurantRow}>
-          {restaurantCard}
-        </View>
-      )
-    })
     return (
       <ScrollView>
         <View style={gs.mainContainer}>
           <View style={{width: "100%", paddingHorizontal:"3%"}}>
             <Text style={gs.cardTitle}>Rekomendasi restoran di sekitar anda</Text>
           </View>
-          {restaurantRow}
+          <View style={{
+            flex:0,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}>
+            {restaurantCard}
+          </View>
         </View>
       </ScrollView>
     )
