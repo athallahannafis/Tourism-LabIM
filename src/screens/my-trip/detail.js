@@ -121,6 +121,9 @@ export default class RestaurantSouvenirDetail extends Component {
                   <TouchableOpacity
                   style={ats.reviewBtn}
                   // TODO: navigate to map
+                  onPress={() => this.props.navigation.navigate(
+                    "My trip map", this.state.DATA
+                  )}
                   >
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
                       Show on map
