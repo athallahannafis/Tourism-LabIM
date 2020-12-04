@@ -324,7 +324,8 @@ export default class MyTripItinerary extends Component {
                     }}
                     style={mts.squareImage}
                   />
-                  <Text style={{fontWeight: 'bold'}}>Bali Asli</Text>
+                  <Text style={{fontWeight: 'bold',
+                  fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <StarRating
                       disabled={true}
@@ -727,7 +728,8 @@ export default class MyTripItinerary extends Component {
                   }}
                   style={mts.squareImage}
                 />
-                <Text style={{fontWeight: 'bold'}}>Bali Asli</Text>
+                <Text style={{fontWeight: 'bold',
+              fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
@@ -1031,7 +1033,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(2)
+                fontSize: RFPercentage(1.6)
                 }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
@@ -1075,7 +1077,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(2)
+                fontSize: RFPercentage(1.6)
                 }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
