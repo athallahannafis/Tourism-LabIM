@@ -112,9 +112,12 @@ export default class RestaurantSouvenirDetail extends Component {
                   <TouchableOpacity
                     style={ats.reviewBtn}
                     // TODO: Navigate to reviews
+                    onPress={() => this.props.navigation.navigate(
+                      "Reviews", this.state.DATA
+                    )}
                     >
                     <Text style={[ats.cardMediumText, {fontWeight: 'bold'}]}>
-                      ({this.state.DATA.reviews_count} reviews)
+                      ({this.state.DATA.reviews.length} reviews)
                     </Text>
                   </TouchableOpacity>
                   {/* TODO: Implement map */}

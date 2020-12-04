@@ -47,6 +47,7 @@ import MyTripNewItinerary from './screens/my-trip/my-trip-new-itinerary';
 import MyTripNewItinerarySearchResults from './screens/my-trip/my-trip-new-itinerary-search-results';
 import MyTripItineraryDetails from './screens/my-trip/itinerary-details';
 import MyTripMap from './screens/my-trip/my-trip-map';
+import RestoSouvenirReview from './screens/my-trip/resto-souvenir-review';
 
 const testStack = createStackNavigator();
 const bottomTab = createBottomTabNavigator();
@@ -256,6 +257,9 @@ export default class BottomTab extends Component {
         name="Detail" />
         <myTripStack.Screen component={MyTripMap}
         name="My trip map"
+        />
+        <myTripStack.Screen component={RestoSouvenirReview}
+        name="Reviews"
         />
       </myTripStack.Navigator>
     );
