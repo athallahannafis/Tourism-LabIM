@@ -220,7 +220,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName, list_attractions:[]})}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
               Itinerary
@@ -288,7 +288,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName, list_attractions:[]})}>
             <Text
               style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
               Itinerary
@@ -355,7 +355,7 @@ export default class MyTripDestinationDetails extends Component {
             {/*Itinerary */}
             <TouchableOpacity
               style={mts.itineraryButton}
-              onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
+              onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName, list_attractions:[]})}>
               <Text
                 style={{color: Color.white, fontWeight: 'bold', fontSize: RFPercentage(1.6)}}>
                 Itinerary
@@ -422,7 +422,7 @@ export default class MyTripDestinationDetails extends Component {
           {/*Itinerary */}
           <TouchableOpacity
             style={mts.itineraryButton}
-            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName})}>
+            onPress={() => this.props.navigation.navigate('Itinerary', {nama: '', destinationName: this.state.destinationName, list_attractions:[]})}>
             <Text
               style={{color: Color.white, fontWeight: 'bold',
               fontSize: RFPercentage(2)}}>
