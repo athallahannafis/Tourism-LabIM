@@ -111,11 +111,9 @@ export default class MyTripItinerary extends Component {
                       this.props.navigation.navigate(
                         "Detail Itinerary",
                         {
-                          list_attractions: listAttractions,
+                          list_name: listAttractions[0].place_name + ", " + listAttractions[1].place_name,
                           price: price,
                           duration: "1 Hari",
-                          destinationName: this.state.destinationName,
-                          itinerary_name: capitalized_itinerary_name
                         }
                       );
                     }}>
