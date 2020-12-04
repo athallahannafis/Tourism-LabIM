@@ -59,7 +59,7 @@ export default class MyTripNewItinerary extends Component {
         alertPopUp : true})
     }
     else {
-      if (this.state.passAttraction){
+      if (this.props.route.params.passAttraction){
           this.setState({saveItineraryPopUp: false})
           console.log("sudah masuk sini")
           this.props.navigation.navigate("Itinerary", {
@@ -81,7 +81,7 @@ export default class MyTripNewItinerary extends Component {
       }
       else {
         this.setState({saveItineraryPopUp: false})
-          console.log("sudah masuk sini")
+          console.log("sudah masuk sono")
           this.props.navigation.navigate("Itinerary", {
           nama: this.state.namaItinerary, 
           destinationName: this.state.destinationName,

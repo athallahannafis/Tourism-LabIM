@@ -42,6 +42,7 @@ export default class MyTripItinerary extends Component {
     const itinerary_name = this.props.route.params.nama;
     const price = this.props.route.params.price;
     const listAttractions = this.props.route.params.list_attractions;
+    console.log(listAttractions);
     const list_length = listAttractions.length;
     if (list_length == 2) {
       this.state.morethanone = true;

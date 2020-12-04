@@ -29,6 +29,7 @@ export default class ItineraryDetails extends Component {
   }
 
   splitItineraryNames = () => {
+    console.log(this.state.itinerary_names);
     let temp;
     temp = this.state.itinerary_names.split(", ");
     this.state.itinerary_nameList = temp;
