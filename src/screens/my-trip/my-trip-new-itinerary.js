@@ -34,7 +34,7 @@ export default class MyTripNewItinerary extends Component {
       passAttraction: props.route.params.passAttraction,
       attraction: props.route.params.attraction,
       thisTripData: [],
-      search: ''
+      search: '',
     };
   }
 
@@ -59,24 +59,46 @@ export default class MyTripNewItinerary extends Component {
         alertPopUp : true})
     }
     else {
-      this.setState({saveItineraryPopUp: false})
-      console.log("sudah masuk sini")
-      this.props.navigation.navigate("Itinerary", {
-        nama: this.state.namaItinerary, 
-        destinationName: this.state.destinationName,
-        price: 800000+parseInt((this.props.route.params.attraction.detail.ticket_price).substring(2, (this.props.route.params.attraction.detail.ticket_price).length - 2)),
-        list_attractions: [
-          {
-          "city_name": "Bali",
-          "place_name": "Pura Gunung Kawi",
-          "description": "Candi Tebing Kawi adalah situs purbakala yang dilindungi di Bali. Terletak di Sungai Pakerisan",
-          "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
-          "detail": {
-            "ticket_price": "Rp600000,00",
-          }
-        },
-          this.props.route.params.attraction],
-      })
+      if (this.state.passAttraction){
+          this.setState({saveItineraryPopUp: false})
+          console.log("sudah masuk sini")
+          this.props.navigation.navigate("Itinerary", {
+          nama: this.state.namaItinerary, 
+          destinationName: this.state.destinationName,
+          price: 800000+parseInt((this.props.route.params.attraction.detail.ticket_price).substring(2, (this.props.route.params.attraction.detail.ticket_price).length - 2)),
+          list_attractions: [
+            {
+            "city_name": "Bali",
+            "place_name": "Pura Gunung Kawi",
+            "description": "Candi Tebing Kawi adalah situs purbakala yang dilindungi di Bali. Terletak di Sungai Pakerisan",
+            "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
+            "detail": {
+              "ticket_price": "Rp600000,00",
+            }
+          },
+            this.props.route.params.attraction],
+        })
+      }
+      else {
+        this.setState({saveItineraryPopUp: false})
+          console.log("sudah masuk sini")
+          this.props.navigation.navigate("Itinerary", {
+          nama: this.state.namaItinerary, 
+          destinationName: this.state.destinationName,
+          price: 600000,
+          list_attractions: [
+            {
+            "city_name": "Bali",
+            "place_name": "Pura Gunung Kawi",
+            "description": "Candi Tebing Kawi adalah situs purbakala yang dilindungi di Bali. Terletak di Sungai Pakerisan",
+            "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
+            "detail": {
+              "ticket_price": "Rp600000,00",
+            }
+          }],
+        })
+      }
+      
     }
   }
 
