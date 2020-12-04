@@ -39,9 +39,18 @@ export default class MyTripNewItinerary extends Component {
   }
 
   UNSAFE_componentWillMount = () => {
-    console.log(this.props.route.params.destinationName);
-    console.log(this.props.route.params.passAttraction);
+    console.log("HAHA")
+    console.log(this.state.passAttraction);
+    console.log("HUHU")
   };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    console.log(this.state.passAttraction);
+    if (this.state.passAttraction !== prevState.passAttraction){
+      console.log("masuk siniiii")
+      this.fetchData(this.state.passAttraction);
+    }
+  }
 
   saveNewItinerary = () => {
     if (this.state.namaItinerary == ''){
@@ -51,7 +60,23 @@ export default class MyTripNewItinerary extends Component {
     }
     else {
       this.setState({saveItineraryPopUp: false})
-      this.props.navigation.navigate("Itinerary", {nama: this.state.namaItinerary})
+      console.log("sudah masuk sini")
+      this.props.navigation.navigate("Itinerary", {
+        nama: this.state.namaItinerary, 
+        destinationName: this.state.destinationName,
+        price: 800000+parseInt((this.props.route.params.attraction.detail.ticket_price).substring(2, (this.props.route.params.attraction.detail.ticket_price).length - 2)),
+        list_attractions: [
+          {
+          "city_name": "Bali",
+          "place_name": "Pura Gunung Kawi",
+          "description": "Candi Tebing Kawi adalah situs purbakala yang dilindungi di Bali. Terletak di Sungai Pakerisan",
+          "image_source": "https://awsimages.detik.net.id/community/media/visual/2018/04/06/d9748234-a7bc-410f-a19f-9df51d3efd76.jpeg?w=700&q=90",
+          "detail": {
+            "ticket_price": "Rp600000,00",
+          }
+        },
+          this.props.route.params.attraction],
+      })
     }
   }
 
@@ -70,6 +95,9 @@ export default class MyTripNewItinerary extends Component {
   };
 
   render() {
+    console.log("heheheheh")
+    console.log(this.props.route.params.passAttraction);
+    console.log("heheheh")
     return (
       <ScrollView>
         <Modal transparent={true} visible={this.state.saveItineraryPopUp}>
@@ -79,7 +107,7 @@ export default class MyTripNewItinerary extends Component {
                   Simpan itinerary dengan nama:
                 </Text>
                 <TextInput
-                      style={[mts.textInput, {width: '50%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '50%', marginLeft: hp(1.5)}]}
                       autoCorrect={false}
                       placeholder={'Nama Itinerary'}
                       onChangeText={(value) => {this.setState({namaItinerary: value})}}
@@ -88,7 +116,7 @@ export default class MyTripNewItinerary extends Component {
               <View style={{flexDirection:'row',alignItems:'center', width: '100%', justifyContent:'flex-end'}}>
               
                 <TouchableOpacity
-                  style={[ats.btn, {marginRight:10, backgroundColor:'white'}]}
+                  style={[ats.btn, {marginRight:hp(1.5), backgroundColor:'white'}]}
                   onPress={() => {
                     this.setState({
                       saveItineraryPopUp: false,
@@ -113,7 +141,7 @@ export default class MyTripNewItinerary extends Component {
             animationType="slide">
             <View style={gs.columnContainer}>
               <View style={ts.modalContainer}>
-                <Icon name={'times-circle'} size={80} color={'red'} />
+                <Icon name={'times-circle'} size={hp(8)} color={'red'} />
                 <Text style={[ts.alertMessage]}>{this.state.alertMessage}</Text>
                 <TouchableOpacity
                   style={ts.okButton}
@@ -128,13 +156,13 @@ export default class MyTripNewItinerary extends Component {
             onCancel={this.hideDate}
             onConfirm={this.handleCheckin}
           />
-          {this.state.passAttraction ? (
+          {this.props.route.params.passAttraction ? (
             <View style={[gs.mainContainer, {justifyContent: 'flex-start', minHeight: Dimensions.get('window').height}]}>
             <View
-              style={{alignItems: 'flex-end', width: '100%', marginBottom: 30}}>
+              style={{alignItems: 'flex-end', width: '100%', marginBottom: hp(4.5)}}>
               <TouchableOpacity
                 onPress={()=>this.setState({saveItineraryPopUp:true})}
-                style={[ts.pesanButton, {borderRadius: 5, marginRight: 30}]}>
+                style={[ts.pesanButton, {borderRadius: hp(1), marginRight: hp(3)}]}>
                 <Text style={{fontWeight: 'bold', color: 'white'}}>Simpan</Text>
               </TouchableOpacity>
             </View>
@@ -160,37 +188,30 @@ export default class MyTripNewItinerary extends Component {
                   )
                 }>
                 <Icon
-                  style={{marginRight: 5}}
+                  style={{marginRight: hp(1)}}
                   name={'search'}
-                  size={18}
+                  size={hp(2.5)}
                   color={Color.color2}
                 />
               </TouchableOpacity>
             </View>
   
-            <View style={[gs.cardSection, {marginTop: 10}]}>
+            <View style={[gs.cardSection, {marginTop: hp(2)}]}>
               <Text style={gs.cardTitle}>Isi Itinerary-mu:</Text>
               {/*Destinasi pertama */}
               <TouchableOpacity
                 style={{
-                  borderRadius: 5,
+                  borderRadius: hp(2),
                   backgroundColor: Color.color3,
-                  height: 175,
-                  marginBottom: 12,
+                  height: hp(20),
+                  padding: hp(1.5),
+                  marginBottom: hp(2),
                 }}>
-                <View style={{width:'100%', alignItems:'flex-end'}}>
-                      <Icon
-                        style={{marginRight:5, marginTop:5}}
-                        name={'times-circle'}
-                        size={20}
-                        color={Color.color4}
-                      />
-                </View>
                 <View
                   style={{
                     alignItems: 'center',
                     flexDirection: 'row',
-                    margin: 10,
+                    margin: hp(1.5),
                   }}>
                   <Image
                     style={[mts.squareImage, {}]}
@@ -202,33 +223,25 @@ export default class MyTripNewItinerary extends Component {
                   <View
                     style={{
                       flexDirection: 'column',
-                      marginLeft: 10,
-                      width: 190,
+                      marginLeft: hp(1.5),
+                      width: hp(23),
                     }}>
-                    <Text style={{fontSize: 17, fontWeight: 'bold'}}>
+                    <Text style={{fontSize: hp(2.2), fontWeight: 'bold'}}>
                       Pura Gunung Kawi
                     </Text>
-                    <Text style={{fontSize: 12, marginTop: 5}}>
+                    <Text style={{fontSize: hp(1.6), marginTop: hp(1)}}>
                       Candi Tebing Kawi adalah situs purbakala yang dilindungi di
                       Bali. Terletak di Sungai Pakerisan
                     </Text>
-                    <View style={{flexDirection: 'row', marginTop: 5}}>
+
+                    <View style={{flexDirection: 'row', marginTop: hp(1)}}>
                       <Icon
-                        style={{marginRight: 5}}
-                        name={'clock-o'}
-                        size={16}
-                        color={'black'}
-                      />
-                      <Text style={{fontSize: 10}}>4-6 Hari</Text>
-                    </View>
-                    <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <Icon
-                        style={{marginRight: 5}}
+                        style={{marginRight: hp(1)}}
                         name={'money'}
-                        size={16}
+                        size={hp(2.5)}
                         color={'black'}
                       />
-                      <Text style={{fontSize: 10}}>600.000 - 800.000</Text>
+                      <Text style={{fontSize: hp(1.5)}}>600.000 - 800.000</Text>
                     </View>
                   </View>
                 </View>
@@ -236,62 +249,45 @@ export default class MyTripNewItinerary extends Component {
               {/*Destinasi kedua */}
               <TouchableOpacity
                 style={{
-                  borderRadius: 5,
+                  borderRadius: hp(2),
                   backgroundColor: Color.color3,
-                  height: 175,
-                  marginBottom: 12,
+                  height: hp(20),
+                  padding: hp(1.5),
+                  marginBottom: hp(2),
                 }}>
-                <View style={{width:'100%', alignItems:'flex-end'}}>
-                      <Icon
-                        style={{marginRight:5, marginTop:5}}
-                        name={'times-circle'}
-                        size={20}
-                        color={Color.color4}
-                      />
-                </View>
                 <View
                   style={{
                     alignItems: 'center',
                     flexDirection: 'row',
-                    margin: 10,
+                    margin: hp(1.5),
                   }}>
                   <Image
                     style={[mts.squareImage, {}]}
                     source={{
                       uri:
-                        'https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/09/1132029/540x270/6-tempat-wisata-baru-yang-viral-di-tahun-2019.jpg',
+                        this.props.route.params.attraction.image_source,
                     }}
                   />
                   <View
                     style={{
                       flexDirection: 'column',
-                      marginLeft: 10,
-                      width: 190,
+                      marginLeft:hp(1.5),
+                      width: hp(23),
                     }}>
-                    <Text style={{fontSize: 17, fontWeight: 'bold'}}>
-                      Pura Gunung Kawi
+                    <Text style={{fontSize: hp(2.2), fontWeight: 'bold'}}>
+                      {this.props.route.params.attraction.place_name}
                     </Text>
-                    <Text style={{fontSize: 12, marginTop: 5}}>
-                      Candi Tebing Kawi adalah situs purbakala yang dilindungi di
-                      Bali. Terletak di Sungai Pakerisan
+                    <Text style={{fontSize: 12, marginTop: hp(1)}}>
+                      {this.props.route.params.attraction.description}
                     </Text>
-                    <View style={{flexDirection: 'row', marginTop: 5}}>
+                    <View style={{flexDirection: 'row', marginTop: hp(1)}}>
                       <Icon
-                        style={{marginRight: 5}}
-                        name={'clock-o'}
-                        size={16}
-                        color={'black'}
-                      />
-                      <Text style={{fontSize: 10}}>4-6 Hari</Text>
-                    </View>
-                    <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <Icon
-                        style={{marginRight: 5}}
+                        style={{marginRight: hp(1)}}
                         name={'money'}
-                        size={16}
+                        size={hp(2.5)}
                         color={'black'}
                       />
-                      <Text style={{fontSize: 10}}>600.000 - 800.000</Text>
+                      <Text style={{fontSize: hp(1.5)}}>{this.props.route.params.attraction.detail.ticket_price} /orang</Text>
                     </View>
                   </View>
                 </View>
@@ -301,10 +297,10 @@ export default class MyTripNewItinerary extends Component {
           ) : (
             <View style={[gs.mainContainer, {justifyContent: 'flex-start', minHeight: Dimensions.get('window').height}]}>
           <View
-            style={{alignItems: 'flex-end', width: '100%', marginBottom: 30}}>
+            style={{alignItems: 'flex-end', width: '100%', marginBottom: hp(4)}}>
             <TouchableOpacity
               onPress={()=>this.setState({saveItineraryPopUp:true})}
-              style={[ts.pesanButton, {borderRadius: 5, marginRight: 30}]}>
+              style={[ts.pesanButton, {borderRadius: hp(1), marginRight: hp(4)}]}>
               <Text style={{fontWeight: 'bold', color: 'white'}}>Simpan</Text>
             </TouchableOpacity>
           </View>
@@ -330,37 +326,30 @@ export default class MyTripNewItinerary extends Component {
                 )
               }>
               <Icon
-                style={{marginRight: 5}}
+                style={{marginRight: hp(1)}}
                 name={'search'}
-                size={18}
+                size={hp(2.5)}
                 color={Color.color2}
               />
             </TouchableOpacity>
           </View>
 
-          <View style={[gs.cardSection, {marginTop: 10}]}>
+          <View style={[gs.cardSection, {marginTop: hp(1.5)}]}>
             <Text style={gs.cardTitle}>Isi Itinerary-mu:</Text>
             {/*Destinasi pertama */}
             <TouchableOpacity
               style={{
-                borderRadius: 5,
-                backgroundColor: Color.color3,
-                height: 175,
-                marginBottom: 12,
+                borderRadius: hp(2),
+                  backgroundColor: Color.color3,
+                  height: hp(20),
+                  padding: hp(1.5),
+                  marginBottom: hp(2),
               }}>
-              <View style={{width:'100%', alignItems:'flex-end'}}>
-                    <Icon
-                      style={{marginRight:5, marginTop:5}}
-                      name={'times-circle'}
-                      size={20}
-                      color={Color.color4}
-                    />
-              </View>
               <View
                 style={{
                   alignItems: 'center',
                   flexDirection: 'row',
-                  margin: 10,
+                  margin: hp(1.5),
                 }}>
                 <Image
                   style={[mts.squareImage, {}]}
@@ -372,28 +361,19 @@ export default class MyTripNewItinerary extends Component {
                 <View
                   style={{
                     flexDirection: 'column',
-                    marginLeft: 10,
-                    width: 190,
+                    marginLeft: hp(1.5),
+                    width: hp(23),
                   }}>
                   <Text style={{fontSize: RFPercentage(2.3), fontWeight: 'bold'}}>
                     Pura Gunung Kawi
                   </Text>
-                  <Text style={{fontSize: RFPercentage(1.6), marginTop: 5}}>
+                  <Text style={{fontSize: RFPercentage(1.6), marginTop: hp(1)}}>
                     Candi Tebing Kawi adalah situs purbakala yang dilindungi di
                     Bali. Terletak di Sungai Pakerisan
                   </Text>
-                  <View style={{flexDirection: 'row', marginTop: 5}}>
+                  <View style={{flexDirection: 'row', marginTop: hp(1)}}>
                     <Icon
-                      style={{marginRight: 5}}
-                      name={'clock-o'}
-                      size={hp(2.5)}
-                      color={'black'}
-                    />
-                    <Text style={{fontSize: RFPercentage(1.5)}}>4-6 Hari</Text>
-                  </View>
-                  <View style={{flexDirection: 'row', marginTop: 5}}>
-                    <Icon
-                      style={{marginRight: 5}}
+                      style={{marginRight: hp(1)}}
                       name={'money'}
                       size={hp(2.5)}
                       color={'black'}

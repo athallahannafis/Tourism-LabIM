@@ -108,7 +108,7 @@ export default class AttractionInDestination extends Component {
       <TouchableOpacity
         onPress={() =>
           this.props.navigation.navigate(
-            'Attraction Details', lastItem)
+            'Attraction Details', {'attraction': lastItem, 'fromItinerary':false})
         }>
         <View style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
           {/* Left section */}
@@ -137,7 +137,7 @@ export default class AttractionInDestination extends Component {
         <>
           <TouchableOpacity
             onPress={() =>
-              this.props.navigation.navigate('Attraction Details', item)
+              this.props.navigation.navigate('Attraction Details', {'attraction':item, 'fromItinerary':false})
             }>
             <View style={[gs.rowContainerNoWrap, {paddingVertical: 20}]}>
               {/* Left section */}
