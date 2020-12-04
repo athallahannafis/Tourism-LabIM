@@ -97,9 +97,9 @@ export default class MyTripHome extends Component {
                         fontWeight: 'bold'}}>
                         {item.destinationName}
                       </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                      <View style={{flexDirection: 'row', marginTop: hp(0.8)}}>
                         <Icon
-                          style={{marginRight: 5}}
+                          style={{marginRight: hp(1)}}
                           name={'calendar'}
                           size={hp(3)}
                         />
@@ -143,8 +143,8 @@ export default class MyTripHome extends Component {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        marginTop: 5,
-                        marginBottom: 5,
+                        marginTop: hp(1),
+                        marginBottom: hp(1),
                       }}>
                       <TouchableOpacity
                         onPress={() => {this.props.navigation.navigate(
@@ -224,9 +224,9 @@ export default class MyTripHome extends Component {
                   Buat Trip
                 </Text>
                 <Icon
-                  style={{marginLeft: 5}}
+                  style={{marginLeft: hp(1)}}
                   name={'plus-circle'}
-                  size={16}
+                  size={hp(2.3)}
                   color={Color.white}
                 />
               </TouchableOpacity>
@@ -241,9 +241,9 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 120,
                     }}>
-                    <Icon name={'map-marker'} size={25} color={Color.color5} />
+                    <Icon name={'map-marker'} size={hp(2.7)} color={Color.color5} />
                     <TextInput
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       placeholder={'Tujuan destinasi'}
                       onChangeText={(value) =>
                         this.setState({destinationValue: value})
@@ -258,22 +258,22 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={hp(3)} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(2.5)} color={Color.color5} />
                     <TouchableOpacity
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       onPress={() => this.showStartDate()}>
                       {this.state.dateStartTextValue === 'Tanggal mulai' ? (
                         <Text
                           style={{
-                            fontSize: 15,
+                            fontSize: RFPercentage(2.3),
                             color: 'grey',
-                            width: 125,
+                            width: wp(50),
                           }}>
                           {this.state.dateStartTextValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          style={{fontSize: RFPercentage(2.3), color: 'black', width: wp(50)}}>
                           {this.state.dateStartTextValue}
                         </Text>
                       )}
@@ -292,17 +292,17 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(2.5)} color={Color.color5} />
                     <TouchableOpacity
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       onPress={() => this.showEndDate()}>
                       {this.state.dateEndTextValue === 'Tanggal selesai' ? (
-                        <Text style={{fontSize: 15, color: 'grey', width: 125}}>
+                        <Text style={{fontSize: RFPercentage(2.2), color: 'grey', width: wp(50)}}>
                           {this.state.dateEndTextValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          style={{fontSize: RFPercentage(2.2), color: 'black', width: wp(50)}}>
                           {this.state.dateEndTextValue}
                         </Text>
                       )}
@@ -320,7 +320,7 @@ export default class MyTripHome extends Component {
                       alignItems: 'flex-end',
                       justifyContent: 'center',
                       width: '100%',
-                      height: 50,
+                      height: hp(4),
                     }}>
                     <TouchableOpacity
                       style={mts.buttonSimpan}
@@ -337,7 +337,7 @@ export default class MyTripHome extends Component {
               </View>
 
               {/* Daftar Trip Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={[gs.cardTitle]}>Daftar Trip</Text>
                 {daftarTrip}
                 <TouchableOpacity
@@ -353,14 +353,14 @@ export default class MyTripHome extends Component {
                   }>
                   <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
                     <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                      <Text style={{fontSize: RFPercentage(2.2), fontWeight: 'bold'}}>
                         {this.state.destinationValue}
                       </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                      <View style={{flexDirection: 'row', marginTop: hp(0.8)}}>
                         <Icon
-                          style={{marginRight: 5}}
+                          style={{marginRight: hp(1)}}
                           name={'calendar'}
-                          size={16}
+                          size={hp(2.3)}
                         />
                         <Text>{this.state.dateStartTextValue} - {this.state.dateEndTextValue}</Text>
                       </View>
@@ -390,7 +390,7 @@ export default class MyTripHome extends Component {
               </View>
 
               {/* Rekomendasi Destinasi Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>
@@ -407,9 +407,9 @@ export default class MyTripHome extends Component {
                   Buat Trip
                 </Text>
                 <Icon
-                  style={{marginLeft: 5}}
+                  style={{marginLeft: hp(1)}}
                   name={'plus-circle'}
-                  size={16}
+                  size={hp(2.3)}
                   color={Color.white}
                 />
               </TouchableOpacity>
@@ -424,9 +424,9 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 120,
                     }}>
-                    <Icon name={'map-marker'} size={25} color={Color.color5} />
+                    <Icon name={'map-marker'} size={hp(2.7)} color={Color.color5} />
                     <TextInput
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       placeholder={'Tujuan destinasi'}
                       onChangeText={(value) =>
                         this.setState({destinationValue: value})
@@ -441,22 +441,22 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(2.5)} color={Color.color5} />
                     <TouchableOpacity
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       onPress={() => this.showStartDate()}>
                       {this.state.dateStartTextValue === 'Tanggal mulai' ? (
                         <Text
                           style={{
-                            fontSize: 15,
+                            fontSize: RFPercentage(2.3),
                             color: 'grey',
-                            width: 125,
+                            width: wp(50),
                           }}>
                           {this.state.dateStartTextValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          style={{fontSize: RFPercentage(2.3), color: 'black', width: wp(50)}}>
                           {this.state.dateStartTextValue}
                         </Text>
                       )}
@@ -475,17 +475,17 @@ export default class MyTripHome extends Component {
                       alignItems: 'center',
                       width: Dimensions.get('window').width - 117,
                     }}>
-                    <Icon name={'calendar'} size={19} color={Color.color5} />
+                    <Icon name={'calendar'} size={hp(2.5)} color={Color.color5} />
                     <TouchableOpacity
-                      style={[mts.textInput, {width: '85%', marginLeft: 10}]}
+                      style={[mts.textInput, {width: '85%', marginLeft: hp(1.5)}]}
                       onPress={() => this.showEndDate()}>
                       {this.state.dateEndTextValue === 'Tanggal selesai' ? (
-                        <Text style={{fontSize: 15, color: 'grey', width: 125}}>
+                        <Text style={{fontSize: RFPercentage(2.3), color: 'grey', width: wp(50)}}>
                           {this.state.dateEndTextValue}
                         </Text>
                       ) : (
                         <Text
-                          style={{fontSize: 15, color: 'black', width: 125}}>
+                          style={{fontSize: RFPercentage(2.3), color: 'black', width: wp(50)}}>
                           {this.state.dateEndTextValue}
                         </Text>
                       )}
@@ -503,7 +503,7 @@ export default class MyTripHome extends Component {
                       alignItems: 'flex-end',
                       justifyContent: 'center',
                       width: '100%',
-                      height: 50,
+                      height: hp(4),
                     }}>
                     <TouchableOpacity
                       style={mts.buttonSimpan}
@@ -520,13 +520,13 @@ export default class MyTripHome extends Component {
               </View>
 
               {/* Daftar Trip Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={[gs.cardTitle]}>Daftar Trip</Text>
                 {daftarTrip}
               </View>
 
               {/* Rekomendasi Destinasi Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>
@@ -551,15 +551,15 @@ export default class MyTripHome extends Component {
                   Buat Trip
                 </Text>
                 <Icon
-                  style={{marginLeft: 5}}
+                  style={{marginLeft: hp(1)}}
                   name={'plus-circle'}
-                  size={16}
+                  size={hp(2.3)}
                   color={Color.white}
                 />
               </TouchableOpacity>
 
               {/* Daftar Trip Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={[gs.cardTitle]}>Daftar Trip</Text>
                 {daftarTrip}
                 <TouchableOpacity
@@ -575,14 +575,14 @@ export default class MyTripHome extends Component {
                   }>
                   <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
                     <View style={{flexDirection: 'column'}}>
-                      <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                      <Text style={{fontSize: RFPercentage(2.2), fontWeight: 'bold'}}>
                         {this.state.destinationValue}
                       </Text>
-                      <View style={{flexDirection: 'row', marginTop: 4}}>
+                      <View style={{flexDirection: 'row', marginTop: hp(0.8)}}>
                         <Icon
-                          style={{marginRight: 5}}
+                          style={{marginRight: hp(1)}}
                           name={'calendar'}
-                          size={16}
+                          size={hp(2.3)}
                         />
                         <Text>{this.state.dateStartTextValue} - {this.state.dateEndTextValue}</Text>
                       </View>
@@ -612,7 +612,7 @@ export default class MyTripHome extends Component {
               </View>
 
               {/* Rekomendasi Destinasi Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>
@@ -629,21 +629,21 @@ export default class MyTripHome extends Component {
                   Buat Trip
                 </Text>
                 <Icon
-                  style={{marginLeft: 5}}
+                  style={{marginLeft: hp(1)}}
                   name={'plus-circle'}
-                  size={16}
+                  size={hp(2.3)}
                   color={Color.white}
                 />
               </TouchableOpacity>
 
               {/* Daftar Trip Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={[gs.cardTitle]}>Daftar Trip</Text>
                 {daftarTrip}
               </View>
 
               {/* Rekomendasi Destinasi Card */}
-              <View style={[gs.cardSection, {marginTop: 20}]}>
+              <View style={[gs.cardSection, {marginTop: hp(2.5)}]}>
                 <Text style={gs.cardTitle}>
                   Rekomendasi Destinasi untuk kamu
                 </Text>

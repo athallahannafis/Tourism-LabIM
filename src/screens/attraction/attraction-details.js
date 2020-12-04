@@ -24,6 +24,7 @@ export default class AttractionDetails extends Component {
       successPopUp: false,
       contactInfoPopUp: false,
       attractionDataSet: {},
+      attractionDestination: "",
       attractionReviews: [],
       averageRate: 0,
       temp: 0,
@@ -37,6 +38,7 @@ export default class AttractionDetails extends Component {
       for (let j = 0; j < attList[i].attraction_list.length; j++) {
         if (attraction == attList[i].attraction_list[j]) {
           this.state.attractionDataSet = attList[i].attraction_list[j];
+          this.state.attractionDestination = attList[i].attraction_place;
         }
       }
     }
@@ -176,11 +178,6 @@ export default class AttractionDetails extends Component {
               />
               <View style={ats.rowImageContainer}>
                 {attrImages}
-                <View style={[ats.smallImageBlackOverlay]} />
-                <View style={[ats.textOnImageContainer]}>
-                  <Text style={ats.textOnImage}>Lihat</Text>
-                  <Text style={ats.textOnImage}>Semua Foto</Text>
-                </View>
               </View>
             </View>
             <View
@@ -253,8 +250,11 @@ export default class AttractionDetails extends Component {
                   </View>
                   <TouchableOpacity
                     style={ats.btnAddtoItinerary}
-                    onPress={() => this.props.navigation.navigate('Buat Itinerary')
-                    }>
+                    onPress={() => this.props.navigation.navigate('Buat Itinerary', {
+                      destinationName: this.state.attractionDestination,
+                      passAttraction: true,
+                      attraction: this.state.attractionDataSet
+                    })}>
                     <Text style={ats.btnAddtoItineraryText}>
                       Tambah 
                     </Text>
