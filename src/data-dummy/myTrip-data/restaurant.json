@@ -2,23 +2,135 @@
   "data": [
     {
       "name": "Bali Asli",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4,
-      "reviews": [],
+      "coordinates": {
+        "latitude": -6.163411, 
+        "longitude": 106.750537
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+            "https://static.limakaki.com/2017/04/bali-asli.jpg",
+            "https://media-cdn.tripadvisor.com/media/photo-s/03/ab/17/21/bali-asli.jpg",
+            "https://m.justgola.com/media/a/00/11/71263_og_1.jpeg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+            "https://static.limakaki.com/2017/04/bali-asli.jpg",
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
+            "https://static.limakaki.com/2017/04/bali-asli.jpg",
+            "https://media-cdn.tripadvisor.com/media/photo-s/03/ab/17/21/bali-asli.jpg",
+            "https://m.justgola.com/media/a/00/11/71263_og_1.jpeg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
       "reviews_count": 183,
       "description": "Sajian makanan cita rasa tradisional Bali dipadu dgn pemandangan Gunung Agung. Tersedia kelas memasak.",
       "price": "40.000 - 200.000",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
       "images_source": [
         "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-s/08/9e/0e/a1/bali-asli.jpg"
+        "https://static.limakaki.com/2017/04/bali-asli.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-s/03/ab/17/21/bali-asli.jpg",
+        "https://m.justgola.com/media/a/00/11/71263_og_1.jpeg"
       ]
     },
     {
       "name": "d'Alas Warung",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.7,
-      "reviews": [],
+      "coordinates": {
+        "latitude": -8.422261, 
+        "longitude": 115.278884
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
       "reviews_count": 200,
       "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
       "price": "20.000 - 50.000",
@@ -32,17 +144,74 @@
     },
     {
       "name": "Cafe Lotus",
+      "open": "10.00",
+      "close": "22.00",
       "rate": 4.4,
-      "reviews": [],
+      "coordinates": {
+        "latitude": -8.50617, 
+        "longitude": 115.26126
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
       "reviews_count": 134,
       "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
       "price": "50.000 - 100.000",
-      "image": "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
+      "image": "https://m.justgola.com/media/a/00/11/71271_og_1.jpeg",
       "images_source": [
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg",
-        "https://storage.googleapis.com/allindonesiatoursim/2017/05/cafe-lotus.jpg"
+        "https://www.befreetour.com/img/attraction/cafe-lotus-ubud%C2%A020191101093148.jpg",
+        "https://www.befreetour.com/laravel-filemanager/photos/Artikel%20Review/Bali/Caf%C3%A9%20Lotus%20Ubud/pic_1.jpg",
+        "https://www.cafelotusubud.com/wp-content/themes/cafelotus/content/the-restaurant-pic3.jpg",
+        "https://m.justgola.com/media/a/00/11/71271_og_1.jpeg"
       ]
     }
   ]

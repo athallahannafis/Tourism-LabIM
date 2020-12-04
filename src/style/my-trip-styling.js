@@ -219,6 +219,7 @@ export const myTripStyling = StyleSheet.create({
     padding: 10,
     marginRight: "1%",
     marginLeft: "1%",
+    marginBottom: "2%",
     shadowColor: 'black',
     shadowOpacity: 1.0,
     elevation: 3,
