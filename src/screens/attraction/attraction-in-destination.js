@@ -12,7 +12,6 @@ import Color from '../../style/color.json';
 
 
 // data
-import attInDestination from '../../data-dummy/attraction-data/attraction-in-destination.json';
 import AllAttraction from '../../data-dummy/attraction-data/attraction.json';
 
 export default class AttractionInDestination extends Component {
