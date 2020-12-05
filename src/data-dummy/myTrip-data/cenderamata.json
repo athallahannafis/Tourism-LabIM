@@ -215,6 +215,294 @@
         "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
         "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg"
       ]
+    },
+    {
+      "name": "Pasar Kuta",
+      "open": "10.00",
+      "close": "22.00",
+      "rate": 4.7,
+      "coordinates": {
+        "latitude": -8.722830, 
+        "longitude": 115.176609
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
+      "reviews_count": 200,
+      "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
+      "price": "20.000 - 50.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+      "images_source": [
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg"
+      ]
+    },
+    {
+      "name": "Pasar Ubud",
+      "open": "10.00",
+      "close": "22.00",
+      "rate": 4.4,
+      "coordinates": {
+        "latitude": -8.507087,
+        "longitude": 115.262743
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
+      "reviews_count": 134,
+      "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
+      "price": "50.000 - 100.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+      "images_source": [
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg"
+      ]
+    },
+    {
+      "name": "Pasar Kuta",
+      "open": "10.00",
+      "close": "22.00",
+      "rate": 4.7,
+      "coordinates": {
+        "latitude": -8.722830, 
+        "longitude": 115.176609
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
+      "reviews_count": 200,
+      "description": "Hidangan makanan Indonesia dan Bali seperti nasi campur dan sate lilit.",
+      "price": "20.000 - 50.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+      "images_source": [
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/0a53512ed278c6aa1ad3dc2bd3c6e930-f1c174259d7c76c3022e87bd9c367903.jpg"
+      ]
+    },
+    {
+      "name": "Pasar Ubud",
+      "open": "10.00",
+      "close": "22.00",
+      "rate": 4.4,
+      "coordinates": {
+        "latitude": -8.507087,
+        "longitude": 115.262743
+      },
+      "reviews": [
+        {
+          "username": "Sterling",
+          "rate": 4.6,
+          "review_time": "2 minggu yang lalu",
+          "review": "Fantastic service with friendly stuffs.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Mortlock",
+          "rate": 4.7,
+          "review_time": "2 minggu yang lalu",
+          "review": "It was a breathtaking experience for myself.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Gaddard",
+          "rate": 5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Beds nice, service is good.",
+          "photos": []
+        },
+        {
+          "username": "Mortlock",
+          "rate": 3,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything in the bedroom is okay, im not stunned.",
+          "photos": [
+            "https://suarabaru.id/wp-content/uploads/2020/03/wabah-convig-19-tak-pengaruhi-kunjugan-wisatawan-ke-bromo-semeru.jpg",
+            "https://blog.frameatrip.com/wp-content/uploads/2019/06/5585a463857fc40bad5885298a2f06c3-xlarge-bromo.jpg",
+            "https://statik.tempo.co/data/2018/11/08/id_795567/795567_720.jpg",
+            "https://static.tiket.photos/image/upload/v1583829488/events/2020/03/10/4523b22a-0603-4a68-a11f-fa2d4c5a9039-1583829483888-01dcf47bc3d9e763b840baed0617e5e4.jpg"
+          ]
+        },
+        {
+          "username": "Jack",
+          "rate": 3.5,
+          "review_time": "2 minggu yang lalu",
+          "review": "Everything's fine.",
+          "photos": []
+        }
+      ],
+      "reviews_count": 134,
+      "description": "Menyajikan menu tradisional Bali dan makanan Indonesia. Memiliki suasana pedesaan dgn pemandangan kolam.",
+      "price": "50.000 - 100.000",
+      "image": "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+      "images_source": [
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg",
+        "https://cdn.idntimes.com/content-images/community/2018/10/bali2017-8529-3d6f17a47f5295cb05dba70ad6e158ab.jpg"
+      ]
     }
   ]
 }
