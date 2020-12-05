@@ -130,7 +130,7 @@ export default class MyTripItinerary extends Component {
                   </View>
                 </View>
             </View>
-  
+
             {/*Rekomendasi Itinerary Card */}
             <View style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
               {/* Judul */}
@@ -140,14 +140,11 @@ export default class MyTripItinerary extends Component {
                 style={{
                   flexDirection: 'row',
                   width: '100%',
-                  justifyContent: 'space-around',
+                  justifyContent: 'center',
                   alignItems: 'center',
                 }}>
                 <TouchableOpacity
-                  style={{
-                    width: Dimensions.get('window').width - 250
-                  }}
-                >
+                  style={{width: "50%"}}>
                   {/*Image Container */}
                   <View>
                     <Image
@@ -175,8 +172,7 @@ export default class MyTripItinerary extends Component {
                     </View>
                   </View>
                   <Text style={{fontWeight: 'bold',
-                  fontSize: RFPercentage(1.6)
-                }}>
+                  fontSize: RFPercentage(1.6)}}>
                     Objek A, Objek B, Objek C, Objek D
                   </Text>
                   <View style={{flexDirection: 'row'}}>
@@ -200,7 +196,7 @@ export default class MyTripItinerary extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={{
-                    width: Dimensions.get('window').width - 250
+                    width: "50%",
                   }}>
                   {/*Image Container */}
                   <View>
@@ -253,17 +249,16 @@ export default class MyTripItinerary extends Component {
                 </TouchableOpacity>
               </View>
             </View>
-  
+
             {/*Rekomendasi Restoran Card */}
-            <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
-            style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
+            <View
+              style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
               {/* Judul */}
               <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
               {/* Layout isi */}
               <View
                 style={{
-                  flex: 0,
+                  flex:0,
                   flexDirection: 'row',
                   width: '100%',
                   justifyContent: 'center',
@@ -272,7 +267,7 @@ export default class MyTripItinerary extends Component {
                 {/*Restoran pertama */}
                 <TouchableOpacity
                   style={{
-                    width: "50%"
+                    width: "50%",
                   }}>
                   <Image
                     source={{
@@ -283,7 +278,7 @@ export default class MyTripItinerary extends Component {
                   />
                   <Text style={{fontWeight: 'bold',
                   fontSize: RFPercentage(1.6)
-                    }}>Bali Asli</Text>
+                  }}>Bali Asli</Text>
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <StarRating
                       disabled={true}
@@ -312,11 +307,11 @@ export default class MyTripItinerary extends Component {
                     <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                   </View>
                 </TouchableOpacity>
-  
+
                 {/*Restoran kedua */}
                 <TouchableOpacity
                   style={{
-                    width: "50%"
+                    width: "50%",
                   }}>
                   <Image
                     source={{
@@ -326,7 +321,8 @@ export default class MyTripItinerary extends Component {
                     style={mts.squareImage}
                   />
                   <Text style={{fontWeight: 'bold',
-                  fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
+                  fontSize: RFPercentage(1.6)
+                  }}>Bali Asli</Text>
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <StarRating
                       disabled={true}
@@ -356,26 +352,32 @@ export default class MyTripItinerary extends Component {
                   </View>
                 </TouchableOpacity>
               </View>
-            </TouchableOpacity>
-  
+              {/* Lihat semua button */}
+              <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
+              style={ls.lihatSemua}>
+                <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+              </TouchableOpacity>
+            </View>
+
             {/*Rekomendasi Cenderamata Card */}
-            <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+            <View
             style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
               {/* Judul */}
               <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
               {/* Layout isi */}
               <View
                 style={{
+                  flex: 0,
                   flexDirection: 'row',
                   width: '100%',
-                  justifyContent: 'space-around',
+                  justifyContent: 'center',
                   alignItems: 'center',
                 }}>
                 {/* Toko pertama */}
                 <TouchableOpacity
                   style={{
-                    width: "50%",
+                    width: "50%"
                   }}>
                   <Image
                     source={{
@@ -415,7 +417,7 @@ export default class MyTripItinerary extends Component {
                     <Text style={{fontSize: RFPercentage(1.5)}}>100.000-300.000</Text>
                   </View>
                 </TouchableOpacity>
-  
+
                 {/*Restoran kedua */}
                 <TouchableOpacity
                   style={{
@@ -460,7 +462,14 @@ export default class MyTripItinerary extends Component {
                   </View>
                 </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+              {/* Lihat semua button */}
+              <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+              style={ls.lihatSemua}>
+                <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+              </TouchableOpacity>
+            </View>
+
           </View>
           ) : (
             <View style={gs.mainContainer}>
@@ -545,14 +554,11 @@ export default class MyTripItinerary extends Component {
               style={{
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               <TouchableOpacity
-                style={{
-                  width: Dimensions.get('window').width - 250
-                }}
-              >
+                style={{width: "50%"}}>
                 {/*Image Container */}
                 <View>
                   <Image
@@ -580,8 +586,7 @@ export default class MyTripItinerary extends Component {
                   </View>
                 </View>
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.6)
-              }}>
+                fontSize: RFPercentage(1.6)}}>
                   Objek A, Objek B, Objek C, Objek D
                 </Text>
                 <View style={{flexDirection: 'row'}}>
@@ -605,7 +610,7 @@ export default class MyTripItinerary extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 250
+                  width: "50%",
                 }}>
                 {/*Image Container */}
                 <View>
@@ -660,15 +665,14 @@ export default class MyTripItinerary extends Component {
           </View>
 
           {/*Rekomendasi Restoran Card */}
-          <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
-          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
+          <View
+            style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
             <View
               style={{
-                flex: 0,
+                flex:0,
                 flexDirection: 'row',
                 width: '100%',
                 justifyContent: 'center',
@@ -677,7 +681,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
-                  width: "50%"
+                  width: "50%",
                 }}>
                 <Image
                   source={{
@@ -688,7 +692,7 @@ export default class MyTripItinerary extends Component {
                 />
                 <Text style={{fontWeight: 'bold',
                 fontSize: RFPercentage(1.6)
-                  }}>Bali Asli</Text>
+                }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
@@ -721,7 +725,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran kedua */}
               <TouchableOpacity
                 style={{
-                  width: "50%"
+                  width: "50%",
                 }}>
                 <Image
                   source={{
@@ -731,7 +735,8 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
+                fontSize: RFPercentage(1.6)
+                }}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
@@ -761,20 +766,26 @@ export default class MyTripItinerary extends Component {
                 </View>
               </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            {/* Lihat semua button */}
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
+            style={ls.lihatSemua}>
+              <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+            </TouchableOpacity>
+          </View>
 
           {/*Rekomendasi Cenderamata Card */}
-          <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+          <View
           style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
             {/* Layout isi */}
             <View
               style={{
+                flex: 0,
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               {/* Toko pertama */}
@@ -865,7 +876,14 @@ export default class MyTripItinerary extends Component {
                 </View>
               </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            {/* Lihat semua button */}
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+            style={ls.lihatSemua}>
+              <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
           ) }
           </>
