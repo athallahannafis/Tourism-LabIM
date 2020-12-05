@@ -107,7 +107,7 @@ export const myTripStyling = StyleSheet.create({
   fontOnBlackOverlay: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 14
+    fontSize: RFPercentage(2)
   },
   imageInCard: {
     // width: (Dimensions.get('window').width - 130) / 2,
