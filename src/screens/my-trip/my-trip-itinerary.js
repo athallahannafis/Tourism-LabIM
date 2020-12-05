@@ -263,15 +263,16 @@ export default class MyTripItinerary extends Component {
               {/* Layout isi */}
               <View
                 style={{
+                  flex: 0,
                   flexDirection: 'row',
                   width: '100%',
-                  justifyContent: 'space-around',
+                  justifyContent: 'center',
                   alignItems: 'center',
                 }}>
                 {/*Restoran pertama */}
                 <TouchableOpacity
                   style={{
-                    width: Dimensions.get('window').width - 270
+                    width: "50%"
                   }}>
                   <Image
                     source={{
@@ -315,7 +316,7 @@ export default class MyTripItinerary extends Component {
                 {/*Restoran kedua */}
                 <TouchableOpacity
                   style={{
-                    width: Dimensions.get('window').width - 270,
+                    width: "50%"
                   }}>
                   <Image
                     source={{
@@ -374,7 +375,7 @@ export default class MyTripItinerary extends Component {
                 {/* Toko pertama */}
                 <TouchableOpacity
                   style={{
-                    width: Dimensions.get('window').width - 270,
+                    width: "50%",
                   }}>
                   <Image
                     source={{
@@ -384,7 +385,7 @@ export default class MyTripItinerary extends Component {
                     style={mts.squareImage}
                   />
                   <Text style={{fontWeight: 'bold',
-                  fontSize: RFPercentage(1.8)
+                  fontSize: RFPercentage(1.6)
                   }}>Souvenir Bali</Text>
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <StarRating
@@ -418,7 +419,7 @@ export default class MyTripItinerary extends Component {
                 {/*Restoran kedua */}
                 <TouchableOpacity
                   style={{
-                    width: Dimensions.get('window').width - 270,
+                    width: "50%"
                   }}>
                   <Image
                     source={{
@@ -428,7 +429,7 @@ export default class MyTripItinerary extends Component {
                     style={mts.squareImage}
                   />
                   <Text style={{fontWeight: 'bold',
-                  fontSize: RFPercentage(1.8)
+                  fontSize: RFPercentage(1.6)
                   }}>Krisna Oleh-oleh</Text>
                   <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <StarRating
@@ -667,15 +668,16 @@ export default class MyTripItinerary extends Component {
             {/* Layout isi */}
             <View
               style={{
+                flex: 0,
                 flexDirection: 'row',
                 width: '100%',
-                justifyContent: 'space-around',
+                justifyContent: 'center',
                 alignItems: 'center',
               }}>
               {/*Restoran pertama */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -719,7 +721,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran kedua */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -729,7 +731,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-              fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
+                fontSize: RFPercentage(1.6)}}>Bali Asli</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
                     disabled={true}
@@ -778,7 +780,7 @@ export default class MyTripItinerary extends Component {
               {/* Toko pertama */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -788,7 +790,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.8)
+                fontSize: RFPercentage(1.6)
                 }}>Souvenir Bali</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
@@ -822,7 +824,7 @@ export default class MyTripItinerary extends Component {
               {/*Restoran kedua */}
               <TouchableOpacity
                 style={{
-                  width: Dimensions.get('window').width - 270,
+                  width: "50%"
                 }}>
                 <Image
                   source={{
@@ -832,7 +834,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.8)
+                fontSize: RFPercentage(1.6)
                 }}>Krisna Oleh-oleh</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
@@ -1138,7 +1140,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.8)
+                fontSize: RFPercentage(1.6)
                 }}>Souvenir Bali</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
@@ -1182,7 +1184,7 @@ export default class MyTripItinerary extends Component {
                   style={mts.squareImage}
                 />
                 <Text style={{fontWeight: 'bold',
-                fontSize: RFPercentage(1.8)
+                fontSize: RFPercentage(1.6)
                 }}>Krisna Oleh-oleh</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <StarRating
