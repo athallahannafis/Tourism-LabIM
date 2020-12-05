@@ -128,7 +128,7 @@ export default class AttractionMap extends Component {
                 <Text style={{fontSize: RFPercentage(1.4)}}>Lokasi anda</Text>
               </View>
               <View style={[ls.bubble]}>
-                <Text style={{fontSize: RFPercentage(1.4)}}>{this.state.destination.place_name}</Text>
+                <Text style={{fontSize: RFPercentage(1.4)}}>{this.state.destination.accomodation_name}</Text>
               </View>
             </View>
           </View>
