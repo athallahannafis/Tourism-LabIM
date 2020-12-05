@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
+import {View, Text, Image, Dimensions, TouchableOpacity, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -1008,9 +1008,8 @@ export default class MyTripItinerary extends Component {
           </View>
 
           {/*Rekomendasi Restoran Card */}
-          <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
-          style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
+          <View
+            style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Rekomendasi Restoran di sekitarmu</Text>
             {/* Layout isi */}
@@ -1110,11 +1109,16 @@ export default class MyTripItinerary extends Component {
                 </View>
               </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            {/* Lihat semua button */}
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Rekomendasi Restoran")}
+            style={ls.lihatSemua}>
+              <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+            </TouchableOpacity>
+          </View>
 
           {/*Rekomendasi Cenderamata Card */}
-          <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+          <View
           style={[gs.cardSection, {marginBottom: hp(2.5)}]}>
             {/* Judul */}
             <Text style={gs.cardTitle}>Toko Cendera mata untuk kamu</Text>
@@ -1215,10 +1219,37 @@ export default class MyTripItinerary extends Component {
                 </View>
               </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+            {/* Lihat semua button */}
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Rekomendasi Cendera Mata")}
+            style={ls.lihatSemua}>
+              <Text style={ls.lihatSemuaText}>Lihat semua</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
         )}
       </ScrollView>
     );
   }
 }
+
+const ls = StyleSheet.create({
+  lihatSemua: {
+    flex: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    borderRadius: hp(5)/7,
+    padding: "2%",
+    width: "100%",
+    height: hp(5),
+    backgroundColor: Color.color1,
+    fontWeight: "bold"
+  },
+  lihatSemuaText: {
+    fontWeight: "bold",
+    fontSize: RFPercentage(2.2)
+  }
+})
